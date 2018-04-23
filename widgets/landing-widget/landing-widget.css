@@ -1,0 +1,158 @@
+
+/*
+Top 5 Reviews Widget-------------------------------------------------------------
+*/
+
+.widget_landing_widget_hlm_sports .widget-title.title2{border:0;}
+.widget_landing_widget_hlm_sports .widget-title.title2 h2 {position: relative; background: #2f2f2f; width: 100%; float: left; line-height: 40px; font-size: 16px; padding: 0 20px; font-weight: 600; color: #FFF; border-radius: 3px 3px 0px 0px; margin: 0; }
+
+.widget_landing_widget_hlm_sports{padding:0;background: transparent;border-radius: 0;}
+.widget_landing_widget_hlm_sports .widget-title{color:#FFF;border-bottom:5px solid #2f2f2f;width:100%;float:left;}
+.widget_landing_widget_hlm_sports .widget-title h2{  position: relative;  background: #2f2f2f; width: auto; float: left;line-height: 34px;font-size:16px;padding:0 12px;font-weight: 600;border-radius: 0;}
+.widget_landing_widget_hlm_sports .widget-title h2:before{content: ''; width: 100%; height: 100%; position: absolute; background: #2f2f2f; transform: skew(-28deg); z-index:-1; }
+.landing-widget{width: 100%;}
+.landing-widget ul{width: calc(100% + 10px);margin-left:-10px;}
+
+.landing-widget li{width:20%;float:left;padding-left:10px;}
+.three-parts .landing-widget li{width:25%;}
+.two-parts .landing-widget li{width:33%;}
+.one-part .landing-widget li{width:100%;}
+
+.landing-widget-logo-wrap {width:100%;float:left;background:#358d53;padding: 7px 10px;position: relative;overflow: hidden;}
+.landing-widget-logo {float:right;overflow: hidden;border-radius: 3px;}
+.landing-widget-review-image-wrap {width:100%;position: relative;float:left;    background: #FFF;    overflow: hidden;}
+.landing-widget-review-image img{width: 100%;float:left;}
+.landing-widget-review-content-wrap {width:100%;position: absolute;bottom:0;background: #000000ad;color:#FFF;padding: 10px 10px 0;transition:all 0.6s;}
+.landing-widget-review-content-wrap a{color:#FFF;}
+.landing-widget-bookmaker-title {font-weight: 600;font-size: 20px;}
+.landing-widget-bonus {font-size: 14px;}
+.landing-widget-review-link {line-height: 36px;text-transform: uppercase;float: left;font-size:12px;text-decoration: underline;font-size: 14px;}
+.landing-widget-review-bet-now {color:#FFF;font-weight: 600;float: right;padding: 5px 25px;background:#f67c01;border-bottom: 3px solid #c86804;font-size: 15px;text-transform: uppercase;} 
+
+.landing-widget-rules-link {text-align: right;width: 100%;float: left;font-size: 10px;}
+
+
+
+.landing1 .landing-widget-tooltip{text-align:center;height:0;overflow: hidden;float:left;font-size:11px;line-height: 14px;transition:all 0.8s;position: relative;bottom:-100px;opacity: 0;}
+.landing1 .landing-widget-review-image-wrap:hover .landing-widget-tooltip{height: 100%;bottom:0px;opacity: 1;max-height: 100%;height: 155px;}
+.landing1 .landing-widget-review-image-wrap:hover .landing-widget-review-content-wrap{max-height: 100%;}
+.landing1 .landing-widget-tooltip span{    width: 100%; text-align: center; float: left; font-size: 14px; margin: 10px 0 20px;font-weight: 800;}
+
+
+.landing1 .landing-widget-logo {display: table; float: none; overflow: hidden; border-radius: 3px; margin: 0 auto; }
+.landing1 .landing-widget-review-bet-now{display: table; float: none;margin: 10px auto 0; }
+.landing1 .landing-widget-rules-link, .landing1 .landing-widget-bookmaker-title{text-align: center;}
+
+
+.landing-widget.landing2 li{width: 100%;}
+.landing2 .landing-widget-review-content-wrap{background: transparent;height:100%;width: 100%;padding:0;}
+.landing2 .landing-widget-logo-wrap{background:transparent;width: auto;float:none;display: table;margin:0 auto;}
+
+
+.landing2 .landing-widget-bonus {font-size: 40px; text-align: center; line-height: normal; width: 300px; margin: 0 auto; }
+.landing2 .landing-widget-review-bet-now-wrap{    background: transparent; width: 100%; position: absolute; margin: 0 auto; bottom: 20px; text-align: center;}
+.landing2 .landing-widget-review-bet-now-wrap a{display: inline-block;}
+.landing2 .landing-widget-tooltip {float: left; background: #FFF; border-left: 10px solid #358d53; padding: 10px; margin-top:10px; width:100%;}
+
+.landing-widget.landing3 li{width: 100%;margin-bottom:2px;height:53px;background: #FFF;overflow: hidden;}
+
+.landing3 .landing-widget-logo-wrap {width:136px;float:left;background:#358d53;padding:0;overflow: hidden;    position: relative;}
+.landing3 .landing-widget-position-number {   font-style: italic; float: left; color: #FFF; font-weight: 400; font-size: 11px; position: absolute; top: 0; left: 3px; margin: 0;}
+
+.landing3 .landing-widget-logo {    padding: 5px 0;float:right;border-radius: 0; }
+
+
+.landing3 .landing-widget-review-image-wrap{width: calc(100% - 136px);}
+
+.landing3 .landing-widget-review-content-wrap {      min-height: 44px;  line-height: 22px;width:100%;position: relative;bottom:0;background: #FFF;color:#FFF;padding:0px;float:left;}
+.landing3 .landing-widget-review-content-wrap a{    font-size: 12px; color: #3271ae; text-transform: capitalize; font-weight: 600;}
+.landing3 .landing-widget-star-rating {margin:5px 0 0;text-align: left;font-size:20px;color:#f7dd00;    zoom: 0.8;
+    margin: 5px 0 -5px;}
+.landing3 .star-rating {text-align: left;}
+.landing3 .landing-widget-review-bet-now{          width: 70%; position: absolute; top: 10px; right: 20px; height: 30px; text-align: center; padding: 5px;}
+.landing3 .landing-widget-review-link{width: calc(100% - 70px); text-align: center; line-height: 15px; float: left;}
+.landing3.landing-widget-reviews li{width:100%;margin-bottom:2px; }
+
+
+
+.landing4{background: #FFF;float:left;padding:20px;}
+.landing-widget.landing4 li{width: 100%;}
+.landing4 .post-content{padding:10px 20px;float:left;;width: 100%;} 
+.landing4 .post-content ul{}
+.landing4 .archive-payment-wrap{width:100%;float:left;position: relative;    border: 1px solid #dbdbdb;margin-top:0;}
+.landing4 .read-more {position: absolute; font-weight: 600; right: 20px; bottom: 20px; padding: 5px 25px; background: #358d53; border-bottom: 3px solid #206539; font-size: 15px; text-transform: uppercase; color: #FFF; } 
+.landing4 .archive-payment-icon{ width:166px; float:left;z-index: 1; position: relative; background: #000; padding: 10px 20px 10px 10px;background: #d9d9d9;}
+.landing4 .archive-payment-icon:before {content: ''; width:65px; height: 100%; position: absolute; background: #d9d9d9; transform: skew(-28deg); top: 0; right:-20px; z-index: -1; } 
+.landing4 .archive-payment-icon img{border-radius:3px;overflow:hidden;}
+
+.landing4 .landing-widget-review-bet-now{    color: #FFF; font-weight: 600; float: right; padding: 5px 25px; background: #f67c01; border-bottom: 3px solid #c86804; font-size: 15px; line-height: normal; text-transform: uppercase; margin-top: 5px;}
+
+.landing4 .payment-icon-content{    margin-left: 50px;font-size:12px;line-height: 18px;margin-top:5px;
+    width: calc(100% - 224px);float: left;position: relative;padding-bottom:20px;}
+.landing4 .payment-icon-read-review{    position: absolute; right: 20px; bottom:0;}
+.landing4 .payment-icon-read-review a {font-size: 12px; color: #3271ae; text-transform: capitalize; font-weight: 600; }
+.landing4 .payment-icon-bookmakers{border:none; position: relative; background: #358d53; width: 100%; float: left; line-height: 40px; font-size: 16px; padding: 0 20px; font-weight: 600; color: #FFF; }
+.landing4 .payment-icon-bookmakers ul{      vertical-align: middle;  text-align: left;display: inline-block;}
+.landing4 .payment-icon-bookmakers ul li{border:none;width: auto;float:left;margin: 0 5px;max-width: 95px;border-radius: 2px;overflow: hidden;line-height: normal;}
+
+
+.landing5{background: #FFF;float:left;padding:20px;}
+.landing-widget.landing5 li{    width: calc(20% - 10px); border-radius: 3px; overflow: hidden; padding: 0; margin-left: 10px;}
+
+.landing5 .landing-widget-tooltip{text-align:center;height:0;overflow: hidden;float:left;font-size:11px;line-height: 14px;transition:all 0.8s;position: relative;bottom:-100px;opacity: 0;}
+
+ .landing5 .landing-widget-review-image-wrap{  background: #358d53;}
+.landing5 .landing-widget-review-image-wrap:hover .landing-widget-tooltip{height: 100%;bottom:0px;opacity: 1;max-height: 100%;height: 155px;}
+.landing5 .landing-widget-review-content-wrap{position: relative;background:transparent;padding:0 0 20px;}
+.landing5 .landing-widget-review-image-wrap:hover .landing-widget-review-content-wrap{max-height: 100%;}
+.landing5 .landing-widget-tooltip span{    width: 100%; text-align: center; float: left; font-size: 14px; margin: 10px 0 20px;font-weight: 800;}
+
+.landing5 .landing-widget-review-image {    display: table;
+    margin: 0 auto;
+    width: 40px;
+}
+.landing5 .landing-widget-logo {display: table; float: none; overflow: hidden; border-radius: 3px; margin: 0 auto; }
+.landing5 .landing-widget-review-bet-now{display: table; float: none;margin: 10px auto 0;border:1px solid #FFF; background: transparent; }
+.landing5 .landing-widget-rules-link, .landing5 .landing-widget-bookmaker-title{text-align: center;width:100%;float:left;    margin: 5px 0;}
+
+
+.landing-widget.landing6 li{width: 100%;margin-bottom:2px;height:53px;background: #FFF;overflow: hidden;}
+.landing6 .landing-image{float:left;margin-left: 10px;margin-right:20px;margin-top:5px;}
+.landing6 .landing-content{font-style: italic; font-size:14px;line-height: normal;padding:10px 0;max-height: 45px; }
+
+
+
+
+
+
+
+@media screen and (max-width: 1200px) and (min-width: 900px){
+.four-parts .landing2 .landing-widget-review-image img{min-height: 260px; margin-left: calc(50% - 600px); min-width: 1200px; }
+.three-parts .landing2 .landing-widget-review-image img{min-height: 260px; margin-left: calc(50% - 450px); min-width: 900px; }
+
+
+
+
+
+}
+
+@media screen and (max-width: 900px){
+.four-parts .landing2 .landing-widget-review-image img{min-height: 260px; margin-left: calc(50% - 600px); min-width: 1200px; }
+.three-parts .landing2 .landing-widget-review-image img{min-height: 260px; margin-left: calc(50% - 450px); min-width: 900px; }
+	.landing-widget.landing5 li{    width: calc(25% - 10px);margin-bottom:10px;}
+	.landing-widget.landing1 li{width: 25%;margin-bottom:10px;}
+	.landing-widget.landing5 li:nth-child(5), .landing-widget.landing1 li:nth-child(5){display: none;}
+}
+
+@media screen and (max-width: 700px){
+	.landing-widget.landing5 li{    width: calc(50% - 10px);margin-bottom:10px;}
+	.landing-widget.landing1 li{width: 50%;margin-bottom:10px;}
+	.landing-widget.landing5 li:nth-child(5), .landing-widget.landing1 li:nth-child(5){display: none;}
+
+.landing3 .landing-widget-review-image-wrap, .landing3 .landing-widget-logo-wrap{width:50%;}
+.landing3 .landing-widget-logo {text-align: center; width: 100%; padding: 5px 0; float: right; border-radius: 0; } 
+.landing3 .landing-widget-logo img{display: inline-block;}
+
+
+
+}

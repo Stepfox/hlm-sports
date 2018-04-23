@@ -1,0 +1,19 @@
+	.big-looks{display:none;}
+	.big-looks input{width:60%;}
+	.row{width:100%;float:left;}
+	[id*="top_5_reviews_hlm_sports"] .image-part{float:left;width:80px;text-align: center;border-right:1px solid #ebebeb;background:#218529;    cursor: move;line-height: 40px;color:#FFF;font-weight: 700;border-radius: 4px;box-shadow:0 0 10px #ebebeb;}
+	.button.remove-row{float: right;margin:20px;color:#FFF;background:#9b2e2e;font-weight:700;}
+	.button.remove-row:hover, .button.remove-row:focus{color:#FFF;background:#6f1b1b;}
+	.text-part{float:left;width:100%;}
+	#customize-controls .text-part{width:100%;}
+	[id*="top_5_reviews_hlm_sports"] .image-preview{width:80px;height:40px;display: inline-block;cursor: move;}
+	.button.add_image_button{background: #218529; color: #FFF; font-weight: 700;border:0;}
+	.button.add_image_button:hover, .button.add_image_button:focus{background:#224f26;color:#FFF;}
+	.repeater-title.widefat.text-field{width:100%;float:left;margin-bottom:10px;line-height:23px;}
+	.repeater-link.widefat.text-field{width:100%;margin-left:20px;float:left;line-height:23px;}
+	.remove-row{float:left;}
+	.button.add-row-repeater{background: #218529;font-weight:700;float:left;width:100%;text-align: center;margin:30px 0 50px;padding:10px;color:#FFF;height:auto;}
+	.button.add-row-repeater:hover, .button.add-row-repeater:focus{background:#224f26;color:#FFF;}
+	.row-holder{height:100px;width:100%;float:left;box-shadow: 0 0 30px #ccc;margin:20px 0;}
+	.row h3{width:100%;float:left;}
+	.row select{width:100%;}
