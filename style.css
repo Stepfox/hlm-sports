@@ -758,7 +758,7 @@ Odds widget
 
 .widget.pros-and-cons > div.three-parts.hlm-sports-widget > img, .page-with-featured-image .top-page-area img {
     min-height: 260px;
-    margin-left: calc(50% - 600px);
+    margin-left: calc(50% - 450px);
     min-width: 900px;
 }
 
