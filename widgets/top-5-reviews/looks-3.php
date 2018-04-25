@@ -22,7 +22,7 @@
 				</div>
 				<div class="top-5-review-link">
 					<a href="<?php echo get_permalink( $bookmaker_id); ?>">
-						Read Review
+						<?php the_field('read_review', 'option');  ?>
 					</a>
 				</div>
 					<a href="<?php echo the_field( 'default_tracker', $bookmaker_id); ?>" target="_blank">

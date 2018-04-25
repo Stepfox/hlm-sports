@@ -37,7 +37,7 @@
 				<div class="landing-widget-review-bet-now-wrap">
 				<a href="<?php echo the_field( 'default_tracker', $bookmaker_id); ?>" target="_blank">
 					<div class="landing-widget-review-bet-now">
-                    	Bet Now
+                    	<?php the_field('bet_now', 'option');  ?>
 					</div>
                 </a>
             	</div>

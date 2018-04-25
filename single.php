@@ -5,7 +5,7 @@
       <div class="three-parts hlm-sports-widget">
     <div class="widget-title">
       <h2>
-      Upcoming Match
+      <?php the_field('upcoming_match', 'option');  ?>
       </h2>
     </div>
     
@@ -39,7 +39,7 @@
               </div>  
               <a href="<?php echo the_field( 'default_tracker' ); ?>" target="_blank">
                 <div class="featured-match-bet-now">
-                    Bet Now
+                    <?php the_field('bet_now', 'option');  ?>
                 </div>
               </a>
           </div>

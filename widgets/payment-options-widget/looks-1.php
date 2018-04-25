@@ -15,7 +15,7 @@
 		</div>
 		<div class="payment-icon-read-review">
 			<a href="<?php the_permalink($bookmaker_id); ?>" title="<?php the_title($bookmaker_id); ?>">
-		         read review
+		         <?php the_field('read_review', 'option');  ?>
 			</a>
 	    </div>
 	</div>

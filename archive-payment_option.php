@@ -42,7 +42,7 @@
 		</div>
 		<div class="payment-icon-read-review">
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-		         read review
+		         <?php the_field('read_review', 'option');  ?>
 			</a>
 	    </div>
 	</div>

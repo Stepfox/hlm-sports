@@ -40,11 +40,11 @@
 				</div>
 				<a href="<?php echo the_field( 'default_tracker' , $bookmaker_id); ?>" target="_blank">
 					<div class="top-5-review-bet-now">
-                    	Bet Now
+                    	<?php the_field('bet_now', 'option');  ?>
 					</div>
                	</a>
 				<div class="top-5-rules-link">
-					T&C Apply
+					<?php the_field('t&c_apply', 'option');  ?>
 				</div>
 
 

@@ -3,7 +3,7 @@
   <div class="four-parts hlm-sports-widget top-page-area">
     <div class="widget-title">
       <h2>
-      Pros and Cons
+      <?php the_field('pros_and_cons', 'option');  ?>
       </h2>
     </div>
 
@@ -51,7 +51,7 @@
               </div>  
               <a href="<?php echo the_field( 'default_tracker' ); ?>" target="_blank">
                 <div class="pros-and-cons-bet-now">
-                    Bet Now
+                    <?php the_field('bet_now', 'option');  ?>
                 </div>
               </a>
           </div>

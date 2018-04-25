@@ -36,12 +36,12 @@
 				<div class="looks-5-content-wrap">
 					<a href="<?php echo the_field( 'default_tracker', $bookmaker_id); ?>" target="_blank">
 						<div class="top-5-review-bet-now">
-                    		Bet Now
+                    		<?php the_field('bet_now', 'option');  ?>
 						</div>
                		</a>
 					<div class="top-5-review-link">
 						<a href="<?php echo get_permalink( $bookmaker_id); ?>">
-							Read Review
+							<?php the_field('read_review', 'option');  ?>
 						</a>
 					</div>
 				</div>

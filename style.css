@@ -668,7 +668,7 @@ Odds widget
 .odds-game-wrap {float:left;background: #2f2f2f;color:#FFF;    box-shadow: 0 0 0 1px #FFF;width:296px;position: relative;}
 .odds-game-wrap:before {content: ''; width: 35px; height: 100%; position: absolute; background: #5a5859; transform: skew(-28deg); right: -20px; z-index: 0; }
 
-.odds-game-time {line-height:50px;float:left;width:20%;text-align: center;}
+.odds-game-time {line-height:50px;float:left;width:20%;text-align: center;    overflow: hidden;    max-height: 50px;}
 .odds-game-teams {float:left;width:80%;}
 .odds-game-home-team div, .odds-game-away-team div{background: #2f2f2f;color:#FFF; box-shadow:0 0 0 1px #FFF;   padding: 0px 10px; line-height:25px;float: left;}
 .odds-game-home-team{float:left;width: 100%;}

@@ -6,19 +6,19 @@
 
 
 $categories = '54a22a24d443afef088b4836';
-$bookmakers = '44';
+$bookmakers = '43';
 
 
 
 
 $filter_categories = 'categories='.$categories ;
 $filter_bookmakers = 'bookmakers='.$bookmakers ;
-$filter_from = 'from='.$from ;
-$filter_to = 'to='.$to ;
+//$filter_from = 'from='.$from ;
+//$filter_to = 'to='.$to ;
 
 
 
-//$url = 'http://api.exaloc.org/v1/pre-match/markets?'.$filter_categories.'&'.$filter_bookmakers;
+$url = 'http://api.exaloc.org/v1/pre-match/markets?'.$filter_categories.'&'.$filter_bookmakers;
 
 
 
@@ -173,14 +173,34 @@ for ($i=0; $i < 10; $i++) { ?>
 
 <?php 
 
-for ($i=0; $i < 5; $i++) { ?>
+$url = 'http://api.exaloc.org/v1/pre-match/markets?categories=54a229fad443afef088b45c9'; 
+
+$request = wp_remote_get($url);
+$body = wp_remote_retrieve_body( $request );
+$data = json_decode( $body, true );
+
+
+
+
+
+
+
+
+
+foreach ($data as $data_part) {
+// var_dump($data_part['markets'][0]['bookies']);
+ ?>
 	<li>
 		<div class="odds-date">
-			Monday December 4
+			<?php echo $data_part['startTime']; 
+			echo '</br>';
+$myDateTime = strtotime($data_part['startTime']);
+			echo $myDateTime; 
+			?>
 		</div>
 		<div class="odds-game-wrap">
 			<div class="odds-game-time">
-				8:25p
+				<?php echo $data_part['startTime']; ?>
 			</div>
 			<div class="odds-game-teams">
 				<div class="odds-game-home-team">
@@ -188,7 +208,7 @@ for ($i=0; $i < 5; $i++) { ?>
 						101
 					</div>
 					<div class="odds-game-home-team-name">
-						New Orleans
+						<?php echo $data_part['teams'][0]['name']; ?>
 					</div>
 				</div>
 
@@ -197,7 +217,7 @@ for ($i=0; $i < 5; $i++) { ?>
 						101
 					</div>
 					<div class="odds-game-away-team-name">
-						Atlanta
+						<?php echo $data_part['teams'][1]['name']; ?>
 					</div>
 				</div>
 			</div>
@@ -207,6 +227,14 @@ for ($i=0; $i < 5; $i++) { ?>
 	<ul>
 
 <?php 
+
+$count =  count((array)$data_part['markets'][0]['bookies']);
+	for ($g=0; $g < $count; $g++) { 
+		echo $data_part['markets'][0]['bookies'][$g]['name'];
+	}
+	
+
+
 
 for ($s=0; $s < 10; $s++) { ?>
 	<li>

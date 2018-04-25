@@ -6,7 +6,7 @@ function hlm_sports_ctm(){
 <a href="" target="_blank">
     <div class="hlm-cta-button">
 
-            bet now
+            <?php the_field('bet_now', 'option');  ?>
 
     </div>
 </a>

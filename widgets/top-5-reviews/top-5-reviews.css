@@ -50,13 +50,15 @@ Top 5 Reviews Widget------------------------------------------------------------
 .looks2 .top-5-review-image-wrap:hover .top-5-review-content-wrap{padding-top:200px;}
 
 
-.looks5 .top-5-tooltip{overflow: hidden;float:left;font-size:11px;line-height: 14px;position: relative; float: left; padding: 15px 0; width:100%; top: 90px; position: absolute; transition:all 0.8s; z-index: 99; left:0; opacity: 1; max-width: 66%; font-weight: 800;transition-delay: 0.5s;}
+.looks5 .top-5-tooltip{padding:20px 20px 20px;border:1px solid #ccc;overflow: hidden;float:left;font-size:11px;line-height: 14px;position: relative; float: left;  width:100%; top: 90px; position: absolute; transition:all 0.8s; z-index: 99; left:0; opacity: 0; max-width: 66%; font-weight: 800;transition-delay: 0.2s;background: #FFF;}
 
-.looks5 li:hover .top-5-tooltip{top:0; width: 100%; }
 
-.looks5 li:hover .top-5-bonus{position: relative;top:-90px;}
-.looks5 li:hover .top-5-star-rating {position: relative;top:-90px;}
-.looks5 li:hover .top-5-star-rating-grade{position: relative;top:-90px;}
+.looks5 li:hover .top-5-tooltip{width: 100%;
+    opacity: 1;
+    top: -10px;
+    box-shadow: 5px 5px 8px #00000061;}
+
+
 
 .looks5 li .top-5-bonus{position: relative;top:0px;transition:all 0.4s;transition-delay: 0.5s;}
 .looks5 li .top-5-bonus span{font-weight: 800;font-size:18px;color:#358d53;    letter-spacing: -1px;}
@@ -75,11 +77,11 @@ Top 5 Reviews Widget------------------------------------------------------------
 
 .looks5 li:hover .looks-5-content-wrap.bonus-with-check{position: relative;top:-90px;opacity: 0;}
 
-.looks-5-content-wrap.bonus-with-check{position: relative;top:0px;transition:all 0.4s;opacity: 1;transition-delay: 0.15s;}
+.looks-5-content-wrap.bonus-with-check{position: relative;top:0px;transition:all 0.4s;opacity: 1;}
 
-.looks5 li.big-looks5 .top-5-tooltip{overflow: hidden; font-size: 12px; line-height: 14px; float: left; padding: 15px 0; position: absolute; transition: all 0.8s; z-index: 99; left: 0; opacity: 0; max-width: 97%; height: auto; top: 90px; width: 100%;transition-delay: 0.15s; }
+.looks5 li.big-looks5 .top-5-tooltip{overflow: hidden; font-size: 12px; line-height: 14px; float: left;  position: absolute; transition: all 0.8s; z-index: 99; left: 0; opacity: 0; max-width: 85%; height: auto; top: 90px; width: 85%; }
 
-.looks5 li.big-looks5:hover .top-5-tooltip{max-width: 97%; height:auto; top: 50px; opacity: 1; width: 100%; }
+.looks5 li.big-looks5:hover .top-5-tooltip{max-width: 85%; height:auto; top: 15px; opacity: 1; width: 85%; }
 
 
 
@@ -171,7 +173,7 @@ Top 5 Reviews Widget------------------------------------------------------------
 .looks5 .top-5-logo-wrap:after {content: ''; width: 50px; height: 100%; position: absolute; background: #FFF; transform: skew(-28deg); top:0; right:-30px; }
 .looks5 .top-5-logo {float: none;    padding-right: 20px;}
 .looks5 .top-5-logo img{border-radius: 2px;overflow:hidden;}
-.looks5 .top-5-review-image-wrap{width: calc(100% - 220px);}
+.looks5 .top-5-review-image-wrap{width: calc(100% - 220px);overflow:visible;}
 .looks5 .top-5-review-content-wrap {      min-height: 64px;  line-height: 22px;width:100%;position: relative;bottom:0;background: #FFF;color:#FFF;padding:0px;float:left;}
 .looks-5-content-wrap{width:33%;float:left;text-align: center;min-height: 64px;}
 
