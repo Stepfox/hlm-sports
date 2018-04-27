@@ -643,34 +643,41 @@ Odds widget
 */
 .widget_hlm_sports_odds{background:#5a5859;}
 
-.odds-sports-wrap {float:left;background: #ccc;    box-shadow: 0 0 0 1px #FFF;width:296px;position: relative;}
-.odds-widget-sports {width:50%;float:left;line-height: 80px; font-size:20px;text-align: center;}
-.odds-widget-spread {width:50%;float:left;line-height: 80px; font-size:20px;text-align: center;}
-.odds-widget .odds-widget-bookmakers ul{    overflow: hidden;width:calc(100% - 296px);float:left;padding:0;    display: flex;white-space: nowrap;}
-.odds-widget ul .odds-widget-bookmakers{    overflow: hidden;width:calc(100% - 276px);float:left;padding:0;    display: flex;white-space: nowrap;margin-left:-20px;}
+.odds-sports-wrap {float:left;background: #ccc;    box-shadow: 0 0 0 1px #FFF;width:276px;position: relative;}
+.odds-widget-sports {color:#FFF;width:50%;float:left;line-height: 80px; font-size:20px;text-align: center;}
+.odds-widget-spread {color:#FFF;width:50%;float:left;line-height: 80px; font-size:20px;text-align: center;}
+.odds-widget .odds-widget-bookmakers ul{    overflow: hidden;width:calc(100% - 276px);float:left;padding:0;    display: flex;white-space: nowrap;}
+.odds-widget ul .odds-widget-bookmakers{    overflow: hidden;width:calc(100% - 276px);float:left;padding:0;    display: flex;white-space: nowrap;margin-left:-40px;}
  .odds-widget ul .odds-widget-bookmakers ul{width:100%;z-index: 1}
  .odds-widget ul .odds-widget-bookmakers li{border: 0;margin:0;}
 .odds-widget .odds-widget-bookmakers li{    min-width: 150px;
     width: 150px;
     float: left;}
+.odds-widget .odds-widget-bookmakers .odds-widget-bookmakers-links{overflow: visible;}
+.odds-widget .odds-widget-bookmakers-links li{border: none;    box-shadow: 0 0 0 1px #FFF;height:80px;margin-right:1px;}
+.odds-widget-bookmakers-links-logo{    max-width: 90px;
+    margin: 5px auto 10px;}
+.odds-widget-bookmakers-links .odds-widget-bookmakers-links-button{    margin: 0 auto 10px; max-width: 90px; float: none; padding: 0; text-align: center; font-size: 12px; line-height: 16px;}
+
+.odds-widget ul .odds-widget-bookmakers li:first-child, .odds-widget ul .odds-widget-bookmakers li:first-child div{width: 170px;max-width: 170px;}
 .odds-widget-bookmakers{
     padding: 10px;
     width: 100%;
     float: left;
 }
-.odds-game-home-team-odd{text-align: center;width: 150px;    box-shadow: 1px 0px 0 0px #FFF;line-height: 25px;}
-.odds-game-away-team-odd{text-align: center;width: 150px;    box-shadow: 1px -1px 0 0px #FFF;line-height: 25px;}
+.odds-game-home-team-odd{color:#FFF;text-align: center;width: 150px;    box-shadow: 1px 0px 0 0px #FFF;line-height: 25px;}
+.odds-game-away-team-odd{color:#FFF;text-align: center;width: 150px;    box-shadow: 1px -1px 0 0px #FFF;line-height: 25px;}
 
 .odds-widget{}
 .odds-widget ul{width: 100%;padding:10px;float:left;}
 .odds-widget li{width:100%;float:left;margin-bottom: 5px;    border: 1px solid #fff;}
 .odds-date {float:left;width:100%;background: #FFF;    padding: 0 10px;}
 .odds-game-wrap {float:left;background: #2f2f2f;color:#FFF;    box-shadow: 0 0 0 1px #FFF;width:296px;position: relative;}
-.odds-game-wrap:before {content: ''; width: 35px; height: 100%; position: absolute; background: #5a5859; transform: skew(-28deg); right: -20px; z-index: 0; }
+.odds-game-wrap:before {    content: ''; width: 44px; height: 100%; position: absolute; background: #5a5859; transform: skew(-28deg); right: -23px; z-index: 0; }
 
-.odds-game-time {line-height:50px;float:left;width:20%;text-align: center;    overflow: hidden;    max-height: 50px;}
+.odds-game-time {line-height:75px;float:left;width:20%;text-align: center;    overflow: hidden;    max-height: 75px;font-size:12px;}
 .odds-game-teams {float:left;width:80%;}
-.odds-game-home-team div, .odds-game-away-team div{background: #2f2f2f;color:#FFF; box-shadow:0 0 0 1px #FFF;   padding: 0px 10px; line-height:25px;float: left;}
+.odds-game-home-team div, .odds-game-away-team div{ width:100%;   white-space: nowrap;background: #2f2f2f;color:#FFF; box-shadow:0 0 0 1px #FFF;   padding: 0px 10px; line-height:25px;float: left;}
 .odds-game-home-team{float:left;width: 100%;}
 .odds-game-away-team{float:left;width: 100%;}
 .odds-game-home-team-name, .odds-game-away-team-name{width:80%;text-align: center;}

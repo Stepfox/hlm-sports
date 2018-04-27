@@ -196,6 +196,10 @@ foreach ($data as $data_part) {
 			echo '</br>';
 $myDateTime = strtotime($data_part['startTime']);
 			echo $myDateTime; 
+echo date ('H:i',$myDateTime);
+
+			
+			echo date("l");
 			?>
 		</div>
 		<div class="odds-game-wrap">
