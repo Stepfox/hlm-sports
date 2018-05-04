@@ -1,11 +1,25 @@
 <?php
 
+/*
+add image
+
+"id":"54a22a0cd443afef088b46db","name":"World Cup"
+"id":"54a22a10d443afef088b4719","name":"Friendly Internationals"
+"id":"576243ab1d142240108b4575","name":"Premier League"
+"id":"576243df1d142240108b471d","name":"Championship"
+"id":"54a229fad443afef088b45c9","name":"Bundesliga"
+"id":"54a229fcd443afef088b45f0","name":"Serie A"
+"id":"54a229f9d443afef088b45bc","name":"Ligue 1"
+"id":"576250f41d142264208b4795","name":"Primera Division"
 
 
 
 
 
-$categories = '54a229f8d443afef088b45b4';
+*/
+
+
+//$categories = '54a229f8d443afef088b45b4';
 //54a229f5d443afef088b4588
 //$bookmakers = '43';
 
@@ -32,10 +46,26 @@ $url = 'http://api.exaloc.org/v1/pre-match/markets?'.$filter_categories;
 	<div class="odds-widget-bookmakers">
 		<div class="odds-sports-wrap">
 			<div class="odds-widget-sports">
-				Premier
-			</div>
-			<div class="odds-widget-spread">
-				 League
+				<?php    
+if( $categories == '54a22a0cd443afef088b46db'){$league_logo = 'world-cup.png';}
+if( $categories == '54a229f8d443afef088b45b4'){$league_logo = 'premier-league.png';}
+if( $categories == '54a229fcd443afef088b45f0'){$league_logo = 'serie-a.png';}
+if( $categories == '54a229fad443afef088b45c9'){$league_logo = 'bundesliga.png';}
+
+
+
+// '54a22a10d443afef088b4719' => 'Friendly Internationals',
+
+// '576243df1d142240108b471d' => 'Championship',
+
+
+// '54a229f9d443afef088b45bc' => 'Ligue 1',
+// '576250f41d142264208b4795' => 'Primera Division',
+
+
+				?>
+<img src="<?php echo get_stylesheet_directory_uri().'/widgets/odds-widget/logos/'.$league_logo; ?>"/>
+
 			</div>
 		</div>
 	<ul class="odds-widget-bookmakers-links">

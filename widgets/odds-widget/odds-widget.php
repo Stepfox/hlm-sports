@@ -170,22 +170,16 @@ $count =  count((array)$data_part);
 
 
 <!-- Sports -->
-<?php $url = 'http://api.exaloc.org/v1/pre-match/categories'; 
-
-$request = wp_remote_get($url);
-$body = wp_remote_retrieve_body( $request );
-$data = json_decode( $body, true );
-
-$options = array();
-
-foreach ($data as $data_part) {
-//var_dump($data_part);
-$count =  count((array)$data_part['sub'][1]['sub']);
-	for ($i=0; $i < $count; $i++) { 
-		$options[$data_part['sub'][1]['sub'][$i]['id'] ] = $data_part['sub'][1]['sub'][$i]['name'];
-	}
-
-}
+<?php $options = array(
+'54a22a0cd443afef088b46db' => 'World Cup',
+'54a22a10d443afef088b4719' => 'Friendly Internationals',
+'54a229f8d443afef088b45b4' => 'Premier League', 
+'576243df1d142240108b471d' => 'Championship',
+'54a229fad443afef088b45c9' => 'Bundesliga',
+'54a229fcd443afef088b45f0' => 'Serie A',
+'54a229f9d443afef088b45bc' => 'Ligue 1',
+'576250f41d142264208b4795' => 'Primera Division',
+);
 
 
 	?>
