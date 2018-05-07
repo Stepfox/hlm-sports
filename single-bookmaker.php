@@ -185,31 +185,32 @@ if( $payment_options ): ?>
       <div class="four-parts widget">
         <div class="widget-title">
           <h2>
-          Bookmaker support details
+            <?php echo the_field('bookmaker_support_details_title', 'option');  ?>
           </h2>
         </div>
         <div class="widget support-details">
           <div class="support-content">
-          Bonus $200 Free Bets  Bonus $200 Free BetsBonus $200 Free BetsBonus $200 Free BetsBonus $200 Free BetsBonus $200 Free Bets
+            <?php echo the_field( 'support_content' ); ?>
           </div>
           <div class="support-customer-lang">
-          Customer Service Languages
-            <img src="http://via.placeholder.com/40x20">
-            <img src="http://via.placeholder.com/40x20">
-            <img src="http://via.placeholder.com/40x20">
-            <img src="http://via.placeholder.com/40x20">
+            <strong><?php echo the_field('customer_service_languages', 'option');?></strong> <?php 
+          if( have_rows('support_languages') ): ?>
+            <?php while( have_rows('support_languages') ): the_row(); 
+              $flag = get_sub_field('flag');
+              ?>
+                  <img src="<?php echo $flag['sizes']['hlm_sports_40x20']; ?>" alt="<?php echo $flag['alt'] ?>" />
+            <?php endwhile; ?>
+          <?php endif; ?>
           </div>
           <div class="support-phone">
-          Telephone NUMBER
+            <strong><?php echo the_field('telephone_number', 'option');?></strong> <?php   echo the_field( 'support_phone' ); ?>  
           </div>
           <div class="support-email">
-          <?php echo the_field( 'support_email' ); ?>
+            <strong><?php echo the_field('email', 'option');?></strong> <?php echo the_field( 'support_email' ); ?>
           </div>
           <div class="support-open-hours">
-          Open Hours 
+            <strong><?php echo the_field('open_hours', 'option');?></strong> <?php echo the_field( 'support_open_hours' ); ?>
           </div>
-
-
         </div>
       </div>
 

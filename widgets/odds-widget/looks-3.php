@@ -1,23 +1,5 @@
 <?php
 
-/*
-add image
-
-"id":"54a22a0cd443afef088b46db","name":"World Cup"
-"id":"54a22a10d443afef088b4719","name":"Friendly Internationals"
-"id":"576243ab1d142240108b4575","name":"Premier League"
-"id":"576243df1d142240108b471d","name":"Championship"
-"id":"54a229fad443afef088b45c9","name":"Bundesliga"
-"id":"54a229fcd443afef088b45f0","name":"Serie A"
-"id":"54a229f9d443afef088b45bc","name":"Ligue 1"
-"id":"576250f41d142264208b4795","name":"Primera Division"
-
-
-
-
-
-*/
-
 
 //$categories = '54a229f8d443afef088b45b4';
 //54a229f5d443afef088b4588
@@ -54,6 +36,19 @@ if( $categories == '54a229fad443afef088b45c9'){$league_logo = 'bundesliga.png';}
 
 
 
+$select_league = array(
+'54a22a0cd443afef088b46db' => 'World Cup',
+'54a22a10d443afef088b4719' => 'Friendly Internationals',
+'54a229f8d443afef088b45b4' => 'Premier League', 
+'576243df1d142240108b471d' => 'Championship',
+'54a229fad443afef088b45c9' => 'Bundesliga',
+'54a229fcd443afef088b45f0' => 'Serie A',
+'54a229f9d443afef088b45bc' => 'Ligue 1',
+'576250f41d142264208b4795' => 'Primera Division',
+);
+
+
+
 // '54a22a10d443afef088b4719' => 'Friendly Internationals',
 
 // '576243df1d142240108b471d' => 'Championship',
@@ -64,6 +59,19 @@ if( $categories == '54a229fad443afef088b45c9'){$league_logo = 'bundesliga.png';}
 
 
 				?>
+
+
+<!-- 
+	<select>
+		<?php 
+		foreach ($select_league as $option => $value) {?>
+		<option value='<?php echo esc_attr($option); ?>'><?php echo esc_html($value); ?></option>
+		<?php } ?>
+	</select>
+ -->
+
+
+ 
 <img src="<?php echo get_stylesheet_directory_uri().'/widgets/odds-widget/logos/'.$league_logo; ?>"/>
 
 			</div>
@@ -96,16 +104,16 @@ foreach( $bookmakers as $bookmaker ){
 
 	?>
 	<li>
-		<a href="<?php echo get_permalink( $bookmaker->ID ); ?>">
 			<div class="odds-widget-bookmakers-links-logo bookmaker-background-wrap-<?php echo $bookmaker->ID; ?>">		 
+		<a href="<?php echo get_permalink( $bookmaker->ID ); ?>">
 				<img src="<?php echo $photo['sizes']['hlm_sports_136x44']; ?>" alt="<?php echo $photo['alt']; ?>" />		
-			</div>									
 		</a>
-				<a href="<?php echo the_field( 'default_tracker', $bookmaker->ID); ?>" target="_blank">
+			</div>									
 					<div class="odds-widget-bookmakers-links-button top-5-review-bet-now">
+				<a href="<?php echo the_field( 'default_tracker', $bookmaker->ID); ?>" target="_blank">
                     	<?php the_field('bet_now', 'option');  ?>
-					</div>
                 </a>
+					</div>
 	</li>
 <?php 
 
@@ -122,7 +130,7 @@ foreach( $bookmakers as $bookmaker ){
 
 
 
-	<ul>
+	<ul class="odds-widget-matches">
 
 <?php 
 
@@ -172,7 +180,7 @@ if(++$count > $number_of_games) break;
 		</div>
 
 	<div class="odds-widget-bookmakers">
-	<ul>
+	<ul class="odds-widget-odds-list">
 
 <?php 
 
@@ -192,8 +200,8 @@ $bookmakers_array = array(
 						$sport888,
 						$williamhill,
 						$betathome,
-						$bethard,
-						$bet365
+						//$bethard,
+						//$bet365
 					);
 
 foreach($bookmakers_array as $item){

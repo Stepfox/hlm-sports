@@ -24,7 +24,20 @@ class odds_widget_hlm_sports extends WP_Widget {
 			'hlm_sports_odds', // Widget ID
 			esc_html__('Odds Widget', 'hlm-sports'), // Name
 			array( 'description' => '', 'customize_selective_refresh' => true ) // Args
-			);}
+			);
+
+		    if ( is_active_widget( false, false, $this->id_base ) || is_customize_preview() ) {
+		            add_action( 'wp_enqueue_scripts', array( $this, 'widget_enqueue_scripts' ) );
+		        }
+
+	}
+
+
+	    public function widget_enqueue_scripts() {
+			wp_enqueue_script('odds_widget_scripts', get_stylesheet_directory_uri() . '/widgets/odds-widget/odds-widget.js');
+			
+	    }
+
 		
 		/* Front-end display of widget. */
 	public function widget( $args, $instance ) {

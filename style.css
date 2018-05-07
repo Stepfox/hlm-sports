@@ -6,7 +6,7 @@ Version: 1.0
 Tags: one-column, two-columns, three-columns, four-columns, custom-colors, custom-menu, featured-images, post-formats, theme-options
 Text Domain: hlm-sports
 */
-.single-bookmaker div.three-parts.hlm-sports-widget.post-page-area > div.four-parts.widget{display:none;}
+
 .post-page-area nav{display: none;}
 .payment-section{display:none;}
 
@@ -444,21 +444,23 @@ Logo-------------------------------------
 
 .site-logo-wrapper{ position:relative;     float: left; z-index: 1;}
 .site-logo-wrapper:after{top:0;left:0;background: #FFF;height: 100%;content:'';position: absolute;    box-shadow: 5px -2px 5px #000;transform: skew(-28deg);width: 100%;z-index: -1;}
-.site-logo-wrapper:before{    top: 0; left: -85vw; background: #FFF; height: 100%; content: ''; position: absolute; width: 100vw; z-index: -1;}
-.big-logo{ float:left;width: 305px; height: 36px;padding-right:30px;    box-sizing: content-box;}
-.big-logo img{    padding: 0;box-sizing: content-box;}
+.site-logo-wrapper:before{    top: 0; left: -90vw; background: #FFF; height: 100%; content: ''; position: absolute; width: 100vw; z-index: -1;}
+.big-logo{float: left; width: 220px; height: 36px; padding-right: 30px; box-sizing: content-box;} 
+.big-logo img{     width: 305px; height: 36px;      max-width: 305px; } 
 /*
 Top Navigation--------------------------------------
 */
 
 .top-navigation-wrap{width:100%;margin:0 auto;max-width:1200px;}
 .top-navigation { width: 100%;  background:#2f2f2f; height:36px;}
-.top-menu {float : left; width:calc(100% - 336px);position: relative; }
+.top-menu {float : left; width:calc(100% - 250px);position: relative; }
 .top-menu ul li { float: left; position: relative; }
 .top-menu ul li:before{content:'';width:100%;height:100%;position: absolute;    box-shadow: 5px -2px 5px #000; transform: skew(-28deg);}
 .top-menu ul li:hover:before{    background: #5a5859;    border-bottom: 1px solid #6d6d6d;}
 .top-menu ul .sub-menu li:before{content:none;}
-.top-menu ul li a { font-size: 16px; font-weight: 400; padding:0 20px;color:#FFF;}
+.top-menu ul li a {       font-size: 15px;
+    font-weight: 400;
+    padding: 0 19px;color:#FFF;}
 .top-menu ul li a:hover {}
 .top-menu ul li .sub-menu { display: none; }
 .top-menu ul.sub-menu {padding:0;    left: -9px;}
@@ -641,47 +643,65 @@ Latest Articles widget
 /*
 Odds widget
 */
+
+
+
 .widget_hlm_sports_odds{background:#5a5859;}
+.odds-sports-wrap{float:left;background:#ccc;width:30%;border: 1px solid #FFF;position:relative;}
+.odds-widget-sports{color:#FFF;width:100%;float:left;line-height:80px;font-size:20px;text-align:center;}
+.odds-widget-sports img{max-height:80px;}
 
-.odds-sports-wrap {float:left;background: #ccc;    box-shadow: 0 0 0 1px #FFF;width:276px;position: relative;}
-.odds-widget-sports {color:#FFF;width:50%;float:left;line-height: 80px; font-size:20px;text-align: center;}
-.odds-widget-spread {color:#FFF;width:50%;float:left;line-height: 80px; font-size:20px;text-align: center;}
-.odds-widget .odds-widget-bookmakers ul{    overflow: hidden;width:calc(100% - 276px);float:left;padding:0;    display: flex;white-space: nowrap;}
-.odds-widget ul .odds-widget-bookmakers{    overflow: hidden;width:calc(100% - 276px);float:left;padding:0;    display: flex;white-space: nowrap;margin-left:-40px;}
- .odds-widget ul .odds-widget-bookmakers ul{width:100%;z-index: 1}
- .odds-widget ul .odds-widget-bookmakers li{border: 0;margin:0;}
-.odds-widget .odds-widget-bookmakers li{    min-width: 150px;
-    width: 150px;
-    float: left;}
-.odds-widget .odds-widget-bookmakers .odds-widget-bookmakers-links{overflow: visible;}
-.odds-widget .odds-widget-bookmakers-links li{border: none;    box-shadow: 0 0 0 1px #FFF;height:80px;margin-right:1px;}
-.odds-widget-bookmakers-links-logo{    max-width: 90px;
-    margin: 5px auto 10px;}
-.odds-widget-bookmakers-links .odds-widget-bookmakers-links-button{    margin: 0 auto 10px; max-width: 90px; float: none; padding: 0; text-align: center; font-size: 12px; line-height: 16px;}
 
-.odds-widget ul .odds-widget-bookmakers li:first-child, .odds-widget ul .odds-widget-bookmakers li:first-child div{width: 170px;max-width: 170px;}
+.odds-widget{width:100%;padding:10px;float:left;}
+
+
+.odds-widget-matches{width:100%;float:left;margin-top:20px;}
+.odds-widget-matches > li{width:100%;float:left;margin-bottom: 10px;border:1px solid #FFF;}
+
+
+
+ul.odds-widget-odds-list{overflow:hidden;width: 70%;float:left;padding:0;display:flex;white-space:nowrap;z-index: 1;}
+.odds-widget-odds-list li{float:left;width: 33.3%;max-width: 33.3%;margin: 0;}
+.odds-widget-odds-list li + li{border-left:1px solid #FFF;}
+
+
+.odds-widget-bookmakers-links{border: 1px solid #FFF;border-left: 0;border-right:0;overflow:hidden;width:70%;float:left;padding:0;display:flex;white-space:nowrap;z-index: 1;}
+.odds-widget-bookmakers-links li{float:left;    width: 33.3%;    max-width: 33.3%;}
+
+
+.odds-widget .odds-widget-bookmakers-links li{border:none;box-shadow:0 0 0 1px #FFF;height:80px;margin-right:1px;}
+.odds-widget-bookmakers-links-logo{max-width:90px;margin:8px auto 10px;    border-radius: 2px;overflow: hidden;}
+.odds-widget-bookmakers-links .odds-widget-bookmakers-links-button{margin:0 auto 10px;max-width:90px;float:none;padding:0;text-align:center;font-size:12px;line-height:16px;}
+.odds-widget-bookmakers-links .odds-widget-bookmakers-links-button a{color:#FFF;}
 .odds-widget-bookmakers{
-    padding: 10px;
-    width: 100%;
-    float: left;
 }
-.odds-game-home-team-odd{color:#FFF;text-align: center;width: 150px;    box-shadow: 1px 0px 0 0px #FFF;line-height: 25px;}
-.odds-game-away-team-odd{color:#FFF;text-align: center;width: 150px;    box-shadow: 1px -1px 0 0px #FFF;line-height: 25px;}
+.odds-game-home-team-odd{color:#FFF;width: 100%;text-align:center;line-height:25px;}
+.odds-game-away-team-odd{color:#FFF;text-align:center;border-top: 1px solid #FFF;line-height:25px;}
 
-.odds-widget{}
-.odds-widget ul{width: 100%;padding:10px;float:left;}
-.odds-widget li{width:100%;float:left;margin-bottom: 5px;    border: 1px solid #fff;}
-.odds-date {float:left;width:100%;background: #FFF;    padding: 0 10px;}
-.odds-game-wrap {float:left;background: #2f2f2f;color:#FFF;    box-shadow: 0 0 0 1px #FFF;width:296px;position: relative;}
-.odds-game-wrap:before {    content: ''; width: 44px; height: 100%; position: absolute; background: #5a5859; transform: skew(-28deg); right: -23px; z-index: 0; }
+.odds-date{float:left;width:100%;background:#FFF;padding:0 10px;}
+.odds-game-wrap{float:left;background:#2f2f2f;color:#FFF;width:30%;position:relative;}
+.odds-game-teams > div{position:relative;}
+.odds-game-teams > div:before{content:'';width:44px;height:100%;position:absolute;background:#5a5859;transform:skew(-28deg);right:-23px;z-index:0;}
 
-.odds-game-time {line-height:75px;float:left;width:20%;text-align: center;    overflow: hidden;    max-height: 75px;font-size:12px;}
-.odds-game-teams {float:left;width:80%;}
-.odds-game-home-team div, .odds-game-away-team div{ width:100%;   white-space: nowrap;background: #2f2f2f;color:#FFF; box-shadow:0 0 0 1px #FFF;   padding: 0px 10px; line-height:25px;float: left;}
-.odds-game-home-team{float:left;width: 100%;}
-.odds-game-away-team{float:left;width: 100%;}
-.odds-game-home-team-name, .odds-game-away-team-name{width:80%;text-align: center;}
-.odds-game-home-team-id, .odds-game-away-team-id{width:20%;text-align: center;}
+
+.odds-game-time{line-height:75px;float:left;width:20%;text-align:center; overflow:hidden; max-height:75px;font-size:12px;border-right:1px solid #FFF;}
+.odds-game-teams{float:left;width:80%;}
+.odds-game-home-team div, .odds-game-away-team div{width:100%;white-space:nowrap;background:#2f2f2f;color:#FFF;padding-right: 20px;line-height:25px;float:left;}
+.odds-game-home-team{float:left;width:100%;}
+.odds-game-away-team{float:left;width:100%;border-top: 1px solid #FFF;}
+.odds-game-home-team-name, .odds-game-away-team-name{width:80%;text-align:center;}
+.odds-game-home-team-id, .odds-game-away-team-id{width:20%;text-align:center;}
+
+
+
+
+
+
+
+
+
+
+
 
 
 .mob-menu-button{display:none;}
@@ -703,7 +723,7 @@ Odds widget
     .top-menu .menu-item, #main-nav ul li {display: inline-block; line-height: normal; float: none; white-space: normal; }
     #main-nav{width:100%;}
     .top-menu ul, #main-nav ul {width: 100%; -webkit-overflow-scrolling: touch; overflow-x: scroll; overflow-y: visible; white-space: nowrap; }
-    .top-menu ul > li:hover ul.sub-menu{white-space: normal; position: fixed; left: 326px; }
+    .top-menu ul > li:hover ul.sub-menu{white-space: normal; position: fixed; left: 240px; }
     #main-nav ul > li:hover ul.sub-menu{position: fixed; left: 0; }
 
 }
