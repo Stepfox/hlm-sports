@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 
 if( function_exists('acf_add_local_field_group') ):
@@ -2137,6 +2137,54 @@ acf_add_local_field_group(array(
     'title' => 'HLM Sports Options: Footer Options',
     'fields' => array(
         array(
+            'key' => 'field_5af165f1b25b4',
+            'label' => 'Footer Logo',
+            'name' => 'footer_logo',
+            'type' => 'image',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'return_format' => 'array',
+            'preview_size' => 'thumbnail',
+            'library' => 'all',
+            'min_width' => '',
+            'min_height' => '',
+            'min_size' => '',
+            'max_width' => '',
+            'max_height' => '',
+            'max_size' => '',
+            'mime_types' => '',
+        ),
+        array(
+            'key' => 'field_5af1662bb25b5',
+            'label' => 'Gambling Aware Logo',
+            'name' => 'gambling_aware_logo',
+            'type' => 'image',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'return_format' => 'array',
+            'preview_size' => 'thumbnail',
+            'library' => 'all',
+            'min_width' => '',
+            'min_height' => '',
+            'min_size' => '',
+            'max_width' => '',
+            'max_height' => '',
+            'max_size' => '',
+            'mime_types' => '',
+        ),
+        array(
             'key' => 'field_5aa7df5d2e921',
             'label' => 'Gamble Aware Text',
             'name' => 'gamble_aware_text',
@@ -2980,4 +3028,4 @@ acf_add_local_field_group(array(
 endif;
 
 
- ?>
+?>

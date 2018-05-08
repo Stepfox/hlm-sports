@@ -5,9 +5,9 @@ Author: Stefan Naumovski
 */    
 
 
-// include( get_template_directory().'/widgets/odds-widget/matches-cpt-registration.php' );
-// include( get_template_directory().'/widgets/odds-widget/testeri.php' );
-// include( get_template_directory().'/widgets/odds-widget/matches-crawl.php' );
+ // include( get_template_directory().'/widgets/odds-widget/matches-cpt-registration.php' );
+ // include( get_template_directory().'/widgets/odds-widget/testeri.php' );
+ // include( get_template_directory().'/widgets/odds-widget/matches-crawl.php' );
 
 
 
@@ -141,44 +141,6 @@ class odds_widget_hlm_sports extends WP_Widget {
 	</select>
 </p>
 
-
-
-
-
-
-
-
-
-<!-- Bookmakers -->
-<?php $url = 'http://api.exaloc.org/v1/pre-match/bookmakers'; 
-
-$request = wp_remote_get($url);
-$body = wp_remote_retrieve_body( $request );
-$data = json_decode( $body );
-
-$options = array();
-
-foreach ($data as $data_part) {
-//var_dump($data_part);
-$count =  count((array)$data_part);
-	for ($i=0; $i < $count; $i++) { 
-		$options[$data_part[$i]->id] = $data_part[$i]->name;
-	}
-
-}
-
-?>
-
-
-<p>
-	<label for="<?php echo esc_attr($this->get_field_id('bookmakers')); ?>"><?php _e('bookmakers:', 'hlm-sports');?></label>
-	<select name="<?php echo esc_attr($this->get_field_name('bookmakers')); ?>" id="<?php echo esc_attr($this->get_field_id('bookmakers')); ?>" class="widefat" >
-		<?php 
-		foreach ($options as $option) {?>
-		<option value='<?php echo esc_attr($option); ?>' <?php if ($option == $instance['bookmakers']) echo 'selected="selected"'; ?>><?php echo esc_html($option); ?></option>
-		<?php } ?>
-	</select>
-</p>
 
 
 

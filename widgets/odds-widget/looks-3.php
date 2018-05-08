@@ -60,15 +60,16 @@ $select_league = array(
 
 				?>
 
-
-<!-- 
+<!--  
 	<select>
 		<?php 
 		foreach ($select_league as $option => $value) {?>
 		<option value='<?php echo esc_attr($option); ?>'><?php echo esc_html($value); ?></option>
 		<?php } ?>
 	</select>
+	
  -->
+
 
 
  

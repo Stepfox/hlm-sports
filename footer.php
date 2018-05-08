@@ -6,7 +6,12 @@
 <div class="footer-color-wrap">	
 	<div class="footer-wrap">
 		<div class="footer-logo">
-			<a href="#"><img src="<?php echo get_template_directory_uri() . '/images/footerlogo.png'?>" /></a>
+			<a href="#">
+				<?php $image = get_field('footer_logo', 'option');                            
+	            if( $image ) {?>
+	              <img src="<?php  echo $image['url']; ?>" alt="">                
+	            <?php } ?> 				
+			</a>
 		</div>
 
 		<div class="content-social">
@@ -28,7 +33,10 @@
 <div class="footer-color-wrap">	
 	<div class="footer-wrap">
 		<div class="footer-gambleaware-logo">
-			<img src="<?php echo get_template_directory_uri() . '/images/gambleaware.png'?>" style="margin:0 auto 10px;display: table;"/>
+				<?php $image = get_field('gambling_aware_logo', 'option');                            
+	            if( $image ) {?>
+	              <img src="<?php  echo $image['url']; ?>" alt="">                
+	            <?php } ?> 	
 		</div>
 		<div class="footer-gambleaware-text">
 			<?php the_field('gamble_aware_text', 'option'); ?>
