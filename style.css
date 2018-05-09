@@ -365,6 +365,41 @@ li.thumb-down:before{background: #d62a1c;}
 
 
 
+/* Category Page*/
+
+.blog-post-image{}
+.blog-post-title-box{}
+.blog-post-title{}
+.blog-post-date-author{}
+.blog-post-author{}
+.blog-post-date{}
+.blog-post-content{}
+
+
+
+
+.category-page .top-page-area li{position: relative;}
+.category-page .post-content{padding: 10px;}
+.top-page-area .blog-post-title h2{font-size:30px;}
+.top-page-area .blog-post-title h2 a, .top-page-area .blog-post-date-author a{color:#FFF;}
+.top-page-area .blog-post-title-box{position:absolute;text-align: center;margin-top:120px;}
+.top-page-area .blog-post-date-author>div:first-child{margin-right:5px;}
+.top-page-area .blog-post-date-author > div:first-child,.top-page-area .blog-post-date{display: inline-block;float:none;color:#FFF;border-color:#FFF;}
+
+
+
+.blog-post ul {display: flex; flex-wrap: wrap }
+.blog-post li {width:33.3%; float:left; padding:10px; }
+.blog-post li a{text-decoration: none;}
+.blog-post-image {overflow: hidden; position: relative; float: left; width: 100% }
+.blog-post-image img{width:100%;}
+.blog-post-title-box {padding: 5px 0 10px; float: left; width: 100% }
+.blog-post-title h2 {font-size: 20px; font-weight: 800; line-height: 26px }
+.blog-post-text {color: #9c9c9c; padding: 8px 0 }
+.blog-post-content {color: #000; font-size: 13px; font-weight: 400; line-height: 18px; padding-bottom: 10px; float: left }
+.blog-post-date-author {font-size: 12px; font-weight: 400; color: #000; position: relative; float: left; width: 100%; margin: 0 0 10px 0 }
+.blog-post-date-author>div:first-child {margin-right: 8px; border-right: 1px solid #444; padding-right: 8px; float: left }
+
 
 
 

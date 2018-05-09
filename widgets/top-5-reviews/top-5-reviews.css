@@ -50,7 +50,7 @@ Top 5 Reviews Widget------------------------------------------------------------
 .looks2 .top-5-review-image-wrap:hover .top-5-review-content-wrap{padding-top:200px;}
 
 
-.looks5 .top-5-tooltip{padding:20px 20px 20px;border:1px solid #ccc;overflow: hidden;float:left;font-size:11px;line-height: 14px;position: relative; float: left;  width:100%; top: 90px; position: absolute; transition:all 0.8s; z-index: 99; left:0; opacity: 0; max-width: 66%; font-weight: 800;transition-delay: 0.2s;background: #FFF;}
+.looks5 .top-5-tooltip{pointer-events: none;padding:20px 20px 20px;border:1px solid #ccc;overflow: hidden;float:left;font-size:11px;line-height: 14px;position: relative; float: left;  width:100%; top: 90px; position: absolute; transition:all 0.8s; z-index: 99; left:0; opacity: 0; max-width: 66%; font-weight: 800;transition-delay: 0.2s;background: #FFF;}
 
 
 .looks5 li:hover .top-5-tooltip{width: 100%;

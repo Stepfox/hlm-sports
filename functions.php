@@ -275,10 +275,10 @@ include( get_template_directory().'/inc/menu-image-upload-fields-menu-walker.php
 include( get_template_directory().'/inc/bookmakers-cpt-registration.php' );
 include( get_template_directory().'/inc/hlm-sports-custom-fields.php' );
 include( get_template_directory().'/inc/hlm-sports-shortcodes.php' );
-// include( get_template_directory().'/inc/widget-presets/widget-presets.php' );
-// include( get_template_directory().'/inc/widget-presets/widget-presets-func.php' );
-// include( get_template_directory().'/inc/widget-presets/widget-presets-save-func.php' );
-// include( get_template_directory().'/inc/widget-presets/widget-presets-save-templates-options.php' );
+include( get_template_directory().'/inc/widget-presets/widget-presets.php' );
+include( get_template_directory().'/inc/widget-presets/widget-presets-func.php' );
+include( get_template_directory().'/inc/widget-presets/widget-presets-save-func.php' );
+include( get_template_directory().'/inc/widget-presets/widget-presets-save-templates-options.php' );
 
 
 
@@ -294,6 +294,21 @@ include(get_template_directory()."/widgets/linking-image-widget/linking-image-wi
 include(get_template_directory()."/widgets/content-block-widget/content-block-widget.php");
 include(get_template_directory()."/widgets/shortcode-widget/shortcode-widget.php");
 include(get_template_directory()."/widgets/payment-options-widget/payment-options-widget.php");
+
+
+
+// category archive and search number of posts
+function dawn_magazine_archive_page_queries( $query ) {
+	$page = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	
+    if(is_category() && $query->is_main_query() && $page == 1){
+			$query->set('posts_per_page', $dawn_magazine_category_number);
+			$query->set('offset', '1' );	
+	}
+
+}
+add_action( 'pre_get_posts', 'dawn_magazine_archive_page_queries' );
+
 
 
 

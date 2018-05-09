@@ -149,9 +149,9 @@ function hlm_sports_prearange(){
 
 <?php 
 if (isset($_POST) && !empty($_POST['preset1'])){
-			$img = hlm_sports_demo_image_upload( $bloginfo.'/images/demo-posts/hlm_sports_demo_0.jpg' );
+			$img = hlm_sports_demo_image_upload( $bloginfo.'/images/hlm_demo_0.jpg' );
 
-			for ($i=0; $i < 3000; $i++) { 
+			for ($i=0; $i < 20; $i++) { 
 
 			$post= array('post_title' => 'hlm Sports Basic demo used for layout setup'.$i, 'post_content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a felis mollis, fringilla ipsum sit amet, pretium tellus. Donec dignissim augue non diam iaculis fringilla id nec ipsum. Praesent sollicitudin suscipit lectus, ut hendrerit nisi semper eu. Duis ut elementum ex, eget posuere libero. Proin eu faucibus risus. Fusce eu massa dui. Quisque sit amet sem sed eros scelerisque placerat eget vel sem. In ac dignissim massa, eu elementum lorem. Curabitur dapibus vestibulum placerat. Aliquam lacinia vel est quis euismod.
 
@@ -174,7 +174,6 @@ if (isset($_POST) && !empty($_POST['preset1'])){
 			//Delete Demo Posts
 			$search_this = 'demo';
 			$args = array(
-			    'post_type' => array('page','cupbmk_bettingtips'),
 			    'posts_per_page' => -1,  
 			    's' => $search_this,
 			    'post_status' => 'publish',   
@@ -195,7 +194,7 @@ if (isset($_POST) && !empty($_POST['preset1'])){
 			$hlm_sports_posts1 = new WP_Query($args1);
 			while($hlm_sports_posts1->have_posts()) : $hlm_sports_posts1->the_post();
 				$image_title = get_the_title();
-				if (strpos($image_title, 'hlm_sports_demo_') !== false) {
+				if (strpos($image_title, 'hlm_demo_') !== false) {
 				    $att_name_id = get_the_ID();
 				    wp_delete_attachment( $att_name_id, true );
 				}
