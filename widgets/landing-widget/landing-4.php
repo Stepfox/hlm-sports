@@ -27,7 +27,7 @@
 			</span>
 
 
-								<a href="<?php echo the_field( 'default_tracker', $bookmaker_id); ?>" target="_blank">
+								<a href="<?php echo $tracker[$i]; ?>" target="_blank">
 					<div class="landing-widget-review-bet-now">
                     	<?php the_field('bet_now', 'option');  ?>
 					</div>
