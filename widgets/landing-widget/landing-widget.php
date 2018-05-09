@@ -47,7 +47,7 @@ class hlm_sports_landing_widget extends WP_Widget {
 		$widget_id = $this->id;
 		//$title = get_field( 'title', 'widget_' . $widget_id );
 
-		$defaults = array( 'title' => 'Landing widget', 'title_style' => 'title1', 'looks' => 'landing1', 'bonus' => array('0' => ''), 'bookmaker' => array('0' => ''), 'tooltip'=> array('0' => ''), 'image'=> array('0' => ''));
+		$defaults = array( 'title' => 'Landing widget', 'title_style' => 'title1', 'looks' => 'landing1', 'bonus' => array('0' => ''), 'bookmaker' => array('0' => ''), 'tooltip'=> array('0' => ''), 'image'=> array('0' => ''), 'tracker'=> array('0' => ''));
 		$instance = wp_parse_args( (array) $instance, $defaults );
 
 
@@ -59,6 +59,7 @@ class hlm_sports_landing_widget extends WP_Widget {
 		$bookmaker = $instance['bookmaker'];
 		$tooltip = $instance['tooltip'];
 		$image = $instance['image'];
+		$tracker = $instance['tracker'];
 
 		$widget_classname = $instance['widget_size'];
 
@@ -127,6 +128,8 @@ if($looks == 'landing1'){
 		$instance['bookmaker'] = $new_instance['bookmaker'];
 		$instance['tooltip'] = $new_instance['tooltip'];
 		$instance['image'] = $new_instance['image'];
+		$instance['tracker'] = $new_instance['tracker'];
+		
 		
 	
 		$instance['looks'] = $new_instance['looks'];
@@ -138,7 +141,7 @@ if($looks == 'landing1'){
 		
 		/* Default widget settings. */
 		
-		$defaults = array( 'title' => 'Landing widget', 'title_style' => 'title1', 'looks' => 'landing1', 'bonus' => array('0' => ''), 'bookmaker' => array('0' => ''), 'tooltip'=> array('0' => ''), 'image'=> array('0' => ''));
+		$defaults = array( 'title' => 'Landing widget', 'title_style' => 'title1', 'looks' => 'landing1', 'bonus' => array('0' => ''), 'bookmaker' => array('0' => ''), 'tooltip'=> array('0' => ''), 'image'=> array('0' => ''), 'tracker'=> array('0' => ''));
 		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
 
 <!-- Widget Title-->
@@ -188,6 +191,7 @@ if($looks == 'landing1'){
         		$repeat_name = $instance['bonus'][$i];
         		$repeat_bookmaker = $instance['bookmaker'][$i];
         		$repeat_tooltip = $instance['tooltip'][$i];
+        		$repeat_tracker = $instance['tracker'][$i];
         		$repeat_image = $instance['image'][$i];
 			?>	
 			
@@ -236,6 +240,12 @@ if($looks == 'landing1'){
 
 			</div>
 
+
+
+			<div class="text-part">
+				<input type="text" field="<?php echo $this->get_field_name( 'tracker' ); ?>" name="<?php echo $this->get_field_name( 'tracker' ); ?>[]" value="<?php echo $repeat_tracker; ?>" placeholder="The tracker" class="repeater-title widefat text-field">
+
+			</div>
 
 				<a class="button remove-row" href="#">
 					<?php echo 'Delete'; ?>
