@@ -86,14 +86,9 @@ if( function_exists('acf_add_options_page') ) {
 	}
 
 
-
-include( get_stylesheet_directory() . '/plugins/widget-shortcode/init.php' );
-
-
-
-
-
-
+if (!class_exists('Widget_Shortcode')) {
+	include( get_stylesheet_directory() . '/plugins/widget-shortcode/init.php' );
+}
 
 
 
@@ -275,10 +270,10 @@ include( get_template_directory().'/inc/menu-image-upload-fields-menu-walker.php
 include( get_template_directory().'/inc/bookmakers-cpt-registration.php' );
 include( get_template_directory().'/inc/hlm-sports-custom-fields.php' );
 include( get_template_directory().'/inc/hlm-sports-shortcodes.php' );
-include( get_template_directory().'/inc/widget-presets/widget-presets.php' );
-include( get_template_directory().'/inc/widget-presets/widget-presets-func.php' );
-include( get_template_directory().'/inc/widget-presets/widget-presets-save-func.php' );
-include( get_template_directory().'/inc/widget-presets/widget-presets-save-templates-options.php' );
+// include( get_template_directory().'/inc/widget-presets/widget-presets.php' );
+// include( get_template_directory().'/inc/widget-presets/widget-presets-func.php' );
+// include( get_template_directory().'/inc/widget-presets/widget-presets-save-func.php' );
+// include( get_template_directory().'/inc/widget-presets/widget-presets-save-templates-options.php' );
 
 
 

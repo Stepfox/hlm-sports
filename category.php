@@ -21,7 +21,7 @@
 					<div class="blog-post-image">
 						<?php if (  (function_exists('has_post_thumbnail')) && (has_post_thumbnail())  ) { ?>
 
-						<?php the_post_thumbnail('hlm_sports_232x310'); ?>
+						<?php the_post_thumbnail('hlm_sports_1200x260'); ?>
 
 						<?php } ?>
 					</div>
@@ -127,8 +127,12 @@
       endif;
     ?>
 	</ul>
+		<div class="pagination pagination-load-more auto-load">
+			<?php next_posts_link('Load More', '' ); ?>
+		</div>
+		<!--pagination-->
 	</div>
-	<?php hlm_sports_pagination(); ?>
+
       </div>
   </div>
 

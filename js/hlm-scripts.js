@@ -127,4 +127,25 @@ $(window).scroll(function(event){
 
 
 
+
+    $('.category-page').on('click', '.pagination a', function(e) {
+        e.preventDefault();
+        var link = $(this).attr('href');
+        $('.blog-post').append('<div class="more-posts"></div>');
+        $('.pagination').replaceWith('<div class="load-content"><div class="load-circle"></div></div>');
+        $('.more-posts').load(link + ' .blog-post li, .pagination', function() {
+            $('.more-posts li').hide().detach().appendTo('.blog-post ul').css('opacity', '0').fadeIn().fadeTo('slow', 1);
+            $('.more-posts .pagination').css('opacity', '0').detach().appendTo('.blog-post').fadeTo('slow', 1);
+            $('.more-posts').remove();
+            $('.load-content').remove();
+        });
+    });
+
+
+
+
+
+
+
+
 });
