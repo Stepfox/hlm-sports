@@ -1,5 +1,19 @@
 <?php 
+function remove_all_matches(){
 
+			//Delete Matches
+			$args = array(
+			    'posts_per_page' => -1,
+			    'post_type' => 'match',
+			    'post_status' => 'publish',   
+			);
+			$hlm_sports_posts = new WP_Query($args);
+			while($hlm_sports_posts->have_posts()) : $hlm_sports_posts->the_post();
+			  	$page_name_id = get_the_ID();
+			 	wp_delete_post( $page_name_id, true );
+			endwhile;	
+
+}
 
 
 function crawl_matches(){
@@ -79,7 +93,7 @@ function crawl_table(){
 		//check for duplicate
 		            $args = array(
 		                'post_type' => 'match',
-		                'posts_per_page' => 1, 
+		                'posts_per_page' => -1, 
 		                'post_status' => 'publish',   
 		            );
 		            $lunar_magazine_posts = new WP_Query($args);

@@ -473,6 +473,14 @@ li.thumb-down:before{background: #d62a1c;}
 .searchpage-url a{float:left;width: 100%;color:#0b6cb9;}
 
 
+/*shortcode looks */
+
+.content-looks1{width:40%;    border-left: 2px solid #358d53; color: #358d53;    margin: 0 0 15px; padding: 10px; float: left; font-size: 22px; line-height: 26px; text-transform: uppercase; letter-spacing: -1px; font-weight: 600;}
+
+.content-looks2{text-align:right;width:40%;    border-right: 2px solid #358d53; color: #358d53;    margin: 0 0 15px; padding: 10px; float: right; font-size: 22px; line-height: 26px; text-transform: uppercase; letter-spacing: -1px; font-weight: 600;}
+
+.content-looks3{text-align:center;width:99%;     color: #358d53;    margin: 0 0 15px; padding: 10px; float: right; font-size: 22px; line-height: 26px; text-transform: uppercase; letter-spacing: -1px; font-weight: 600;}
+
 /*
 pagination-------------------------------------------------------------------------------------------------------------------------
 */

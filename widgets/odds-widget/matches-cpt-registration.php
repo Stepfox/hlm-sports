@@ -1,5 +1,96 @@
 <?php 
 
+add_action('admin_menu', 'add_crawler_options_page');
+
+function add_crawler_options_page() {
+    add_submenu_page('edit.php?post_type=match', __('Crawler Options','hlm-sports'), __('Crawler Options','hlm-sports'), 'manage_options', 'crawler_options_page', 'crawler_options_function');
+}
+
+
+
+
+
+function crawler_options_function(){
+
+
+        echo '<h2>Crawl Matches</h2>';
+?>
+            <form method="post">                    
+                <input  type="submit" class="button-secondary" name="crawl_matches" value="<?php echo esc_attr('Crawl All Matches'); ?>"/>
+            </form>
+<?php               
+
+if (isset($_POST) && !empty($_POST['crawl_matches'])){
+
+        crawl_matches();
+
+}
+
+
+
+
+
+
+
+
+
+
+        echo '<h2>Crawl Odds</h2>';
+
+?>
+            <form method="post">                    
+                <input  type="submit" class="button-secondary" name="crawl_odds" value="<?php echo esc_attr('Crawl Odds'); ?>"/>
+            </form>
+<?php  
+if (isset($_POST) && !empty($_POST['crawl_odds'])){
+
+        crawl_table();
+
+}
+
+
+
+        echo '<h2>Timer Settings</h2>';
+
+
+?>
+            <form method="post">                    
+                <input  type="submit" class="button-secondary" name="preset1" value="<?php echo esc_attr('Timer Options'); ?>"/>
+            </form>
+<?php  
+
+
+
+        echo '<h2>Admin options</h2>';
+        echo '<h4>Remove All Matches</h4>';
+
+?>
+            <form method="post">                    
+                <input  type="submit" class="button-secondary" name="remove_all_matches" value="<?php echo esc_attr('Reset Do not play with it'); ?>"/>
+            </form>
+<?php  
+
+
+
+if (isset($_POST) && !empty($_POST['remove_all_matches'])){
+
+        remove_all_matches();
+
+}
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
 
 
 
@@ -49,39 +140,57 @@ add_action( 'init', 'match_post_type');
 
 
 //promotion company taxonomy
-function taxonomy_sports() {
-    register_taxonomy('sports', array('match' ), array(
+// function taxonomy_sports() {
+//     register_taxonomy('sports', array('match' ), array(
+//         'hierarchical' => true,
+//         'labels' => array(
+//             'name' => esc_html__('Sport', 'hlm-sports'),
+//             'singular_name' => esc_html__('Sport', 'hlm-sports'),
+//             'search_items' => esc_html__('Search Sport', 'hlm-sports'),
+//             'all_items' => esc_html__('All Sports', 'hlm-sports'),
+//             'parent_item' => esc_html__('Sport', 'hlm-sports'),
+//             'parent_item_colon' => esc_html__('Sport:', 'hlm-sports'),
+//             'edit_item' => esc_html__('Edit Sport', 'hlm-sports'),
+//             'update_item' => esc_html__('Update Sport', 'hlm-sports'),
+//             'add_new_item' => esc_html__('Add New Sport', 'hlm-sports'),
+//             'new_item_name' => esc_html__('New Sport Name', 'hlm-sports'),
+//             'menu_name' => esc_html__('Sport', 'hlm-sports'),
+//             ),
+//         'rewrite' => array(
+//             'slug' => 'sports',
+//             'with_front' => false, 
+//             'hierarchical' => true 
+//             ),
+//         ));
+// }
+// add_action( 'init', 'taxonomy_sports');
+
+
+
+
+
+
+function taxonomy_league() {
+    register_taxonomy('leagues', array('match' ), array(
         'hierarchical' => true,
         'labels' => array(
-            'name' => esc_html__('Sport', 'hlm-sports'),
-            'singular_name' => esc_html__('Sport', 'hlm-sports'),
-            'search_items' => esc_html__('Search Promotion', 'hlm-sports'),
-            'all_items' => esc_html__('All Sports', 'hlm-sports'),
-            'parent_item' => esc_html__('Sport', 'hlm-sports'),
-            'parent_item_colon' => esc_html__('Sport:', 'hlm-sports'),
-            'edit_item' => esc_html__('Edit Sport', 'hlm-sports'),
-            'update_item' => esc_html__('Update Sport', 'hlm-sports'),
-            'add_new_item' => esc_html__('Add New Sport', 'hlm-sports'),
-            'new_item_name' => esc_html__('New Sport Name', 'hlm-sports'),
-            'menu_name' => esc_html__('Sport', 'hlm-sports'),
+            'name' => esc_html__('League', 'hlm-sports'),
+            'singular_name' => esc_html__('League', 'hlm-sports'),
+            'search_items' => esc_html__('Search League', 'hlm-sports'),
+            'all_items' => esc_html__('All Leagues', 'hlm-sports'),
+            'parent_item' => esc_html__('League', 'hlm-sports'),
+            'parent_item_colon' => esc_html__('League:', 'hlm-sports'),
+            'edit_item' => esc_html__('Edit League', 'hlm-sports'),
+            'update_item' => esc_html__('Update League', 'hlm-sports'),
+            'add_new_item' => esc_html__('Add New League', 'hlm-sports'),
+            'new_item_name' => esc_html__('New League Name', 'hlm-sports'),
+            'menu_name' => esc_html__('League', 'hlm-sports'),
             ),
         'rewrite' => array(
-            'slug' => 'sports',
+            'slug' => 'leagues',
             'with_front' => false, 
             'hierarchical' => true 
             ),
         ));
 }
-add_action( 'init', 'taxonomy_sports');
-
-
-
-
-
-
-
-
-
-
-
-
+add_action( 'init', 'taxonomy_league');

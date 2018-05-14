@@ -5,11 +5,6 @@ Author: Stefan Naumovski
 */    
 
 
- // include( get_template_directory().'/widgets/odds-widget/matches-cpt-registration.php' );
- // include( get_template_directory().'/widgets/odds-widget/testeri.php' );
- // include( get_template_directory().'/widgets/odds-widget/matches-crawl.php' );
-
-
 
 add_action( 'widgets_init', 'odds_widget' );
 
@@ -72,7 +67,7 @@ class odds_widget_hlm_sports extends WP_Widget {
 
 
 		<?php 
-		// include( locate_template( 'widgets/odds-widget/simplehtmldom.php', false, false ) ); 
+	
 
 
 		if($looks == 'looks1'){
