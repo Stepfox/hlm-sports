@@ -45,13 +45,13 @@ Top 5 Reviews Widget------------------------------------------------------------
 
 
 .landing-widget.landing2 li{width: 100%;}
-.landing2 .landing-widget-review-content-wrap{background: transparent;height:100%;width: 100%;padding:0;}
-.landing2 .landing-widget-logo-wrap{background:transparent;width: auto;float:none;display: table;margin:0 auto;}
+.landing2 .landing-widget-review-content-wrap{background: transparent;height:100%;width: 100%;padding:0;pointer-events: none;}
+.landing2 .landing-widget-logo-wrap{background:transparent;width: auto;float:none;display: table;margin:0 auto;pointer-events: all;}
 
 
 .landing2 .landing-widget-bonus {font-size: 40px; text-align: center; line-height: normal; width: 300px; margin: 0 auto; }
 .landing2 .landing-widget-review-bet-now-wrap{    background: transparent; width: 100%; position: absolute; margin: 0 auto; bottom: 20px; text-align: center;}
-.landing2 .landing-widget-review-bet-now-wrap a{display: inline-block;}
+.landing2 .landing-widget-review-bet-now-wrap a{display: inline-block;pointer-events: all;}
 .landing2 .landing-widget-tooltip {float: left; background: #FFF; border-left: 10px solid #358d53; padding: 10px; margin-top:10px; width:100%;}
 
 .landing-widget.landing3 li{width: 100%;margin-bottom:2px;height:53px;background: #FFF;overflow: hidden;}
@@ -137,8 +137,7 @@ Top 5 Reviews Widget------------------------------------------------------------
 }
 
 @media screen and (max-width: 900px){
-.four-parts .landing2 .landing-widget-review-image img{min-height: 260px; margin-left: calc(50% - 600px); min-width: 1200px; }
-.three-parts .landing2 .landing-widget-review-image img{min-height: 260px; margin-left: calc(50% - 450px); min-width: 900px; }
+
 	.landing-widget.landing5 li{    width: calc(25% - 10px);margin-bottom:10px;}
 	.landing-widget.landing1 li{width: 25%;margin-bottom:10px;}
 	.landing-widget.landing5 li:nth-child(5), .landing-widget.landing1 li:nth-child(5){display: none;}
@@ -153,6 +152,6 @@ Top 5 Reviews Widget------------------------------------------------------------
 .landing3 .landing-widget-logo {text-align: center; width: 100%; padding: 5px 0; float: right; border-radius: 0; } 
 .landing3 .landing-widget-logo img{display: inline-block;}
 
-
+.landing2 .landing-widget-review-content-wrap{display:none;}
 
 }

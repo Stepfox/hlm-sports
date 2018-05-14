@@ -2,7 +2,7 @@
 
 		<div class="landing-widget-review-image-wrap">
 			<div class="landing-widget-review-image"> 
-
+						<a href="<?php echo $tracker[$i]; ?>">
 						<?php
 						if( !empty($image[$i]) ) {?>
 							<img src="<?php  
@@ -17,6 +17,7 @@
 								}
 							 ?>" alt="">  							 
 						<?php } ?>	
+						</a>
 			</div>
 		
 			<div class="landing-widget-review-content-wrap">

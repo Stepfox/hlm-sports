@@ -13,7 +13,15 @@
 			<div class="landing-widget-review-image"> 
 		<?php 
 				
+
+
+
 				$review_img_url = get_the_post_thumbnail_url( $bookmaker_id, 'hlm_sports_232x310' ); 
+
+				// if ( wp_is_mobile() && $i == '0') {
+				// 	$review_img_url = get_the_post_thumbnail_url( $bookmaker_id, 'hlm_sports_900x260' ); 
+				// }
+
 				
 				 ?>
 				 <img src="<?php   echo $review_img_url; ?>" alt="">
