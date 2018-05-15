@@ -50,14 +50,76 @@ if (isset($_POST) && !empty($_POST['crawl_odds'])){
 
 
 
-        echo '<h2>Timer Settings</h2>';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        echo '<h2>Odds Portal</h2>';
 
 
 ?>
             <form method="post">                    
-                <input  type="submit" class="button-secondary" name="preset1" value="<?php echo esc_attr('Timer Options'); ?>"/>
+                <input  type="submit" class="button-secondary" name="checker_checker" value="<?php echo esc_attr('Timer Options'); ?>"/>
             </form>
 <?php  
+
+if (isset($_POST) && !empty($_POST['checker_checker'])){
+
+    $opts = array('http'=>array(
+        'method'=>"GET",
+        'header'=>"Accept-language: en\r\n"."Cookie: odds_type=decimal\r\n",
+        'user_agent'=>'Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10.4; en-US; rv:1.9.2.28) Gecko/20120306 Firefox/3.6.28')
+    );
+
+    $context = stream_context_create($opts);
+
+    $html = file_get_html('http://www.oddsportal.com/soccer/england/wsl-1-women-2017-2018/bristol-city-chelsea-jwwOHWak/',false,$context);
+
+    foreach($html->find('h1') as $element) {
+         echo $element . '<br>';
+     }
+
+ 
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
