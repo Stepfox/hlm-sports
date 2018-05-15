@@ -101,7 +101,7 @@ function crawl_table(){
 
 
 	$opts=array('http'=>array('method'=>"GET",'header'=>"Accept-language: en\r\n"."Cookie: odds_type=decimal\r\n",'user_agent'=>'Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10.4; en-US; rv:1.9.2.28) Gecko/20120306 Firefox/3.6.28'));
-	$context=stream_context_create($opts);
+	$context = stream_context_create($opts);
 	$match_url = get_field('match_url');
 
 	$html = file_get_html($match_url,false,$context);
@@ -111,7 +111,11 @@ function crawl_table(){
 
 		//$crawled_titles_number = count($html->find('.match-on .fixtures-bet-name'));
 
+
+//the id of the table with odds
 $table = $html->find('#t1', 0);
+
+
 $rowData = array();
 
 foreach($table->find('tr') as $row) {
