@@ -7,6 +7,8 @@
 
 <main id="main" class="category-page">
 
+ <div class="three-parts post-page-area hlm-sports-widget">
+
   <div class="four-parts hlm-sports-widget top-page-area">
 
 	<ul>
@@ -21,7 +23,7 @@
 					<div class="blog-post-image">
 						<?php if (  (function_exists('has_post_thumbnail')) && (has_post_thumbnail())  ) { ?>
 
-						<?php the_post_thumbnail('hlm_sports_1200x260'); ?>
+						<?php the_post_thumbnail('hlm_sports_900x260'); ?>
 
 						<?php } ?>
 					</div>
