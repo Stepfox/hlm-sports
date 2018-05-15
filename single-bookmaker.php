@@ -30,10 +30,10 @@
                   <?php echo the_field( 'left_bonus' ); ?>
                 </span>
               </div>  
-              <div class="pros-and-cons-terms">
-                Terms Apply to all bonus offers
+              <div class="pros-and-cons-terms">               
+                <?php the_field('terms_apply_to_all_bonus_offers', 'option');  ?>
                 </br>
-                Advertising disclosure
+                <?php the_field('advertising_disclosure', 'option');  ?>
               </div>  
           </div>
 

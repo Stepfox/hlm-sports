@@ -21,7 +21,7 @@
 	</div>
 <div class="payment-icon-bookmakers">
 			<span>
-				Recomended Sportsbook
+				<?php the_field('recomended_sportsbook', 'option');  ?>
 			</span>
 
 

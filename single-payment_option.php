@@ -26,7 +26,7 @@
               </div>  
               <a href="https://www.winningsportsbets.co.uk/deposit-bookmakers">
                   <div class="pros-and-cons-bet-now">
-                        Best Bookmakers
+                        <?php the_field('best_bookmakers', 'option');  ?>
                   </div>
               </a>
           </div>

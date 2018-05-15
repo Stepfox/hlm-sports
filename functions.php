@@ -305,16 +305,22 @@ include(get_template_directory()."/widgets/payment-options-widget/payment-option
 
 
 // category archive and search number of posts
-function dawn_magazine_archive_page_queries( $query ) {
+function hlm_sports_archive_page_queries( $query ) {
 	$page = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	
     if(is_category() && $query->is_main_query() && $page == 1){
-			$query->set('posts_per_page', $dawn_magazine_category_number);
+			$query->set('posts_per_page', '9');
 			$query->set('offset', '1' );	
 	}
 
+    if(is_tag() && $query->is_main_query() && $page == 1){
+			$query->set('posts_per_page', '9');
+			$query->set('offset', '1' );	
+	}
+
+
 }
-add_action( 'pre_get_posts', 'dawn_magazine_archive_page_queries' );
+add_action( 'pre_get_posts', 'hlm_sports_archive_page_queries' );
 
 
 
@@ -522,19 +528,19 @@ function hlm_sports_get_star_rating_grade($rating){
 if(empty($rating)){ $rating = 0;}
 
 				if($rating <= 1)
-					{  echo 'Bad ';}
+					{  echo the_field('star_rating_bad', 'option');}
 				elseif($rating > 1 && $rating < 2)
-					{ echo 'Normal ';}
+					{ echo the_field('star_rating_normal', 'option');}
 				elseif($rating >= 2 && $rating < 3)
-					{ echo 'Alright';}
+					{ echo the_field('star_rating_alright', 'option');}
 				elseif($rating >= 3 && $rating < 4)
-					{ echo 'Good ';}
+					{ echo the_field('star_rating_good', 'option');}
 				elseif($rating >= 4 && $rating < 4.5)
-					{ echo 'Very Good ';}
+					{ echo the_field('star_rating_very_good', 'option');}
 				elseif($rating >= 4.5 && $rating < 5)
-					{ echo 'Great ';}
+					{ echo the_field('star_rating_great', 'option');}
 				elseif($rating >= 5)
-					{ echo 'Excellent !';}
+					{ echo the_field('star_rating_excellent', 'option');}
 }
 
 
