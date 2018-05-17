@@ -1,36 +1,78 @@
-<?php get_header(); ?>
-	<main id="main">
-		<?php if ( have_posts() ) : ?>
-			<header class="page-header">
+<?php get_header();?>
+
+<main id="main" class="search-page">
+  <div id="full-area">
+        <div class="post-content widget">
+          <div class="post-title">
+            <h1>
 				<?php
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
 				?>
-			</header><!-- .page-header -->
+            </h1>
+          </div>
+<ul>
+        <?php
+      if ( have_posts() ) :
+        while ( have_posts() ) : the_post();
+             ?>								
+				<li>					
 
-			<?php
-			// Start the Loop.
-			while ( have_posts() ) : the_post();
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				?>
-				<a href="<?php the_permalink(); ?>">
-					<?php echo esc_html(get_the_title()); ?> 
-				</a>
-				<?php
-			// End the loop.
-			endwhile;
+			<div class="searchpage-wrap">
+				<div class="searchpage-title-box">
+					<div class="searchpage-title">
+						<h2>
+							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+							<?php the_title(); ?>
+							</a>
+						</h2>
+					</div>
+					<!--searchpage-title-->
+					
 
-	// If no content, include the "No posts found" template.
-		else :
-			echo 'Nothing Found';
+					<?php echo hlm_sports_excerpt(30); ?>
+					<div class="searchpage-url">
+						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+							<?php echo the_permalink(); ?>
+						</a>
+					</div>
+				</div>
+				<!--searchpage-title-box-->
+			</div>
+			<!-- blogwrap -->
+			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+			<div class="read-more">
+                 read more
+            </div>
+        	</a>
 
-		endif;
-		?>
 
-</main><!-- .site-main -->
+
+
+
+				</li>
+				<?php 
+        endwhile;
+        //pagination
+        
+      else :
+        ?><p><?php _e( 'Sorry, no posts matched your criteria.', 'hlm-sports' ); ?></p><?php
+      endif;
+    ?>
+	</ul>
+	<?php hlm_sports_pagination(); ?>
+      </div>
+  </div>
+</main>
+
+
+
+
+
+
+
+
+
+
 <?php get_footer(); ?>

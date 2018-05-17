@@ -140,9 +140,9 @@ var_dump($rowData);
 		                'posts_per_page' => -1, 
 		                'post_status' => 'publish',   
 		            );
-		            $lunar_magazine_posts1 = new WP_Query($args1);
+		            $bookmakers_query = new WP_Query($args1);
 		            $count = 0;
-		            while($lunar_magazine_posts1->have_posts()) : $lunar_magazine_posts1->the_post();
+		            while($bookmakers_query->have_posts()) : $bookmakers_query->the_post();
 
 
 
@@ -194,6 +194,99 @@ update_field( $field_key, $value, $page_name_id );
 
 
 }
+
+
+
+
+
+
+
+
+function our_own_api($pick_league){
+
+$url = 'http://api.exaloc.org/v1/pre-match/markets?categories='.$pick_league;
+
+
+
+$request = wp_remote_get($url);
+$body = wp_remote_retrieve_body( $request );
+$data = json_decode( $body, true );
+
+
+	foreach ($data as $data_part) {
+
+		$title = $data_part['teams'][0]['name'].' vs '.$data_part['teams'][1]['name'];
+		$league = $data_part['league']['name'];
+
+		//check for duplicate
+					$duplicate = 'unique';
+		            $args = array(
+		                'post_type' => 'match',
+		                'posts_per_page' => -1, 
+		                's' => $title, 
+		                'post_status' => 'publish',   
+		            );
+		            $check_duplicate_posts = new WP_Query($args);
+		            while($check_duplicate_posts->have_posts()) : $check_duplicate_posts->the_post();
+		                $duplicate = 'duplicate';
+		            endwhile;   
+
+
+				//Add Match
+		        if($duplicate != 'duplicate'){
+					$post= array('post_title' => $title, 'post_content' => '', 'post_status' => 'publish', 'post_type' => 'match' );
+			 		$post_ID = wp_insert_post( $post );
+			 		wp_set_object_terms( $post_ID, $league, 'leagues', false );
+			 		wp_set_object_terms( $post_ID, array($data_part['teams'][0]['name'], $data_part['teams'][1]['name']), 'teams', false );
+
+
+					$args1 = array(
+		                'post_type' => 'bookmaker',
+		                'posts_per_page' => -1, 
+		                'post_status' => 'publish',   
+		            );
+		            $bookmakers_query = new WP_Query($args1);
+		            $count = 0;
+		            while($bookmakers_query->have_posts()) : $bookmakers_query->the_post();
+		            		$bookmaker_crawl_order = get_field('bookmaker_crawl_order', get_the_ID());
+ 							$bookmaker_number = 'none';
+							for ($g=0; $g < 10; $g++) { 
+								if($data_part['markets'][0]['bookies'][$g]['code'] == $bookmaker_crawl_order){ $bookmaker_number = $g;}
+							}
+
+		            		$value[$count]['bookmaker'] = get_the_ID();
+		            		$value[$count]['win_odds'] = $data_part['markets'][0]['bookies'][$bookmaker_number]['bets'][0]['odds'];
+		            		$value[$count]['draw_odds'] = $data_part['markets'][0]['bookies'][$bookmaker_number]['bets'][1]['odds'];
+		            		$value[$count]['loss_odds'] = $data_part['markets'][0]['bookies'][$bookmaker_number]['bets'][2]['odds'];
+
+
+		            		$count++;
+		            endwhile; 
+
+					$field_key = "winner_table";
+					update_field( $field_key, $value, $post_ID );
+
+
+				}
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

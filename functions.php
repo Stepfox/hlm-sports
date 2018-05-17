@@ -271,6 +271,11 @@ include( get_template_directory().'/inc/bookmakers-cpt-registration.php' );
 include( get_template_directory().'/inc/hlm-sports-custom-fields.php' );
 include( get_template_directory().'/inc/hlm-sports-shortcodes.php' );
 
+
+include( get_template_directory().'/inc/world-cup-knockout.php' );
+
+
+
 include( get_template_directory().'/inc/widget-presets/widget-presets.php' );
 include( get_template_directory().'/inc/widget-presets/widget-presets-func.php' );
 include( get_template_directory().'/inc/widget-presets/widget-presets-save-func.php' );

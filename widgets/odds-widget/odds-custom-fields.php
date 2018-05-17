@@ -10,7 +10,7 @@ acf_add_local_field_group(array(
             'key' => 'field_5ab0f84414817',
             'label' => 'bookmaker crawl order',
             'name' => 'bookmaker_crawl_order',
-            'type' => 'number',
+            'type' => 'text',
             'instructions' => '',
             'required' => 0,
             'conditional_logic' => 0,

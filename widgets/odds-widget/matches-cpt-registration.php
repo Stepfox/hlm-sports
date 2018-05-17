@@ -40,11 +40,15 @@ if (isset($_POST) && !empty($_POST['crawl_matches'])){
 ?>
             <form method="post">                    
                 <input  type="submit" class="button-secondary" name="crawl_odds" value="<?php echo esc_attr('Crawl Odds'); ?>"/>
+
+
+
+
             </form>
 <?php  
-if (isset($_POST) && !empty($_POST['crawl_odds'])){
-
-        crawl_table();
+if (isset($_POST) && !empty($_POST['crawl_odds']) ){
+        
+        crawl_table_our_own_api();
 
 }
 
@@ -79,26 +83,33 @@ if (isset($_POST) && !empty($_POST['crawl_odds'])){
 ?>
             <form method="post">                    
                 <input  type="submit" class="button-secondary" name="checker_checker" value="<?php echo esc_attr('Timer Options'); ?>"/>
+
+            <select name="pick_league" id="widget-layout-dropdown">
+
+                <?php $options = array(
+                    '' => 'Pick a League',
+                    '54a22a0cd443afef088b46db' => 'World Cup',
+                    '54a229f8d443afef088b45b4' => 'Premiere League',
+                    '54a229fad443afef088b45c9' => 'Bundesliga',
+                    'demo4' => 'Demo4',             
+                    'reset_widgets' => 'Blank Demo',
+                    );
+
+                foreach ($options as $option => $name) {?>
+                    <option value='<?php echo esc_attr($option); ?>'>
+                        <?php echo esc_html($name); ?>
+                    </option>
+                <?php } ?>
+            </select>
+
             </form>
+
+
 <?php  
 
-if (isset($_POST) && !empty($_POST['checker_checker'])){
-
-    $opts = array('http'=>array(
-        'method'=>"GET",
-        'header'=>"Accept-language: en\r\n"."Cookie: odds_type=decimal\r\n",
-        'user_agent'=>'Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10.4; en-US; rv:1.9.2.28) Gecko/20120306 Firefox/3.6.28')
-    );
-
-    $context = stream_context_create($opts);
-
-    $html = file_get_html('http://www.oddsportal.com/soccer/england/wsl-1-women-2017-2018/bristol-city-chelsea-jwwOHWak/',false,$context);
-
-    foreach($html->find('h1') as $element) {
-         echo $element . '<br>';
-     }
-
- 
+if (isset($_POST) && !empty($_POST['checker_checker']) && !empty($_POST['pick_league'])){
+$pick_league = $_POST['pick_league'];
+ our_own_api($pick_league);
 
 }
 
@@ -256,3 +267,29 @@ function taxonomy_league() {
         ));
 }
 add_action( 'init', 'taxonomy_league');
+
+
+function taxonomy_team() {
+    register_taxonomy('teams', array('match' ), array(
+        'hierarchical' => true,
+        'labels' => array(
+            'name' => esc_html__('Team', 'hlm-sports'),
+            'singular_name' => esc_html__('Team', 'hlm-sports'),
+            'search_items' => esc_html__('Search Team', 'hlm-sports'),
+            'all_items' => esc_html__('All Teams', 'hlm-sports'),
+            'parent_item' => esc_html__('Team', 'hlm-sports'),
+            'parent_item_colon' => esc_html__('Team:', 'hlm-sports'),
+            'edit_item' => esc_html__('Edit Team', 'hlm-sports'),
+            'update_item' => esc_html__('Update Team', 'hlm-sports'),
+            'add_new_item' => esc_html__('Add New Team', 'hlm-sports'),
+            'new_item_name' => esc_html__('New Team Name', 'hlm-sports'),
+            'menu_name' => esc_html__('Team', 'hlm-sports'),
+            ),
+        'rewrite' => array(
+            'slug' => 'teams',
+            'with_front' => false, 
+            'hierarchical' => true 
+            ),
+        ));
+}
+add_action( 'init', 'taxonomy_team');
