@@ -76,6 +76,8 @@ class odds_widget_hlm_sports extends WP_Widget {
 			include( locate_template( 'widgets/odds-widget/looks-2.php', false, false ) );   
 		}elseif($looks == 'looks3'){
 			include( locate_template( 'widgets/odds-widget/looks-3.php', false, false ) );   
+		}elseif($looks == 'looks4'){
+			include( locate_template( 'widgets/odds-widget/looks-4.php', false, false ) );   
 		}
 
 		?>
@@ -129,7 +131,7 @@ class odds_widget_hlm_sports extends WP_Widget {
 	<label for="<?php echo esc_attr($this->get_field_id('looks')); ?>"><?php _e('Looks:', 'hlm-sports');?></label>
 	<select name="<?php echo esc_attr($this->get_field_name('looks')); ?>" id="<?php echo esc_attr($this->get_field_id('looks')); ?>" class="widefat" >
 		<?php 
-		$options = array('looks1', 'looks2', 'looks3' );
+		$options = array('looks1', 'looks2', 'looks3', 'looks4' );
 		foreach ($options as $option) {?>
 		<option value='<?php echo esc_attr($option); ?>' <?php if ($option == $instance['looks']) echo 'selected="selected"'; ?>><?php echo esc_html($option); ?></option>
 		<?php } ?>

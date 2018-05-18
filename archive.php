@@ -1,8 +1,14 @@
 <?php get_header();?>
 
-<main id="main" class="search-page">
-  <div id="full-area">
-        <div class="post-content widget">
+
+
+
+
+
+<main id="main" class="category-page">
+
+ <div class="three-parts post-page-area hlm-sports-widget">
+
           <div class="post-title">
             <h1>
 				<?php
@@ -11,46 +17,61 @@
 				?>
             </h1>
           </div>
-<ul>
+
+  </div>
+
+  <div class="three-parts post-page-area hlm-sports-widget">
+        <div class="post-content widget blog-post">
+
+
+
+
+	<ul>
         <?php
       if ( have_posts() ) :
         while ( have_posts() ) : the_post();
              ?>								
 				<li>					
-
-
-			<div class="searchpage-wrap">
-				<div class="searchpage-title-box">
-					<div class="searchpage-title">
-						<h2>
-							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-							<?php the_title(); ?>
-							</a>
-						</h2>
-					</div>
-					<!--searchpage-title-->
-					
-
-					<?php echo hlm_sports_excerpt(30); ?>
-					<div class="searchpage-url">
+					<div class="blog-post-image">
+						<?php if (  (function_exists('has_post_thumbnail')) && (has_post_thumbnail())  ) { ?>
 						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-							<?php echo the_permalink(); ?>
+						<?php the_post_thumbnail('hlm_sports_232x310'); ?>
 						</a>
+						<?php } ?>
 					</div>
-				</div>
-				<!--searchpage-title-box-->
-			</div>
-			<!-- blogwrap -->
-			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-			<div class="read-more">
-                 read more
-            </div>
-        	</a>
+					<!--blog-post-image-->
+					<div class="blog-post-title-box">
+						<div class="blog-post-title">
+							<h2>
+								<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+								<?php the_title(); ?>
+								</a>
+							</h2>
+						</div>
+						<!--blog-post-title-->
+					</div>
+					<!--blog-post-title-box-->
+
+					<div class="blog-post-date-author">
+
+						<div class="blog-post-author">
+							<?php the_author_posts_link(); ?>
+						</div>
+						<!--blog-post-author-->
 
 
+						<div class="blog-post-date">
+							<?php echo esc_html(get_the_date()); ?>
+						</div>
+						<!--blog-post-date-->
 
+					</div>
+					<!--blog-post-date-author-->
 
-
+					<div class="blog-post-content">
+						<?php echo hlm_sports_excerpt(50); ?>
+					</div>
+					<!--blog-post-content-->	
 				</li>
 				<?php 
         endwhile;
@@ -61,9 +82,19 @@
       endif;
     ?>
 	</ul>
-	<?php hlm_sports_pagination(); ?>
+		<div class="pagination pagination-load-more auto-load">
+			<?php next_posts_link('Load More', '' ); ?>
+		</div>
+		<!--pagination-->
+	</div>
+
       </div>
   </div>
+
+  <div class="one-part post-page-area">
+      <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Post Sidebar')): endif; ?>
+  </div>
+
 </main>
 
 

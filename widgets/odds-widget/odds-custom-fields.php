@@ -23,9 +23,7 @@ acf_add_local_field_group(array(
             'placeholder' => '',
             'prepend' => '',
             'append' => '',
-            'min' => '',
-            'max' => '',
-            'step' => '',
+            'maxlength' => '',
         ),
     ),
     'location' => array(
@@ -52,9 +50,9 @@ acf_add_local_field_group(array(
     'title' => 'Odds Table',
     'fields' => array(
         array(
-            'key' => 'field_5ab014efc960a',
-            'label' => 'Match url',
-            'name' => 'match_url',
+            'key' => 'field_5afec0fd70e04',
+            'label' => 'Start time',
+            'name' => 'start_time',
             'type' => 'text',
             'instructions' => '',
             'required' => 0,
@@ -69,6 +67,50 @@ acf_add_local_field_group(array(
             'prepend' => '',
             'append' => '',
             'maxlength' => '',
+        ),
+        array(
+            'key' => 'field_5afe9aa575a60',
+            'label' => 'Home Team',
+            'name' => 'home_team',
+            'type' => 'taxonomy',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'taxonomy' => 'teams',
+            'field_type' => 'select',
+            'allow_null' => 0,
+            'add_term' => 1,
+            'save_terms' => 0,
+            'load_terms' => 0,
+            'return_format' => 'id',
+            'multiple' => 0,
+        ),
+        array(
+            'key' => 'field_5afe9b0675a61',
+            'label' => 'Away Team',
+            'name' => 'away_team',
+            'type' => 'taxonomy',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'taxonomy' => 'teams',
+            'field_type' => 'select',
+            'allow_null' => 0,
+            'add_term' => 1,
+            'save_terms' => 0,
+            'load_terms' => 0,
+            'return_format' => 'id',
+            'multiple' => 0,
         ),
         array(
             'key' => 'field_5ab00c7343435',
@@ -230,6 +272,5 @@ acf_add_local_field_group(array(
 ));
 
 endif;
-
 
 ?>

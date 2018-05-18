@@ -237,8 +237,12 @@ $data = json_decode( $body, true );
 					$post= array('post_title' => $title, 'post_content' => '', 'post_status' => 'publish', 'post_type' => 'match' );
 			 		$post_ID = wp_insert_post( $post );
 			 		wp_set_object_terms( $post_ID, $league, 'leagues', false );
-			 		wp_set_object_terms( $post_ID, array($data_part['teams'][0]['name'], $data_part['teams'][1]['name']), 'teams', false );
+			 		
+			 		$teams = wp_set_object_terms( $post_ID, array($data_part['teams'][0]['name'],  $data_part['teams'][1]['name']), 'teams', false );
 
+			 		update_field( 'start_time', $data_part['startTime'], $post_ID );
+					update_field( 'home_team', $teams[0], $post_ID );
+					update_field( 'away_team', $teams[1], $post_ID );
 
 					$args1 = array(
 		                'post_type' => 'bookmaker',
@@ -250,7 +254,7 @@ $data = json_decode( $body, true );
 		            while($bookmakers_query->have_posts()) : $bookmakers_query->the_post();
 		            		$bookmaker_crawl_order = get_field('bookmaker_crawl_order', get_the_ID());
  							$bookmaker_number = 'none';
-							for ($g=0; $g < 10; $g++) { 
+							for ($g=0; $g < 20; $g++) { 
 								if($data_part['markets'][0]['bookies'][$g]['code'] == $bookmaker_crawl_order){ $bookmaker_number = $g;}
 							}
 
