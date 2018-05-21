@@ -729,7 +729,8 @@ Odds widget
 .widget_hlm_sports_odds{background:#5a5859;}
 .odds-sports-wrap{float:left;background:#ccc;width:30%;border: 1px solid #FFF;position:relative;}
 .odds-widget-sports{color:#FFF;width:100%;float:left;line-height:80px;font-size:20px;text-align:center;}
-.odds-widget-sports img{max-height:80px;}
+.odds-widget-sports select{width:50%;}
+.odds-widget-sports img{max-height:80px;max-width: 50%;}
 
 
 .odds-widget{width:100%;padding:10px;float:left;}
@@ -767,6 +768,7 @@ ul.odds-widget-odds-list{overflow:hidden;width: 70%;float:left;padding:0;display
 .odds-game-time{line-height:75px;float:left;width:20%;text-align:center; overflow:hidden; max-height:75px;font-size:12px;border-right:1px solid #FFF;}
 .odds-game-teams{float:left;width:80%;}
 .odds-game-home-team div, .odds-game-away-team div{width:100%;white-space:nowrap;background:#2f2f2f;color:#FFF;padding-right: 20px;line-height:25px;float:left;}
+.odds-game-home-team div a, .odds-game-away-team div a{color:#FFF;}
 .odds-game-home-team{float:left;width:100%;}
 .odds-game-away-team{float:left;width:100%;border-top: 1px solid #FFF;}
 .odds-game-home-team-name, .odds-game-away-team-name{width:80%;text-align:center;}

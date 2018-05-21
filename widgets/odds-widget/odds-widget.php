@@ -54,11 +54,11 @@ class odds_widget_hlm_sports extends WP_Widget {
 		$bet365_id = $instance['bet365'];
 
 
-		echo $args['before_widget'];
-				
-		if ( ! empty( $title ) ){
-			echo $args['before_title'] . esc_html($title) . $args['after_title'];
-		}
+        echo $args['before_widget'];
+
+        if ( ! empty( $title ) ){
+            echo $args['before_title'] . esc_html($title) . $args['after_title'];
+        }
 			?>
 
 
@@ -71,11 +71,11 @@ class odds_widget_hlm_sports extends WP_Widget {
 
 
 		if($looks == 'looks1'){
-		 	include( locate_template( 'widgets/odds-widget/looks-1.php', false, false ) );   
+		 	//include( locate_template( 'widgets/odds-widget/looks-1.php', false, false ) );   
 		}elseif($looks == 'looks2'){
-			include( locate_template( 'widgets/odds-widget/looks-2.php', false, false ) );   
+			//include( locate_template( 'widgets/odds-widget/looks-2.php', false, false ) );   
 		}elseif($looks == 'looks3'){
-			include( locate_template( 'widgets/odds-widget/looks-3.php', false, false ) );   
+			//include( locate_template( 'widgets/odds-widget/looks-3.php', false, false ) );   
 		}elseif($looks == 'looks4'){
 			include( locate_template( 'widgets/odds-widget/looks-4.php', false, false ) );   
 		}

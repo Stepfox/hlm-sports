@@ -41,7 +41,7 @@
 		            );
 		            $bookmakers_query = new WP_Query($args1);
 		            while($bookmakers_query->have_posts()) : $bookmakers_query->the_post();
-				?>
+		            	if(!empty(get_field('bookmaker_crawl_order'))){ ?>
 
 				<li>
 					<div class="odds-widget-bookmakers-links-logo bookmaker-background-wrap-<?php the_ID(); ?>">
@@ -59,7 +59,7 @@
                 		</a>
 					</div>
 				</li>
-			<?php endwhile; wp_reset_postdata();?>
+			<?php  } endwhile; wp_reset_postdata();?>
 
 			</ul>
 		</div>
@@ -115,9 +115,10 @@
 				<div class="odds-widget-bookmakers">
 					<?php if(get_field('winner_table')): ?>
 					<ul class="odds-widget-odds-list">
-						<?php while(has_sub_field('winner_table')): ?>
+						<?php while(has_sub_field('winner_table')): 
+							$deezs = get_sub_field('bookmaker'); if(!empty(get_field('bookmaker_crawl_order', $deezs->ID))) { ?>
 						<li>
-							<?php //$deezs = get_sub_field('bookmaker'); echo $deezs->post_name;?>
+							<?php ?>
 							<div class="odds-game-home-team-odd">
 								<?php if(!empty(get_sub_field('win_odds'))){the_sub_field('win_odds');}else{echo '*';} ?>
 							</div>
@@ -128,7 +129,7 @@
 								<?php if(!empty(get_sub_field('loss_odds'))){the_sub_field('loss_odds');}else{echo '*';}?>
 							</div>
 						</li>
-						<?php endwhile; ?>
+						<?php } endwhile; ?>
 					</ul>
 					<?php endif; ?>
 				</div>
@@ -136,3 +137,6 @@
 			<?php endwhile; ?>
 		</ul>
 	</div>
+
+<!-- close but dont know -->
+</div></div>
