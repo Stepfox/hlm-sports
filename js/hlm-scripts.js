@@ -144,7 +144,74 @@ $(window).scroll(function(event){
 
 
 
+            $('.odds-prev').on('click', function(){
+                $('.odds-widget-bookmakers').flexslider('prev');
+                $('.odds-list').each(function() {
+                    $(this).flexslider('prev');
+                 });
 
+                //return false;
+            });
+            
+            $('.odds-next').on('click', function(){
+                $('.odds-widget-bookmakers').flexslider('next');
+                $('.odds-list').each(function() {
+                    $(this).flexslider('next');
+                 });
+                return false;
+            });
+
+    //Gallery slider
+    $(window).load(function() {
+        $('.odds-widget-bookmakers').each(function() {
+
+            function bookmakers_grid() {
+
+                                return (window.innerWidth < 500) ? 2 : (window.innerWidth < 1024) ? 3 : 5;
+                                
+                            }
+
+            $(this).flexslider({
+                animation : 'slide',
+                itemWidth: 166,
+                itemMargin: 0,
+                minItems: bookmakers_grid(),
+                maxItems: bookmakers_grid(),
+                move: 1,
+                slideshow : false,
+                controlNav: false,
+                directionNav: false,
+            });
+            
+
+
+        });
+    });
+
+
+    $(window).load(function() {
+        $('.odds-list').each(function() {
+
+            function odds_grid() {
+
+                                return (window.innerWidth < 500) ? 2 : (window.innerWidth < 1024) ? 3 : 5;
+                                
+                            }
+
+            $(this).flexslider({
+                animation : 'slide',
+                itemWidth: 166,
+                itemMargin: 0,
+                minItems: odds_grid(),
+                maxItems: odds_grid(),
+                move: 1,
+                slideshow : false,
+                controlNav: false,
+                directionNav: false,
+            });
+
+        });
+    });
 
 
 

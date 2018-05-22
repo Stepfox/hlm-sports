@@ -89,8 +89,8 @@ if (isset($_POST) && !empty($_POST['crawl_odds']) ){
                 <?php $options = array(
                     '' => 'Pick a League',
                     '54a22a0cd443afef088b46db' => 'World Cup',
-                    '54a229f8d443afef088b45b4' => 'Premiere League',
-                    '54a229fad443afef088b45c9' => 'Bundesliga',
+                    //'54a229f8d443afef088b45b4' => 'Premiere League',
+                    //'54a229fad443afef088b45c9' => 'Bundesliga',
                     );
 
                 foreach ($options as $option => $name) {?>

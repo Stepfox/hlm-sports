@@ -9,7 +9,7 @@ Text Domain: hlm-sports
 
 .post-page-area nav{display: none;}
 .payment-section{display:none;}
-whatever{font-size:20px; font-weight: 800;color: #F00;}
+
 
 /*Css reset*/
 
@@ -774,7 +774,9 @@ ul.odds-widget-odds-list{overflow:hidden;width: 70%;float:left;padding:0;display
 .odds-game-home-team-name, .odds-game-away-team-name{width:80%;text-align:center;}
 .odds-game-home-team-id, .odds-game-away-team-id{width:20%;text-align:center;}
 
-
+.odds-list{ width: 70%;    float: left;}
+.odds-prev{padding:10px;background: #358d53;position: absolute;left: 0; top:240px;z-index: 9;font-size: 20px;color:#FFF;font-weight: 800;cursor: pointer;}
+.odds-next{padding:10px;background: #358d53;position: absolute;right:0;top: 240px;z-index: 9;font-size: 20px;color:#FFF;font-weight: 800;cursor: pointer;}
 
 
 

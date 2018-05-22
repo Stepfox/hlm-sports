@@ -39,19 +39,13 @@ class odds_widget_hlm_sports extends WP_Widget {
 		
 		/* Default widget settings. */
 		
-		$defaults = array( 'title' => 'Odds widget', 'looks' => 'looks1', 'categories' => '0', 'sport888' => '0' , 'williamhill' => '0' , 'betathome' => '0' , 'bethard' => '0' , 'bet365'  => '0'  );
+		$defaults = array( 'title' => 'Odds widget', 'looks' => 'looks1', 'categories' => '0' );
 		$instance = wp_parse_args( (array) $instance, $defaults );
 		
 		
 		$title = $instance['title'];
 		$looks = $instance['looks'];
 		$categories = $instance['categories'];
-	
-		$sport888_id = $instance['sport888'];
-		$williamhill_id = $instance['williamhill'];
-		$betathome_id = $instance['betathome'];
-		$bethard_id = $instance['bethard'];
-		$bet365_id = $instance['bet365'];
 
 
         echo $args['before_widget'];
@@ -101,12 +95,6 @@ class odds_widget_hlm_sports extends WP_Widget {
 		$instance['looks'] = $new_instance['looks'];
 		$instance['categories'] = $new_instance['categories'];
 
-		$instance['sport888'] = $new_instance['sport888'];
-		$instance['williamhill'] = $new_instance['williamhill'];
-		$instance['betathome'] = $new_instance['betathome'];
-		$instance['bethard'] = $new_instance['bethard'];
-		$instance['bet365'] = $new_instance['bet365'];
-
 		return $instance;
 	}
 	
@@ -115,7 +103,7 @@ class odds_widget_hlm_sports extends WP_Widget {
 		
 		/* Default widget settings. */
 		
-		$defaults = array( 'title' => 'Odds widget', 'looks' => 'looks1', 'categories' => '0', 'sport888' => '0' , 'williamhill' => '0' , 'betathome' => '0' , 'bethard' => '0' , 'bet365'  => '0' );
+		$defaults = array( 'title' => 'Odds widget', 'looks' => 'looks1', 'categories' => '0' );
 		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
 
 <!-- Widget Title-->
@@ -142,16 +130,7 @@ class odds_widget_hlm_sports extends WP_Widget {
 
 
 <!-- Sports -->
-<?php $options = array(
-'54a22a0cd443afef088b46db' => 'World Cup',
-'54a22a10d443afef088b4719' => 'Friendly Internationals',
-'54a229f8d443afef088b45b4' => 'Premier League', 
-'576243df1d142240108b471d' => 'Championship',
-'54a229fad443afef088b45c9' => 'Bundesliga',
-'54a229fcd443afef088b45f0' => 'Serie A',
-'54a229f9d443afef088b45bc' => 'Ligue 1',
-'576250f41d142264208b4795' => 'Primera Division',
-);
+<?php $options = get_terms('leagues', array('hide_empty' => '0'));
 
 
 	?>
@@ -164,10 +143,15 @@ class odds_widget_hlm_sports extends WP_Widget {
 	<label for="<?php echo esc_attr($this->get_field_id('categories')); ?>"><?php _e('categories:', 'hlm-sports');?></label>
 	<select name="<?php echo esc_attr($this->get_field_name('categories')); ?>" id="<?php echo esc_attr($this->get_field_id('categories')); ?>" class="widefat" >
 		<?php 
-		foreach ($options as $option => $value) {?>
-		<option value='<?php echo esc_attr($option); ?>' <?php if ($option == $instance['categories']) echo 'selected="selected"'; ?>><?php echo esc_html($value); ?></option>
+		foreach ($options as $option) {?>
+		<option value='<?php echo esc_attr($option->slug); ?>' <?php if ($option == $instance['categories']) echo 'selected="selected"'; ?>><?php echo esc_html($option->name); ?></option>
 		<?php } ?>
 	</select>
+
+
+
+
+
 </p>
 
 
@@ -177,40 +161,8 @@ class odds_widget_hlm_sports extends WP_Widget {
 
 <?php
 
-$sport888 = 'sport888'; 
-$williamhill = 'williamhill'; 
-$betathome = 'betathome'; 
-$bethard = 'bethard'; 
-$bet365 = 'bet365'; 
 
-$bookmakers_array = array(
-						$sport888,
-						$williamhill,
-						$betathome,
-						$bethard,
-						$bet365
-					);
 
-foreach($bookmakers_array as $item){
-?>
-
-<p>
-	   			<?php 	$args = array('post_type' => 'bookmaker', 'posts_per_page' => -1, 'orderby' => 'title', 'order'   => 'ASC');
-						$options = get_posts($args);?>
-	 
-	        		<select field="<?php echo $this->get_field_name( $item ); ?>" name="<?php echo $this->get_field_name( $item ); ?>">
-	        			<option value="select_fighter">
-	        				<?php echo 'pick '. $item; ?>
-						</option>
-						<?php 
-						foreach ($options as $option) {?>
-						<option value='<?php echo esc_attr($option->ID); ?>' <?php if(isset($instance[$item])){ if ($option->ID == $instance[$item]) echo 'selected="selected"';}?>><?php echo esc_html($option->post_title);?></option>
-						<?php } ?>
-					</select>
-</p>
-
-<?php 
-}
 
 
 

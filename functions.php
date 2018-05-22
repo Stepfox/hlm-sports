@@ -258,6 +258,7 @@ function hlm_sports_scripts() {
 		wp_enqueue_script('hlm_sports_smoothscroll', get_template_directory_uri() . '/js/smoothscroll.js', array('jquery'));
 
 		// wp_enqueue_style('hlm_sports_responsive', get_template_directory_uri() . '/css/responsive.css');
+		wp_enqueue_script('flexslider-min', get_template_directory_uri() . '/js/jquery.flexslider-min.js', array('jquery'));
 		wp_enqueue_script('hlm_sports_scripts', get_template_directory_uri() . '/js/hlm-scripts.js', array('jquery'));
 }
 add_action('wp_enqueue_scripts', 'hlm_sports_scripts');

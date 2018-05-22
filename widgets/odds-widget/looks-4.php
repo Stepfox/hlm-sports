@@ -1,19 +1,24 @@
 	<div class="odds-widget">
+
+		<div class="odds-prev"> < </div> 
+		<div class="odds-next"> > </div>
+
 		<div class="odds-widget-bookmakers">
+
 			<div class="odds-sports-wrap">
 				<div class="odds-widget-sports">
-				<select>
+<!-- 				<select>
 				    <?php
 				       $tax_terms = get_terms('leagues', array('hide_empty' => '0'));      
 				       foreach ( $tax_terms as $tax_term ):  
 				          echo '<option value="'.$tax_term->name.'">'.$tax_term->name.'</option>';   
 				       endforeach;
 				    ?>
-				</select> 
+				</select>  -->
 				<img src="http://hlm-sports-betting.local/wp-content/themes/hlm/widgets/odds-widget/logos/world-cup.png">
 				</div>
 			</div>
-			<ul class="odds-widget-bookmakers-links">
+			<ul class="odds-widget-bookmakers-links slides">
 				<?php 
 
 		            $args1 = array(
@@ -50,7 +55,17 @@
 			$args = array(
 			    'posts_per_page' => 5,
 			    'post_type' => 'match',
-			    'post_status' => 'publish',   
+			    'post_status' => 'publish', 
+				'meta_key'			=> 'start_time',
+				'orderby'			=> 'meta_value',
+				'order'				=> 'ASC',
+		      'tax_query' => array(
+                array(
+                    'taxonomy' => 'leagues',
+                    'field' => 'slug',
+                    'terms' => $categories
+             	   )
+            	)
 			);
 
 		            $matches_query = new WP_Query($args);
@@ -94,9 +109,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="odds-widget-bookmakers">
+				<div class="odds-list" >
 					<?php if(get_field('winner_table')): ?>
-					<ul class="odds-widget-odds-list">
+					<ul class="odds-widget-odds-list slides">
 						<?php while(has_sub_field('winner_table')): 
 							$deezs = get_sub_field('bookmaker'); if(!empty(get_field('bookmaker_crawl_order', $deezs->ID))) { ?>
 						<li>
