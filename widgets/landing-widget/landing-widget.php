@@ -195,7 +195,7 @@ if($looks == 'landing1'){
         		$repeat_tooltip = $instance['tooltip'][$i];
         		$repeat_tracker = $instance['tracker'][$i];
         		$repeat_image = $instance['image'][$i];
-        		$custom_logo = $instance['custom_logo'][$i];
+        		$repeat_logo = $instance['custom_logo'][$i];
 			?>	
 			
 			<div class="row">
@@ -236,8 +236,8 @@ if($looks == 'landing1'){
 
 				<div class="image-part">
 
-					<input type="hidden" field="<?php echo $this->get_field_name( 'custom_logo' ); ?>" name="<?php echo $this->get_field_name( 'custom_logo' ); ?>[]" value="<?php echo $custom_logo;?>" class="widefat image_save">
-					<img class="image-preview" src="<?php echo $custom_logo;?>" width="100" />
+					<input type="hidden" field="<?php echo $this->get_field_name( 'custom_logo' ); ?>" name="<?php echo $this->get_field_name( 'custom_logo' ); ?>[]" value="<?php echo $repeat_logo;?>" class="widefat image_save">
+					<img class="image-preview" src="<?php echo $repeat_logo;?>" width="100" />
 					<input type= "button" class="button add_image_button" name="add_image_button" value="Image" />
 				</div>
 

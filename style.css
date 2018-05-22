@@ -611,7 +611,7 @@ Footer-------------------------------------------------------------
 .footer-gambleaware-logo a{display: inline;}
 .footer-gambleaware-text{    margin-bottom: 20px; text-align: center; font-size: 12px; line-height: 16px;}
 
-.footer-copyright{    line-height: 17px; font-size: 12px; font-weight: 400;   float: left;color:#FFF; text-transform:uppercase;}
+.footer-copyright{    line-height: 17px; font-size: 12px; font-weight: 400;   float: left;color:#FFF; }
 .footer-menu{}
 #footer .add-menu{padding:6px 0;color:#FFF;position:relative;}
 #footer .add-menu{padding:6px 0;color:#FFF;position:relative;    line-height: 50px;}
