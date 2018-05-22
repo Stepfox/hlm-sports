@@ -526,7 +526,7 @@ Logo-------------------------------------
 .site-logo-wrapper:after{top:0;left:0;background: #FFF;height: 100%;content:'';position: absolute;    box-shadow: 5px -2px 5px #000;transform: skew(-28deg);width: 100%;z-index: -1;}
 .site-logo-wrapper:before{    top: 0; left: -90vw; background: #FFF; height: 100%; content: ''; position: absolute; width: 100vw; z-index: -1;}
 .big-logo{float: left; width: 220px; height: 36px; padding-right: 30px; box-sizing: content-box;} 
-.big-logo img{     width: 305px; height: 36px;      max-width: 305px; } 
+.big-logo img{     width: 240px; height: 36px;      max-width: 240px; } 
 /*
 Top Navigation--------------------------------------
 */
@@ -606,7 +606,8 @@ Footer-------------------------------------------------------------
 #footer .content-social ul{}
 #footer .content-social li{float:left;margin-left:10px;}
 
-.footer-gambleaware-logo{text-align: center;}
+.footer-gambleaware-logo{text-align: center; }
+.footer-gambleaware-logo img{max-width:368px; }
 .footer-gambleaware-logo a{display: inline;}
 .footer-gambleaware-text{    margin-bottom: 20px; text-align: center; font-size: 12px; line-height: 16px;}
 
@@ -727,13 +728,15 @@ Odds widget
 
 
 .widget_hlm_sports_odds{background:#5a5859;}
+.text-editor-widget-content .widget_hlm_sports_odds{    margin-left: -20px;    width: calc(100% + 40px);}
+
 .odds-sports-wrap{float:left;background:#ccc;width:30%;border: 1px solid #FFF;position:relative;}
 .odds-widget-sports{color:#FFF;width:100%;float:left;line-height:80px;font-size:20px;text-align:center;}
 .odds-widget-sports select{width:50%;}
 .odds-widget-sports img{max-height:80px;max-width: 50%;}
 
 
-.odds-widget{width:100%;padding:10px;float:left;}
+.odds-widget{width:100%;padding:10px;float:left;position: relative;}
 
 
 .odds-widget-matches{width:100%;float:left;margin-top:20px;}
