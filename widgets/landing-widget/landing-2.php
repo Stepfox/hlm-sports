@@ -21,17 +21,6 @@
 			</div>
 		
 			<div class="landing-widget-review-content-wrap">
-				<div class="landing-widget-logo-wrap">
-					<a href="<?php echo get_permalink( $bookmaker_id); ?>">
-					<div class="landing-widget-logo bookmaker-background-wrap-<?php echo $bookmaker_id; ?>">		 
-						 <?php $image = get_field('logo_136x44', $bookmaker_id);					                  
-								if( $image ) {?>
-									<img src="<?php  echo $image['sizes']['hlm_sports_136x44']; ?>" alt="">  							 
-								<?php } ?>											
-					</div>
-					</a>	
-				</div>
-
 				<div class="landing-widget-bonus">
 					<?php echo $bonus[$i];	?>
 				</div>

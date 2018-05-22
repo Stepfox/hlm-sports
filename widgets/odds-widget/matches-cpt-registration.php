@@ -11,7 +11,7 @@ function add_crawler_options_page() {
 
 
 function crawler_options_function(){
-
+/*
 
         echo '<h2>Crawl Matches</h2>';
 ?>
@@ -52,6 +52,7 @@ if (isset($_POST) && !empty($_POST['crawl_odds']) ){
 
 }
 
+*/
 
 
 
@@ -76,13 +77,12 @@ if (isset($_POST) && !empty($_POST['crawl_odds']) ){
 
 
 
-
-        echo '<h2>Odds Portal</h2>';
+        echo '<h2>Odds api</h2>';
 
 
 ?>
             <form method="post">                    
-                <input  type="submit" class="button-secondary" name="checker_checker" value="<?php echo esc_attr('Timer Options'); ?>"/>
+                <input  type="submit" class="button-secondary" name="checker_checker" value="<?php echo esc_attr('Add Games and odds for the games'); ?>"/>
 
             <select name="pick_league" id="widget-layout-dropdown">
 
@@ -91,8 +91,6 @@ if (isset($_POST) && !empty($_POST['crawl_odds']) ){
                     '54a22a0cd443afef088b46db' => 'World Cup',
                     '54a229f8d443afef088b45b4' => 'Premiere League',
                     '54a229fad443afef088b45c9' => 'Bundesliga',
-                    'demo4' => 'Demo4',             
-                    'reset_widgets' => 'Blank Demo',
                     );
 
                 foreach ($options as $option => $name) {?>
@@ -107,13 +105,11 @@ if (isset($_POST) && !empty($_POST['crawl_odds']) ){
 
 <?php  
 
-if (isset($_POST) && !empty($_POST['checker_checker']) && !empty($_POST['pick_league'])){
-$pick_league = $_POST['pick_league'];
- our_own_api($pick_league);
+        if (isset($_POST) && !empty($_POST['checker_checker']) && !empty($_POST['pick_league'])){
+        $pick_league = $_POST['pick_league'];
+         our_own_api($pick_league);
 
-}
-
-
+        }
 
 
 
@@ -134,8 +130,9 @@ $pick_league = $_POST['pick_league'];
 
 
 
-        echo '<h2>Admin options</h2>';
-        echo '<h4>Remove All Matches</h4>';
+
+
+        echo '<h2>Remove All Matches</h2>';
 
 ?>
             <form method="post">                    
@@ -208,35 +205,6 @@ function match_post_type(){
 
 // Hook into the 'init' action
 add_action( 'init', 'match_post_type');
-
-
-
-
-//promotion company taxonomy
-// function taxonomy_sports() {
-//     register_taxonomy('sports', array('match' ), array(
-//         'hierarchical' => true,
-//         'labels' => array(
-//             'name' => esc_html__('Sport', 'hlm-sports'),
-//             'singular_name' => esc_html__('Sport', 'hlm-sports'),
-//             'search_items' => esc_html__('Search Sport', 'hlm-sports'),
-//             'all_items' => esc_html__('All Sports', 'hlm-sports'),
-//             'parent_item' => esc_html__('Sport', 'hlm-sports'),
-//             'parent_item_colon' => esc_html__('Sport:', 'hlm-sports'),
-//             'edit_item' => esc_html__('Edit Sport', 'hlm-sports'),
-//             'update_item' => esc_html__('Update Sport', 'hlm-sports'),
-//             'add_new_item' => esc_html__('Add New Sport', 'hlm-sports'),
-//             'new_item_name' => esc_html__('New Sport Name', 'hlm-sports'),
-//             'menu_name' => esc_html__('Sport', 'hlm-sports'),
-//             ),
-//         'rewrite' => array(
-//             'slug' => 'sports',
-//             'with_front' => false, 
-//             'hierarchical' => true 
-//             ),
-//         ));
-// }
-// add_action( 'init', 'taxonomy_sports');
 
 
 

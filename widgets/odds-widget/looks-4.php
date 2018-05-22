@@ -2,33 +2,15 @@
 		<div class="odds-widget-bookmakers">
 			<div class="odds-sports-wrap">
 				<div class="odds-widget-sports">
-					<select>
-					<option value="54a22a0cd443afef088b46db">
-						World Cup
-					</option>
-					<option value="54a22a10d443afef088b4719">
-						Friendly Internationals
-					</option>
-					<option value="54a229f8d443afef088b45b4">
-						Premier League
-					</option>
-					<option value="576243df1d142240108b471d">
-						Championship
-					</option>
-					<option value="54a229fad443afef088b45c9">
-						Bundesliga
-					</option>
-					<option value="54a229fcd443afef088b45f0">
-						Serie A
-					</option>
-					<option value="54a229f9d443afef088b45bc">
-						Ligue 1
-					</option>
-					<option value="576250f41d142264208b4795">
-						Primera Division
-					</option>
-					</select> 
-					<img src="http://hlm-sports-betting.local/wp-content/themes/hlm/widgets/odds-widget/logos/world-cup.png">
+				<select>
+				    <?php
+				       $tax_terms = get_terms('leagues', array('hide_empty' => '0'));      
+				       foreach ( $tax_terms as $tax_term ):  
+				          echo '<option value="'.$tax_term->name.'">'.$tax_term->name.'</option>';   
+				       endforeach;
+				    ?>
+				</select> 
+				<img src="http://hlm-sports-betting.local/wp-content/themes/hlm/widgets/odds-widget/logos/world-cup.png">
 				</div>
 			</div>
 			<ul class="odds-widget-bookmakers-links">
