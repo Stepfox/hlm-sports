@@ -347,7 +347,8 @@ function widget_scripts($hook) {
 			return;
 		}else{
 			wp_enqueue_style('hlm_editor_style', get_template_directory_uri() . '/css/hlm-text-editor.css');
-			wp_enqueue_script('hlm_editor_script', get_template_directory_uri().'/js/hlm-text-editor.js', null, null, true); 
+			wp_enqueue_script('hlm_editor_script', get_template_directory_uri().'/js/hlm-text-editor.js', null, null, true);
+			wp_enqueue_script('menu-image-upload-fields', get_stylesheet_directory_uri() . '/js/menu-image-upload-fields.js', array('jquery')); 
 		} 	
 }
 add_action('admin_enqueue_scripts', 'widget_scripts');

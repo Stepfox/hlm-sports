@@ -238,7 +238,7 @@ if($looks == 'landing1'){
 
 					<input type="hidden" field="<?php echo $this->get_field_name( 'custom_logo' ); ?>" name="<?php echo $this->get_field_name( 'custom_logo' ); ?>[]" value="<?php echo $repeat_logo;?>" class="widefat image_save">
 					<img class="image-preview" src="<?php echo $repeat_logo;?>" width="100" />
-					<input type= "button" class="button add_image_button" name="add_image_button" value="Image" />
+					<input type= "button" class="button add_image_custom_logo" name="add_image_custom_logo" value="Image" />
 				</div>
 
 
