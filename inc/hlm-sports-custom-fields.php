@@ -1,5 +1,4 @@
-<?php 
-
+<?php  
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
@@ -2606,6 +2605,63 @@ acf_add_local_field_group(array(
             'append' => '',
             'maxlength' => '',
         ),
+        array(
+            'key' => 'field_5b052a6cfe3cf',
+            'label' => 'New customer offer 18+ please gamble resposibly T&C apply.',
+            'name' => 'new_customer_offer',
+            'type' => 'text',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => 'New customer offer 18+ please gamble resposibly T&C apply.',
+            'placeholder' => '',
+            'prepend' => '',
+            'append' => '',
+            'maxlength' => '',
+        ),
+        array(
+            'key' => 'field_5b052a9dfe3d0',
+            'label' => 'Top payment options',
+            'name' => 'top_payment_options',
+            'type' => 'text',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => 'Top payment options:',
+            'placeholder' => '',
+            'prepend' => '',
+            'append' => '',
+            'maxlength' => '',
+        ),
+        array(
+            'key' => 'field_5b052ac7fe3d1',
+            'label' => 'Best Offer',
+            'name' => 'best_offer',
+            'type' => 'text',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => 'Best Offer',
+            'placeholder' => '',
+            'prepend' => '',
+            'append' => '',
+            'maxlength' => '',
+        ),
     ),
     'location' => array(
         array(
@@ -3252,7 +3308,29 @@ acf_add_local_field_group(array(
     'description' => '',
 ));
 
+acf_add_local_field_group(array(
+    'key' => 'group_5afd379222df0',
+    'title' => 'World Cup: Knockout Stage',
+    'fields' => false,
+    'location' => array(
+        array(
+            array(
+                'param' => 'post_type',
+                'operator' => '==',
+                'value' => 'post',
+            ),
+        ),
+    ),
+    'menu_order' => 0,
+    'position' => 'normal',
+    'style' => 'default',
+    'label_placement' => 'top',
+    'instruction_placement' => 'label',
+    'hide_on_screen' => '',
+    'active' => 1,
+    'description' => '',
+));
+
 endif;
 
-
-?>
+ ?>

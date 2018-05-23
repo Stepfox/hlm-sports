@@ -1,14 +1,14 @@
 	<li class="big-looks5">
 
 <div class="top-5-terms">
-	New customer offer 18+ please gamble resposibly T&C apply.
+	<?php the_field('new_customer_offer', 'option');  ?>
 </div>
 		<div class="top-5-logo-wrap">
 			
 
 			<div class="top-5-position-number">
 				<span><?php echo '#';echo ($i + 1);?></span>
-				<span>Best Offer</span>
+				<span><?php the_field('best_offer', 'option');  ?></span>
 			</div>
 			<a href="<?php echo get_permalink( $bookmaker_id); ?>">
 			<div class="top-5-logo">		 
@@ -52,7 +52,7 @@
 			<div class="top-5-review-content-wrap">
 				<div class="looks-5-content-wrap">
 					<div class="top-5-big-bonus">
-					Top payment options:
+					<?php the_field('top_payment_options', 'option');  ?>
 				</br>
 						<?php 
 
