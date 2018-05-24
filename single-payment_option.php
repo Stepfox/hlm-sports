@@ -24,7 +24,7 @@
                   <?php echo the_field( 'left_bonus' ); ?>
                 </span>
               </div>  
-              <a href="https://www.winningsportsbets.co.uk/deposit-bookmakers">
+              <a href="<?php the_field('best_bookmakers_link', 'option');  ?>">
                   <div class="pros-and-cons-bet-now">
                         <?php the_field('best_bookmakers', 'option');  ?>
                   </div>

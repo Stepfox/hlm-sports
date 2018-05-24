@@ -28,6 +28,7 @@
 						<?php
 
 						$bookmakers = new WP_Query(array(
+							'posts_per_page' => '5',
 							'post_type' => 'bookmaker',
 							'meta_query' => array(
 								array(

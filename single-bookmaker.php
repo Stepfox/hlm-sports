@@ -206,7 +206,10 @@ if( $payment_options ): ?>
             <strong><?php echo the_field('telephone_number', 'option');?></strong> <?php   echo the_field( 'support_phone' ); ?>  
           </div>
           <div class="support-email">
-            <strong><?php echo the_field('email', 'option');?></strong> <?php echo the_field( 'support_email' ); ?>
+            <strong><?php echo the_field('email', 'option');?></strong> 
+              <a href="mailto:<?php echo the_field( 'support_email' ); ?>">
+                <?php echo the_field( 'support_email' ); ?>
+              </a>
           </div>
           <div class="support-open-hours">
             <strong><?php echo the_field('open_hours', 'option');?></strong> <?php echo the_field( 'support_open_hours' ); ?>

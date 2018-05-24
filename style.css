@@ -216,6 +216,10 @@ header{  width: 100%;margin-bottom:10px;}
 
 .hlm-sports-widget{padding:0 5px 10px;box-sizing: border-box;}
 .widget{float:left;width:100%;border-radius: 2px; overflow: hidden;box-sizing: border-box;background: #FFF; }
+
+.text-editor-widget-content .widget{}
+
+
 .widget-title h2{    position: relative;
     background: #2f2f2f;
     width: 100%;
@@ -233,7 +237,7 @@ color:#FFF;
 .post-page-area{float:left;}
 .post-page-area .hlm-sports-widget{float:left;width:100%;}
 .post-content {padding:20px;margin-bottom:10px;}
-.post-content a, .text-editor-widget-content a{text-decoration: underline;color:#008000;font-weight:600;}
+.post-content a, .text-editor-widget-content a{text-decoration: underline;color:#006ec2;font-weight:600;}
 
 .one-part { width: 25%; }
 .two-parts { width: 49.9%; }
@@ -262,6 +266,7 @@ color:#FFF;
 .top-page-area .hlm-sports-widget{float:left;padding: 0;}
 .top-page-area .widget-title h2{text-align: right;}
 .pros-and-cons{background:transparent;}
+.pros-and-cons-logo{text-align: center;}
 .pros-and-cons .three-parts{position: relative;min-height:260px;}
 .pros-and-cons-right{padding:0px 0px 20px 20px;color:#FFF;text-align: right;width:33%;right:0;top:0;    background: linear-gradient(to left,#000000,rgba(0,0,0,0));position: absolute;height: 100%;}
 .pros-and-cons-left{padding:0px 80px 20px 20px;color:#FFF;width:33%;left:0;top:0;position: absolute;height: 100%;    z-index: 1;}
@@ -299,8 +304,10 @@ li.thumb-down:before{background: #d62a1c;}
 .support-details{padding:20px;}
 .support-content {margin-bottom:20px;}
 .support-customer-lang {margin-bottom:10px;width:50%;float: left;}
+.support-customer-lang img{border-radius: 3px;margin-right: 2px;}
 .support-phone {margin-bottom:10px;width:50%;float: left;}
 .support-email {margin-bottom:10px;width:50%;float: left;}
+.support-email a{color:#006ec2;}
 .support-open-hours {margin-bottom:10px;width:50%;float: left;}
 
 .payment-section{margin:10px 0 0;}
@@ -352,13 +359,13 @@ li.thumb-down:before{background: #d62a1c;}
 .widget_payment_options_hlm_sports .read-more {position: absolute; font-weight: 600; right: 20px; bottom: 20px; padding: 5px 25px; background: #358d53; border-bottom: 3px solid #206539; font-size: 15px; text-transform: uppercase; color: #FFF; } 
 .widget_payment_options_hlm_sports .archive-payment-icon{ width:166px; float:left;z-index: 1; position: relative; background: #000; padding: 10px 20px 10px 10px;background: #d9d9d9;}
 .widget_payment_options_hlm_sports .archive-payment-icon:before {content: ''; width:65px; height: 100%; position: absolute; background: #d9d9d9; transform: skew(-28deg); top: 0; right:-20px; z-index: -1; } 
-.widget_payment_options_hlm_sports .archive-payment-icon img{background:#FFF;border-radius:3px;overflow:hidden;}
+.widget_payment_options_hlm_sports .archive-payment-icon img{background:#FFF;border-radius:3px;overflow:hidden;padding:6px;}
 
 .payment-icon-content{    margin-left: 50px;font-size:12px;line-height: 18px;margin-top:5px;
     width: calc(100% - 224px);float: left;position: relative;padding-bottom:20px;}
 .payment-icon-read-review{    position: absolute; right: 20px; bottom:0;}
 .payment-icon-read-review a {font-size: 12px; color: #3271ae; text-transform: capitalize; font-weight: 600; }
-.payment-icon-bookmakers{border:none; position: relative; background: #2f2f2f; width: 100%; float: left; line-height: 40px; font-size: 16px; padding: 0 20px; font-weight: 600; color: #FFF; }
+.payment-icon-bookmakers{border:none; position: relative; background: #2f2f2f; width: 100%; float: left; line-height: 40px; font-size: 14px; padding: 0 20px; font-weight: 400; color: #FFF; }
 .payment-icon-bookmakers ul{      vertical-align: middle;  text-align: left;display: inline-block;}
 .payment-icon-bookmakers ul li{border:none;width: auto;float:left;margin: 0 5px;max-width: 95px;border-radius: 2px;overflow: hidden;line-height: normal;}
 
@@ -440,17 +447,28 @@ li.thumb-down:before{background: #d62a1c;}
 }
 
 
-
-
+.post-content tr {
+    background-image: linear-gradient(170deg, #b5f7c0, #4a823c, #2e693d, #355f33, #1d1d1d);
+}
+.post-content td {
+    border: none;
+    background: none;
+    box-shadow: inset 0 0 0px 1px #0202023b;
+    padding: 2px 15px;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 7px 0;
+    color: #FFF;
+}
 
 /*Universal Elements*/
 
 .star-rating {margin: 5px 0; text-align: center; font-size: 20px; color: #f7dd00; }
 
 
-.full-star{display:inline-block;background: url(images/full-star.png) no-repeat center;opacity: 1; right: 0;height: 20px;width: 20px;}
-.half-star{display:inline-block;background: url(images/half-star.png) no-repeat center;opacity: 1; right: 0;height: 20px;width: 20px;}
-.empty-star{display:inline-block;background: url(images/empty-star.png) no-repeat center;opacity: 1; right: 0;height: 20px;width: 20px;}
+.full-star{background: url(images/gold-star.svg) no-repeat center;background-size:20px;display:inline-block;opacity: 1; right: 0;height: 20px;width: 20px;}
+.half-star{background: url(images/half-star.png) no-repeat center;background-size:20px;display:inline-block;opacity: 1; right: 0;height: 20px;width: 20px;}
+.empty-star{background: url(images/empty-star.png) no-repeat center;background-size:20px;display:inline-block;opacity: 1; right: 0;height: 20px;width: 20px;}
 
 
 .bonus-with-check{text-align:left;width:25%;float:left;text-align: left;font-size:12px;line-height: normal;vertical-align: middle;line-height: 60px;padding:0;padding-left:20px;}
@@ -605,9 +623,10 @@ Footer-------------------------------------------------------------
 #footer .content-social{padding:13px;float:right;}
 #footer .content-social ul{}
 #footer .content-social li{float:left;margin-left:10px;}
+#footer .content-social li img{max-width:30px;}
 
-.footer-gambleaware-logo{text-align: center; }
-.footer-gambleaware-logo img{max-width:368px; }
+.footer-gambleaware-logo{text-align: center;margin-top:20px; }
+.footer-gambleaware-logo img{max-width:250px; }
 .footer-gambleaware-logo a{display: inline;}
 .footer-gambleaware-text{    margin-bottom: 20px; text-align: center; font-size: 12px; line-height: 16px;}
 

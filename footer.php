@@ -6,7 +6,7 @@
 <div class="footer-color-wrap">	
 	<div class="footer-wrap">
 		<div class="footer-logo">
-			<a href="#">
+			<a href="<?php echo esc_url(home_url('/')); ?>">
 				<?php $image = get_field('footer_logo', 'option');                            
 	            if( $image ) {?>
 	              <img src="<?php  echo $image['url']; ?>" alt="">                
@@ -17,12 +17,12 @@
 		<div class="content-social">
 			<ul><li>
 				<a href="<?php the_field('fb_link', 'option'); ?>" target="_blank">
-					<img src="<?php echo get_template_directory_uri() . '/images/fb-footer.png'?>">
+					<img src="<?php echo get_template_directory_uri() . '/images/facebook-logo.svg'?>">
 				</a>
 			</li> 
 				<li>
 					<a href="<?php the_field('twitter_link', 'option'); ?>" target="_blank">
-						<img src="<?php echo get_template_directory_uri() . '/images/twitter-footer.png'?>">
+						<img src="<?php echo get_template_directory_uri() . '/images/twitter.svg'?>">
 					</a>
 				</li>
 			</ul>

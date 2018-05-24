@@ -13,7 +13,7 @@
 	      </div>
 
 		<div class="payment-icon-content">
-			<?php echo wp_trim_words( $tooltip[$i], 30 ); ?>
+			<?php echo $tooltip[$i]; ?>
 		</div>
 	</div>
 <div class="payment-icon-bookmakers">
