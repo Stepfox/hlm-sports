@@ -54,12 +54,6 @@
 
 					<div class="blog-post-date-author">
 
-						<div class="blog-post-author">
-							<?php the_author_posts_link(); ?>
-						</div>
-						<!--blog-post-author-->
-
-
 						<div class="blog-post-date">
 							<?php echo esc_html(get_the_date()); ?>
 						</div>

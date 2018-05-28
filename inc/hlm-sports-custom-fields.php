@@ -2749,6 +2749,25 @@ acf_add_local_field_group(array(
             'append' => '',
             'maxlength' => '',
         ),
+        array(
+            'key' => 'field_5b0bed93f51c1',
+            'label' => 'See the Best Betting Site Reviews',
+            'name' => 'see_the_best_betting_site_reviews',
+            'type' => 'text',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => 'See the Best Betting Site Reviews',
+            'placeholder' => '',
+            'prepend' => '',
+            'append' => '',
+            'maxlength' => '',
+        ),
     ),
     'location' => array(
         array(
@@ -3852,6 +3871,7 @@ acf_add_local_field_group(array(
 ));
 
 endif;
+
 
 
 ?>

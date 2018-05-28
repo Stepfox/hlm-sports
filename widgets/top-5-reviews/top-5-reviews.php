@@ -103,6 +103,17 @@ if($looks == 'looks1'){
 
 </ul>
 
+<?php if($looks == 'looks1'){ ?>
+<div class="see-all-bookmakers-wrap">
+	<a href="<?php echo get_post_type_archive_link( 'bookmaker' ); ?>">
+	<div class="see-all-bookmakers-button">
+		<?php the_field('see_the_best_betting_site_reviews', 'option');  ?>  &nbsp; &nbsp; <span>&#8594;</span>
+	</div>
+	</a>
+</div>
+<?php } ?>
+
+
 </div>
 
 
