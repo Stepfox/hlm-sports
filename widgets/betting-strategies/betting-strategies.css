@@ -2,12 +2,12 @@
 Table contents widget
 */
 .widget_hlm_sports_betting_strategies{background: transparent;}
-.betting-strategies{box-sizing: border-box; float: left; width: 100%;}
-.betting-strategies-item{width: 100%; list-style: none; float: left; margin: 0; overflow:hidden;transition: all 0.5s;border-top: 1px solid #ebebeb;}
+.betting-strategies{box-sizing: border-box; float: left; width: 100%;    background: #d9d9d9;}
+.betting-strategies-item{width: 100%; list-style: none; float: left; margin: 0; overflow:hidden;transition: all 0.5s;}
 .betting-strategies-item li {    position: relative; width: 100%; float: left; margin: 0 0 2px; font-size: 14px; line-height: 14px; background: #FFF;}
-.betting-strategies-item li a{text-decoration: none;font-size:13px;float:left;width:50%;line-height: 50px;text-align: center;}
-.betting-strategies-item li .menu-icon{width:50%;float:left;background: #358d53;position: relative;overflow: hidden;height: 50px;}
-.betting-strategies-item li .menu-icon:before{content: ''; width: 50px; height: 50px; position: absolute; background: #FFF; transform: skew(-28deg); top: 0; right: -35px;        box-shadow: 0 0 5px 5px #7fd898, 0 0 0 10px #4cb469; }
+.betting-strategies-item li a{padding-left:10px;text-decoration: none;font-size:13px;float:left;width:60%;line-height: 50px;text-align: left;}
+.betting-strategies-item li .menu-icon{width:40%;float:left;background: #358d53;position: relative;overflow: hidden;height: 50px;}
+.betting-strategies-item li .menu-icon:before{content: ''; width: 50px; height: 50px; position: absolute; background: #FFF; transform: skew(-28deg); top: 0; right: -35px; }
 .betting-strategies-item li .menu-icon img{margin-left:20px;margin-top:5px;max-width: 40px;}
 
 

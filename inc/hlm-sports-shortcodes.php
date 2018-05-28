@@ -42,6 +42,23 @@ add_shortcode( 'hlm_sports_content_looks3', 'hlm_sports_content_looks3' );
 
 
 
+function hlm_sports_content_images($atts) {
+	$images = shortcode_atts( array(
+    'image1' => '',
+    'image2' => '',
+	), $atts );
+
+	return '<div class="content-images-shortcode">
+				<img src="' . $images['image1'] . '" />
+				<img src="' . $images['image2'] . '" />
+			</div>';
+}
+add_shortcode( 'hlm_sports_content_images', 'hlm_sports_content_images' );
+
+
+
+
+
 
 
 ?>

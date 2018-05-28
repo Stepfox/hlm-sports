@@ -40,6 +40,14 @@ $(window).scroll(function(event){
 
 });
 
+$(".top-menu ul > li").mouseover(function(){
+   $(this).find(".sub-menu").stop(true, true).delay(200).slideDown(200);
+});
+
+$(".top-menu ul > li").mouseout(function(){
+   $(this).find(".sub-menu").stop(true, true).delay(200).slideUp(200);
+});
+
 
     //sidebar height
  if ($('.one-part.post-page-area .widget').length) {  

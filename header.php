@@ -76,7 +76,6 @@
 			<!--main-nav-->
 			<label class="search-menu">
 			<input type="checkbox" id="search-switch" />
-			
 			<div class="search-box">
 				<?php get_search_form(); ?>
 			</div>
