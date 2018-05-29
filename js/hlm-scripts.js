@@ -20,20 +20,20 @@ jQuery(document).ready(function($) {
     });
 
 // Header 
-var lastScrollTop = 0;
+var lastScrollTop = 50;
 $(window).scroll(function(event){
    var st = $(this).scrollTop();
    if (st > lastScrollTop){
        // downscroll codeconso
 
        $('#nav-wrapper').slideUp(100);
-       $('.hlm-sports-widget.fixed-widget').addClass('upmenu');
+       $('.one-part.post-page-area .hlm-sports-widget:last-child').addClass('upmenu');
 
    } else {
       // upscroll code
 
        $('#nav-wrapper').slideDown(100);
-       $('.hlm-sports-widget.fixed-widget').removeClass('upmenu');
+       $('.one-part.post-page-area .hlm-sports-widget:last-child').removeClass('upmenu');
 
    }
    lastScrollTop = st;
@@ -76,7 +76,7 @@ $(".top-menu ul > li").mouseout(function(){
     //fixed-sidebar-last widget
     $(window).load(function() {
 
-            var widgetaboveHeight = $('.one-part.post-page-area .hlm-sports-widget:last-child ').offset().top - ($('#wpadminbar').height() + 113);
+            var widgetaboveHeight = $('.one-part.post-page-area .hlm-sports-widget:last-child ').offset().top - ($('#wpadminbar').height() - 25);
 
             var primaryheight = $('.three-parts.post-page-area').height();
             var secondaryheight = 0;
@@ -89,7 +89,7 @@ $(".top-menu ul > li").mouseout(function(){
                     $('.one-part.post-page-area .fixed-widget').css('position', 'relative');
                     $('.one-part.post-page-area .hlm-sports-widget:last-child ').css('top', '0');
                 } else {
-                    if ($(window).scrollTop() > widgetaboveHeight ) {
+                    if ($(window).scrollTop() > widgetaboveHeight - 125 ) {
                         $('.one-part.post-page-area .hlm-sports-widget:last-child').addClass('fixed-widget');
                     } else {
                         $('.one-part.post-page-area .hlm-sports-widget:last-child ').removeClass('fixed-widget');

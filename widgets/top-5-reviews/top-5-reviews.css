@@ -46,7 +46,7 @@ Top 5 Reviews Widget------------------------------------------------------------
 .looks1 .top-5-review-image-wrap:hover .top-5-review-content-wrap{max-height: 100%;}
 .looks1 .top-5-tooltip span{    width: 100%; text-align: center; float: left; font-size: 14px; margin: 10px 0 20px;font-weight: 800;}
 .looks1 .top-5-review-bet-now{border-radius: 0;max-width:50%;width:50%;padding:0 10px;text-align: center;white-space: nowrap;}
-.looks1 .top-5-review-link{max-width:50%;width:50%;text-align: left;}
+.looks1 .top-5-review-link{max-width:50%;width:50%;text-align: left;    padding-left: 15px;}
 .looks1 .top-5-review-bet-now:active{margin-top:5px;}
 .looks1 .see-all-bookmakers-wrap{float:left;width:100%;text-align: center;margin:20px 0;}
 .looks1 .see-all-bookmakers-button {display: inline-block; font-weight: 400; padding: 10px 15px; background: #358d53; border-bottom: 3px solid #206539; font-size: 18px;color: #FFF; width: auto; }

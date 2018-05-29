@@ -246,10 +246,10 @@ color:#FFF;
 .full-parts{ width:99.9%; }
 #secondary .one-part, #secondary .two-parts, #secondary .three-parts, #secondary .four-parts{width:100%;}
 
-.hlm-sports-widget.fixed-widget { position: fixed; top: 75px;margin-top:10px; transition:all 0.15s;}
-.admin-bar .hlm-sports-widget.fixed-widget { top: 105px; }
-.admin-bar .hlm-sports-widget.fixed-widget.upmenu{top:70px;}
-.hlm-sports-widget.fixed-widget.upmenu{top:40px;}
+.hlm-sports-widget.fixed-widget { position: fixed; top: 107px;margin-top:10px; transition:all 0.15s;}
+.admin-bar .hlm-sports-widget.fixed-widget { top: 141px; }
+.admin-bar .hlm-sports-widget.fixed-widget.upmenu{top:90px;}
+.hlm-sports-widget.fixed-widget.upmenu{top:60px;}
 
 
 .page-with-featured-image .top-page-area img{  width: 100%;}
