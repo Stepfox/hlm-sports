@@ -309,6 +309,7 @@ include( get_template_directory().'/inc/world-cup-knockout.php' );
 include(get_template_directory()."/widgets/text-editor-widget/text-editor-widget.php");
 include(get_template_directory()."/widgets/top-5-reviews/top-5-reviews.php");
 include(get_template_directory()."/widgets/faq-widget/faq-widget.php");
+include(get_template_directory()."/widgets/related-widget/related-widget.php");
 include(get_template_directory()."/widgets/landing-widget/landing-widget.php");
 include(get_template_directory()."/widgets/odds-widget/odds-widget.php");
 include(get_template_directory()."/widgets/latest-articles/latest-articles.php");

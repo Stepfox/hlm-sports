@@ -3,6 +3,11 @@
 			<div class="top-5-position-number">
 				<?php echo ($i + 1);?>
 			</div>
+
+			<div class="mobile-star-rating">
+				<?php hlm_sports_get_star_rating(get_field('overall_rating', $bookmaker_id));?>
+			</div>
+
 			<a href="<?php echo get_permalink( $bookmaker_id); ?>">
 			<div class="top-5-logo bookmaker-background-wrap-<?php echo $bookmaker_id; ?>">		 
 				 <?php $image = get_field('logo_136x44', $bookmaker_id);					                  

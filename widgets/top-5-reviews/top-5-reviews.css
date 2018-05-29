@@ -51,6 +51,9 @@ Top 5 Reviews Widget------------------------------------------------------------
 .looks1 .see-all-bookmakers-wrap{float:left;width:100%;text-align: center;margin:20px 0;}
 .looks1 .see-all-bookmakers-button {display: inline-block; font-weight: 400; padding: 10px 15px; background: #358d53; border-bottom: 3px solid #206539; font-size: 18px;color: #FFF; width: auto; }
 .looks1 .see-all-bookmakers-button:active {border-bottom: 1px solid #206539; background: #358d53; border-right: 1px solid #206539; box-shadow: 0px 0px 0 -10px #f67c01; text-shadow: 1px 0 0 #9c9c9c; margin-top: 2px; }
+.looks1 .mobile-star-rating{   pointer-events: none; float: left; display: none; width: 80%; position: absolute;}
+.looks1 .mobile-star-rating .star-rating{margin:3px 0;}
+.looks1 .mobile-star-rating .full-star, .looks1 .mobile-star-rating .empty-star, .looks1 .mobile-star-rating .half-star{background-size:22px;width: 8%;height: 22px;}
 
 .looks2 .top-5-tooltip{text-align:center;height:0;overflow: hidden;float:left;font-size:12px;line-height: 14px;transition:all 0.8s;position: relative;bottom:200px;opacity: 0;}
 .looks2 .top-5-review-image-wrap:hover .top-5-tooltip{height:auto;bottom:0px;margin:10px 0 ;opacity: 1;}

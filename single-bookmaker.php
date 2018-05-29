@@ -3,7 +3,7 @@
   <div class="four-parts hlm-sports-widget top-page-area">
     <div class="widget-title">
       <h2>
-      <?php the_field('pros_and_cons', 'option');  ?>
+      <span><?php the_field('pros_and_cons', 'option');  ?></span>
       </h2>
     </div>
 
