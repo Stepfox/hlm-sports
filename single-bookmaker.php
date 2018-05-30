@@ -135,32 +135,21 @@ if( $payment_options ): ?>
 
 
 
-
-
   <div class="three-parts hlm-sports-widget post-page-area">
         <nav>
+          <?php if(get_field('content_target_menu')): ?>
           <ul>
+            <?php while(has_sub_field('content_target_menu')): 
+
+              if(!empty(get_sub_field('menu_item_name'))){      ?>
             <li>
-              <a href="#">
-                Content
+              <a href="<?php the_sub_field('target'); ?>">
+                <?php the_sub_field('menu_item_name'); ?>
               </a>
             </li>
-            <li>
-              <a href="#">
-                Content
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Content
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Content
-              </a>
-            </li>
+            <?php } endwhile; ?>
           </ul>
+          <?php endif; ?>
         </nav>
         <div class="post-content widget">
 

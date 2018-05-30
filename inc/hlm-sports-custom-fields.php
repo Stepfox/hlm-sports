@@ -1221,6 +1221,89 @@ acf_add_local_field_group(array(
 ));
 
 acf_add_local_field_group(array(
+    'key' => 'group_5b0e915cc5df3',
+    'title' => 'Bookmakers: Content Target Menu',
+    'fields' => array(
+        array(
+            'key' => 'field_5b0e917b96081',
+            'label' => 'Content Target Menu',
+            'name' => 'content_target_menu',
+            'type' => 'repeater',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'collapsed' => '',
+            'min' => 1,
+            'max' => 0,
+            'layout' => 'table',
+            'button_label' => '',
+            'sub_fields' => array(
+                array(
+                    'key' => 'field_5b0e918c96082',
+                    'label' => 'Menu Item Name',
+                    'name' => 'menu_item_name',
+                    'type' => 'text',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                    'maxlength' => '',
+                ),
+                array(
+                    'key' => 'field_5b0e921b96083',
+                    'label' => 'Target',
+                    'name' => 'target',
+                    'type' => 'text',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                    'maxlength' => '',
+                ),
+            ),
+        ),
+    ),
+    'location' => array(
+        array(
+            array(
+                'param' => 'post_type',
+                'operator' => '==',
+                'value' => 'bookmaker',
+            ),
+        ),
+    ),
+    'menu_order' => 0,
+    'position' => 'normal',
+    'style' => 'default',
+    'label_placement' => 'top',
+    'instruction_placement' => 'label',
+    'hide_on_screen' => '',
+    'active' => 1,
+    'description' => '',
+));
+
+acf_add_local_field_group(array(
     'key' => 'group_5a89c29b47895',
     'title' => 'Bookmakers: Rating',
     'fields' => array(
@@ -3871,7 +3954,5 @@ acf_add_local_field_group(array(
 ));
 
 endif;
-
-
 
 ?>

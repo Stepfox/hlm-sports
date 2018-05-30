@@ -103,7 +103,6 @@ if (!class_exists('Widget_Shortcode')) {
 
 
 
-
 //svg support
 function add_file_types_to_uploads($file_types){
 	$new_filetypes = array();

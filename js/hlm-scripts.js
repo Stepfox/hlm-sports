@@ -73,6 +73,15 @@ $(".top-menu ul > li").mouseout(function(){
         }, 200);
     });
 
+    $(".post-page-area nav a").click(function(e) {
+        e.preventDefault();
+        var aid = $(this).attr("href");
+        $('html,body').animate({scrollTop: $(aid).offset().top - 200},'slow');
+    });
+
+
+
+
     //fixed-sidebar-last widget
     $(window).load(function() {
 

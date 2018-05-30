@@ -43,6 +43,10 @@
 					<?php echo $tooltip[$i];	?>
 
 				</div>
+
+
+			</div>
+	<div class="bookmakers-links-wrap">			
 				<div class="top-5-review-link">
 					<a href="<?php echo get_permalink( $bookmaker_id); ?>">
 						<?php the_field('review', 'option');  ?>
@@ -56,8 +60,6 @@
 				<div class="top-5-rules-link">
 					<?php the_field('t&c_apply', 'option');  ?>
 				</div>
-
-
-			</div>
+	</div>
 		</div>
 	</li>
