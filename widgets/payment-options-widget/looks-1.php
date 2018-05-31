@@ -21,14 +21,13 @@
 	</div>
 <div class="payment-icon-bookmakers">
 			<span>
-				<?php the_field('recomended_sportsbook', 'option');  ?>
+				Recomended Sportsbook
 			</span>
 
 
 						<?php
 
 						$bookmakers = new WP_Query(array(
-							'posts_per_page' => '5',
 							'post_type' => 'bookmaker',
 							'meta_query' => array(
 								array(

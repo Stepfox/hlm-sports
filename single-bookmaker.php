@@ -3,7 +3,7 @@
   <div class="four-parts hlm-sports-widget top-page-area">
     <div class="widget-title">
       <h2>
-      <span><?php the_field('pros_and_cons', 'option');  ?></span>
+      <?php the_field('pros_and_cons', 'option');  ?>
       </h2>
     </div>
 
@@ -30,10 +30,10 @@
                   <?php echo the_field( 'left_bonus' ); ?>
                 </span>
               </div>  
-              <div class="pros-and-cons-terms">               
-                <?php the_field('terms_apply_to_all_bonus_offers', 'option');  ?>
+              <div class="pros-and-cons-terms">
+                Terms Apply to all bonus offers
                 </br>
-                <?php the_field('advertising_disclosure', 'option');  ?>
+                Advertising disclosure
               </div>  
           </div>
 
@@ -135,21 +135,32 @@ if( $payment_options ): ?>
 
 
 
+
+
   <div class="three-parts hlm-sports-widget post-page-area">
         <nav>
-          <?php if(get_field('content_target_menu')): ?>
           <ul>
-            <?php while(has_sub_field('content_target_menu')): 
-
-              if(!empty(get_sub_field('menu_item_name'))){      ?>
             <li>
-              <a href="<?php the_sub_field('target'); ?>">
-                <?php the_sub_field('menu_item_name'); ?>
+              <a href="#">
+                Content
               </a>
             </li>
-            <?php } endwhile; ?>
+            <li>
+              <a href="#">
+                Content
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Content
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Content
+              </a>
+            </li>
           </ul>
-          <?php endif; ?>
         </nav>
         <div class="post-content widget">
 
@@ -195,10 +206,7 @@ if( $payment_options ): ?>
             <strong><?php echo the_field('telephone_number', 'option');?></strong> <?php   echo the_field( 'support_phone' ); ?>  
           </div>
           <div class="support-email">
-            <strong><?php echo the_field('email', 'option');?></strong> 
-              <a href="mailto:<?php echo the_field( 'support_email' ); ?>">
-                <?php echo the_field( 'support_email' ); ?>
-              </a>
+            <strong><?php echo the_field('email', 'option');?></strong> <?php echo the_field( 'support_email' ); ?>
           </div>
           <div class="support-open-hours">
             <strong><?php echo the_field('open_hours', 'option');?></strong> <?php echo the_field( 'support_open_hours' ); ?>

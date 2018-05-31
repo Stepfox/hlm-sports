@@ -10,9 +10,11 @@
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <?php wp_head(); ?>
 
-<?php //$scripts = get_field('scripts', 'option'); eval( $scripts );  ?>
-
-
+<?php if (is_home()){ ?>
+<script src="https://zz.connextra.com/dcs/tagController/tag/4b14c6edf5e6/homepage" async defer></script>
+<?php }else{ ?>
+<script src="https://zz.connextra.com/dcs/tagController/tag/4b14c6edf5e6/<?php $post_slug = get_post_field( 'post_name', get_post() ); echo $post_slug;?>" async defer></script>
+<?php } ?>	
 </head>
 
 <body <?php body_class(); ?>>
@@ -36,10 +38,7 @@
 				</div>
 				<div class="mobile-logo">
 					<a href="<?php echo esc_url(home_url('/')); ?>">
-					<?php $image = get_field('mobile_logo', 'option');                            
-		            if( $image ) {?>
-		              <img src="<?php  echo $image['url']; ?>" alt="">                
-		            <?php } ?> 
+						<img src="<?php echo get_template_directory_uri() . '/images/mob-logo.png'?>"/>
 					</a>
 				</div>
 				<!--big-logo-->
@@ -76,6 +75,7 @@
 			<!--main-nav-->
 			<label class="search-menu">
 			<input type="checkbox" id="search-switch" />
+			
 			<div class="search-box">
 				<?php get_search_form(); ?>
 			</div>

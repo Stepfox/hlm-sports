@@ -7,8 +7,6 @@
 
 <main id="main" class="category-page">
 
- <div class="three-parts post-page-area hlm-sports-widget">
-
   <div class="four-parts hlm-sports-widget top-page-area">
 
 	<ul>
@@ -23,7 +21,7 @@
 					<div class="blog-post-image">
 						<?php if (  (function_exists('has_post_thumbnail')) && (has_post_thumbnail())  ) { ?>
 
-						<?php the_post_thumbnail('hlm_sports_900x260'); ?>
+						<?php the_post_thumbnail('hlm_sports_232x310'); ?>
 
 						<?php } ?>
 					</div>
@@ -129,12 +127,8 @@
       endif;
     ?>
 	</ul>
-		<div class="pagination pagination-load-more auto-load">
-			<?php next_posts_link('Load More', '' ); ?>
-		</div>
-		<!--pagination-->
 	</div>
-
+	<?php hlm_sports_pagination(); ?>
       </div>
   </div>
 

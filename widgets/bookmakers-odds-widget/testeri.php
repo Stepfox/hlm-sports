@@ -88,7 +88,7 @@ function lunar_magazine_prearange(){
 
 <?php 
 if (isset($_POST) && !empty($_POST['preset1'])){
-            $img = lunar_demo_image_upload( $bloginfo.'/images/hlm_demo_0.jpg' );
+            $img = lunar_demo_image_upload( $bloginfo.'/images/demo-posts/stepfox_demo_0.jpg' );
 
             for ($i=0; $i < 30; $i++) { 
 

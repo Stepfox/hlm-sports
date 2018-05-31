@@ -86,9 +86,8 @@ if( function_exists('acf_add_options_page') ) {
 	}
 
 
-if (!class_exists('Widget_Shortcode')) {
-	include( get_stylesheet_directory() . '/plugins/widget-shortcode/init.php' );
-}
+
+// include( get_stylesheet_directory() . '/plugins/widget-shortcode/init.php' );
 
 
 
@@ -103,14 +102,15 @@ if (!class_exists('Widget_Shortcode')) {
 
 
 
-//svg support
-function add_file_types_to_uploads($file_types){
-	$new_filetypes = array();
-	$new_filetypes['svg'] = 'image/svg+xml';
-	$file_types = array_merge($file_types, $new_filetypes );
-	return $file_types;
-}
-add_action('upload_mimes', 'add_file_types_to_uploads');
+
+
+
+
+
+
+
+
+
 
 
 
@@ -263,7 +263,6 @@ function hlm_sports_scripts() {
 		wp_enqueue_script('hlm_sports_smoothscroll', get_template_directory_uri() . '/js/smoothscroll.js', array('jquery'));
 
 		// wp_enqueue_style('hlm_sports_responsive', get_template_directory_uri() . '/css/responsive.css');
-		wp_enqueue_script('flexslider-min', get_template_directory_uri() . '/js/jquery.flexslider-min.js', array('jquery'));
 		wp_enqueue_script('hlm_sports_scripts', get_template_directory_uri() . '/js/hlm-scripts.js', array('jquery'));
 }
 add_action('wp_enqueue_scripts', 'hlm_sports_scripts');
@@ -276,31 +275,10 @@ include( get_template_directory().'/inc/menu-image-upload-fields-menu-walker.php
 include( get_template_directory().'/inc/bookmakers-cpt-registration.php' );
 include( get_template_directory().'/inc/hlm-sports-custom-fields.php' );
 include( get_template_directory().'/inc/hlm-sports-shortcodes.php' );
-
-
-include( get_template_directory().'/inc/world-cup-knockout.php' );
-
-
-
-// include( get_template_directory().'/inc/widget-presets/widget-presets.php' );
-// include( get_template_directory().'/inc/widget-presets/widget-presets-func.php' );
-// include( get_template_directory().'/inc/widget-presets/widget-presets-save-func.php' );
-// include( get_template_directory().'/inc/widget-presets/widget-presets-save-templates-options.php' );
-
-
-//Odds Widget
- include( get_template_directory().'/widgets/odds-widget/matches-cpt-registration.php' );
- //include( get_template_directory().'/widgets/odds-widget/testeri.php' );
- include( get_template_directory().'/widgets/odds-widget/odds-custom-fields.php' );
- include( get_template_directory().'/widgets/odds-widget/matches-crawl.php' );
- include( get_template_directory().'/widgets/odds-widget/simplehtmldom.php' );
-
-
-
-
-
-
-
+include( get_template_directory().'/inc/widget-presets/widget-presets.php' );
+include( get_template_directory().'/inc/widget-presets/widget-presets-func.php' );
+include( get_template_directory().'/inc/widget-presets/widget-presets-save-func.php' );
+include( get_template_directory().'/inc/widget-presets/widget-presets-save-templates-options.php' );
 
 
 
@@ -308,7 +286,6 @@ include( get_template_directory().'/inc/world-cup-knockout.php' );
 include(get_template_directory()."/widgets/text-editor-widget/text-editor-widget.php");
 include(get_template_directory()."/widgets/top-5-reviews/top-5-reviews.php");
 include(get_template_directory()."/widgets/faq-widget/faq-widget.php");
-include(get_template_directory()."/widgets/related-widget/related-widget.php");
 include(get_template_directory()."/widgets/landing-widget/landing-widget.php");
 include(get_template_directory()."/widgets/odds-widget/odds-widget.php");
 include(get_template_directory()."/widgets/latest-articles/latest-articles.php");
@@ -321,22 +298,16 @@ include(get_template_directory()."/widgets/payment-options-widget/payment-option
 
 
 // category archive and search number of posts
-function hlm_sports_archive_page_queries( $query ) {
+function dawn_magazine_archive_page_queries( $query ) {
 	$page = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	
     if(is_category() && $query->is_main_query() && $page == 1){
-			$query->set('posts_per_page', '9');
+			$query->set('posts_per_page', $dawn_magazine_category_number);
 			$query->set('offset', '1' );	
 	}
-
-    if(is_tag() && $query->is_main_query() && $page == 1){
-			$query->set('posts_per_page', '9');
-			$query->set('offset', '1' );	
-	}
-
 
 }
-add_action( 'pre_get_posts', 'hlm_sports_archive_page_queries' );
+add_action( 'pre_get_posts', 'dawn_magazine_archive_page_queries' );
 
 
 
@@ -347,8 +318,7 @@ function widget_scripts($hook) {
 			return;
 		}else{
 			wp_enqueue_style('hlm_editor_style', get_template_directory_uri() . '/css/hlm-text-editor.css');
-			wp_enqueue_script('hlm_editor_script', get_template_directory_uri().'/js/hlm-text-editor.js', null, null, true);
-			wp_enqueue_script('menu-image-upload-fields', get_stylesheet_directory_uri() . '/js/menu-image-upload-fields.js', array('jquery')); 
+			wp_enqueue_script('hlm_editor_script', get_template_directory_uri().'/js/hlm-text-editor.js', null, null, true); 
 		} 	
 }
 add_action('admin_enqueue_scripts', 'widget_scripts');
@@ -545,19 +515,19 @@ function hlm_sports_get_star_rating_grade($rating){
 if(empty($rating)){ $rating = 0;}
 
 				if($rating <= 1)
-					{  echo the_field('star_rating_bad', 'option');}
+					{  echo 'Bad ';}
 				elseif($rating > 1 && $rating < 2)
-					{ echo the_field('star_rating_normal', 'option');}
+					{ echo 'Normal ';}
 				elseif($rating >= 2 && $rating < 3)
-					{ echo the_field('star_rating_alright', 'option');}
+					{ echo 'Alright';}
 				elseif($rating >= 3 && $rating < 4)
-					{ echo the_field('star_rating_good', 'option');}
+					{ echo 'Good ';}
 				elseif($rating >= 4 && $rating < 4.5)
-					{ echo the_field('star_rating_very_good', 'option');}
+					{ echo 'Very Good ';}
 				elseif($rating >= 4.5 && $rating < 5)
-					{ echo the_field('star_rating_great', 'option');}
+					{ echo 'Great ';}
 				elseif($rating >= 5)
-					{ echo the_field('star_rating_excellent', 'option');}
+					{ echo 'Excellent !';}
 }
 
 

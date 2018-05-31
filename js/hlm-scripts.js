@@ -20,32 +20,24 @@ jQuery(document).ready(function($) {
     });
 
 // Header 
-var lastScrollTop = 50;
+var lastScrollTop = 0;
 $(window).scroll(function(event){
    var st = $(this).scrollTop();
    if (st > lastScrollTop){
        // downscroll codeconso
 
        $('#nav-wrapper').slideUp(100);
-       $('.one-part.post-page-area .hlm-sports-widget:last-child').addClass('upmenu');
+       $('.hlm-sports-widget.fixed-widget').addClass('upmenu');
 
    } else {
       // upscroll code
 
        $('#nav-wrapper').slideDown(100);
-       $('.one-part.post-page-area .hlm-sports-widget:last-child').removeClass('upmenu');
+       $('.hlm-sports-widget.fixed-widget').removeClass('upmenu');
 
    }
    lastScrollTop = st;
 
-});
-
-$(".top-menu ul > li").mouseover(function(){
-   $(this).find(".sub-menu").stop(true, true).delay(200).slideDown(200);
-});
-
-$(".top-menu ul > li").mouseout(function(){
-   $(this).find(".sub-menu").stop(true, true).delay(200).slideUp(200);
 });
 
 
@@ -73,19 +65,10 @@ $(".top-menu ul > li").mouseout(function(){
         }, 200);
     });
 
-    $(".post-page-area nav a").click(function(e) {
-        e.preventDefault();
-        var aid = $(this).attr("href");
-        $('html,body').animate({scrollTop: $(aid).offset().top - 200},'slow');
-    });
-
-
-
-
     //fixed-sidebar-last widget
     $(window).load(function() {
 
-            var widgetaboveHeight = $('.one-part.post-page-area .hlm-sports-widget:last-child ').offset().top - ($('#wpadminbar').height() - 25);
+            var widgetaboveHeight = $('.one-part.post-page-area .hlm-sports-widget:last-child ').offset().top - ($('#wpadminbar').height() + 113);
 
             var primaryheight = $('.three-parts.post-page-area').height();
             var secondaryheight = 0;
@@ -98,7 +81,7 @@ $(".top-menu ul > li").mouseout(function(){
                     $('.one-part.post-page-area .fixed-widget').css('position', 'relative');
                     $('.one-part.post-page-area .hlm-sports-widget:last-child ').css('top', '0');
                 } else {
-                    if ($(window).scrollTop() > widgetaboveHeight - 125 ) {
+                    if ($(window).scrollTop() > widgetaboveHeight ) {
                         $('.one-part.post-page-area .hlm-sports-widget:last-child').addClass('fixed-widget');
                     } else {
                         $('.one-part.post-page-area .hlm-sports-widget:last-child ').removeClass('fixed-widget');
@@ -139,133 +122,8 @@ $(".top-menu ul > li").mouseout(function(){
 
 
 
-//svg inline script
-
-// jQuery('img').each(function(){
-
-//     var $img = jQuery(this);
-//     var imgID = $img.attr('id');
-//     var imgClass = $img.attr('class');
-//     var imgURL = $img.attr('src');
-
-//     jQuery.get(imgURL, function(data) {
-//         // Get the SVG tag, ignore the rest
-//         var $svg = jQuery(data).find('svg');
-//         console.dir($svg);
-
-//         // Add replaced image's ID to the new SVG
-//         if(typeof imgID !== 'undefined') {
-//             $svg = $svg.attr('id', imgID);
-//         }
-//         // Add replaced image's classes to the new SVG
-//         if(typeof imgClass !== 'undefined') {
-//             $svg = $svg.attr('class', imgClass+' replaced-svg');
-//         }
-
-//         // Remove any invalid XML tags as per http://validator.w3.org
-//         $svg = $svg.removeAttr('xmlns:a');
-
-//         // Check if the viewport is set, if the viewport is not set the SVG wont't scale.
-//         if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
-//             $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
-//         }
-
-//         // Replace image with new SVG
-//         $img.replaceWith($svg);
-
-//     }, 'xml');
-
-// });
 
 
-
-
-
-
-    $('.category-page').on('click', '.pagination a', function(e) {
-        e.preventDefault();
-        var link = $(this).attr('href');
-        $('.blog-post').append('<div class="more-posts"></div>');
-        $('.pagination').replaceWith('<div class="load-content"><div class="load-circle"></div></div>');
-        $('.more-posts').load(link + ' .blog-post li, .pagination', function() {
-            $('.more-posts li').hide().detach().appendTo('.blog-post ul').css('opacity', '0').fadeIn().fadeTo('slow', 1);
-            $('.more-posts .pagination').css('opacity', '0').detach().appendTo('.blog-post').fadeTo('slow', 1);
-            $('.more-posts').remove();
-            $('.load-content').remove();
-        });
-    });
-
-
-
-
-            $('.odds-prev').on('click', function(){
-                $('.odds-widget-bookmakers').flexslider('prev');
-                $('.odds-list').each(function() {
-                    $(this).flexslider('prev');
-                 });
-
-                //return false;
-            });
-            
-            $('.odds-next').on('click', function(){
-                $('.odds-widget-bookmakers').flexslider('next');
-                $('.odds-list').each(function() {
-                    $(this).flexslider('next');
-                 });
-                return false;
-            });
-
-    //Gallery slider
-    $(window).load(function() {
-        $('.odds-widget-bookmakers').each(function() {
-
-            function bookmakers_grid() {
-
-                                return (window.innerWidth < 500) ? 2 : (window.innerWidth < 1024) ? 3 : 5;
-                                
-                            }
-
-            $(this).flexslider({
-                animation : 'slide',
-                itemWidth: 166,
-                itemMargin: 0,
-                minItems: bookmakers_grid(),
-                maxItems: bookmakers_grid(),
-                move: 1,
-                slideshow : false,
-                controlNav: false,
-                directionNav: false,
-            });
-            
-
-
-        });
-    });
-
-
-    $(window).load(function() {
-        $('.odds-list').each(function() {
-
-            function odds_grid() {
-
-                                return (window.innerWidth < 500) ? 2 : (window.innerWidth < 1024) ? 3 : 5;
-                                
-                            }
-
-            $(this).flexslider({
-                animation : 'slide',
-                itemWidth: 166,
-                itemMargin: 0,
-                minItems: odds_grid(),
-                maxItems: odds_grid(),
-                move: 1,
-                slideshow : false,
-                controlNav: false,
-                directionNav: false,
-            });
-
-        });
-    });
 
 
 

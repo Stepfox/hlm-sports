@@ -45,18 +45,18 @@ Top 5 Reviews Widget------------------------------------------------------------
 
 
 .landing-widget.landing2 li{width: 100%;}
-.landing2 .landing-widget-review-content-wrap{background: transparent;height:100%;width: 100%;padding:0;pointer-events: none;}
-.landing2 .landing-widget-logo-wrap{background:transparent;width: auto;float:none;display: table;margin:0 auto;pointer-events: all;}
+.landing2 .landing-widget-review-content-wrap{background: transparent;height:100%;width: 100%;padding:0;}
+.landing2 .landing-widget-logo-wrap{background:transparent;width: auto;float:none;display: table;margin:0 auto;}
 
 
 .landing2 .landing-widget-bonus {font-size: 40px; text-align: center; line-height: normal; width: 300px; margin: 0 auto; }
 .landing2 .landing-widget-review-bet-now-wrap{    background: transparent; width: 100%; position: absolute; margin: 0 auto; bottom: 20px; text-align: center;}
-.landing2 .landing-widget-review-bet-now-wrap a{display: inline-block;pointer-events: all;}
+.landing2 .landing-widget-review-bet-now-wrap a{display: inline-block;}
 .landing2 .landing-widget-tooltip {float: left; background: #FFF; border-left: 10px solid #358d53; padding: 10px; margin-top:10px; width:100%;}
 
 .landing-widget.landing3 li{width: 100%;margin-bottom:2px;height:53px;background: #FFF;overflow: hidden;}
 
-.landing3 .landing-widget-logo-wrap {width:136px;float:left;background:#FFF;padding:0;overflow: hidden;    position: relative;}
+.landing3 .landing-widget-logo-wrap {width:136px;float:left;background:#358d53;padding:0;overflow: hidden;    position: relative;}
 .landing3 .landing-widget-position-number {   font-style: italic; float: left; color: #FFF; font-weight: 400; font-size: 11px; position: absolute; top: 0; left: 3px; margin: 0;}
 
 .landing3 .landing-widget-logo {    padding: 5px 0;float:right;border-radius: 0; }
@@ -79,18 +79,18 @@ Top 5 Reviews Widget------------------------------------------------------------
 .landing-widget.landing4 li{width: 100%;}
 .landing4 .post-content{padding:10px 20px;float:left;;width: 100%;} 
 .landing4 .post-content ul{}
-.landing4 .archive-payment-wrap{overflow: hidden;width:100%;float:left;position: relative;border: 1px solid #dbdbdb;margin-top:0;}
+.landing4 .archive-payment-wrap{width:100%;float:left;position: relative;    border: 1px solid #dbdbdb;margin-top:0;}
 .landing4 .read-more {position: absolute; font-weight: 600; right: 20px; bottom: 20px; padding: 5px 25px; background: #358d53; border-bottom: 3px solid #206539; font-size: 15px; text-transform: uppercase; color: #FFF; } 
 .landing4 .archive-payment-icon{ width:166px; float:left;z-index: 1; position: relative; background: #000; padding: 10px 20px 10px 10px;background: #d9d9d9;}
-.landing4 .archive-payment-wrap:before {content: '';width: 200px;height: 100%;position: absolute;background: #d9d9d9;transform: skew(-28deg);top: 0;left: -20px;z-index: 0;} 
+.landing4 .archive-payment-icon:before {content: ''; width:65px; height: 100%; position: absolute; background: #d9d9d9; transform: skew(-28deg); top: 0; right:-20px; z-index: -1; } 
 .landing4 .archive-payment-icon img{border-radius:3px;overflow:hidden;}
 
 .landing4 .landing-widget-review-bet-now{    color: #FFF; font-weight: 600; float: right; padding: 5px 25px; background: #f67c01; border-bottom: 3px solid #c86804; font-size: 15px; line-height: normal; text-transform: uppercase; margin-top: 5px;}
 
 .landing4 .payment-icon-content{    margin-left: 50px;font-size:12px;line-height: 18px;margin-top:5px;
     width: calc(100% - 224px);float: left;position: relative;padding-bottom:20px;}
-.landing4 .payment-icon-read-review{    position: relative; right: 0; bottom:0;margin-right: 20px;float:right;}
-.landing4 .payment-icon-read-review a {font-size: 14px; color: #FFF; text-transform: capitalize; font-weight: 400;text-decoration: underline; }
+.landing4 .payment-icon-read-review{    position: absolute; right: 20px; bottom:0;}
+.landing4 .payment-icon-read-review a {font-size: 12px; color: #3271ae; text-transform: capitalize; font-weight: 600; }
 .landing4 .payment-icon-bookmakers{border:none; position: relative; background: #358d53; width: 100%; float: left; line-height: 40px; font-size: 16px; padding: 0 20px; font-weight: 600; color: #FFF; }
 .landing4 .payment-icon-bookmakers ul{      vertical-align: middle;  text-align: left;display: inline-block;}
 .landing4 .payment-icon-bookmakers ul li{border:none;width: auto;float:left;margin: 0 5px;max-width: 95px;border-radius: 2px;overflow: hidden;line-height: normal;}
@@ -137,7 +137,8 @@ Top 5 Reviews Widget------------------------------------------------------------
 }
 
 @media screen and (max-width: 900px){
-
+.four-parts .landing2 .landing-widget-review-image img{min-height: 260px; margin-left: calc(50% - 600px); min-width: 1200px; }
+.three-parts .landing2 .landing-widget-review-image img{min-height: 260px; margin-left: calc(50% - 450px); min-width: 900px; }
 	.landing-widget.landing5 li{    width: calc(25% - 10px);margin-bottom:10px;}
 	.landing-widget.landing1 li{width: 25%;margin-bottom:10px;}
 	.landing-widget.landing5 li:nth-child(5), .landing-widget.landing1 li:nth-child(5){display: none;}
@@ -152,6 +153,6 @@ Top 5 Reviews Widget------------------------------------------------------------
 .landing3 .landing-widget-logo {text-align: center; width: 100%; padding: 5px 0; float: right; border-radius: 0; } 
 .landing3 .landing-widget-logo img{display: inline-block;}
 
-.landing2 .landing-widget-review-content-wrap{display:none;}
+
 
 }

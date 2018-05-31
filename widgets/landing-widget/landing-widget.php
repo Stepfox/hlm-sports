@@ -47,7 +47,7 @@ class hlm_sports_landing_widget extends WP_Widget {
 		$widget_id = $this->id;
 		//$title = get_field( 'title', 'widget_' . $widget_id );
 
-		$defaults = array( 'title' => 'Landing widget', 'title_style' => 'title1', 'looks' => 'landing1', 'bonus' => array('0' => ''), 'bookmaker' => array('0' => ''), 'custom_logo' => array('0' => ''), 'tooltip'=> array('0' => ''), 'image'=> array('0' => ''), 'tracker'=> array('0' => ''));
+		$defaults = array( 'title' => 'Landing widget', 'title_style' => 'title1', 'looks' => 'landing1', 'bonus' => array('0' => ''), 'bookmaker' => array('0' => ''), 'tooltip'=> array('0' => ''), 'image'=> array('0' => ''), 'tracker'=> array('0' => ''));
 		$instance = wp_parse_args( (array) $instance, $defaults );
 
 
@@ -59,7 +59,6 @@ class hlm_sports_landing_widget extends WP_Widget {
 		$bookmaker = $instance['bookmaker'];
 		$tooltip = $instance['tooltip'];
 		$image = $instance['image'];
-		$custom_logo = $instance['custom_logo'];
 		$tracker = $instance['tracker'];
 
 		$widget_classname = $instance['widget_size'];
@@ -130,7 +129,6 @@ if($looks == 'landing1'){
 		$instance['tooltip'] = $new_instance['tooltip'];
 		$instance['image'] = $new_instance['image'];
 		$instance['tracker'] = $new_instance['tracker'];
-		$instance['custom_logo'] = $new_instance['custom_logo'];
 		
 		
 	
@@ -143,7 +141,7 @@ if($looks == 'landing1'){
 		
 		/* Default widget settings. */
 		
-		$defaults = array( 'title' => 'Landing widget', 'title_style' => 'title1', 'looks' => 'landing1', 'bonus' => array('0' => ''), 'bookmaker' => array('0' => ''), 'custom_logo' => array('0' => ''), 'tooltip'=> array('0' => ''), 'image'=> array('0' => ''), 'tracker'=> array('0' => ''));
+		$defaults = array( 'title' => 'Landing widget', 'title_style' => 'title1', 'looks' => 'landing1', 'bonus' => array('0' => ''), 'bookmaker' => array('0' => ''), 'tooltip'=> array('0' => ''), 'image'=> array('0' => ''), 'tracker'=> array('0' => ''));
 		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
 
 <!-- Widget Title-->
@@ -195,7 +193,6 @@ if($looks == 'landing1'){
         		$repeat_tooltip = $instance['tooltip'][$i];
         		$repeat_tracker = $instance['tracker'][$i];
         		$repeat_image = $instance['image'][$i];
-        		$repeat_logo = $instance['custom_logo'][$i];
 			?>	
 			
 			<div class="row">
@@ -233,15 +230,6 @@ if($looks == 'landing1'){
 					<img class="image-preview" src="<?php echo $repeat_image;?>" width="100" />
 					<input type= "button" class="button add_image_button" name="add_image_button" value="Image" />
 				</div>
-
-				<div class="image-part">
-
-					<input type="hidden" field="<?php echo $this->get_field_name( 'custom_logo' ); ?>" name="<?php echo $this->get_field_name( 'custom_logo' ); ?>[]" value="<?php echo $repeat_logo;?>" class="widefat image_save">
-					<img class="image-preview" src="<?php echo $repeat_logo;?>" width="100" />
-					<input type= "button" class="button add_image_custom_logo" name="add_image_custom_logo" value="Image" />
-				</div>
-
-
 			<div class="text-part">
 				<input type="text" field="<?php echo $this->get_field_name( 'bonus' ); ?>" name="<?php echo $this->get_field_name( 'bonus' ); ?>[]" value="<?php echo $repeat_name; ?>" placeholder="The bonus" class="repeater-title widefat text-field">
 

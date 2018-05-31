@@ -3,11 +3,6 @@
 			<div class="top-5-position-number">
 				<?php echo ($i + 1);?>
 			</div>
-
-			<div class="mobile-star-rating">
-				<?php hlm_sports_get_star_rating(get_field('overall_rating', $bookmaker_id));?>
-			</div>
-
 			<a href="<?php echo get_permalink( $bookmaker_id); ?>">
 			<div class="top-5-logo bookmaker-background-wrap-<?php echo $bookmaker_id; ?>">		 
 				 <?php $image = get_field('logo_136x44', $bookmaker_id);					                  
@@ -43,13 +38,9 @@
 					<?php echo $tooltip[$i];	?>
 
 				</div>
-
-
-			</div>
-	<div class="bookmakers-links-wrap">			
 				<div class="top-5-review-link">
 					<a href="<?php echo get_permalink( $bookmaker_id); ?>">
-						<?php the_field('review', 'option');  ?>
+						review
 					</a>
 				</div>
 				<a href="<?php echo the_field( 'default_tracker', $bookmaker_id); ?>" target="_blank">
@@ -60,6 +51,8 @@
 				<div class="top-5-rules-link">
 					<?php the_field('t&c_apply', 'option');  ?>
 				</div>
-	</div>
+
+
+			</div>
 		</div>
 	</li>

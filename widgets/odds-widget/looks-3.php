@@ -60,7 +60,7 @@ $select_league = array(
 
 				?>
 
- 
+<!--  
 	<select>
 		<?php 
 		foreach ($select_league as $option => $value) {?>
@@ -68,7 +68,7 @@ $select_league = array(
 		<?php } ?>
 	</select>
 	
- 
+ -->
 
 
 

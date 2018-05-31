@@ -8,24 +8,6 @@
 				Search Result for
 				"<?php the_search_query(); ?>"
             </h1>
-            <div class="search-page-desc">
-            <?php 
-				$total = $wp_query->found_posts;
-				$per_page = 10;
-				$curpage = (get_query_var('paged')) ? get_query_var('paged') : 1;
-
-				$result_start = ($curpage - 1) * $per_page + 1;
-				if ($result_start == 0) $result_start= 1;
-
-				$result_end = $result_start + $per_page-1;
-
-				if ($result_end < $per_page)   // happens when records less than per page  
-				    $result_end = $per_page;  
-				else if ($result_end > $total)  // happens when result end is greater than total records  
-				    $result_end = $total;
-				echo "Displaying $result_start to $result_end of $total";  ?>
-			</div>
-
           </div>
 <ul>
         <?php
@@ -47,7 +29,7 @@
 					<!--searchpage-title-->
 					
 
-					<?php echo hlm_sports_excerpt(60); ?>
+					<?php echo hlm_sports_excerpt(30); ?>
 					<div class="searchpage-url">
 						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 							<?php echo the_permalink(); ?>
