@@ -45,15 +45,15 @@
 
 <div class="footer-color-wrap">	
 	<div class="footer-wrap">
-		<div class="footer-copyright">
-			<?php the_field('copyright', 'option'); ?>
-		</div>
 
 		<div class="footer-menu">
 			<nav id="bottom-menu">
 				<?php if ( has_nav_menu( 'bottom-menu' ) ) {wp_nav_menu(array('theme_location' => 'bottom-menu', 'depth' => 1));} else { echo '<span class="add-menu">ADD MENU</span>';}?>
 			</nav>
 			<!--bottom-menu-->	
+		</div>
+		<div class="footer-copyright">
+			<?php the_field('copyright', 'option'); ?>
 		</div>
 	</div>
 </div>

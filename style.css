@@ -975,6 +975,27 @@ ul.odds-widget-odds-list{overflow:hidden;width: 70%;float:left;padding:0;display
 
 
 @media screen and (max-width: 700px){
+    #main{margin-top:90px;}
+    .parallax-background{display:none;}
+body.custom-background{background-image:none;}
+
+#bottom-menu ul {
+    text-align: center;
+    line-height: initial;
+    margin: 10px;
+}
+#bottom-menu li{margin:10px 0;}
+#bottom-menu li + li{border:none;}
+
+.footer-logo {
+    position: relative;
+    float: left;
+    padding: 10px;
+    max-width: 240px;
+}
+
+.footer-copyright{text-align: center;width: 100%}
+
     .big-logo{display: none;}
 .mobile-logo{    float: left;width: 100%;
     display: block;
@@ -1007,7 +1028,7 @@ ul.odds-widget-odds-list{overflow:hidden;width: 70%;float:left;padding:0;display
 
 
 
-.site-logo-wrapper{width:calc(100% - 50px);transform: skew(0);    float: right;background: #FFF;}
+.site-logo-wrapper{padding: 7px;width:calc(100% - 50px);transform: skew(0);    float: right;background: #FFF;}
 .site-logo-wrapper:after{display: none;}
 .site-logo-wrapper:before{left: 0;}
 .big-logo {margin: 0 auto; padding-right: 0; float: none; }
