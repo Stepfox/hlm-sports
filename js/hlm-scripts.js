@@ -19,6 +19,25 @@ jQuery(document).ready(function($) {
         $('body').toggleClass("mob-menu-active");
     });
 
+    
+        $('#main').fadeTo(500, 1);
+    
+
+  //scroll effects
+    $(window).scroll(function() {
+        var hlm_magazinetop = $(this).scrollTop();
+        var hlm_magazineheight = $(this).height();
+        var hlm_magazinebottom = hlm_magazinetop + hlm_magazineheight;
+        $('#main .hlm-sports-widget').each(function() {
+            var geget = $(this).offset().top;
+            if (hlm_magazinebottom > geget && geget > hlm_magazineheight) {
+                $(this).find('.widget').addClass('widgetfx-2');
+            }
+        });
+    });
+
+
+
 // Header 
 var lastScrollTop = 50;
 $(window).scroll(function(event){
