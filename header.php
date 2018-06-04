@@ -10,7 +10,7 @@
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <?php wp_head(); ?>
 
-<?php //$scripts = get_field('scripts', 'option'); eval( $scripts );  ?>
+<?php $scripts = get_field('scripts', 'option'); eval( $scripts );  ?>
 
 
 </head>

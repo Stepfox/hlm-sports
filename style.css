@@ -6,7 +6,7 @@ Version: 1.0
 Tags: one-column, two-columns, three-columns, four-columns, custom-colors, custom-menu, featured-images, post-formats, theme-options
 Text Domain: hlm-sports
 */
-
+.looks1 .see-all-bookmakers-wrap{display: none;}
 
 .payment-section{display:none;}
 
@@ -1058,7 +1058,11 @@ body.custom-background{background-image:none;}
 .top-menu.active{width:100%;background: #2f2f2f;display:block;    width: 100%; overflow-y: scroll; max-height: calc(100vh - 82px); overflow-x: hidden;}
 .top-menu ul.sub-menu{left:0;position: relative;padding:0;background:transparent;}
 .top-menu ul li .sub-menu li{   padding:0; }
-.top-menu ul .sub-menu > li a{padding:10px 30px;border:none;}
+.top-menu ul .sub-menu > li a{padding:10px 30px;border:none;    padding: 10px 30px;
+    border: none;
+    color: #FFF;
+    font-weight: normal;}
+    .top-menu ul li .sub-menu:before{display: none;}
 .top-menu ul li{width: 100%;padding:0;}
 .top-menu ul li:before{display: none;}
 .top-menu .search-box {display: block; padding: 10px 20px 5px;width:100%;}
