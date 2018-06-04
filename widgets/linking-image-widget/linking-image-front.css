@@ -14,6 +14,7 @@ Most popular widget
 .linking-image-posts-text a{    left: 0; width: 100%; position: absolute; bottom: 10px;}
 
 .linking-image-bet-now{display: inline-block; display: inline-block; font-weight: 600; padding: 5px 25px; background: #358d53; border-bottom: 3px solid #206539; font-size: 15px; text-transform: uppercase; color: #FFF; width:90%;}
+.linking-image-bet-now:hover, .looks1 .see-all-bookmakers-button:hover, .search-page .read-more:hover, #searchsubmit:hover{background: #46b36b;}
 
 .orange .linking-image-bet-now:active{border-bottom: 1px solid #c86804;
     background: #ff8101;
