@@ -315,6 +315,7 @@ include(get_template_directory()."/widgets/latest-articles/latest-articles.php")
 include(get_template_directory()."/widgets/betting-strategies/betting-strategies.php");
 include(get_template_directory()."/widgets/linking-image-widget/linking-image-widget.php");
 include(get_template_directory()."/widgets/content-block-widget/content-block-widget.php");
+include(get_template_directory()."/widgets/deposit-withdraw-widget/deposit-withdraw-widget.php");
 include(get_template_directory()."/widgets/shortcode-widget/shortcode-widget.php");
 include(get_template_directory()."/widgets/payment-options-widget/payment-options-widget.php");
 

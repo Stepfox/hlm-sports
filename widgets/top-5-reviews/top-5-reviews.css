@@ -3,6 +3,19 @@
 Top 5 Reviews Widget-------------------------------------------------------------
 */
 
+.big-looks5 .looks-5-content-wrap{display:table;}
+.big-looks5 .looks-5-content-wrap div{height: 1px;display:table-cell;vertical-align: middle;float:none;}
+
+.big-looks5 .looks-5-content-wrap a{width:100%;    width: 190px;
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+    height: 1px;}
+
+#main .big-looks5 .top-5-review-bet-now{width: 100%;height:30px;display: block;}
+
+
+
 
 .looks1 .bookmakers-links-wrap {position: absolute; bottom: 0; width: 100%; left: 0; padding: 0 10px;z-index: 9; }
 
@@ -84,7 +97,7 @@ Top 5 Reviews Widget------------------------------------------------------------
 
 .looks5 li:hover .looks-5-content-wrap.bonus-with-check{position: relative;top:-90px;opacity: 0;}
 
-.looks-5-content-wrap.bonus-with-check{position: relative;top:0px;transition:all 0.4s;opacity: 1;}
+.looks-5-content-wrap.bonus-with-check{white-space: nowrap;position: relative;top:0px;transition:all 0.4s;opacity: 1;}
 
 .looks5 li.big-looks5 .top-5-tooltip{overflow: hidden; font-size: 12px; line-height: 14px; float: left;  position: absolute; transition: all 0.8s; z-index: 99; left: 0; opacity: 0; max-width: 85%; height: auto; top: 90px; width: 85%; }
 

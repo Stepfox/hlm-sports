@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 
 if( function_exists('acf_add_local_field_group') ):
 
@@ -2851,6 +2852,25 @@ acf_add_local_field_group(array(
             'append' => '',
             'maxlength' => '',
         ),
+        array(
+            'key' => 'field_5b11349450031',
+            'label' => 'Deposit and Withdraw',
+            'name' => 'deposit_and_withdraw',
+            'type' => 'text',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => 'Deposit and Withdraw',
+            'placeholder' => '',
+            'prepend' => '',
+            'append' => '',
+            'maxlength' => '',
+        ),
     ),
     'location' => array(
         array(
@@ -3955,4 +3975,6 @@ acf_add_local_field_group(array(
 
 endif;
 
-?>
+
+
+ ?>

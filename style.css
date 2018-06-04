@@ -522,10 +522,10 @@ li.thumb-down:before{background: #d62a1c;}
 
 
 
-.top-5-review-bet-now:hover{    box-shadow: 0px -2px 0 #ff9b35;
+.top-5-review-bet-now:hover, .looks5 .deposit-withdraw-review-bet-now:hover{    box-shadow: 0px -2px 0 #ff9b35;
     background: #ff9b35; }
 .landing-widget-review-bet-now:hover, .landing4 .landing-widget-review-bet-now:hover, .pros-and-cons-bet-now:hover{background: #ff9b35; }
-.landing-widget-review-bet-now:active, .pros-and-cons-bet-now:active{    border-bottom: 1px solid #c86804;
+.landing-widget-review-bet-now:active, .pros-and-cons-bet-now:active, .looks5 .deposit-withdraw-review-bet-now:active{    border-bottom: 1px solid #c86804;
     background: #ff8101;    
     border-right: 1px solid #c86804;
     box-shadow: 0px 0px 0 -10px #f67c01;
