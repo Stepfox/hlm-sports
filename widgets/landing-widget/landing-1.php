@@ -56,6 +56,11 @@
 						<?php } ?>	<?php echo $bonus[$i];	?>
 </a>
 				</div>
+
+
+
+	<div class="bookmakers-links-wrap">		
+
 				<a href="<?php echo $tracker[$i]; ?>" target="_blank">
 					<div class="landing-widget-review-bet-now">
                     	<?php the_field('bet_now', 'option');  ?>
@@ -64,6 +69,11 @@
 				<div class="landing-widget-rules-link">
 					<?php the_field('t&c_apply', 'option');  ?>
 				</div>
+
+
+	</div>
+
+
 
 				<div class="landing-widget-tooltip">
 					<?php echo $tooltip[$i];	?>

@@ -31,6 +31,8 @@ Top 5 Reviews Widget------------------------------------------------------------
 
 .landing-widget-rules-link {text-align: right;width: 100%;float: left;font-size: 10px;}
 
+.landing1 .bookmakers-links-wrap {position: absolute; bottom: 0; width: 100%; left: 0; padding: 0 10px; z-index: 9; }
+.landing1 .landing-widget-review-content-wrap{    padding: 10px 10px 80px;}
 
 
 .landing1 .landing-widget-tooltip{text-align:center;height:0;overflow: hidden;float:left;font-size:11px;line-height: 14px;transition:all 0.8s;position: relative;bottom:-100px;opacity: 0;}
