@@ -276,7 +276,7 @@ color:#FFF;
 .pros-and-cons-logo img{padding:5px 0;text-align: center;}
 .pros-and-cons .three-parts{position: relative;min-height:260px;}
 .pros-and-cons-right{padding:0px 0px 20px 20px;color:#FFF;text-align: right;width:33%;right:0;top:0;    background: linear-gradient(to left,#000000,rgba(0,0,0,0));position: absolute;height: 100%;}
-.pros-and-cons-left{padding:0px 50px 20px 20px;color:#FFF;width:33%;left:0;top:0;position: absolute;height: 100%;    z-index: 1;}
+.pros-and-cons-left{z-index:9999;padding:0px 50px 20px 20px;color:#FFF;width:33%;left:0;top:0;position: absolute;height: 100%; }
 .pros-and-cons-left:before{content: ''; width: 150%; height: 100%; position: absolute; background: #2f2f2f; transform: skew(-28deg); top: 0; right: 30px;    z-index: -1;}
 .pros-and-cons-bet-now {z-index:999;position: absolute; font-weight: 600; right:20px; bottom:20px; padding: 5px 25px; background: #f67c01; border-bottom: 3px solid #c86804; font-size: 15px; text-transform: uppercase; color:#FFF; }
 .pros-and-cons-bet-now a{color:#FFF;}
