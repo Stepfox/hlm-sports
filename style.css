@@ -6,6 +6,7 @@ Version: 1.0
 Tags: one-column, two-columns, three-columns, four-columns, custom-colors, custom-menu, featured-images, post-formats, theme-options
 Text Domain: hlm-sports
 */
+
 .looks1 .see-all-bookmakers-wrap{display: none;}
 
 .payment-section{display:none;}
@@ -267,7 +268,7 @@ color:#FFF;
 .page-template-pagewithfeaturedimageandsidebar .pros-and-cons-left{padding:20px;text-align: left;display:none;}
 .page-template-pagewithfeaturedimageandsidebar .pros-and-cons-rating-grade{text-align: left;}
 .top-page-area .hlm-sports-widget{float:left;padding: 0;}
-.top-page-area .widget-title h2{text-align: right;border: 2px solid #d9d9d9;z-index: 99;
+.top-page-area .widget-title h2{text-align: right;border: 2px solid #d9d9d9;z-index: 4;
     border-bottom: 0;}
 .top-page-area .widget-title h2 span{    width: 25%; text-align: center; float: right; text-transform: uppercase;}
 .pros-and-cons{background:transparent;position: relative;}
@@ -1107,11 +1108,27 @@ body.custom-background{background-image:none;}
 
 .top-page-area .widget-title h2{text-align: center;}
 
-.pros-and-cons-logo{padding:0 20px;}
+.pros-and-cons-logo {
+    padding: 0 20px;
+    width: 60%;
+    margin: 0 20%;
+    text-align: center;
+}
+.pros-and-cons-rating-grade{width: 100%;float:left;text-align: center;}
+.pros-and-cons-left .star-rating{text-align: center;}
 
-.pros-and-cons-left{width: 100%; position: relative; padding:0; text-align: center; } 
+.pros-and-cons-site-address {
+    text-align: center;
+    margin-bottom: 5px;
+    width: 100%;
+    float: left;
+}
 
-.top-page-area .pros-and-cons-terms{    position: relative; text-align: center; max-width: 100%; left: auto; margin-top: 15px;}
+
+
+.pros-and-cons-left{width: 100%; position: relative; padding:0; text-align: center; float:left;} 
+
+.top-page-area .pros-and-cons-terms{  width:100%; float:left; position: relative; text-align: center; max-width: 100%; left: auto; margin-top: 15px;}
 
 .pros-and-cons-left:before{right: auto;left:0; transform: skew(0);}
 
