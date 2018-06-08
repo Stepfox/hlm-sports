@@ -1,4 +1,4 @@
-<?php 
+http://market.exaloc.org/v1/pre-match/markets?categories=5b1540d1557b8cb1558b460c<?php 
 function remove_all_matches(){
 
 			//Delete Matches
@@ -204,7 +204,7 @@ update_field( $field_key, $value, $page_name_id );
 
 function our_own_api($pick_league){
 
-$url = 'http://api.exaloc.org/v1/pre-match/markets?categories='.$pick_league;
+$url = 'http://market.exaloc.org/v1/pre-match/markets?categories='.$pick_league;
 
 
 
