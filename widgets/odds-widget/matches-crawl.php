@@ -1,4 +1,4 @@
-http://market.exaloc.org/v1/pre-match/markets?categories=5b1540d1557b8cb1558b460c<?php 
+<?php 
 function remove_all_matches(){
 
 			//Delete Matches

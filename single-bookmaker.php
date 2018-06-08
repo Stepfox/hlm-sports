@@ -17,13 +17,20 @@
           <?php $image = get_field('logo_136x44');                            
             if( $image ) {?>
               <div class="bookmaker-background-wrap-<?php echo get_the_ID(); ?>">
-                <img src="<?php  echo $image['sizes']['hlm_sports_196x66']; ?>" alt="">     
+                <a href="<?php echo the_field( 'default_tracker' ); ?>" target="_blank">
+                <img src="<?php  echo $image['sizes']['hlm_sports_196x66']; ?>" alt="">  
+                </a>   
               </div>           
             <?php } ?>  
                  
               </div>
               <div class="pros-and-cons-star-rating star-rating">
                     <?php hlm_sports_get_star_rating(get_field('overall_rating'));?>
+              </div>
+              <div class="pros-and-cons-site-address">
+                  <a href="<?php echo the_field( 'default_tracker' ); ?>" target="_blank">
+                      <?php echo the_field( 'domain_name' ); ?>
+                  </a>
               </div>
               <div class="pros-and-cons-rating-grade">
                 <span>
