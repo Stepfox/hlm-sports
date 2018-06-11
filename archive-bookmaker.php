@@ -22,7 +22,7 @@ $i++;
 $bookmaker_id = $post->ID;
 
 			?>
-<!-- 
+
 
 	<li>
 		<div class="top-5-logo-wrap">
@@ -85,75 +85,7 @@ $bookmaker_id = $post->ID;
 				</div>
 	</div>
 		</div>
-	</li> -->
-
-
-
-
-
-
-    <div class="widget pros-and-cons">
-      <div class="three-parts hlm-sports-widget">
-          <div class="pros-and-cons-left">
-              
-
-              <div class="pros-and-cons-logo"> 
-
-          <?php $image = get_field('logo_136x44');                            
-            if( $image ) {?>
-              <div class="bookmaker-background-wrap-<?php echo get_the_ID(); ?>">
-                <a href="<?php echo the_field( 'default_tracker' ); ?>" target="_blank">
-                <img src="<?php  echo $image['sizes']['hlm_sports_196x66']; ?>" alt="">  
-                </a>   
-              </div>           
-            <?php } ?>  
-                 
-              </div>
-              <div class="pros-and-cons-star-rating star-rating">
-                    <?php hlm_sports_get_star_rating(get_field('overall_rating'));?>
-              </div>
-              <div class="pros-and-cons-site-address">
-                  <a href="<?php echo the_field( 'default_tracker' ); ?>" target="_blank">
-                      <?php echo the_field( 'domain_name' ); ?>
-                  </a>
-              </div>
-              <div class="pros-and-cons-rating-grade">
-                <span>
-                  <?php echo the_field( 'left_bonus' ); ?>
-                </span>
-              </div>  
-              <div class="pros-and-cons-terms">               
-                <?php the_field('terms_apply_to_all_bonus_offers', 'option');  ?>
-                </br>
-                <?php the_field('advertising_disclosure', 'option');  ?>
-              </div>  
-          </div>
-
-          <div class="pros-and-cons-right">
-              <div class="pros-and-cons-logo">     
-                         <?php $image = get_field('right_logo');                            
-            if( $image ) {?>
-              <img src="<?php  echo $image['sizes']['hlm_sports_196x66']; ?>" alt="">                
-            <?php } ?>                     
-              </div>
-              <div class="pros-and-cons-rating-grade">
-                <span>
-                  <?php echo the_field( 'right_bonus' ); ?>
-                </span>
-              </div>  
-              <a href="<?php echo the_field( 'default_tracker' ); ?>" target="_blank">
-                <div class="pros-and-cons-bet-now">
-                    <?php the_field('bet_now', 'option');  ?>
-                </div>
-              </a>
-          </div>
-                    <?php $image = get_field('main_image');                            
-            if( $image ) {?>
-              <img src="<?php  echo $image['sizes']['hlm_sports_900x260']; ?>" alt="">                
-            <?php } ?>  
-      </div>
-
-</div>
+	</li>
 
 
 
