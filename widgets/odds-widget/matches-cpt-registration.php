@@ -11,7 +11,7 @@ function add_crawler_options_page() {
 
 
 function crawler_options_function(){
-/*
+
 
         echo '<h2>Crawl Matches</h2>';
 ?>
@@ -27,7 +27,18 @@ if (isset($_POST) && !empty($_POST['crawl_matches'])){
 }
 
 
+        echo '<h2>Crawl Matches oods</h2>';
+?>
+            <form method="post">                    
+                <input  type="submit" class="button-secondary" name="crawl_matches_odds" value="<?php echo esc_attr('Crawl All Matches odds'); ?>"/>
+            </form>
+<?php               
 
+if (isset($_POST) && !empty($_POST['crawl_matches_odds'])){
+
+        crawl_table();
+
+}
 
 
 
@@ -52,7 +63,7 @@ if (isset($_POST) && !empty($_POST['crawl_odds']) ){
 
 }
 
-*/
+
 
 
 

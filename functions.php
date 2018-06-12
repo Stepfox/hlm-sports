@@ -336,6 +336,20 @@ function hlm_sports_archive_page_queries( $query ) {
 	}
 
 
+ if ( is_post_type_archive( 'bookmaker' ) && $query->is_main_query() ) {
+ 	if($page == 1){
+ 		$query->set('offset', '1' );	
+ 	}
+
+        $query->set('meta_key', 'overall_rating');
+        $query->set('orderby', 'meta_value_num');
+        $query->set('order', 'DESC');
+			$query->set('posts_per_page', '9');
+			
+	}
+
+
+
 }
 add_action( 'pre_get_posts', 'hlm_sports_archive_page_queries' );
 

@@ -21,13 +21,18 @@ function crawl_matches(){
 	$opts=array('http'=>array('method'=>"GET",'header'=>"Accept-language: en\r\n"."Cookie: odds_type=decimal\r\n",'user_agent'=>'Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10.4; en-US; rv:1.9.2.28) Gecko/20120306 Firefox/3.6.28'));
 	$context=stream_context_create($opts);
 
-	$html = file_get_html('https://www.oddschecker.com/football',false,$context);
+	$html = file_get_html('https://www.oddschecker.com/football/world-cup',false,$context);
 
 
 
 
 		$crawled_titles_number = count($html->find('.match-on .fixtures-bet-name'));
 
+		//remove span text
+		foreach($html->find('.match-on p.fixtures-bet-name span') as $row) {
+			$row->innertext = '';
+			$row->outertext = '';
+		}
 
 
 		for ($i=0; $i < $crawled_titles_number; $i++) { 
@@ -35,7 +40,7 @@ function crawl_matches(){
 			$duplicate = 'unique';
 			$title = $html->find('.match-on p.fixtures-bet-name', $i)->plaintext.' vs '.$html->find('.match-on p.fixtures-bet-name', $i + 1)->plaintext;
 			$match_url = 'https://www.oddschecker.com/'.$html->find('.match-on .link-right a', $i / 2)->href;
-			$i++;
+			
 
 
 
@@ -59,6 +64,19 @@ function crawl_matches(){
 					$post= array('post_title' => $title, 'post_content' => '', 'post_status' => 'publish', 'post_type' => 'match' );
 			 		$post_ID = wp_insert_post( $post );
 			 		update_field( 'match_url', $match_url, $post_ID );
+
+
+$teams = wp_set_object_terms( $post_ID, array($html->find('.match-on p.fixtures-bet-name', $i)->plaintext,  $html->find('.match-on p.fixtures-bet-name', $i + 1)->plaintext), 'teams', false );
+					update_field( 'home_team', $teams[0], $post_ID );
+					update_field( 'away_team', $teams[1], $post_ID );
+// update_field( 'start_time', $html->find('.match-on .time .time-div .time-digits', $i)->plaintext, $post_ID );
+
+
+
+
+
+
+$i++;
 				}
 
 echo $i;
@@ -67,6 +85,12 @@ echo $match_url;
 echo '     ';
 echo $title;
 echo '</br>';
+
+
+
+
+
+
 
 		}
 
@@ -108,6 +132,15 @@ function crawl_table(){
 
 
 
+$crawl_date = $html->find('.date', 0)->plaintext;
+$date_parts = explode(' ', $crawl_date);
+$day = substr($date_parts[1], 0, -2);
+$month = date('m',strtotime($date_parts[2]));
+$year = '2018';
+$time = $date_parts[4];
+$fulldate_unix = mysql2date( 'U', $year.'-'.$month.'-'.$day.' '.$time.':00' );
+
+
 
 		//$crawled_titles_number = count($html->find('.match-on .fixtures-bet-name'));
 
@@ -117,7 +150,7 @@ $table = $html->find('#t1', 0);
 
 
 $rowData = array();
-
+if (!empty($table)){
 foreach($table->find('tr') as $row) {
     // initialize array to store the cell data from each row
     $flight = array();
@@ -127,13 +160,14 @@ foreach($table->find('tr') as $row) {
     }
     $rowData[] = $flight;
 }
+}
 var_dump($rowData);
 
 
 		                 $page_name_id = get_the_ID();
 		                // wp_delete_post( $page_name_id, true );
 		                 echo get_the_title();
-
+update_field( 'start_time', $fulldate_unix, $page_name_id );
 
 		            $args1 = array(
 		                'post_type' => 'bookmaker',

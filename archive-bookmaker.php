@@ -6,6 +6,145 @@
 
 
 <main id="main" class="category-page">
+   <?php 
+	$page = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	
+	if($page == 1){
+
+ $hlm_sports_posts = new WP_Query(array( 
+ 	'post_type' => 'bookmaker',
+ 	'posts_per_page' => 1,
+ 	'meta_key'			=> 'overall_rating',
+	'orderby'			=> 'meta_value',
+	'order'				=> 'DESC',
+
+ )); while ( $hlm_sports_posts->have_posts()) : $hlm_sports_posts->the_post(); ?>
+
+
+
+
+  <div class="four-parts hlm-sports-widget top-page-area">
+    <div class="widget-title">
+      <h2>
+      <span><?php the_field('pros_and_cons', 'option');  ?></span>
+      <span style="float:left;text-align:left;">Best Bookmaker</span>
+
+      </h2>
+    </div>
+
+    <div class="widget pros-and-cons">
+      <div class="three-parts hlm-sports-widget">
+          <div class="pros-and-cons-left">
+              
+
+              <div class="pros-and-cons-logo"> 
+
+          <?php $image = get_field('logo_136x44');                            
+            if( $image ) {?>
+              <div class="bookmaker-background-wrap-<?php echo get_the_ID(); ?>">
+                <a href="<?php echo the_field( 'default_tracker' ); ?>" target="_blank">
+                <img src="<?php  echo $image['sizes']['hlm_sports_196x66']; ?>" alt="">  
+                </a>   
+              </div>           
+            <?php } ?>  
+                 
+              </div>
+              <div class="pros-and-cons-star-rating star-rating">
+                    <?php hlm_sports_get_star_rating(get_field('overall_rating'));?>
+              </div>
+              <div class="pros-and-cons-site-address">
+                  <a href="<?php echo the_field( 'default_tracker' ); ?>" target="_blank">
+                      <?php echo the_field( 'domain_name' ); ?>
+                  </a>
+              </div>
+              <div class="pros-and-cons-rating-grade">
+                <span>
+                  <?php echo the_field( 'left_bonus' ); ?>
+                </span>
+              </div>  
+              <div class="pros-and-cons-terms">               
+                <?php the_field('terms_apply_to_all_bonus_offers', 'option');  ?>
+                </br>
+                <?php the_field('advertising_disclosure', 'option');  ?>
+              </div>  
+          </div>
+
+          <div class="pros-and-cons-right">
+              <div class="pros-and-cons-logo">     
+                         <?php $image = get_field('right_logo');                            
+            if( $image ) {?>
+              <img src="<?php  echo $image['sizes']['hlm_sports_196x66']; ?>" alt="">                
+            <?php } ?>                     
+              </div>
+              <div class="pros-and-cons-rating-grade">
+                <span>
+                  <?php echo the_field( 'right_bonus' ); ?>
+                </span>
+              </div>  
+              <a href="<?php echo the_field( 'default_tracker' ); ?>" target="_blank">
+                <div class="pros-and-cons-bet-now">
+                    <?php the_field('bet_now', 'option');  ?>
+                </div>
+              </a>
+          </div>
+                    <?php $image = get_field('main_image');                            
+            if( $image ) {?>
+              <img src="<?php  echo $image['sizes']['hlm_sports_900x260']; ?>" alt="">                
+            <?php } ?>  
+      </div>
+
+
+      <div class="one-part hlm-sports-widget">
+          <ul>
+
+<?php
+
+// check if the repeater field has rows of data
+if( have_rows('pros_and_cons') ):
+
+  // loop through the rows of data
+    while ( have_rows('pros_and_cons') ) : the_row();?>
+
+<?php 
+$pros_and_cons_text = get_sub_field('pros_and_cons_text');
+$thumb = get_sub_field('pros_and_cons_thumb');
+
+?>
+            <li class="thumb-<?php echo esc_attr($thumb);?>">
+              <img src="<?php echo get_template_directory_uri() . '/images/thumb_'.$thumb.'.png'?>">
+              <span>
+                <?php echo esc_html($pros_and_cons_text);?>
+              </span>
+            </li>
+<?php
+ endwhile;
+
+else :
+
+    echo 'add pros and cons';
+
+endif;
+
+?>
+
+          </ul>
+      </div>
+    </div>
+
+
+ 				<?php 
+        endwhile;
+        //pagination
+
+      wp_reset_postdata();
+  }
+    ?>
+
+  </div>
+
+
+
+
 
   <div class="three-parts post-page-area hlm-sports-widget">
         <div class="post-content widget blog-post">

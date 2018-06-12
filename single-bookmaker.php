@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <main id="main">
   <div class="four-parts hlm-sports-widget top-page-area">
-    <div class="widget-title">
+    <div class="widget-title desktop-pros-and-cons-title">
       <h2>
       <span><?php the_field('pros_and_cons', 'option');  ?></span>
       </h2>
@@ -70,6 +70,13 @@
 
 
       <div class="one-part hlm-sports-widget">
+
+    <div class="widget-title mobile-pros-and-cons-title">
+      <h2>
+      <span><?php the_field('pros_and_cons', 'option');  ?></span>
+      </h2>
+    </div>
+
           <ul>
 
 <?php

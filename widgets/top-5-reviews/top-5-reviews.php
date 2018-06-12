@@ -19,7 +19,7 @@ class hlm_sports_232x310_widget extends WP_Widget {
 			add_action('admin_enqueue_scripts', array( $this, 'services_widget_scripts' ));
 
 		    if ( is_active_widget( false, false, $this->id_base ) || is_customize_preview() ) {
-		            add_action( 'wp_enqueue_scripts', array( $this, 'widget_enqueue_scripts' ) );
+		            add_action( 'wp_enqueue_scripts', array( $this, 'widget_enqueue_scripts' ), 0 );
 		        }
 			}
 			
@@ -73,7 +73,7 @@ class hlm_sports_232x310_widget extends WP_Widget {
         }
         ?>
 
-<div class="top-5-reviews <?php echo esc_attr($looks);?>">
+<div class="top-5-reviews <?php if($looks != 'looks6'){echo esc_attr($looks);}else{echo 'looks5 looks6';}?>">
 
 
 
@@ -96,6 +96,8 @@ if($looks == 'looks1'){
 	}else{
 	include( locate_template( 'widgets/top-5-reviews/looks-5.php', false, false ) );  
 	}
+}elseif($looks == 'looks6'){
+	include( locate_template( 'widgets/top-5-reviews/looks-5.php', false, false ) );  
 }
 
   } ?>
@@ -175,7 +177,7 @@ if($looks == 'looks1'){
 	<label for="<?php echo esc_attr($this->get_field_id('looks')); ?>"><?php _e('Looks:', 'hlm-sports');?></label>
 	<select name="<?php echo esc_attr($this->get_field_name('looks')); ?>" id="<?php echo esc_attr($this->get_field_id('looks')); ?>" class="widefat" >
 		<?php 
-		$options = array('looks1', 'looks2', 'looks3', 'looks4', 'looks5' );
+		$options = array('looks1', 'looks2', 'looks3', 'looks4', 'looks5', 'looks6' );
 		foreach ($options as $option) {?>
 		<option value='<?php echo esc_attr($option); ?>' <?php if ($option == $instance['looks']) echo 'selected="selected"'; ?>><?php echo esc_html($option); ?></option>
 		<?php } ?>

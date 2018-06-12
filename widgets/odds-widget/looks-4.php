@@ -15,7 +15,7 @@
 				       endforeach;
 				    ?>
 				</select>  -->
-				<img src="http://hlm-sports-betting.local/wp-content/themes/hlm/widgets/odds-widget/logos/world-cup.png">
+				<img src="<?php echo get_template_directory_uri() . '/widgets/odds-widget/logos/world-cup.png'?>"/>
 				</div>
 			</div>
 			<ul class="odds-widget-bookmakers-links slides">
@@ -59,13 +59,13 @@
 				'meta_key'			=> 'start_time',
 				'orderby'			=> 'meta_value',
 				'order'				=> 'ASC',
-		      'tax_query' => array(
-                array(
-                    'taxonomy' => 'leagues',
-                    'field' => 'slug',
-                    'terms' => $categories
-             	   )
-            	)
+		      // 'tax_query' => array(
+        //         array(
+        //             'taxonomy' => 'leagues',
+        //             'field' => 'slug',
+        //             'terms' => $categories
+        //      	   )
+        //     	)
 			);
 
 		            $matches_query = new WP_Query($args);
@@ -76,7 +76,7 @@
 					<?php 
 
 						$myDateTime = strtotime(get_field('start_time'));
-						echo date ('l F d',$myDateTime);
+						echo date('l F d',$myDateTime);
 			
 
 					 ?>
