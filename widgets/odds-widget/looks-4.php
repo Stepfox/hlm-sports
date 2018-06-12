@@ -75,7 +75,7 @@
 				<div class="odds-date">
 					<?php 
 
-						$myDateTime = strtotime(get_field('start_time'));
+						$myDateTime = get_field('start_time');
 						echo date('l F d',$myDateTime);
 			
 
