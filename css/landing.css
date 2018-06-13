@@ -1,114 +1,71 @@
-.landing-header{background: #F00;height:30px;}
-.landing-top-element{}
-.landing-logo{float:left;}
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/**
+colors needed
+
+orange f2994a
+green  6fcf97
+
+**/
 
 
-@import url("http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
-/* HERE STARTS THE MAGIC */
-header {
-    text-align: center;
-    color: #fff;
-    background: #18bc9c;
-
-    position: fixed;
-    width:100%;
-    z-index: 1;
-    height: 88%;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-}
-
-.content-wrapper{
-    background-color: white;
-    top: 87%;
-    min-height: 12%;
-    position:absolute;
-    z-index: 2;
-    width: 100%;    
-}
-/* HERE ENDS THE MAGIC */
-header .container {
-    padding-top: 150px;
-    padding-bottom: 50px;
-}
-
-header img {
-    display: block;
-    margin: 0 auto 20px;
-}
-
-header .intro-text .name {
-    display: block;
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 2em;
-    font-weight: 700;
-}
-
-header .intro-text .skills {
-    font-size: 1.25em;
-    font-weight: 300;
-}
-
-section {
-    padding: 100px 0;    
-    width: 100%;
-}
-
-section h2 {
-    margin: 0;
-    font-size: 3em;
-}
-hr.star-light,
-hr.star-primary {
-    margin: 25px auto 30px;
-    padding: 0;
-    max-width: 250px;
-    border: 0;
-    border-top: solid 5px;
-    text-align: center;
-}
-
-hr.star-light:after,
-hr.star-primary:after {
-    content: "\f005";
-    display: inline-block;
-    position: relative;
-    top: -.8em;
-    padding: 0 .25em;
-    font-family: FontAwesome;
-    font-size: 2em;
-}
-
-hr.star-light {
-    border-color: #fff;
-}
-
-hr.star-light:after {
-    color: #fff;
-    background-color: #18bc9c;
-}
-
-hr.star-primary {
-    border-color: #2c3e50;
-}
-
-hr.star-primary:after {
-    color: #2c3e50;
-    background-color: #fff;
-}
-
-section.primary h2{    
-    color: #2c3e50;
-    }
-    
-section.success{
-    background-color: #18bc9c;
-    color: #fff;
-    }
+nav.navbar-findcond { background: #fff; border-color: #ccc; box-shadow: 0 0 2px 0 #ccc; }
+nav.navbar-findcond a { color: #f14444; }
+nav.navbar-findcond ul.navbar-nav a { color: #f14444; border-style: solid; border-width: 0 0 2px 0; border-color: #fff; }
+nav.navbar-findcond ul.navbar-nav a:hover,
+nav.navbar-findcond ul.navbar-nav a:visited,
+nav.navbar-findcond ul.navbar-nav a:focus,
+nav.navbar-findcond ul.navbar-nav a:active { background: #fff; }
+nav.navbar-findcond ul.navbar-nav a:hover { border-color: #f14444; }
+nav.navbar-findcond li.divider { background: #ccc; }
+nav.navbar-findcond button.navbar-toggle { background: #f14444; border-radius: 2px; }
+nav.navbar-findcond button.navbar-toggle:hover { background: #999; }
+nav.navbar-findcond button.navbar-toggle > span.icon-bar { background: #fff; }
+nav.navbar-findcond ul.dropdown-menu { border: 0; background: #fff; border-radius: 4px; margin: 4px 0; box-shadow: 0 0 4px 0 #ccc; }
+nav.navbar-findcond ul.dropdown-menu > li > a { color: #444; }
+nav.navbar-findcond ul.dropdown-menu > li > a:hover { background: #f14444; color: #fff; }
+nav.navbar-findcond span.badge { background: #f14444; font-weight: normal; font-size: 11px; margin: 0 4px; }
+nav.navbar-findcond span.badge.new { background: rgba(255, 0, 0, 0.8); color: #fff; }
 
 
-    
-    
-    
+
+
+
+
+#top-element{padding:250px 0 200px 0;background: url("http://via.placeholder.com/1920x700")no-repeat top center;}
+#top-element .container{margin-top:-150px;}
+#top-element .container-fluid{margin-top:120px;}
+
+
+section{max-width:;padding:20px 0;}
+section .section-title{text-align:center;color:#007b5e;margin-bottom:50px;text-transform:uppercase;}
+#what-we-do{}
+#what-we-do 
+#what-we-do .card{padding:1rem!important;border:none;margin-bottom:1rem;-webkit-transition:.5s all ease;-moz-transition:.5s all ease;transition:.5s all ease;}
+#what-we-do .card:hover{-webkit-box-shadow:5px 7px 9px -4px rgb(158, 158, 158);-moz-box-shadow:5px 7px 9px -4px rgb(158, 158, 158);box-shadow:5px 7px 9px -4px rgb(158, 158, 158);}
+#what-we-do .card .card-block{padding-left:50px;position:relative;}
+#what-we-do .card .card-block a{color:#007b5e !important;font-weight:700;text-decoration:none;}
+#what-we-do .card .card-block a i{display:none;}
+#what-we-do .card:hover .card-block a i{display:inline-block;font-weight:700;}
+#what-we-do .card .card-block:before{font-family:FontAwesome;position:absolute;font-size:39px;color:#007b5e;left:0;-webkit-transition:-webkit-transform .2s ease-in-out;transition:transform .2s ease-in-out;}
+#what-we-do .card .block-1:before{content:"\f0e7";}
+#what-we-do .card .block-2:before{content:"\f0eb";}
+#what-we-do .card .block-3:before{content:"\f00c";}
+#what-we-do .card .block-4:before{content:"\f209";}
+#what-we-do .card .block-5:before{content:"\f0a1";}
+#what-we-do .card .block-6:before{content:"\f218";}
+#what-we-do .card:hover .card-block:before{-webkit-transform:rotate(360deg);transform:rotate(360deg);-webkit-transition:.5s all ease;-moz-transition:.5s all ease;transition:.5s all ease;}
+
+
+
+
+
+
+#bonus-list{}
+#bonus-list img{width:100%;margin-bottom:30px;}
+#bonus-list .list-group-item-text{margin-bottom: 30px;}
+#bonus-list .card{padding:20px 0;float:left;    border: 1px solid #eae7e7; padding: 20px 0; float: left; margin: 5px;}
+
+
+
+
