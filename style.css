@@ -7,7 +7,7 @@ Tags: one-column, two-columns, three-columns, four-columns, custom-colors, custo
 Text Domain: hlm-sports
 */
 
-.payment-section{display:none;}
+
 /*Css reset*/
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video{margin:0;padding:0;border:0;font-size:100%;vertical-align:baseline;text-decoration:none;}
 /* HTML5 display-role reset for older browsers */
@@ -251,6 +251,7 @@ li.thumb-down:before{background:#d62a1c;}
 .payment-section{margin:10px 0 0;}
 .payment-icon{box-sizing:content-box;line-height:60px;display:inline-block;vertical-align:middle;padding-left:10px;margin-right:-5px;}
 .payment-icon img{vertical-align:middle;}
+.single-bookmaker .payment-icon{max-width:7%;}
 .bookmaker-footer-image{margin-top:20px;float:left;width:100%;}
 .match-top-page-area{float:left;margin-bottom:30px;}
 .match-top-page-area .hlm-sports-widget{float:left;}
@@ -535,7 +536,7 @@ input#search-switch:checked + .search-box{position:absolute;float:left;display:b
 .odds-widget-sports{color:#FFF;width:100%;float:left;line-height:80px;font-size:20px;text-align:center;}
 .odds-widget-sports select{width:50%;}
 .odds-widget-sports img{max-height:80px;max-width:50%;}
-.odds-widget{width:100%;padding:10px;float:left;position:relative;}
+.odds-widget{    background: #5a5859;width:100%;padding:10px;float:left;position:relative;}
 .odds-widget-matches{width:100%;float:left;margin-top:20px;}
 .odds-widget-matches > li{width:100%;float:left;margin-bottom:10px;border:1px solid #FFF;}
 ul.odds-widget-odds-list{overflow:hidden;width:70%;float:left;padding:0;display:flex;white-space:nowrap;z-index:1;}
@@ -567,7 +568,7 @@ ul.odds-widget-odds-list{overflow:hidden;width:70%;float:left;padding:0;display:
 .odds-next{padding:10px;background:#358d53;position:absolute;right:0;top:240px;z-index:9;font-size:20px;color:#FFF;font-weight:800;cursor:pointer;}
 .mob-menu-button{display:none;}
 
-
+.single-match .odds-prev, .single-match .odds-next{top:40px;}
 
 
 /*
@@ -863,8 +864,12 @@ Top 5 Reviews Widget------------------------------------------------------------
 .looks1.top-5-reviews li{width:25%;margin-bottom:10px; margin-bottom: 10px;    margin-left: 0;    padding-left: 10px;}
 .looks1.top-5-reviews li:nth-child(5){display:none;}
 }
-@media screen and (max-width:700px){#main{margin-top:90px;}
- .parallax-background{display:none;}
+@media screen and (max-width:700px){
+.payment-section .widget .bonus-with-check{width:33%;}
+.payment-section .widget{text-align: center;}
+.single-bookmaker .payment-icon{    max-width: 33%; width: 33%; box-sizing: border-box; text-align: left; padding-left: 30px;}
+#main{margin-top:90px;}
+.parallax-background{display:none;}
 body.custom-background{background-image:none;}
 #bottom-menu ul{text-align:center;line-height:initial;margin:10px;}
 #bottom-menu li{margin:10px 0;}

@@ -31,7 +31,7 @@
                 <?php } ?>                    
               </div>
               <div class="featured-match-date">
-               <?php            $myDateTime = strtotime(get_field('start_time'));
+               <?php            $myDateTime = get_field('start_time');
             echo date ('l F d',$myDateTime); ?>
               </div>  
               <div class="featured-match-time">
@@ -59,16 +59,7 @@
 
 
       <div class="one-part hlm-sports-widget">
-<?php 
-$bookmaker = get_field('featured_review_bookmaker', 'option'); 
-$bookmaker_bonus = get_field('featured_review_bonus', 'option'); 
-$bookmaker_title = get_field('featured_review_title', 'option'); 
 
-$widget_instance = array( 'title' => $bookmaker_title, 'biglooks_bonus_title' => '', 'biglooks_bonus_one' => '', 'biglooks_bonus_two' => '', 'biglooks_bonus_three' => '',  'looks' => 'looks2', 'bonus' => array('0' => $bookmaker_bonus), 'bookmaker' => array('0' => $bookmaker));
-$widget_args = array(   'before_title' => '<div class="widget-title"><h2>',
-    'after_title' => '</h2></div>');
-
-the_widget( 'hlm_sports_232x310_widget', $widget_instance, $widget_args ); ?>
       </div>
     </div>
   </div>
@@ -77,31 +68,14 @@ the_widget( 'hlm_sports_232x310_widget', $widget_instance, $widget_args ); ?>
 
 
   <div class="three-parts hlm-sports-widget post-page-area">
-        <nav>
-          <ul>
-            <li>
-              <a href="#">
-                Content
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Content
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Content
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Content
-              </a>
-            </li>
-          </ul>
-        </nav>
+    <?php echo do_shortcode( '[hlm_sports_highest_odd]' ); ?>
         <div class="post-content widget">
+
+<?php echo do_shortcode( '[hlm_sports_match_odds]' ); ?>
+
+
+
+
         <?php
       if ( have_posts() ) :
         while ( have_posts() ) : the_post();

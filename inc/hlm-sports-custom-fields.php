@@ -1,6 +1,4 @@
 <?php
-
-
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
@@ -2871,6 +2869,25 @@ acf_add_local_field_group(array(
             'append' => '',
             'maxlength' => '',
         ),
+        array(
+            'key' => 'field_5b20c7abf4b98',
+            'label' => 'Bookmaker Archive Page Text',
+            'name' => 'bookmaker_archive_page_text',
+            'type' => 'wysiwyg',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'tabs' => 'all',
+            'toolbar' => 'full',
+            'media_upload' => 1,
+            'delay' => 0,
+        ),
     ),
     'location' => array(
         array(
@@ -3974,7 +3991,5 @@ acf_add_local_field_group(array(
 ));
 
 endif;
-
-
 
  ?>

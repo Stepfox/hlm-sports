@@ -131,11 +131,11 @@ $payment_options = get_field('payment_options');
 
 if( $payment_options ): ?>
 
-  <?php foreach( $payment_options as $p ): ?>
+  <?php foreach( array_slice($payment_options, 0, 3) as $p ): ?>
       <div class="payment-icon">
          <?php $image = get_field('payment_icon', $p->ID);                            
             if( $image ) {?>
-              <img src="<?php  echo $image['sizes']['hlm_sports_70x30']; ?>" alt="">                
+              <img src="<?php  echo $image['sizes']['hlm_sports_136x44']; ?>" alt="">                
             <?php } ?>  
       </div>
   <?php endforeach; ?>

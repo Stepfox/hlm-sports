@@ -42,7 +42,7 @@
           <?php $image = get_field('logo_136x44');                            
             if( $image ) {?>
               <div class="bookmaker-background-wrap-<?php echo get_the_ID(); ?>">
-                <a href="<?php echo the_field( 'default_tracker' ); ?>" target="_blank">
+                <a href="<?php echo get_permalink(); ?>">
                 <img src="<?php  echo $image['sizes']['hlm_sports_196x66']; ?>" alt="">  
                 </a>   
               </div>           
@@ -146,11 +146,14 @@ endif;
 
 
 
+
+
   <div class="three-parts post-page-area hlm-sports-widget">
+    <div class="widget hlm-sports-widget post-content">
+      <?php the_field('bookmaker_archive_page_text', 'options'); ?>
+    </div>
+
         <div class="post-content widget blog-post">
-
-
-
 
 	<ul class="looks1">
         <?php
