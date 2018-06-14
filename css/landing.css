@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900');
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 /**
@@ -7,11 +8,21 @@ orange f2994a
 green  6fcf97
 
 **/
+body{font-family: 'Roboto', sans-serif;font-size:18px;color:#acacac;}
 
+.h1, #top-element .card-title{color:#252624;}
 
 nav.navbar-findcond { background: #fff; border-color: #ccc; box-shadow: 0 0 2px 0 #ccc; }
-nav.navbar-findcond a { color: #f14444; }
-nav.navbar-findcond ul.navbar-nav a { color: #f14444; border-style: solid; border-width: 0 0 2px 0; border-color: #fff; }
+nav.navbar-findcond a { color: #252624; }
+nav.navbar-findcond ul.navbar-nav a { color: #CCC; border-style: solid; border-width: 0 0 2px 0; border-color: #fff; }
+nav.navbar-findcond ul.navbar-nav a:hover{color:#f14444;}
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 10px;
+    font-size: 18px;
+    line-height: 20px;
+}
 nav.navbar-findcond ul.navbar-nav a:hover,
 nav.navbar-findcond ul.navbar-nav a:visited,
 nav.navbar-findcond ul.navbar-nav a:focus,
@@ -32,40 +43,53 @@ nav.navbar-findcond span.badge.new { background: rgba(255, 0, 0, 0.8); color: #f
 
 
 
-#top-element{padding:250px 0 200px 0;background: url("http://via.placeholder.com/1920x700")no-repeat top center;}
+#top-element{padding:250px 0 200px 0;background: url("../images/landing/landing-background.png")no-repeat top center;background-size: 1920px;    background-position: center -100px;}
+#top-element .h1{font-weight: 700;font-size:60px;}
+#top-element .h5{font-size:30px;color:#ccc;margin-top:30px;}
+#top-element .card-title{margin-top:15px;}
+#top-element .logo{overflow: hidden;max-width: 100%;height:60px;}
+#top-element .logo img{;max-width: 100%;}
 #top-element .container{margin-top:-150px;}
-#top-element .container-fluid{margin-top:120px;}
+#top-element .container-fluid{margin-top:70px;}
+#top-element .row > div{  padding:0 0 70px 0;  box-shadow: inset 0 0 0 1000px #FFF; border: 10px solid transparent;}
+#top-element .card{padding:20px;}
+.bet-now{font-size:20px;font-weight:600;text-transform: uppercase; color:#FFF;   left: 0; bottom: 20px; width: 84%; margin: 0 8%; position: absolute; padding: 10px; background: #f2994a; box-sizing: border-box; text-align: center;}
+#bonus-list .bet-now{position: relative;top:0;}
 
-
+#good-bonus{margin-top:-150px;max-width: 900px;}
 section{max-width:;padding:20px 0;}
-section .section-title{text-align:center;color:#007b5e;margin-bottom:50px;text-transform:uppercase;}
-#what-we-do{}
-#what-we-do 
-#what-we-do .card{padding:1rem!important;border:none;margin-bottom:1rem;-webkit-transition:.5s all ease;-moz-transition:.5s all ease;transition:.5s all ease;}
-#what-we-do .card:hover{-webkit-box-shadow:5px 7px 9px -4px rgb(158, 158, 158);-moz-box-shadow:5px 7px 9px -4px rgb(158, 158, 158);box-shadow:5px 7px 9px -4px rgb(158, 158, 158);}
-#what-we-do .card .card-block{padding-left:50px;position:relative;}
-#what-we-do .card .card-block a{color:#007b5e !important;font-weight:700;text-decoration:none;}
-#what-we-do .card .card-block a i{display:none;}
-#what-we-do .card:hover .card-block a i{display:inline-block;font-weight:700;}
-#what-we-do .card .card-block:before{font-family:FontAwesome;position:absolute;font-size:39px;color:#007b5e;left:0;-webkit-transition:-webkit-transform .2s ease-in-out;transition:transform .2s ease-in-out;}
-#what-we-do .card .block-1:before{content:"\f0e7";}
-#what-we-do .card .block-2:before{content:"\f0eb";}
-#what-we-do .card .block-3:before{content:"\f00c";}
-#what-we-do .card .block-4:before{content:"\f209";}
-#what-we-do .card .block-5:before{content:"\f0a1";}
-#what-we-do .card .block-6:before{content:"\f218";}
-#what-we-do .card:hover .card-block:before{-webkit-transform:rotate(360deg);transform:rotate(360deg);-webkit-transition:.5s all ease;-moz-transition:.5s all ease;transition:.5s all ease;}
-
+.section-title{font-size:50px;text-align:center;color:#252624;margin-bottom:50px;font-weight: 700;}
+#what-we-do .card-block{    line-height: 30px;   background: #FFF url("../images/landing/dollar-sign.png")no-repeat bottom center; padding:50px;text-align: center;font-size:20px;font-weight: 700;height:200px;    vertical-align: middle;
+    display: table-cell;box-shadow: 0 0 50px #CCC;}
+#good-bonus .row > div{padding:20px;}
+#what-we-do .row > div:nth-child(3){}
+#what-we-do .row > div:nth-child(2) .card-block{background: #FFF url("../images/landing/file-alt.png")no-repeat bottom center;}
+#what-we-do .row > div:nth-child(3) .card-block{background: #FFF url("../images/landing/clock.png")no-repeat bottom center;}
+#what-we-do .row > div .card-block:hover{background-color: #6fcf97;color:#FFF;}
 
 
 
 
 
 #bonus-list{}
-#bonus-list img{width:100%;margin-bottom:30px;}
+#bonus-list .list-group-item-text{}
+#bonus-list .card{width:100%;float:left;    border: 1px solid #eae7e7; padding: 20px 0; float: left; margin: 5px;}
+
+.footer-nav{margin-bottom:50px;}
+
+
+
+@media (max-width: 992px) {
+#top-element .h1, #top-element .h5{max-width: 100%;}
+}
+
+@media (max-width: 768px) {
+	#what-we-do .card-block{width:100%;float:left;}
+.logo, #top-element .card, #bonus-list .list-group-item-text{text-align: center;}
+.logo img{display: inline-block;}
+#bonus-list .card{float:left;  padding: 20px 0; }
+#bonus-list img{margin-bottom:30px;}
 #bonus-list .list-group-item-text{margin-bottom: 30px;}
-#bonus-list .card{padding:20px 0;float:left;    border: 1px solid #eae7e7; padding: 20px 0; float: left; margin: 5px;}
-
-
+}
 
 

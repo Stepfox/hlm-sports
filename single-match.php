@@ -1,8 +1,10 @@
 <?php get_header(); ?>
 <main id="main">
-  <div class="four-parts hlm-sports-widget match-top-page-area">
+
+  <div class="three-parts hlm-sports-widget post-page-area">
+
+  <div class="match-top-page-area">
     <div class="widget featured-match">
-      <div class="three-parts hlm-sports-widget">
     <div class="widget-title">
       <h2>
       <?php the_field('upcoming_match', 'option');  ?>
@@ -58,17 +60,11 @@
     </div>
 
 
-      <div class="one-part hlm-sports-widget">
 
-      </div>
     </div>
-  </div>
 
 
 
-
-  <div class="three-parts hlm-sports-widget post-page-area">
-    <?php echo do_shortcode( '[hlm_sports_highest_odd]' ); ?>
         <div class="post-content widget">
 
 <?php echo do_shortcode( '[hlm_sports_match_odds]' ); ?>
@@ -97,6 +93,16 @@
 
 
   <div class="one-part post-page-area">
+
+      <div class="one-part hlm-sports-widget">
+            <div class="widget-title">
+      <h2>
+         Next Game Best Odds
+      </h2>
+    </div>
+        <?php echo do_shortcode( '[hlm_sports_highest_odd]' ); ?>
+      </div>
+       
       <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Post Sidebar')): endif; ?>
   </div>
 

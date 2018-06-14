@@ -573,11 +573,8 @@ ul.odds-widget-odds-list{overflow:hidden;width:70%;float:left;padding:0;display:
 .bestodds-team-part .top-5-review-bet-now{margin: 5px auto; padding: 0px 10px; float: none; display: inline-block; color: #FFF; font-size: 12px;}
 .bestodds-team-part + .bestodds-team-part{border-top:1px solid #FFF;} 
 .bestodds-team + .bestodds-team{border-left:1px solid #FFF;} 
-
-
-
+.bestodds-match a{float:left;font-size:14px;color:#FFF;margin-top:5px;font-weight: 600;}
 .mob-menu-button{display:none;}
-
 .single-match .odds-prev, .single-match .odds-next{top:40px;}
 
 
