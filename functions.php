@@ -318,6 +318,7 @@ include(get_template_directory()."/widgets/content-block-widget/content-block-wi
 include(get_template_directory()."/widgets/deposit-withdraw-widget/deposit-withdraw-widget.php");
 include(get_template_directory()."/widgets/shortcode-widget/shortcode-widget.php");
 include(get_template_directory()."/widgets/payment-options-widget/payment-options-widget.php");
+include(get_template_directory()."/widgets/bestodds-widget/bestodds-widget.php");
 
 
 

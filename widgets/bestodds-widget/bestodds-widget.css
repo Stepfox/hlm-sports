@@ -1,0 +1,13 @@
+/*
+Faq Widget
+*/
+.faq-widget {width:100%;float:left;padding: 10px 20px;}
+.faq-widget-item {width:100%;float:left;}
+.faq-widget-posts-text {width:100%;float:left;margin-bottom:20px;}
+.faq-widget-posts-title {float:left;font-weight:700;padding-left:40px;}
+.faq-widget-posts-title h3{margin-top:5px;}
+.faq-widget-posts-title:before {text-align:center;content:'Q';font-size:20px;font-weight:700;background:#4cb469;float:left;height:30px;width: 30px;margin-right:10px;color:#FFF;margin-left:-40px;line-height:30px;border-radius: 3px;}
+
+.faq-widget-posts-content {width:100%;float:left;box-sizing: border-box;padding-left:40px;}
+.faq-widget-posts-content:before {text-align:center;content:'A';font-size:20px;line-height:30px;font-weight:700;background:#5a5859;float:left;height:30px;width: 30px;margin-right:10px;color:#FFF;margin-left:-40px;border-radius: 3px;}
+#secondary .faq-widget-posts-content{padding-left:20px;}
