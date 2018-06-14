@@ -51,9 +51,9 @@ https://bootsnipp.com/snippets/featured/services-section-using-bootstrap-4
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-fw fa-bell-o"></i> Bildirimler <span class="badge">0</span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#"><i class="fa fa-fw fa-thumbs-o-up"></i> <span class="badge">Music</span> sayfasında iletiniz beğenildi</a></li>
-                        <li><a href="#"><i class="fa fa-fw fa-thumbs-o-up"></i> <span class="badge">Video</span> sayfasında iletiniz beğenildi</a></li>
-                        <li><a href="#"><i class="fa fa-fw fa-thumbs-o-up"></i> <span class="badge">Game</span> sayfasında iletiniz beğenildi</a></li>
+                        <li><a href="#"><i class="fa fa-fw fa-thumbs-o-up"></i> <span class="badge">Review</span> sayfasında iletiniz beğenildi</a></li>
+                        <li><a href="#"><i class="fa fa-fw fa-thumbs-o-up"></i> <span class="badge">Review</span> sayfasında iletiniz beğenildi</a></li>
+                        <li><a href="#"><i class="fa fa-fw fa-thumbs-o-up"></i> <span class="badge">Review</span> sayfasında iletiniz beğenildi</a></li>
                     </ul>
                 </li>
                 <li class="active"><a href="#">Ana Sayfa <span class="sr-only">(current)</span></a></li>

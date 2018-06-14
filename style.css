@@ -566,10 +566,11 @@ ul.odds-widget-odds-list{overflow:hidden;width:70%;float:left;padding:0;display:
 .odds-list{width:70%;float:left;}
 .odds-prev{padding:10px;background:#358d53;position:absolute;left:0;top:240px;z-index:9;font-size:20px;color:#FFF;font-weight:800;cursor:pointer;}
 .odds-next{padding:10px;background:#358d53;position:absolute;right:0;top:240px;z-index:9;font-size:20px;color:#FFF;font-weight:800;cursor:pointer;}
-.bestodds-teams{width: 100%;float:left;border:1px solid #FFF;}
+.bestodds-teams{width: 100%;float:left;border:1px solid #FFF;color:#FFF;}
 .bestodds-team{width:33.3%;float:left;text-align: center;}
 .bestodds-team-part{width:100%;float:left;padding:5px;}
-.bestodds-team-part .top-5-review-bet-now{margin:5px auto;float: none;display:inline-block;}
+.bestodds-team a{color:#FFF;}
+.bestodds-team-part .top-5-review-bet-now{margin: 5px auto; padding: 0px 10px; float: none; display: inline-block; color: #FFF; font-size: 12px;}
 .bestodds-team-part + .bestodds-team-part{border-top:1px solid #FFF;} 
 .bestodds-team + .bestodds-team{border-left:1px solid #FFF;} 
 
