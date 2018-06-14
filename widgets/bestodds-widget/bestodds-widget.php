@@ -96,24 +96,111 @@ $args = array(
 			              $deezs = get_sub_field('bookmaker'); if(!empty(get_field('bookmaker_crawl_order', $deezs->ID))) { 
 			              	
 			            if(!empty( get_sub_field('win_odds'))){ $win_odds[] = array(get_sub_field('win_odds') => $deezs->ID);}else{$win_odds[] = '0';}
-			           if(!empty( get_sub_field('draw_odds'))){ $draw_odds[] = get_sub_field('draw_odds');}else{$draw_odds[] = '0';}
-						if(!empty( get_sub_field('loss_odds'))){ $loss_odds[] = get_sub_field('loss_odds');}else{$loss_odds[] = '0';}
+			           if(!empty( get_sub_field('draw_odds'))){ $draw_odds[] = array(get_sub_field('draw_odds') => $deezs->ID);}else{$draw_odds[] = '0';}
+						if(!empty( get_sub_field('loss_odds'))){ $loss_odds[] = array(get_sub_field('loss_odds') => $deezs->ID);}else{$loss_odds[] = '0';}
 			             } 
 			         	endwhile;          
 			          endif; 
 
 			$highest_win_odd = max(array_keys($win_odds));
+			$highest_draw_odd = max(array_keys($draw_odds));
+			$highest_loss_odd = max(array_keys($loss_odds));
 			$terms = wp_get_post_terms( get_the_ID(), 'teams');
 
+var_dump($draw_odds);
+			?>
 
-			echo 'the highest odd to win '.$terms[0]->slug.' is ';
-			echo key($win_odds[$highest_win_odd]);
-			echo ' by the bookmaker ';
-			echo current($win_odds[$highest_win_odd]);
-            $image = get_field('logo_136x44', current($win_odds[$highest_win_odd]));              
-            if( $image ) {?>
-              <img src="<?php  echo $image['sizes']['hlm_sports_136x44']; ?>" >                 
-            <?php }	?>
+
+            <div class="odds-widget">
+            	<div class="odds-date">
+					Thursday June 14				
+				</div>
+
+				<div class="bestodds-teams">
+					<div class="bestodds-team">
+						<div class="bestodds-team-part">
+							<a href="http://hlm-betting.local/teams/russia">
+								<?php  echo $terms[0]->slug; ?>					
+							</a>
+						</div>
+						<div class="bestodds-team-part">
+							<?php $image = get_field('logo_136x44', current($win_odds[$highest_win_odd]));          
+				            if( $image ) {?>
+				              <img src="<?php  echo $image['sizes']['hlm_sports_136x44']; ?>" >                 
+				            <?php }	?>
+			        	</div>
+			        	<div class="bestodds-team-part">
+			        		<?php echo key($win_odds[$highest_win_odd]); ?>
+			        	</div>
+			        	<div class="bestodds-team-part">
+							<a class="top-5-review-bet-now" href="<?php echo the_field( 'default_tracker', current($win_odds[$highest_win_odd])); ?>" target="_blank">
+	                    		<?php the_field('bet_now', 'option');  ?>
+	                		</a>
+			        	</div>
+					</div>
+
+
+					<div class="bestodds-team">
+						<div class="bestodds-team-part">
+							<?php  echo 'draw'; ?>
+
+						</div>		
+						<div class="bestodds-team-part">
+							<?php $image = get_field('logo_136x44', current($draw_odds[$highest_draw_odd]));          
+				            if( $image ) {?>
+				              <img src="<?php  echo $image['sizes']['hlm_sports_136x44']; ?>" >                 
+				            <?php }	?>
+			        	</div>
+			        	<div class="bestodds-team-part">
+			        		<?php echo key($draw_odds[$highest_draw_odd]); ?>
+			        	</div>
+			        	<div class="bestodds-team-part">
+							<a class="top-5-review-bet-now" href="<?php echo the_field( 'default_tracker', current($draw_odds[$highest_draw_odd])); ?>" target="_blank">
+	                    		<?php the_field('bet_now', 'option');  ?>
+	                		</a>
+			        	</div>
+					</div>
+					<div class="bestodds-team">
+						<div class="bestodds-team-part">
+							<a href="http://hlm-betting.local/teams/saudi-arabia">
+								<?php  echo $terms[1]->slug; ?>					
+							</a>
+						</div>
+						<div class="bestodds-team-part">
+							<?php $image = get_field('logo_136x44', current($loss_odds[$highest_loss_odd]));          
+				            if( $image ) {?>
+				              <img src="<?php  echo $image['sizes']['hlm_sports_136x44']; ?>" >                 
+				            <?php }	?>
+			        	</div>
+			        	<div class="bestodds-team-part">
+			        		<?php echo key($loss_odds[$highest_loss_odd]); ?>
+			        	</div>
+			        	<div class="bestodds-team-part">
+							<a class="top-5-review-bet-now" href="<?php echo the_field( 'default_tracker', current($loss_odds[$highest_loss_odd])); ?>" target="_blank">
+	                    		<?php the_field('bet_now', 'option');  ?>
+	                		</a>
+			        	</div>
+					</div>
+
+				</div>
+
+
+				<?php 
+				echo 'the highest odd to win '.$terms[0]->slug.' is ';
+				echo key($win_odds[$highest_win_odd]);
+				echo ' by the bookmaker ';
+				echo current($win_odds[$highest_win_odd]);
+	            $image = get_field('logo_136x44', current($win_odds[$highest_win_odd]));              
+	            if( $image ) {?>
+	              <img src="<?php  echo $image['sizes']['hlm_sports_136x44']; ?>" >                 
+	            <?php }	 ?>
+
+
+
+            </div>
+
+
+
 
 
 			</li>
