@@ -557,7 +557,7 @@ ul.odds-widget-odds-list{overflow:hidden;width:70%;float:left;padding:0;display:
 .odds-game-teams > div:before{content:'';width:44px;height:100%;position:absolute;background:#5a5859;transform:skew(-28deg);right:-23px;z-index:0;}
 .odds-game-time{line-height:75px;float:left;width:20%;text-align:center;overflow:hidden;max-height:75px;font-size:12px;border-right:1px solid #FFF;}
 .odds-game-teams{float:left;width:80%;}
-.odds-game-home-team div, .odds-game-away-team div{width:100%;white-space:nowrap;background:#2f2f2f;color:#FFF;padding-right:20px;line-height:25px;float:left;}
+.odds-game-home-team div, .odds-game-away-team div{text-transform:capitalize;width:100%;white-space:nowrap;background:#2f2f2f;color:#FFF;padding-right:20px;line-height:25px;float:left;}
 .odds-game-home-team div a, .odds-game-away-team div a{color:#FFF;}
 .odds-game-home-team{float:left;width:100%;}
 .odds-game-away-team{float:left;width:100%;border-top:1px solid #FFF;}

@@ -157,7 +157,7 @@ endif;
 
 	<ul class="looks1">
         <?php
-        $i = 0;
+        $i = 9 * ($page - 1);
       if ( have_posts() ) :
         while ( have_posts() ) : the_post();
 $i++;

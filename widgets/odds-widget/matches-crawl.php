@@ -331,4 +331,161 @@ $data = json_decode( $body, true );
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function crawl_super_table(){
+
+
+
+
+		//check for duplicate
+		            $args = array(
+		                'post_type' => 'match',
+		                'posts_per_page' => 1, 
+		                'post_status' => 'publish',   
+		            );
+		            $lunar_magazine_posts = new WP_Query($args);
+		            while($lunar_magazine_posts->have_posts()) : $lunar_magazine_posts->the_post();
+
+
+	$opts=array('http'=>array('method'=>"GET",'header'=>"Accept-language: en\r\n"."Cookie: odds_type=decimal\r\n",'user_agent'=>'Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10.4; en-US; rv:1.9.2.28) Gecko/20120306 Firefox/3.6.28'));
+	$context = stream_context_create($opts);
+	$match_url = str_replace('winner','correct-score', get_field('match_url'));
+	
+	$html = file_get_html($match_url,false,$context);
+
+
+
+echo $match_url;
+
+
+		//$crawled_titles_number = count($html->find('.match-on .fixtures-bet-name'));
+
+
+//the id of the table with odds
+$table = $html->find('#t1', 0);
+
+
+$rowData = array();
+if (!empty($table)){
+foreach($table->find('tr') as $row) {
+    // initialize array to store the cell data from each row
+    $flight = array();
+    foreach($row->find('td') as $cell) {
+        // push the cell's text to the array
+        	$flight[] = $cell->plaintext;
+    }
+    if(array_filter($flight)){
+    	$rowData[] = $flight;
+	}
+}
+}
+//var_dump($rowData);
+
+
+		            $page_name_id = get_the_ID();
+
+		            $args1 = array(
+		                'post_type' => 'bookmaker',
+		                'posts_per_page' => -1, 
+		                'post_status' => 'publish',   
+		            );
+		            $bookmakers_query = new WP_Query($args1);
+
+		            while($bookmakers_query->have_posts()) : $bookmakers_query->the_post();
+		            		$bookmaker_crawl_order[] = get_field('bookmaker_crawl_order', get_the_ID());
+		            endwhile; 
+
+
+var_dump($bookmaker_crawl_order);
+
+//title of the odd
+
+//echo $rowData[$count][0];
+
+//bookmaker crawl number
+
+//echo $rowData[$count][$bookmaker_crawl_order];
+$rowdata_count = count($rowData) - 1;
+
+for ($i = 0; $i <= $rowdata_count; $i++) {
+
+	foreach($rowData[$i] as $hhh) {
+	        // push the cell's text to the array
+	        	$gggg[$i]['odd_list'][] = array('odd' => $hhh);       	
+	}
+
+}
+
+var_dump($gggg);	
+
+//save a repeater field value
+$field_key = "super_table";
+$value = array(
+    array(
+    	"name_of_the_table" => 'deez',
+        "odds_lists"	=> $gggg,  
+ 	),
+ );
+update_field( $field_key, $value, $page_name_id );
+
+		            endwhile;  
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
 ?>

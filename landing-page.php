@@ -49,20 +49,22 @@ https://bootsnipp.com/snippets/featured/services-section-using-bootstrap-4
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Reviews <span class="badge">11</span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#"><i class="fa fa-fw fa-thumbs-o-up"></i> <span class="badge">Review</span> 888Sport</a></li>
-                        <li><a href="#"><i class="fa fa-fw fa-thumbs-o-up"></i> <span class="badge">Review</span>Unibet</a></li>
-                        <li><a href="#"><i class="fa fa-fw fa-thumbs-o-up"></i> <span class="badge">Review</span>Betfred</a></li>
-                    </ul>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Reviews </a>
                 </li>
-                <li class="active"><a href="#">Strategy <span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="#">Betting Strategy<span class="sr-only">(current)</span></a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Bonuses <span class="badge">3</span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Bonuses <span class="badge">10</span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#"> <span class="badge">Bonus</span> 10$ bonus</a></li>
                         <li><a href="#"><span class="badge">Bonus</span> 100$ bonus</a></li>
                         <li><a href="#"> <span class="badge">Bonus</span> Sign Up Bonus</a></li>
+                        <li><a href="#"> <span class="badge">Bonus</span> 10$ bonus</a></li>
+                        <li><a href="#"><span class="badge">Bonus</span> 100$ bonus</a></li>
+                        <li><a href="#"> <span class="badge">Bonus</span> Sign Up Bonus</a></li>
+                        <li><a href="#"> <span class="badge">Bonus</span> 10$ bonus</a></li>
+                        <li><a href="#"><span class="badge">Bonus</span> 100$ bonus</a></li>
+                        <li><a href="#"> <span class="badge">Bonus</span> Sign Up Bonus</a></li>
+                        <li><a href="#"> <span class="badge">Bonus</span> 10$ bonus</a></li>
                     </ul>
                 </li>
                 <li class="active"><a href="#">World Cup</a></li>
@@ -252,12 +254,6 @@ https://bootsnipp.com/snippets/featured/services-section-using-bootstrap-4
 
 <div class="container text-center">
     <img class="align-self-center" src="<?php echo get_template_directory_uri() . '/images/landing/logo-landing.png'; ?>">
-</div>
-<div class="container text-center footer-nav">
-            <a href="#">Toggle navigation</a>
-            <a href="#">Toggle navigation</a>
-            <a href="#">Toggle navigation</a>
-            <a href="#">Toggle navigation</a>
 </div>
 
 <div class="container text-center">
