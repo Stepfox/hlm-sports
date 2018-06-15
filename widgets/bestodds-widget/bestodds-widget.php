@@ -151,7 +151,7 @@ $args = array(
             <div class="odds-widget">
             	<div class="odds-date">
 					<?php $myDateTime = get_field('start_time');
-						echo date('l, F d H:i A',$myDateTime);
+						echo date('l, F d H:i',(int)$myDateTime);
 						 ?>			
 				</div>
 

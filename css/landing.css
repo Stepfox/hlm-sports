@@ -79,6 +79,35 @@ section{max-width:;padding:20px 0;}
 
 
 
+ .bet-now:hover{text-decoration: none;background:#e6a56b;}
+
+a:hover, a:focus {
+    color: #2a6496;
+    text-decoration: none;
+}
+
+ .bookmaker-background-wrap-955{background:#000000}
+.bookmaker-background-wrap-884{background:}
+.bookmaker-background-wrap-1087{background:}
+.bookmaker-background-wrap-867{background:}
+.bookmaker-background-wrap-852{background:#001b38}
+.bookmaker-background-wrap-823{background:#2f2f2f}
+.bookmaker-background-wrap-583{background:#ffffff}
+.bookmaker-background-wrap-494{background:#ce2816}
+.bookmaker-background-wrap-374{background:#2f2f2f}
+.bookmaker-background-wrap-256{background:#e8e8e8}
+.bookmaker-background-wrap-197{background:#ffffff}
+.bookmaker-background-wrap-177{background:#04517f}
+.bookmaker-background-wrap-43{background:#143158}
+.bookmaker-background-wrap-30{background:#fa6200}
+
+
+
+    
+
+
+
+
 @media (max-width: 992px) {
 #top-element .h1, #top-element .h5{max-width: 100%;}
 }
