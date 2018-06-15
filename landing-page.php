@@ -218,7 +218,7 @@ https://bootsnipp.com/snippets/featured/services-section-using-bootstrap-4
 
              <div class="card">
                 <div class="logo col-sm-12 col-xs-3 col-md-3">
-                    <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/betfred">
+                    <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/betfred-bg1">
                        <img src="https://www.winningsportsbets.co.uk/wp-content/uploads/betfred-1-1-136x44.png" alt="" class="bookmaker-background-wrap-852">
                     </a>
                 </div> 
@@ -227,7 +227,7 @@ https://bootsnipp.com/snippets/featured/services-section-using-bootstrap-4
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
-                    <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/betfred">
+                    <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/betfred-bg1">
                         <div class="bet-now">bet now</div>
                     </a>
                 </div>
@@ -235,7 +235,7 @@ https://bootsnipp.com/snippets/featured/services-section-using-bootstrap-4
 
              <div class="card">
                 <div class="logo col-sm-12 col-xs-3 col-md-3">
-                    <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/william-hill">
+                    <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/william-hill-bg1">
                         <img src="https://www.winningsportsbets.co.uk/wp-content/uploads/2018/02/Comp-1-0000000-1-136x44.png" alt="" class="bookmaker-background-wrap-43">
                     </a>
                 </div> 
@@ -245,7 +245,7 @@ https://bootsnipp.com/snippets/featured/services-section-using-bootstrap-4
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
-                    <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/william-hill">
+                    <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/william-hill-bg1">
                         <div class="bet-now">bet now</div>
                     </a>
                 </div>
@@ -269,7 +269,7 @@ https://bootsnipp.com/snippets/featured/services-section-using-bootstrap-4
             </div>
              <div class="card">
                 <div class="logo col-sm-12 col-xs-3 col-md-3">
-                    <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/ladbrokes">
+                    <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/ladbrokes-bg1">
                         <img src="https://www.winningsportsbets.co.uk/wp-content/uploads/ladbrokes-logo-136x44.png" alt="" class="bookmaker-background-wrap-494">
                     </a>
                 </div>                
@@ -279,7 +279,7 @@ https://bootsnipp.com/snippets/featured/services-section-using-bootstrap-4
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
-                    <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/ladbrokes">
+                    <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/ladbrokes-bg1">
                         <div class="bet-now">bet now</div>
                     </a>
                 </div>
@@ -304,7 +304,7 @@ https://bootsnipp.com/snippets/featured/services-section-using-bootstrap-4
 
              <div class="card">
                 <div class="logo col-sm-12 col-xs-3 col-md-3">
-                    <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/bet-at-home">
+                    <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/bet-at-home-bg1">
                         <img src="https://www.winningsportsbets.co.uk/wp-content/uploads/bet-at-home-logo-136x44.png" alt="" class="bookmaker-background-wrap-177">
                     </a>
                 </div> 
@@ -313,7 +313,7 @@ https://bootsnipp.com/snippets/featured/services-section-using-bootstrap-4
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
-                    <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/bet-at-home">
+                    <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/bet-at-home-bg1">
                         <div class="bet-now">bet now</div>
                     </a>
                 </div>
@@ -321,7 +321,7 @@ https://bootsnipp.com/snippets/featured/services-section-using-bootstrap-4
 
              <div class="card">
                 <div class="logo col-sm-12 col-xs-3 col-md-3">
-                    <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/bethard">
+                    <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/bethard-bg1">
                         <img src="https://www.winningsportsbets.co.uk/wp-content/uploads/bethardd.png" alt="" class="bookmaker-background-wrap-374">
                     </a>
                 </div> 

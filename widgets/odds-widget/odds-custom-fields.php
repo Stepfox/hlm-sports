@@ -1,5 +1,7 @@
 <?php 
 
+
+
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
@@ -271,6 +273,133 @@ acf_add_local_field_group(array(
     'description' => '',
 ));
 
+acf_add_local_field_group(array(
+    'key' => 'group_5b2362bd09479',
+    'title' => 'Super Table',
+    'fields' => array(
+        array(
+            'key' => 'field_5b2362cc6a378',
+            'label' => 'Super Table',
+            'name' => 'super_table',
+            'type' => 'repeater',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'collapsed' => '',
+            'min' => 0,
+            'max' => 0,
+            'layout' => 'block',
+            'button_label' => '',
+            'sub_fields' => array(
+                array(
+                    'key' => 'field_5b236311b1da6',
+                    'label' => 'Name of the table',
+                    'name' => 'name_of_the_table',
+                    'type' => 'text',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '100',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                    'maxlength' => '',
+                ),
+                array(
+                    'key' => 'field_5b2371ea80532',
+                    'label' => 'Odds LIsts',
+                    'name' => 'odds_lists',
+                    'type' => 'repeater',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'collapsed' => '',
+                    'min' => 0,
+                    'max' => 0,
+                    'layout' => 'block',
+                    'button_label' => '',
+                    'sub_fields' => array(
+                        array(
+                            'key' => 'field_5b2365003e253',
+                            'label' => 'Odd list',
+                            'name' => 'odd_list',
+                            'type' => 'repeater',
+                            'instructions' => '',
+                            'required' => 0,
+                            'conditional_logic' => 0,
+                            'wrapper' => array(
+                                'width' => '',
+                                'class' => '',
+                                'id' => '',
+                            ),
+                            'collapsed' => '',
+                            'min' => 0,
+                            'max' => 0,
+                            'layout' => 'table',
+                            'button_label' => '',
+                            'sub_fields' => array(
+                                array(
+                                    'key' => 'field_5b236957c6fcb',
+                                    'label' => 'odd',
+                                    'name' => 'odd',
+                                    'type' => 'text',
+                                    'instructions' => '',
+                                    'required' => 0,
+                                    'conditional_logic' => 0,
+                                    'wrapper' => array(
+                                        'width' => '',
+                                        'class' => '',
+                                        'id' => '',
+                                    ),
+                                    'default_value' => '',
+                                    'placeholder' => '',
+                                    'prepend' => '',
+                                    'append' => '',
+                                    'maxlength' => '',
+                                ),
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+        ),
+    ),
+    'location' => array(
+        array(
+            array(
+                'param' => 'post_type',
+                'operator' => '==',
+                'value' => 'match',
+            ),
+        ),
+    ),
+    'menu_order' => 0,
+    'position' => 'normal',
+    'style' => 'default',
+    'label_placement' => 'top',
+    'instruction_placement' => 'label',
+    'hide_on_screen' => '',
+    'active' => 1,
+    'description' => '',
+));
+
 endif;
+
+
 
 ?>
