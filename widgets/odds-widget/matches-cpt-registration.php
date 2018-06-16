@@ -22,7 +22,10 @@ function crawler_options_function(){
 
 if (isset($_POST) && !empty($_POST['crawl_matches'])){
 
-        crawl_matches();
+
+crawl_full_football_game();
+//crawl_super_table();
+    //    crawl_matches();
 
 }
 

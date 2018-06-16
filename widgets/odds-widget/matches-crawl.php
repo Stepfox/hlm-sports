@@ -376,24 +376,14 @@ $data = json_decode( $body, true );
 
 
 
-function crawl_super_table(){
+function crawl_super_table($market = 'correct-score', $page_name_id){
 
-
-
-
-		//check for duplicate
-		            $args = array(
-		                'post_type' => 'match',
-		                'posts_per_page' => 1, 
-		                'post_status' => 'publish',   
-		            );
-		            $lunar_magazine_posts = new WP_Query($args);
-		            while($lunar_magazine_posts->have_posts()) : $lunar_magazine_posts->the_post();
+		
 
 
 	$opts=array('http'=>array('method'=>"GET",'header'=>"Accept-language: en\r\n"."Cookie: odds_type=decimal\r\n",'user_agent'=>'Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10.4; en-US; rv:1.9.2.28) Gecko/20120306 Firefox/3.6.28'));
 	$context = stream_context_create($opts);
-	$match_url = str_replace('winner','correct-score', get_field('match_url'));
+	$match_url = str_replace('winner', $market, get_field('match_url', $page_name_id ));
 	
 	$html = file_get_html($match_url,false,$context);
 
@@ -426,7 +416,7 @@ foreach($table->find('tr') as $row) {
 //var_dump($rowData);
 
 
-		            $page_name_id = get_the_ID();
+		            
 
 		            $args1 = array(
 		                'post_type' => 'bookmaker',
@@ -451,6 +441,7 @@ var_dump($bookmaker_crawl_order);
 //echo $rowData[$count][$bookmaker_crawl_order];
 $rowdata_count = count($rowData) - 1;
 
+
 for ($i = 0; $i <= $rowdata_count; $i++) {
 
 	foreach($rowData[$i] as $hhh) {
@@ -460,25 +451,75 @@ for ($i = 0; $i <= $rowdata_count; $i++) {
 
 }
 
-var_dump($gggg);	
+       
 
-//save a repeater field value
-$field_key = "super_table";
-$value = array(
-    array(
-    	"name_of_the_table" => 'deez',
-        "odds_lists"	=> $gggg,  
- 	),
- );
-update_field( $field_key, $value, $page_name_id );
-
-		            endwhile;  
-
-
+return $gggg;
 
 }
 
+function crawl_full_football_game(){
 
+        $args = array(
+            'post_type' => 'match',
+            'posts_per_page' => -1, 
+            'post_status' => 'publish',   
+        );
+        $lunar_magazine_posts = new WP_Query($args);
+        while($lunar_magazine_posts->have_posts()) : $lunar_magazine_posts->the_post();
+
+
+$page_name_id = get_the_ID();
+
+		$crawl_football_markets = array(
+				 'first-goalscorer' => 'first-goalscorer',
+				// 'both-teams-to-score' => 'both-teams-to-score',
+				// 'correct-score' => 'correct-score',
+				// 'half-time-full-time' => 'half-time-full-time',
+				// 'anytime-goalscorer' => 'anytime-goalscorer',
+				// 'draw-no-bet' => 'draw-no-bet',
+				// 'total-goals-over-under' => 'total-goals-over-under',
+				// 'total-goals-exact' => 'total-goals-exact',
+				// 'asian-handicap' => 'asian-handicap',
+				// 'enhanced-odds-specials' => 'enhanced-odds-specials',
+				// 'half-time' => 'half-time',
+				// 'last-goalscorer' => 'last-goalscorer',
+				// 'half-time-score' => 'half-time-score',
+				// 'winning-margin' => 'winning-margin',
+				// 'total-corners' => 'total-corners',
+				// 'man-of-the-match' => 'man-of-the-match',
+				// 'double-chance' => 'double-chance',
+				// 'score-win-double' => 'score-win-double',
+				// 'betting-markets' => 'betting-markets',
+				'winner' => 'winner',
+			);
+
+			$i = 0;
+			foreach ($crawl_football_markets as $key => $value) {
+
+				$crawl_full[$i]['name_of_the_table'] = $value;
+				$crawl_full[$i]['odds_lists'] = crawl_super_table($value, $page_name_id);
+				$i++;
+			}
+
+			// echo $page_name_id;
+			//save a repeater field value
+			// $field_key = "super_table";
+			$value = $crawl_full;
+			 
+			//update_field( $field_key, $value, $page_name_id );
+			update_post_meta($page_name_id, 'lice_za_kontakt', 0 );
+			if ( ! add_post_meta( $page_name_id, 'lice_za_kontakt', $value, true ) ) { 
+			   update_post_meta ( $page_name_id, 'lice_za_kontakt', $value );
+			}
+
+
+    echo "<pre>";
+    print_r($value);
+    echo "</pre>";
+
+ endwhile; 
+
+}
 
 
 

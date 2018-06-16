@@ -67,7 +67,61 @@
 
         <div class="post-content widget">
 
-<?php echo do_shortcode( '[hlm_sports_match_odds]' ); ?>
+<?php 
+
+$test = get_post_meta( get_the_ID(), 'lice_za_kontakt', true );
+
+foreach ($test as $key){
+
+
+
+ echo '<div class="widget-title"><h2>'.$key['name_of_the_table'].'      </h2> </div>';
+
+            echo '<table style="width:100%">';
+      if(!empty($key['odds_lists']) || $key['odds_lists'] != NULL || $key['odds_lists'] != ""){
+          foreach($key['odds_lists'] as $odds_lists){
+            if(!empty($odds_lists) || $odds_lists != NULL || $odds_lists != ""){
+                  if(!empty($odds_lists['odd_list']) || $odds_lists['odd_list'] != NULL || $odds_lists['odd_list'] != ""){
+                    echo '<tr>';
+                       foreach($odds_lists['odd_list'] as $odd_list){
+
+                        
+                          if(!empty($odd_list) || $odd_list != NULL || $odd_list != ""){
+
+                                  echo "<td>";
+                                  echo $odd_list['odd'];
+                                  echo "</td>";
+
+                          }
+                        }
+                        echo '</tr>';
+                    }
+
+              // echo "<pre>";
+              // print_r($odds_lists['odd_list'][0]);
+              // echo "</pre>";
+
+
+
+            }
+          }
+                    echo '</table>';  
+
+    }else{ echo 'I didnt Find Any Odds yall</br>';}
+
+
+}
+
+
+
+    // echo "<pre>";
+    // print_r($test[0]['name_of_the_table']);
+    // print_r($test[0]['odds_lists'][0]['odd_list'][0]['odd']);
+    // print_r($test[0]);
+    // echo "</pre>";
+
+
+echo do_shortcode( '[hlm_sports_match_odds]' ); ?>
 
 
 
