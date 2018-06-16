@@ -71,14 +71,15 @@
 
 $test = get_post_meta( get_the_ID(), 'lice_za_kontakt', true );
 
+
 foreach ($test as $key){
 
 
 
  echo '<div class="widget-title"><h2>'.$key['name_of_the_table'].'      </h2> </div>';
 
-            echo '<table style="width:100%">';
       if(!empty($key['odds_lists']) || $key['odds_lists'] != NULL || $key['odds_lists'] != ""){
+            echo '<table style="width:100%">';
           foreach($key['odds_lists'] as $odds_lists){
             if(!empty($odds_lists) || $odds_lists != NULL || $odds_lists != ""){
                   if(!empty($odds_lists['odd_list']) || $odds_lists['odd_list'] != NULL || $odds_lists['odd_list'] != ""){

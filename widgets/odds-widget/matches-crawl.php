@@ -415,22 +415,7 @@ foreach($table->find('tr') as $row) {
 }
 //var_dump($rowData);
 
-
-		            
-
-		            $args1 = array(
-		                'post_type' => 'bookmaker',
-		                'posts_per_page' => -1, 
-		                'post_status' => 'publish',   
-		            );
-		            $bookmakers_query = new WP_Query($args1);
-
-		            while($bookmakers_query->have_posts()) : $bookmakers_query->the_post();
-		            		$bookmaker_crawl_order[] = get_field('bookmaker_crawl_order', get_the_ID());
-		            endwhile; 
-
-
-var_dump($bookmaker_crawl_order);
+	            
 
 //title of the odd
 
@@ -461,8 +446,9 @@ function crawl_full_football_game(){
 
         $args = array(
             'post_type' => 'match',
-            'posts_per_page' => -1, 
-            'post_status' => 'publish',   
+            'posts_per_page' => 1, 
+            'post_status' => 'publish', 
+            'offset' => '1'  
         );
         $lunar_magazine_posts = new WP_Query($args);
         while($lunar_magazine_posts->have_posts()) : $lunar_magazine_posts->the_post();
@@ -471,25 +457,25 @@ function crawl_full_football_game(){
 $page_name_id = get_the_ID();
 
 		$crawl_football_markets = array(
-				 'first-goalscorer' => 'first-goalscorer',
-				// 'both-teams-to-score' => 'both-teams-to-score',
-				// 'correct-score' => 'correct-score',
-				// 'half-time-full-time' => 'half-time-full-time',
-				// 'anytime-goalscorer' => 'anytime-goalscorer',
-				// 'draw-no-bet' => 'draw-no-bet',
-				// 'total-goals-over-under' => 'total-goals-over-under',
-				// 'total-goals-exact' => 'total-goals-exact',
-				// 'asian-handicap' => 'asian-handicap',
-				// 'enhanced-odds-specials' => 'enhanced-odds-specials',
-				// 'half-time' => 'half-time',
-				// 'last-goalscorer' => 'last-goalscorer',
-				// 'half-time-score' => 'half-time-score',
-				// 'winning-margin' => 'winning-margin',
-				// 'total-corners' => 'total-corners',
-				// 'man-of-the-match' => 'man-of-the-match',
-				// 'double-chance' => 'double-chance',
-				// 'score-win-double' => 'score-win-double',
-				// 'betting-markets' => 'betting-markets',
+				'first-goalscorer' => 'first-goalscorer',
+				'both-teams-to-score' => 'both-teams-to-score',
+				'correct-score' => 'correct-score',
+				'half-time-full-time' => 'half-time-full-time',
+				'anytime-goalscorer' => 'anytime-goalscorer',
+				'draw-no-bet' => 'draw-no-bet',
+				'total-goals-over-under' => 'total-goals-over-under',
+				'total-goals-exact' => 'total-goals-exact',
+				'asian-handicap' => 'asian-handicap',
+				'enhanced-odds-specials' => 'enhanced-odds-specials',
+				'half-time' => 'half-time',
+				'last-goalscorer' => 'last-goalscorer',
+				'half-time-score' => 'half-time-score',
+				'winning-margin' => 'winning-margin',
+				'total-corners' => 'total-corners',
+				'man-of-the-match' => 'man-of-the-match',
+				'double-chance' => 'double-chance',
+				'score-win-double' => 'score-win-double',
+				'betting-markets' => 'betting-markets',
 				'winner' => 'winner',
 			);
 
@@ -505,17 +491,16 @@ $page_name_id = get_the_ID();
 			//save a repeater field value
 			// $field_key = "super_table";
 			$value = $crawl_full;
-			 
-			//update_field( $field_key, $value, $page_name_id );
-			update_post_meta($page_name_id, 'lice_za_kontakt', 0 );
+
+
+			// delete_post_meta($page_name_id, 'lice_za_kontakt');
 			if ( ! add_post_meta( $page_name_id, 'lice_za_kontakt', $value, true ) ) { 
 			   update_post_meta ( $page_name_id, 'lice_za_kontakt', $value );
 			}
 
 
-    echo "<pre>";
-    print_r($value);
-    echo "</pre>";
+the_title();
+echo ' Done!';
 
  endwhile; 
 
