@@ -448,7 +448,7 @@ function crawl_full_football_game(){
             'post_type' => 'match',
             'posts_per_page' => 1, 
             'post_status' => 'publish', 
-            'offset' => '1'  
+            // 'offset' => '1'  
         );
         $lunar_magazine_posts = new WP_Query($args);
         while($lunar_magazine_posts->have_posts()) : $lunar_magazine_posts->the_post();

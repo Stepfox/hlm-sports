@@ -371,6 +371,46 @@ li.thumb-down:before{background:#d62a1c;}
 .hlm-cta-button{color:#FFF;font-weight:600;float:left;padding:5px 25px;background:#f67c01;border-bottom:3px solid #c86804;font-size:15px;text-transform:uppercase;width:100%;text-align:center;}
 .hlm-cta-button a{color:#FFF;text-decoration:none;}
 .mobile-logo{display:none;}
+
+.all-odds tr{    border: 5px solid #fff;
+    background: #27272f;}
+
+.all-odds caption{border: 5px solid #fff;
+    background: #27272f;font-size:20px;padding:5px;color: #FFF;font-weight: 400;text-transform: uppercase;}
+
+ .all-odds td{      width: 50px;
+    max-width: 50px;  border: 5px solid #fff;
+    background: #27272f;}
+
+
+ .all-odds th{      width: 50px;
+    max-width: 50px;  border: 5px solid #fff;
+    background: #27272f;}
+ .all-odds .odds-widget-bookmakers-links-button {
+    margin: 10px auto 0px;
+    max-width: 90px;
+    float: none;
+    padding: 0;
+    text-align: center;
+    font-size: 12px;
+    line-height: 16px;
+    text-decoration: none;
+}
+.all-odds .top-5-review-bet-now:active {
+
+    border-bottom: 1px solid #c86804;
+    background: #ff8101;
+    border-right: 1px solid #c86804;
+    box-shadow: 0px 0px 0 -10px #f67c01;
+    text-shadow: 1px 0 0 #9c9c9c;
+}
+.all-odds .top-5-review-bet-now a {
+	font-size:13px;
+	color:#FFF;
+    
+}
+
+
 /*search page*/
 .search-page{}
 .search-page .post-title{margin-bottom:20px;}

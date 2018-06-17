@@ -52,6 +52,7 @@
 		</div>
 		<ul class="odds-widget-matches">
 			<?php 
+			$now_date = current_time('timestamp');
 			$args = array(
 			    'posts_per_page' => 5,
 			    'post_type' => 'match',
@@ -59,6 +60,12 @@
 				'meta_key'			=> 'start_time',
 				'orderby'			=> 'meta_value',
 				'order'				=> 'ASC',
+				'meta_query' => array(
+						array('key' => 'start_time',
+							'value'   => $now_date,
+							'compare' => '>'),
+				   			 ),
+			
 		      // 'tax_query' => array(
         //         array(
         //             'taxonomy' => 'leagues',
