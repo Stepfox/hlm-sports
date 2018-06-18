@@ -90,7 +90,7 @@
 				</div>
 				<div class="odds-game-wrap">
 					<div class="odds-game-time">
-						<?php echo date ('H i A',$myDateTime); ?>
+						<?php echo date ('H i',$myDateTime); ?>
 					</div>
 					<div class="odds-game-teams">
 						<div class="odds-game-home-team">
