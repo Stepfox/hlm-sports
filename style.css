@@ -9,184 +9,6 @@ Text Domain: hlm-sports
 
 
 
-
-
-
-/*Profile Card 1*/
-.profile-card-1 {
-  font-family: 'Open Sans', Arial, sans-serif;
-  position: relative;
-  float: left;
-  overflow: hidden;
-  width: 100%;
-  color: #ffffff;
-  text-align: center;
-  height:368px;
-  border:none;
-}
-.profile-card-1 .background {
-  width:100%;
-  vertical-align: top;
-  opacity: 0.9;
-  -webkit-filter: blur(5px);
-  filter: blur(5px);
-   -webkit-transform: scale(1.8);
-  transform: scale(2.8);
-}
-.profile-card-1 .card-content {
-  width: 100%;
-  padding: 15px 25px;
-  position: absolute;
-  left: 0;
-  top: 50%;
-}
-.profile-card-1 .profile {
-  border-radius: 50%;
-  position: absolute;
-  bottom: 50%;
-  left: 50%;
-  max-width: 100px;
-  opacity: 1;
-  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
-  border: 2px solid rgba(255, 255, 255, 1);
-  -webkit-transform: translate(-50%, 0%);
-  transform: translate(-50%, 0%);
-}
-.profile-card-1 h2 {
-  margin: 0 0 5px;
-  font-weight: 600;
-  font-size:25px;
-}
-.profile-card-1 h2 small {
-  display: block;
-  font-size: 15px;
-  margin-top:10px;
-}
-.profile-card-1 i {
-  display: inline-block;
-    font-size: 16px;
-    color: #ffffff;
-    text-align: center;
-    border: 1px solid #fff;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    border-radius: 50%;
-    margin:0 5px;
-}
-.profile-card-1 .icon-block{
-    float:left;
-    width:100%;
-    margin-top:15px;
-}
-.profile-card-1 .icon-block a{
-    text-decoration:none;
-}
-.profile-card-1 i:hover {
-  background-color:#fff;
-  color:#2E3434;
-  text-decoration:none;
-}
-
-
-
-
-.our-team-main
-{
-	width:100%;
-	height:auto;
-	border-bottom:5px #323233 solid;
-	background:#fff;
-	text-align:center;
-	border-radius:10px;
-	overflow:hidden;
-	position:relative;
-	transition:0.5s;
-	margin-bottom:28px;
-}
-
-
-.our-team-main img
-{
-	border-radius:50%;
-	margin-bottom:20px;
-	width: 90px;
-}
-
-.our-team-main h3
-{
-	font-size:20px;
-	font-weight:700;
-}
-
-.our-team-main p
-{
-	margin-bottom:0;
-}
-
-.team-back
-{
-	width:100%;
-	height:auto;
-	position:absolute;
-	top:0;
-	left:0;
-	padding:5px 15px 0 15px;
-	text-align:left;
-	background:#fff;
-	
-}
-
-.team-front
-{
-	width:100%;
-	height:auto;
-	position:relative;
-	z-index:10;
-	background:#fff;
-	padding:15px;
-	bottom:0px;
-	transition: all 0.5s ease;
-}
-
-.our-team-main:hover .team-front
-{
-	bottom:-200px;
-	transition: all 0.5s ease;
-}
-
-.our-team-main:hover
-{
-	border-color:#777;
-	transition:0.5s;
-}
-
-/*our-team-main*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*Css reset*/
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video{margin:0;padding:0;border:0;font-size:100%;vertical-align:baseline;text-decoration:none;}
 /* HTML5 display-role reset for older browsers */
@@ -555,16 +377,16 @@ li.thumb-down:before{background:#d62a1c;}
 
 
 .all-odds tr{ width:100%;   background: #FFF;}
-
+.all-odds tr:hover td{background: #ebebeb;}
 .all-odds caption{float:left;width:100%;border-bottom:5px solid #fff;
     background: #27272f;font-size:20px;padding:5px;color: #FFF;font-weight: 400;text-transform: uppercase;}
 
- .all-odds tr td:first-child, .all-odds tr th:first-child{color:#FFF;background:#27272f;
+ .all-odds tr td:first-child, .all-odds tr th:first-child{text-align:left;color:#FFF;background:#27272f;
   font-size:14px;
-  width: 250px;}
+  width: 250px;padding-left:20px;}
 
- .all-odds tr:first-child td{background: #FFF;color:#000;}
-.all-odds tr:nth-child(2) th{background: #FFF;color:#000;}
+ .all-odds tr:first-child td{text-align:center;background: #FFF;color:#000;}
+.all-odds tr:nth-child(2) th{text-align:center;background: #FFF;color:#000;}
 body .all-odds th div{
     width: 68px;
     transform: rotate(90deg);
@@ -617,8 +439,8 @@ body .all-odds th{ height: 70px;position: relative; }
   color:#FFF;
     
 }
-
-.all-odds td:hover, .all-odds th:hover{background:#fa6200;color:#FFF;}
+.all-odds td:first-child.filled:hover{background: #27272f;}
+.all-odds td.filled:hover, .all-odds th:hover{background:#fa6200;color:#FFF;}
 
 
 

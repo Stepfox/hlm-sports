@@ -194,8 +194,8 @@ echo '<tr><th>Betting Company</th>';
                           if(!empty($odd_list) || $odd_list != NULL || $odd_list != ""){
 
 
-
-                                  echo "<td>";
+                                  if (empty($odd_list['odd'])){echo '<td>';}else{echo '<td class="filled">';}
+                                  
                                   echo $odd_list['odd'];
                                   if($i != 0){
                                   //echo get_the_title( $bookmakers_order[$i - 1]['id'] );

@@ -446,7 +446,7 @@ function crawl_full_football_game(){
 
         $args = array(
             'post_type' => 'match',
-            'posts_per_page' => 1, 
+            'posts_per_page' => -1, 
             'post_status' => 'publish', 
             // 'offset' => '1'  
         );
