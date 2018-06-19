@@ -551,21 +551,50 @@ li.thumb-down:before{background:#d62a1c;}
 .hlm-cta-button a{color:#FFF;text-decoration:none;}
 .mobile-logo{display:none;}
 
-.all-odds tr{    border: 5px solid #fff;
-    background: #27272f;}
 
-.all-odds caption{border: 5px solid #fff;
+
+
+.all-odds tr{ width:100%;   background: #FFF;}
+
+.all-odds caption{float:left;width:100%;border-bottom:5px solid #fff;
     background: #27272f;font-size:20px;padding:5px;color: #FFF;font-weight: 400;text-transform: uppercase;}
 
- .all-odds td{      width: 50px;
-    max-width: 50px;  border: 5px solid #fff;
-    background: #27272f;}
+ .all-odds tr td:first-child, .all-odds tr th:first-child{color:#FFF;background:#27272f;
+  font-size:14px;
+  width: 250px;}
+
+ .all-odds tr:first-child td{background: #FFF;color:#000;}
+.all-odds tr:nth-child(2) th{background: #FFF;color:#000;}
+body .all-odds th div{
+    width: 68px;
+    transform: rotate(90deg);
+    height: 40px;
+    float: left;
+    position: absolute;
+    bottom: 14px;
+    left: -15px;
+    box-shadow: inset 0 0 0 1px #CCC;
+    }
+
+body .all-odds th div img{vertical-align: middle;padding: 0 5px;margin: 10px 0;}
+
+body .all-odds th{ height: 70px;position: relative; }
 
 
- .all-odds th{      width: 50px;
-    max-width: 50px;  border: 5px solid #fff;
-    background: #27272f;}
- .all-odds .odds-widget-bookmakers-links-button {
+ .all-odds td, .all-odds th, tr:nth-child(odd) td{
+    line-height: 30px;
+    float:left;
+    width: 40px;
+    min-height: 32px;
+    border: 1px solid #CCC;
+    font-size: 12px;
+    background: #FFF;
+    padding:0;
+    color:#27272f;
+    }
+
+
+ .all-odds .odds-widget-bookmakers-links-button {display:none;
     margin: 10px auto 0px;
     max-width: 90px;
     float: none;
@@ -584,10 +613,15 @@ li.thumb-down:before{background:#d62a1c;}
     text-shadow: 1px 0 0 #9c9c9c;
 }
 .all-odds .top-5-review-bet-now a {
-	font-size:13px;
-	color:#FFF;
+  font-size:13px;
+  color:#FFF;
     
 }
+
+.all-odds td:hover, .all-odds th:hover{background:#fa6200;color:#FFF;}
+
+
+
 
 
 /*search page*/

@@ -128,7 +128,8 @@ foreach ($test as $key){
             echo '<table class="all-odds" style="width:100%">';
 
 echo '<caption>'.$key['name_of_the_table'].'</caption>';
-echo '<tr><th></th>';
+
+echo '<tr><td>Sign Up Bonus</td>';
        
 
                 $args1 = array(
@@ -136,6 +137,19 @@ echo '<tr><th></th>';
                     'posts_per_page' => -1, 
                     'post_status' => 'publish',   
                 );
+                $bookmakers_query = new WP_Query($args1);
+                while($bookmakers_query->have_posts()) : $bookmakers_query->the_post();
+                  if(!empty(get_field('bookmaker_crawl_order'))){ ?>
+
+     <td>
+
+10$
+        </td>
+      <?php  } endwhile; wp_reset_postdata();echo '</tr>';
+
+
+echo '<tr><th>Betting Company</th>';
+       
                 $bookmakers_query = new WP_Query($args1);
                 while($bookmakers_query->have_posts()) : $bookmakers_query->the_post();
                   if(!empty(get_field('bookmaker_crawl_order'))){ ?>
