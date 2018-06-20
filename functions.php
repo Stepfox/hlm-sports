@@ -100,26 +100,7 @@ if (!class_exists('Widget_Shortcode')) {
 
 
 
-if ( ! function_exists( 'hlm_theme_styles' ) ) :
-  function hlm_theme_styles() {
-    wp_enqueue_style( 'experimental', get_template_directory_uri() . '/css/experimental.css', array() );
-    wp_enqueue_style( 'hlm-sports-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.4.0' );
-    wp_register_style( 'hlm-sports-bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array() );
-    wp_enqueue_style( 'hlm-sports-styles', get_stylesheet_uri(), array( 'hlm-sports-bootstrap' ), '1' );
-  }
-endif;
-add_action('wp_enqueue_scripts', 'hlm_theme_styles');
 
-
-if ( ! function_exists( 'hlm_theme_scripts' ) ) :
-  function hlm_theme_scripts() {
-
-    wp_enqueue_script( 'hlm-sports-bootstrap-tether', get_template_directory_uri() . '/js/tether.js', array( 'jquery' ) );
-    wp_enqueue_script( 'hlm-sports-bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array( 'jquery' ) );
-
-  }
-endif;
-add_action('wp_enqueue_scripts', 'hlm_theme_scripts');
 
 
 

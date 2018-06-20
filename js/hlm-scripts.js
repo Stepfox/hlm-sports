@@ -20,7 +20,6 @@ jQuery(document).ready(function($) {
     });
 
     
-        $('#main').fadeTo(500, 1);
     
 
   //scroll effects

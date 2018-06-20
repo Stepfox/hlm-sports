@@ -2,7 +2,7 @@
 <main id="main">
 
   <div class="three-parts hlm-sports-widget post-page-area">
-<?php  experiment_3(); ?>
+<?php  //experiment_3(); ?>
   <div class="match-top-page-area">
     <div class="widget featured-match">
     <div class="widget-title">
@@ -129,18 +129,16 @@ $name_of_the_odds_table = 'winner';
 });
 </script>
 
-
-
 <?php 
 
-    echo '<select id="dropDown">';
+    echo '<div class="select"><select id="dropDown">';
 
           foreach ($test as $key){
             if(!empty($key['odds_lists']) || $key['odds_lists'] != NULL || $key['odds_lists'] != ""){
             echo '<option value="'.$key['name_of_the_table'].'">'.$key['name_of_the_table'].'</option>';
           }
           }
-     echo '</select>';
+     echo '</select></div>';
 
 foreach ($test as $key){
 //if($key['name_of_the_table'] == $name_of_the_odds_table ){
@@ -157,7 +155,7 @@ foreach ($test as $key){
       if(!empty($key['odds_lists']) || $key['odds_lists'] != NULL || $key['odds_lists'] != ""){
             echo '<table id="'.$key['name_of_the_table'].'" class="all-odds" style="width:100%">';
 
-echo '<caption>'.$key['name_of_the_table'].'</caption>';
+//echo '<caption>'.$key['name_of_the_table'].'</caption>';
 
 echo '<tr><td>Sign Up Bonus</td>';
        

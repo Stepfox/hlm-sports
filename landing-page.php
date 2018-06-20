@@ -16,18 +16,28 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() . '/css/landing.css'; ?>" />
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() . '/css/bootstrap-grid.min.css'; ?>" />
-
-<!-- 
-
-https://bootsnipp.com/snippets/featured/findcond-navbar 
-https://bootsnipp.com/snippets/featured/services-section-using-bootstrap-4
+<?php 
 
 
+if (is_home()){ ?>
+<script src="https://zz.connextra.com/dcs/tagController/tag/4b14c6edf5e6/homepage" async defer></script>
+<?php }else{ ?>
+<script src="https://zz.connextra.com/dcs/tagController/tag/4b14c6edf5e6/<?php $post_slug = get_post_field( 'post_name', get_post() ); echo $post_slug;?>" async defer></script>
+<?php } ?>
+<script src="https://a.volvelle.tech/pixel?id=8928&aid=1115&type=js"></script>  
+<script type="text/javascript">
 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-113659323-1']);
+  _gaq.push(['_trackPageview']);
 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
 
--->
-
+</script>
 
 </head>
 
