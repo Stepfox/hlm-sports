@@ -216,7 +216,7 @@ echo '<tr><th>Betting Company</th>';
                         if($i > $bookmakers_count) break;
                         $odd_list_number++;
 
-                          if(in_array_r($odd_list_number , $bookmakers_order) || $odd_list_number == 0){
+                          if(in_array_r($odd_list_number -1 , $bookmakers_order) || $odd_list_number == 0){
                       
 
                           if(!empty($odd_list) || $odd_list != NULL || $odd_list != ""){
