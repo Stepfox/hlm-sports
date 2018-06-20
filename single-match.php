@@ -2,7 +2,7 @@
 <main id="main">
 
   <div class="three-parts hlm-sports-widget post-page-area">
-
+<?php  experiment_3(); ?>
   <div class="match-top-page-area">
     <div class="widget featured-match">
     <div class="widget-title">
@@ -116,16 +116,46 @@ $test = get_post_meta( get_the_ID(), 'lice_za_kontakt', true );
 
 $name_of_the_odds_table = 'winner';
 
+?>
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+  $('.all-odds').not('#winner').hide();
+  $('#dropDown').change(function(){
+   $(this).find("option").each(function(){
+      $('#' + this.value).hide();
+    });
+    $('#' + this.value).show();
+});
+});
+</script>
 
+
+
+<?php 
+
+    echo '<select id="dropDown">';
+
+          foreach ($test as $key){
+            if(!empty($key['odds_lists']) || $key['odds_lists'] != NULL || $key['odds_lists'] != ""){
+            echo '<option value="'.$key['name_of_the_table'].'">'.$key['name_of_the_table'].'</option>';
+          }
+          }
+     echo '</select>';
 
 foreach ($test as $key){
 //if($key['name_of_the_table'] == $name_of_the_odds_table ){
+
+      
+
+
+
+
 
 
 
 
       if(!empty($key['odds_lists']) || $key['odds_lists'] != NULL || $key['odds_lists'] != ""){
-            echo '<table class="all-odds" style="width:100%">';
+            echo '<table id="'.$key['name_of_the_table'].'" class="all-odds" style="width:100%">';
 
 echo '<caption>'.$key['name_of_the_table'].'</caption>';
 
@@ -218,12 +248,7 @@ echo '<tr><th>Betting Company</th>';
           }
                     echo '</table>';  
 
-    }else{ 
-      echo '<table class="all-odds" style="width:100%">';
-    echo '<caption>'.$key['name_of_the_table'].'</caption>';
-    echo '<tr><th>I didnt Find Any Odds yall</tr></th></br></table>';
-  }
-
+    }
 }
 //}
 
@@ -274,7 +299,7 @@ echo '<tr><th>Betting Company</th>';
 
 
 
-echo do_shortcode( '[hlm_sports_match_odds]' ); ?>
+?>
 
 
 
@@ -309,7 +334,7 @@ echo do_shortcode( '[hlm_sports_match_odds]' ); ?>
         <?php echo do_shortcode( '[hlm_sports_highest_odd]' ); ?>
       </div>
        
-      <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Post Sidebar')): endif; ?>
+      <?php //if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Post Sidebar')): endif; ?>
   </div>
 
 
