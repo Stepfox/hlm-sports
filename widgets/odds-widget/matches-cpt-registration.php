@@ -1,5 +1,7 @@
 <?php 
 
+
+
 add_action('admin_menu', 'add_crawler_options_page');
 
 function add_crawler_options_page() {
@@ -13,7 +15,9 @@ function add_crawler_options_page() {
 function crawler_options_function(){
 
 
+
         echo '<h2>Crawl Matches</h2>';
+        
 ?>
             <form method="post">                    
                 <input  type="submit" class="button-secondary" name="crawl_matches" value="<?php echo esc_attr('Crawl All Matches'); ?>"/>
@@ -23,11 +27,27 @@ function crawler_options_function(){
 if (isset($_POST) && !empty($_POST['crawl_matches'])){
 
 
-crawl_full_football_game();
-//crawl_super_table();
-    //    crawl_matches();
+
+
+        crawl_matches();
 
 }
+
+
+        echo '<h2>Crawl Matches Winner Odds</h2>';
+?>
+            <form method="post">                    
+                <input  type="submit" class="button-secondary" name="crawl_matches_winnerodds" value="<?php echo esc_attr('Crawl Winner Odds'); ?>"/>
+            </form>
+<?php               
+
+if (isset($_POST) && !empty($_POST['crawl_matches_winnerodds'])){
+
+        crawl_table();
+
+
+}
+
 
 
         echo '<h2>Crawl Matches oods</h2>';
@@ -39,13 +59,14 @@ crawl_full_football_game();
 
 if (isset($_POST) && !empty($_POST['crawl_matches_odds'])){
 
-        crawl_table();
+
+        crawl_full_football_game();
 
 }
 
 
 
-
+/*
 
 
 
@@ -125,7 +146,7 @@ if (isset($_POST) && !empty($_POST['crawl_odds']) ){
 
         }
 
-
+*/
 
 
 
@@ -159,6 +180,7 @@ if (isset($_POST) && !empty($_POST['crawl_odds']) ){
 if (isset($_POST) && !empty($_POST['remove_all_matches'])){
 
         remove_all_matches();
+        //remove_past_matches();
 
 }
 

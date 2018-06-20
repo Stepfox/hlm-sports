@@ -61,7 +61,6 @@ if (is_home()){ ?>
                 <li>
                     <a target="_blank" href="https://www.winningsportsbets.co.uk/all-bookmakers-reviews" role="button" >Reviews </a>
                 </li>
-                <li><a target="_blank" href="https://www.winningsportsbets.co.uk/football-betting-strategies">Betting Strategy<span class="sr-only">(current)</span></a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Bonuses <span class="badge">3</span></a>
                     <ul class="dropdown-menu" role="menu">
@@ -70,6 +69,7 @@ if (is_home()){ ?>
                         <li><a target="_blank" href="https://www.winningsportsbets.co.uk/best-bonuses-promotions-world-cup-2018"> <span class="badge">Bonus</span> Sign Up Bonus</a></li>
                     </ul>
                 </li>
+                <li><a target="_blank" href="https://www.winningsportsbets.co.uk/world-cup-2018-calendar">World Cup Odds<span class="sr-only">(current)</span></a></li>
                 <li class="active"><a target="_blank" href="https://www.winningsportsbets.co.uk/world-cup-2018-betting-tips ">World Cup Tips</a></li>
             </ul>
         </div>
@@ -263,16 +263,16 @@ if (is_home()){ ?>
 
              <div class="card">
                 <div class="logo col-sm-12 col-xs-3 col-md-3">
-                    <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/betbright">
-                        <img src="https://www.winningsportsbets.co.uk/wp-content/uploads/betbright-136x44.png" alt="" class="bookmaker-background-wrap-867">
+                    <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/bet365">
+                        <img src="https://www.winningsportsbets.co.uk/wp-content/uploads/bet365logo_600x300-136x44.jpg" alt="" class="bookmaker-background-wrap-1276">
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text"> Bet on a European team to win the World Cup at odds of 4/11       
+                    <p class="list-group-item-text"> Bet on Iceland to get knocked out in the quarter finals at odds of 12/1       
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
-                    <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/betbright">
+                    <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/bet365">
                         <div class="bet-now">bet now</div>
                     </a>
                 </div>

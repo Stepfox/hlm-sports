@@ -1,4 +1,29 @@
 <?php 
+function remove_past_matches(){
+
+			//Delete Matches
+			$args = array(
+			    'posts_per_page' => -1,
+			    'post_type' => 'match',
+			    'post_status' => 'publish', 
+				'meta_key'			=> 'start_time',
+				'orderby'			=> 'meta_value',
+				'order'				=> 'ASC',
+				'meta_query' => array(
+						array('key' => 'start_time',
+							'value'   => $now_date,
+							'compare' => '>'),
+				   			 ),
+			);
+			$hlm_sports_posts = new WP_Query($args);
+			while($hlm_sports_posts->have_posts()) : $hlm_sports_posts->the_post();
+			  	$page_name_id = get_the_ID();
+			 	wp_delete_post( $page_name_id, true );
+			endwhile;	
+
+}
+
+
 function remove_all_matches(){
 
 			//Delete Matches
@@ -14,6 +39,7 @@ function remove_all_matches(){
 			endwhile;	
 
 }
+
 
 
 function crawl_matches(){
@@ -161,7 +187,7 @@ foreach($table->find('tr') as $row) {
     $rowData[] = $flight;
 }
 }
-var_dump($rowData);
+//var_dump($rowData);
 
 
 		                 $page_name_id = get_the_ID();

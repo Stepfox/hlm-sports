@@ -403,7 +403,7 @@ body .all-odds th div img{vertical-align: middle;padding: 0 5px;margin: 10px 0;}
 body .all-odds th{ height: 70px;position: relative; }
 
 
- .all-odds td, .all-odds th, tr:nth-child(odd) td{
+.all-odds td, .all-odds th, .single-match .all-odds td{
     line-height: 30px;
     float:left;
     width: 40px;
@@ -641,14 +641,17 @@ ul.odds-widget-odds-list{overflow:hidden;width:70%;float:left;padding:0;display:
 .odds-list{width:70%;float:left;}
 .odds-prev{padding:10px;background:#358d53;position:absolute;left:0;top:240px;z-index:9;font-size:20px;color:#FFF;font-weight:800;cursor:pointer;}
 .odds-next{padding:10px;background:#358d53;position:absolute;right:0;top:240px;z-index:9;font-size:20px;color:#FFF;font-weight:800;cursor:pointer;}
-.bestodds-teams{width: 100%;float:left;border:1px solid #FFF;color:#FFF;}
+
+.bestodds-widget .odds-widget{background: #FFF;}
+.bestodds-widget  .odds-date{background:#2f2f2f; color:#FFF;padding:3px 15px;}
+.bestodds-teams{width: 100%;float:left;border:1px solid #ccc;color:#000;}
 .bestodds-team{width:33.3%;float:left;text-align: center;}
 .bestodds-team-part{width:100%;float:left;padding:5px;}
-.bestodds-team a{color:#FFF;}
+.bestodds-team a{color:#000;}
 .bestodds-team-part .top-5-review-bet-now{margin: 5px auto; padding: 0px 10px; float: none; display: inline-block; color: #FFF; font-size: 12px;}
-.bestodds-team-part + .bestodds-team-part{border-top:1px solid #FFF;} 
-.bestodds-team + .bestodds-team{border-left:1px solid #FFF;} 
-.bestodds-match a{float:left;font-size:14px;color:#FFF;margin-top:5px;font-weight: 600;}
+.bestodds-team-part + .bestodds-team-part{border-top:1px solid #CCC;} 
+.bestodds-team + .bestodds-team{border-left:1px solid #CCC;} 
+.bestodds-match a{float:left;font-size:14px;color:#000;margin-top:5px;font-weight: 600;}
 .mob-menu-button{display:none;}
 .single-match .odds-prev, .single-match .odds-next{top:40px;}
 
@@ -1040,65 +1043,11 @@ body.custom-background{background-image:none;}
 
 
 
-#dropDown{ width: 100%; }
-
-
-
-#dropDown {
-	    padding-left: 50px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
-  outline: 0;
-  box-shadow: none;
-  border: 0 !important;
-  background: #FFF;
-  background-image: none;
-}
-/* Custom Select */
-.select {
-	font-size:20px;
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 3em;
-  margin-bottom:10px;
-  line-height: 3;
-  background: #FFF;
-  overflow: hidden;
-  border-radius: .25em;
-  border:1px solid #ccc;
-}
-#dropDown {
-	text-align: center;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  color: #101010;
-  cursor: pointer;
-}
-#dropDown::-ms-expand {
-  display: none;
-}
-/* Arrow */
-.select::after {
-  color:#FFF;
-  content: '\25BC';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  padding: 0 1em;
-  background: #27272f;
-  pointer-events: none;
-}
-/* Transition */
-.select:hover::after {
-  color: #f39c12;
-}
-.select::after {
-  -webkit-transition: .25s all ease;
-  -o-transition: .25s all ease;
-  transition: .25s all ease;
-}
+#dropDown{ width: 100%; font-size: 16px;}
+#dropDown {padding-left: 50px; -webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; appearance: none; outline: 0; box-shadow: none; background: #FFF; background-image: none; }
+.select {font-size:20px; position: relative; display: block; width: 100%;     margin-bottom:10px; line-height: 2; background: #FFF; overflow: hidden; border-radius: .25em; border:1px solid #ccc; }
+#dropDown {border:none; height: 40px;width: 100%;  margin: 0; color: #101010; cursor: pointer; }
+#dropDown::-ms-expand {display: none; }
+.select::after {color:#FFF; content: '\25BC'; position: absolute; top: 0; right: 0; bottom: 0; padding: 0 1em; background: #27272f; pointer-events: none; }
+.select:hover::after {color: #f39c12; }
+.select::after {-webkit-transition: .25s all ease; -o-transition: .25s all ease; transition: .25s all ease; }
