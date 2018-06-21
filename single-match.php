@@ -99,12 +99,13 @@ function in_array_r($item , $array){
                 );
                 $bookmakers_query = new WP_Query($args1);
                 while($bookmakers_query->have_posts()) : $bookmakers_query->the_post();
-                  if(!empty(get_field('bookmaker_crawl_order'))){ 
+                  if(!empty(get_field('bookmaker_crawl_order')) && is_numeric(get_field('bookmaker_crawl_order'))){ 
 
+                      $bookmaker_crawl_order = get_field('bookmaker_crawl_order') - 1;
                       $bookmakers_order[$bookmakers_count]['id'] = get_the_ID();
-                      $bookmakers_order[$bookmakers_count]['bookmaker_crawl_order'] = get_field('bookmaker_crawl_order');
-
+                      $bookmakers_order[$bookmakers_count]['bookmaker_crawl_order'] = (string)$bookmaker_crawl_order;
                       $bookmakers_count++;
+                    
                   } endwhile; wp_reset_postdata();
 
 
@@ -112,7 +113,6 @@ function in_array_r($item , $array){
 
 
 $test = get_post_meta( get_the_ID(), 'lice_za_kontakt', true );
-
 
 $name_of_the_odds_table = 'winner';
 
@@ -167,7 +167,7 @@ echo '<tr><td>Sign Up Bonus</td>';
                 );
                 $bookmakers_query = new WP_Query($args1);
                 while($bookmakers_query->have_posts()) : $bookmakers_query->the_post();
-                  if(!empty(get_field('bookmaker_crawl_order'))){ ?>
+                  if(!empty(get_field('bookmaker_crawl_order')) && is_numeric(get_field('bookmaker_crawl_order'))){ ?>
 
      <td>
 
@@ -180,7 +180,7 @@ echo '<tr><th>Betting Company</th>';
        
                 $bookmakers_query = new WP_Query($args1);
                 while($bookmakers_query->have_posts()) : $bookmakers_query->the_post();
-                  if(!empty(get_field('bookmaker_crawl_order'))){ ?>
+                  if(!empty(get_field('bookmaker_crawl_order')) && is_numeric(get_field('bookmaker_crawl_order'))){ ?>
 
      <th>
           <div class="bookmaker-background-wrap-<?php the_ID(); ?>">
@@ -216,18 +216,22 @@ echo '<tr><th>Betting Company</th>';
                         if($i > $bookmakers_count) break;
                         $odd_list_number++;
 
-                          if(in_array_r($odd_list_number -1 , $bookmakers_order) || $odd_list_number == 0){
+                          if(in_array_r($odd_list_number , $bookmakers_order) || $odd_list_number == 0){
                       
 
                           if(!empty($odd_list) || $odd_list != NULL || $odd_list != ""){
 
 
                                   if (empty($odd_list['odd'])){echo '<td>';}else{echo '<td class="filled">';}
-                                  
-                                  echo $odd_list['odd'];
+//var_dump($odds_lists['odd_list'][$i]['odd']);   
                                   if($i != 0){
-                                  //echo get_the_title( $bookmakers_order[$i - 1]['id'] );
-                                  }
+                            echo $odds_lists['odd_list'][$bookmakers_order[$i - 1]['bookmaker_crawl_order']]['odd'];              }else{echo $odd_list['odd'];}                   
+                                  // echo $odd_list['odd'];
+                                  // if($i != 0){
+                                  //   echo '!!';
+                                  // echo $bookmakers_order[$i - 1]['bookmaker_crawl_order'];
+                                  // echo '!!';
+                                  // }
                                   echo "</td>";
                                   $i++;
                           }

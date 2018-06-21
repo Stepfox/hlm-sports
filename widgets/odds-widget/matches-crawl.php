@@ -65,7 +65,7 @@ function crawl_matches(){
 
 			$duplicate = 'unique';
 			$title = $html->find('.match-on p.fixtures-bet-name', $i)->plaintext.' vs '.$html->find('.match-on p.fixtures-bet-name', $i + 1)->plaintext;
-			$match_url = 'https://www.oddschecker.com/'.$html->find('.match-on .link-right a', $i / 2)->href;
+			$match_url = 'https://www.oddschecker.com'.$html->find('.match-on .link-right a', $i / 2)->href;
 			
 
 
@@ -162,7 +162,7 @@ $crawl_date = $html->find('.date', 0)->plaintext;
 $date_parts = explode(' ', $crawl_date);
 $day = substr($date_parts[1], 0, -2);
 $month = date('m',strtotime($date_parts[2]));
-$year = '2018';
+$year = get_the_date( 'Y' );
 $time = $date_parts[4];
 $fulldate_unix = mysql2date( 'U', $year.'-'.$month.'-'.$day.' '.$time.':00' );
 
@@ -425,14 +425,37 @@ echo $match_url;
 $table = $html->find('#t1', 0);
 
 
+
+$crawl_date = $html->find('.date', 0)->plaintext;
+$date_parts = explode(' ', $crawl_date);
+$day = substr($date_parts[1], 0, -2);
+$month = date('m',strtotime($date_parts[2]));
+$year = get_the_date( 'Y' );
+$time = $date_parts[4];
+$fulldate_unix = mysql2date( 'U', $year.'-'.$month.'-'.$day.' '.$time.':00' );
+
+
+update_field( 'start_time', $fulldate_unix, $page_name_id );
+
+
+
+
 $rowData = array();
 if (!empty($table)){
 foreach($table->find('tr') as $row) {
     // initialize array to store the cell data from each row
     $flight = array();
+
     foreach($row->find('td') as $cell) {
+    	if(!empty($cell->find('.tcell .top-row')[0]->children[0]->attr['data-name'])){
+			$flight[] = $cell->find('.tcell .top-row')[0]->children[0]->attr['data-name'];
         // push the cell's text to the array
-        	$flight[] = $cell->plaintext;
+    	}else{
+
+    		$flight[] = $cell->plaintext;
+    	}
+    	$cell_count++;
+        	
     }
     if(array_filter($flight)){
     	$rowData[] = $flight;
@@ -470,11 +493,12 @@ return $gggg;
 
 function crawl_full_football_game(){
 
+		$now_date = current_time('timestamp');
         $args = array(
             'post_type' => 'match',
             'posts_per_page' => -1, 
             'post_status' => 'publish', 
-            // 'offset' => '1'  
+
         );
         $lunar_magazine_posts = new WP_Query($args);
         while($lunar_magazine_posts->have_posts()) : $lunar_magazine_posts->the_post();
@@ -483,7 +507,7 @@ function crawl_full_football_game(){
 $page_name_id = get_the_ID();
 
 		$crawl_football_markets = array(
-				'first-goalscorer' => 'first-goalscorer',
+				 'first-goalscorer' => 'first-goalscorer',
 				'both-teams-to-score' => 'both-teams-to-score',
 				'correct-score' => 'correct-score',
 				'half-time-full-time' => 'half-time-full-time',

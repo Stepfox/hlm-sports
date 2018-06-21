@@ -1,6 +1,74 @@
 <?php 
 
 
+add_filter( 'cron_schedules', 'example_add_cron_interval' );
+ 
+function example_add_cron_interval( $schedules ) {
+    $schedules['halfhour'] = array(
+        'interval' => 1800,
+        'display'  => esc_html__( 'Every Half Hour' ),
+    );
+
+    $schedules['15minutes'] = array(
+        'interval' => 900,
+        'display'  => esc_html__( '15minutes' ),
+    );
+
+
+    $schedules['fullhour'] = array(
+        'interval' => 3600,
+        'display'  => esc_html__( 'Every Hour' ),
+    );
+ 
+    return $schedules;
+}
+
+
+
+
+
+
+
+function cron_crawl_matches() {
+
+   crawl_matches();
+
+}
+add_action( 'cron_crawl_matches', 'cron_crawl_matches' );
+
+
+function cron_crawl_odds() {
+
+   crawl_full_football_game();
+
+}
+add_action( 'cron_crawl_odds', 'cron_crawl_odds' );
+
+
+function cron_remove_past_matches() {
+remove_past_matches();
+}
+add_action( 'cron_remove_past_matches', 'cron_remove_past_matches' );
+
+
+if ( ! wp_next_scheduled( 'cron_remove_past_matches' ) ) {
+    wp_schedule_event( time(), '15minutes', 'cron_remove_past_matches' );
+}
+
+if ( ! wp_next_scheduled( 'cron_crawl_matches' ) ) {
+    wp_schedule_event( time(), 'fullhour', 'cron_crawl_matches' );
+}
+
+if ( ! wp_next_scheduled( 'cron_crawl_odds' ) ) {
+    wp_schedule_event( time(), 'halfhour', 'cron_crawl_odds' );
+}
+
+
+
+
+
+
+
 
 add_action('admin_menu', 'add_crawler_options_page');
 
@@ -17,7 +85,7 @@ function crawler_options_function(){
 
 
         echo '<h2>Crawl Matches</h2>';
-        
+
 ?>
             <form method="post">                    
                 <input  type="submit" class="button-secondary" name="crawl_matches" value="<?php echo esc_attr('Crawl All Matches'); ?>"/>
