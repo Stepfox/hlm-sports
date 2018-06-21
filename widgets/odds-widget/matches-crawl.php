@@ -507,25 +507,25 @@ function crawl_full_football_game(){
 $page_name_id = get_the_ID();
 
 		$crawl_football_markets = array(
-				 'first-goalscorer' => 'first-goalscorer',
-				'both-teams-to-score' => 'both-teams-to-score',
-				'correct-score' => 'correct-score',
-				'half-time-full-time' => 'half-time-full-time',
-				'anytime-goalscorer' => 'anytime-goalscorer',
-				'draw-no-bet' => 'draw-no-bet',
-				'total-goals-over-under' => 'total-goals-over-under',
-				'total-goals-exact' => 'total-goals-exact',
-				'asian-handicap' => 'asian-handicap',
-				'enhanced-odds-specials' => 'enhanced-odds-specials',
-				'half-time' => 'half-time',
-				'last-goalscorer' => 'last-goalscorer',
-				'half-time-score' => 'half-time-score',
-				'winning-margin' => 'winning-margin',
-				'total-corners' => 'total-corners',
-				'man-of-the-match' => 'man-of-the-match',
-				'double-chance' => 'double-chance',
-				'score-win-double' => 'score-win-double',
-				'betting-markets' => 'betting-markets',
+				//  'first-goalscorer' => 'first-goalscorer',
+				// 'both-teams-to-score' => 'both-teams-to-score',
+				// 'correct-score' => 'correct-score',
+				// 'half-time-full-time' => 'half-time-full-time',
+				// 'anytime-goalscorer' => 'anytime-goalscorer',
+				// 'draw-no-bet' => 'draw-no-bet',
+				// 'total-goals-over-under' => 'total-goals-over-under',
+				// 'total-goals-exact' => 'total-goals-exact',
+				// 'asian-handicap' => 'asian-handicap',
+				// 'enhanced-odds-specials' => 'enhanced-odds-specials',
+				// 'half-time' => 'half-time',
+				// 'last-goalscorer' => 'last-goalscorer',
+				// 'half-time-score' => 'half-time-score',
+				// 'winning-margin' => 'winning-margin',
+				// 'total-corners' => 'total-corners',
+				// 'man-of-the-match' => 'man-of-the-match',
+				// 'double-chance' => 'double-chance',
+				// 'score-win-double' => 'score-win-double',
+				// 'betting-markets' => 'betting-markets',
 				'winner' => 'winner',
 			);
 
@@ -548,15 +548,89 @@ $page_name_id = get_the_ID();
 			   update_post_meta ( $page_name_id, 'lice_za_kontakt', $value );
 			}
 
-
 the_title();
 echo ' Done!';
 
  endwhile; 
+convert_winner_table();
 
 }
 
 
+
+
+
+
+
+
+
+
+
+function convert_winner_table(){
+
+
+
+
+		//check for duplicate
+		            $args = array(
+		                'post_type' => 'match',
+		                'posts_per_page' => -1, 
+		                'post_status' => 'publish',   
+		            );
+		            $lunar_magazine_posts = new WP_Query($args);
+		            while($lunar_magazine_posts->have_posts()) : $lunar_magazine_posts->the_post();
+
+
+		$page_name_id = get_the_ID();
+		$test = get_post_meta( get_the_ID(), 'lice_za_kontakt', true );
+
+$winner_odds = array();
+		foreach ($test as $key){
+			if($key['name_of_the_table'] == 'winner' ){
+			foreach($key['odds_lists'] as $odds_lists){
+				$list_number = 0;
+				$winner_odds[$list_number][] = $odds_lists['odd_list'];
+				$list_number++;
+			}
+			}
+		}
+
+
+
+		            $args1 = array(
+		                'post_type' => 'bookmaker',
+		                'posts_per_page' => -1, 
+		                'post_status' => 'publish',   
+		            );
+		            $bookmakers_query = new WP_Query($args1);
+		            $count = 0;
+		            while($bookmakers_query->have_posts()) : $bookmakers_query->the_post();
+
+
+
+
+		            		$bookmaker_crawl_order = get_field('bookmaker_crawl_order', get_the_ID());
+
+
+		            		$value[$count]['win_odds'] = $winner_odds[0][0][$bookmaker_crawl_order]['odd'];
+		            		$value[$count]['draw_odds'] = $winner_odds[0][1][$bookmaker_crawl_order]['odd'];
+		            		$value[$count]['loss_odds'] = $winner_odds[0][2][$bookmaker_crawl_order]['odd'];
+		            		$value[$count]['bookmaker'] = get_the_ID();
+
+
+		            		$count++;
+		            endwhile; 
+
+
+$field_key = "winner_table";
+
+update_field( $field_key, $value, $page_name_id );
+
+endwhile;  
+
+
+
+}
 
 
 

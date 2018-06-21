@@ -1,6 +1,30 @@
 <?php 
 
 
+
+/*
+
+
+back i front 
+
+promotion page
+contact form design
+Bonus list page
+flash game custom post type i link do play igata
+custom posg types izglea poveke
+
+
+
+
+
+
+
+
+
+
+
+
+
 add_filter( 'cron_schedules', 'example_add_cron_interval' );
  
 function example_add_cron_interval( $schedules ) {
@@ -8,12 +32,6 @@ function example_add_cron_interval( $schedules ) {
         'interval' => 1800,
         'display'  => esc_html__( 'Every Half Hour' ),
     );
-
-    $schedules['15minutes'] = array(
-        'interval' => 900,
-        'display'  => esc_html__( '15minutes' ),
-    );
-
 
     $schedules['fullhour'] = array(
         'interval' => 3600,
@@ -38,7 +56,7 @@ add_action( 'cron_crawl_matches', 'cron_crawl_matches' );
 
 
 function cron_crawl_odds() {
-
+    crawl_table();
    crawl_full_football_game();
 
 }
@@ -52,7 +70,7 @@ add_action( 'cron_remove_past_matches', 'cron_remove_past_matches' );
 
 
 if ( ! wp_next_scheduled( 'cron_remove_past_matches' ) ) {
-    wp_schedule_event( time(), '15minutes', 'cron_remove_past_matches' );
+    wp_schedule_event( time(), 'fullhour', 'cron_remove_past_matches' );
 }
 
 if ( ! wp_next_scheduled( 'cron_crawl_matches' ) ) {
@@ -60,13 +78,13 @@ if ( ! wp_next_scheduled( 'cron_crawl_matches' ) ) {
 }
 
 if ( ! wp_next_scheduled( 'cron_crawl_odds' ) ) {
-    wp_schedule_event( time(), 'halfhour', 'cron_crawl_odds' );
+    wp_schedule_event( time(), 'fullhour', 'cron_crawl_odds' );
 }
 
 
 
 
-
+*/
 
 
 
@@ -246,8 +264,8 @@ if (isset($_POST) && !empty($_POST['crawl_odds']) ){
 
 
 if (isset($_POST) && !empty($_POST['remove_all_matches'])){
-
-        remove_all_matches();
+convert_winner_table();
+        //remove_all_matches();
         //remove_past_matches();
 
 }
