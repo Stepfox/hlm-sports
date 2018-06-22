@@ -172,9 +172,6 @@ function experiment_3(){
 //https://livedemo00.template-help.com/wt_63853_v1/index.html
 
  ?>
-
-
-<div class="main-component">
                 <!-- Game Result Bug-->
                 <article class="game-result">
                   <div class="game-info game-info-creative">
@@ -184,7 +181,7 @@ function experiment_3(){
                     <h3 class="game-info-title">Champions league semi-final 2018</h3>
                     <div class="game-info-main">
                       <div class="game-info-team game-info-team-first">
-                        <figure><img src="https://livedemo00.template-help.com/wt_63853_v1/theme/images/team-atletico-100x100.png" alt="" width="100" height="100">
+                        <figure><img width="100" height="100" alt="" src="images/team-atletico-100x100.png">
                         </figure>
                         <div class="game-result-team-name">Atletico</div>
                         <div class="game-result-team-country">Italy</div>
@@ -205,7 +202,7 @@ function experiment_3(){
                         </div>
                       </div>
                       <div class="game-info-team game-info-team-second">
-                        <figure><img src="https://livedemo00.template-help.com/wt_63853_v1/theme/images/team-bavaria-fc-113x106.png" alt="" width="113" height="106">
+                        <figure><img width="113" height="106" alt="" src="images/team-bavaria-fc-113x106.png">
                         </figure>
                         <div class="game-result-team-name">Celta Vigo</div>
                         <div class="game-result-team-country">Spain</div>
@@ -213,10 +210,11 @@ function experiment_3(){
                     </div>
                   </div>
                   <div class="game-info-countdown">
-                    <div class="countdown countdown-bordered is-countdown" data-type="until" data-time="31 Dec 2018 16:00" data-format="dhms" data-style="short"><span class="countdown-row countdown-show4"><span class="countdown-section"><span class="countdown-amount">194</span><span class="countdown-period">Days</span></span><span class="countdown-section"><span class="countdown-amount">6</span><span class="countdown-period">Hrs</span></span><span class="countdown-section"><span class="countdown-amount">45</span><span class="countdown-period">Mins</span></span><span class="countdown-section"><span class="countdown-amount">23</span><span class="countdown-period">Secs</span></span></span></div>
+                    <div class="countdown countdown-bordered is-countdown" data-style="short" data-format="dhms" data-time="31 Dec 2018 16:00" data-type="until"><span class="countdown-row countdown-show4"><span class="countdown-section"><span class="countdown-amount">192</span><span class="countdown-period">Days</span></span><span class="countdown-section"><span class="countdown-amount">9</span><span class="countdown-period">Hrs</span></span><span class="countdown-section"><span class="countdown-amount">1</span><span class="countdown-period">Minute</span></span><span class="countdown-section"><span class="countdown-amount">48</span><span class="countdown-period">Secs</span></span></span></div>
                   </div>
                 </article>
-              </div>
+
+
 
 
 <?php
