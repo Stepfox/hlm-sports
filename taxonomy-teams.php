@@ -296,7 +296,7 @@ th {
                           <div class="player-name">S. Lavery-Spahr</div>
                         </div>
                       </td>
-                      <td>21</td>
+                      <td>Defender</td>
                     </tr>
                     <tr>
                       <td><span class="table-counter">2</span></td>
@@ -305,7 +305,7 @@ th {
                           <div class="player-name">P. Bohn III</div>
                         </div>
                       </td>
-                      <td>20</td>
+                      <td>Attacker</td>
                     </tr>
 
                   </tbody>
