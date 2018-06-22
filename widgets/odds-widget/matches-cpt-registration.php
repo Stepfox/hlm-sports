@@ -264,8 +264,8 @@ if (isset($_POST) && !empty($_POST['crawl_odds']) ){
 
 
 if (isset($_POST) && !empty($_POST['remove_all_matches'])){
-convert_winner_table();
-        //remove_all_matches();
+
+        remove_all_matches();
         //remove_past_matches();
 
 }

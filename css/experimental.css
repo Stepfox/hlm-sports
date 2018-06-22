@@ -353,16 +353,13 @@ html {
   padding: 30px 10px;
 }
 .game-info-creative {
-  padding-bottom: 0px;
+  padding-bottom: 40px;
 }
 /* @media all and (min-width:576px) */
 .game-info {
   padding: 46px 15px 60px;
 }
 /* @media all and (min-width:576px) */
-.game-info-creative {
-  padding-bottom: 0px;
-}
 .game-info-countdown {
   position: relative;
   padding: 15px 10px;

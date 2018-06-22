@@ -175,19 +175,29 @@ function experiment_3(){
                 <!-- Game Result Bug-->
                 <article class="game-result">
                   <div class="game-info game-info-creative">
-                    <p class="game-info-subtitle">Real Stadium - 
-                      <time datetime="08:30"> 08:30 PM</time>
-                    </p>
-                    <h3 class="game-info-title">Champions league semi-final 2018</h3>
+                    <h3 class="game-info-title"><?php echo get_the_title(); ?></h3>
                     <div class="game-info-main">
                       <div class="game-info-team game-info-team-first">
-                        <figure><img width="100" height="100" alt="" src="images/team-atletico-100x100.png">
+                        <figure>
+                          <?php $home_team = get_term( get_field('home_team'), 'teams' ); 
+                               $image = get_field('flag', $home_team);                            
+                                  if( $image ) {?>
+                                    <img src="<?php  echo $image['sizes']['hlm_sports_196x196']; ?>">                 
+                                  <?php } ?>
                         </figure>
-                        <div class="game-result-team-name">Atletico</div>
-                        <div class="game-result-team-country">Italy</div>
+                        <div class="game-result-team-name">                      
+                          <?php    ?>
+                          <a href="<?php echo esc_url(get_term_link($home_team, 'teams')); ?>">
+                            <?php echo $home_team->slug;   ?>       
+
+
+
+                          </a>
+                        </div>
                       </div>
                       <div class="game-info-middle game-info-middle-vertical">
-                        <time class="time-big" datetime="2018-04-17"><span class="heading-3">Fri 19</span> May 2018
+                        <time class="time-big" ><span class="heading-3"><?php $myDateTime = get_field('start_time'); echo date('D d',$myDateTime);?></span> <?php echo date('F Y',$myDateTime);?>
+                        <span class="heading-3"><?php echo date ('H:i',$myDateTime); ?></span>
                         </time>
                         <div class="game-result-divider-wrap"><span class="game-info-team-divider">VS</span></div>
                         <div class="group-sm">
@@ -198,19 +208,25 @@ function experiment_3(){
                               <li class="game-info-share-item"><a class="icon fa fa-google-plus" href="#"></a></li>
                               <li class="game-info-share-item"><a class="icon fa fa-instagram" href="#"></a></li>
                             </ul>
-                          </div><a class="button button-sm button-primary" href="#">Bet Now</a>
+                          </div><a href="<?php the_permalink();?>" class="button button-sm button-primary" href="#">Bet Now</a>
                         </div>
                       </div>
                       <div class="game-info-team game-info-team-second">
-                        <figure><img width="113" height="106" alt="" src="images/team-bavaria-fc-113x106.png">
+                        <figure>
+                                <?php
+                                $away_team = get_term( get_field('away_team'), 'teams' );
+                               $image = get_field('flag', $away_team);                            
+                                  if( $image ) {?>
+                                    <img src="<?php  echo $image['sizes']['hlm_sports_196x196']; ?>">                 
+                                  <?php } ?>
+
                         </figure>
-                        <div class="game-result-team-name">Celta Vigo</div>
-                        <div class="game-result-team-country">Spain</div>
+                          <?php   ?>
+                          <a href="<?php echo esc_url(get_term_link($away_team, 'teams')); ?>">
+                            <?php echo $away_team->slug;?>
+                          </a>
                       </div>
                     </div>
-                  </div>
-                  <div class="game-info-countdown">
-                    <div class="countdown countdown-bordered is-countdown" data-style="short" data-format="dhms" data-time="31 Dec 2018 16:00" data-type="until"><span class="countdown-row countdown-show4"><span class="countdown-section"><span class="countdown-amount">192</span><span class="countdown-period">Days</span></span><span class="countdown-section"><span class="countdown-amount">9</span><span class="countdown-period">Hrs</span></span><span class="countdown-section"><span class="countdown-amount">1</span><span class="countdown-period">Minute</span></span><span class="countdown-section"><span class="countdown-amount">48</span><span class="countdown-period">Secs</span></span></span></div>
                   </div>
                 </article>
 
@@ -997,34 +1013,54 @@ h5, .heading-5 {
             <div class="unit unit-md-horizontal align-items-center align-items-md-stretch">
               <div class="unit-right">
                 <div class="promo-creative-details">
-                  <h3 class="promo-creative-title">American league 2018</h3>
-                  <p class="promo-creative-location"><span class="icon icon-gray-800 mdi mdi-map-marker"></span>New Yorkers Stadium
-                  </p>
                   <div class="promo-creative-countdown">
-                    <div class="countdown countdown-bordered is-countdown" data-style="short" data-format="dhms" data-time="31 Dec 2018 16:00" data-type="until"><span class="countdown-row countdown-show4"><span class="countdown-section"><span class="countdown-amount">192</span><span class="countdown-period">Days</span></span><span class="countdown-section"><span class="countdown-amount">8</span><span class="countdown-period">Hrs</span></span><span class="countdown-section"><span class="countdown-amount">24</span><span class="countdown-period">Mins</span></span><span class="countdown-section"><span class="countdown-amount">45</span><span class="countdown-period">Secs</span></span></span></div>
+                      <p class="game-info-subtitle">
+                        <time> 
+                          <?php $myDateTime = get_field('start_time'); 
+                          echo date ('F d, Y H : i',$myDateTime); ?>                  
+                        </time>
+                      </p>
                   </div>
                   <div class="promo-main promo-creative-main">
                     <div class="promo-team promo-creative-team">
-                      <figure class="promo-team-figure"><img width="37" height="37" alt="" src="images/team-atletico-37x37.png">
-                      </figure>
                       <div class="promo-team-title">
-                        <div class="promo-team-name">Atletico</div>
-                        <div class="promo-team-country">USA</div>
+                        <div class="promo-team-name">     
+                          <?php  $home_team = get_term( get_field('home_team'), 'teams' );  ?>
+                          <a href="<?php echo esc_url(get_term_link($home_team, 'teams')); ?>">
+                            <?php echo $home_team->slug;?>
+                          </a>
+                        </div>
                       </div>
+                      <figure class="promo-team-figure">                                <?php
+                          $home_team = get_term( get_field('home_team'), 'teams' );
+                         $image = get_field('flag', $home_team);                            
+                            if( $image ) {?>
+                              <img src="<?php  echo $image['sizes']['hlm_sports_40x40']; ?>">                 
+                            <?php } ?>
+                      </figure>
                     </div>
                     <div class="promo-creative-middle">VS</div>
                     <div class="promo-team promo-creative-team">
-                      <figure class="promo-team-figure"><img width="45" height="35" alt="" src="images/team-sevilla-45x35.png">
+                      <figure class="promo-team-figure">                                <?php
+                                $away_team = get_term( get_field('away_team'), 'teams' );
+                               $image = get_field('flag', $away_team);                            
+                                  if( $image ) {?>
+                                    <img src="<?php  echo $image['sizes']['hlm_sports_40x40']; ?>">                 
+                                  <?php } ?>
                       </figure>
                       <div class="promo-team-title">
-                        <div class="promo-team-name">Sevilla</div>
-                        <div class="promo-team-country">Spain</div>
+                        <div class="promo-team-name">
+                          <?php  $away_team = get_term( get_field('away_team'), 'teams' );  ?>
+                          <a href="<?php echo esc_url(get_term_link($away_team, 'teams')); ?>">
+                            <?php echo $away_team->slug;?>
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
                   <div class="promo-creative-tickets">
                     <div class="promo-buttons text-nowrap">
-                      <a class="button button-primary" href="#">Bet Now</a>
+                      <a class="button button-primary" href="<?php the_permalink();?>">Check Game Odds</a>
                     </div>
                   </div>
                 </div>
