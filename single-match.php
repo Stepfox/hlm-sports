@@ -240,8 +240,10 @@ echo '<tr><th>Betting Company</th>';
 
 
 
-
-
+experiment_4();
+experiment_5();
+experiment_5();
+experiment_5();
 
 ?>
 
