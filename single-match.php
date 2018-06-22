@@ -280,7 +280,7 @@ experiment_5();
         <?php echo do_shortcode( '[hlm_sports_highest_odd]' ); ?>
       </div>
        
-      <?php //if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Post Sidebar')): endif; ?>
+      <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Post Sidebar')): endif; ?>
   </div>
 
 

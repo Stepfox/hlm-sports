@@ -198,7 +198,7 @@ function experiment_3(){
                               <li class="game-info-share-item"><a class="icon fa fa-google-plus" href="#"></a></li>
                               <li class="game-info-share-item"><a class="icon fa fa-instagram" href="#"></a></li>
                             </ul>
-                          </div><a class="button button-sm button-primary" href="#">Buy tickets</a>
+                          </div><a class="button button-sm button-primary" href="#">Bet Now</a>
                         </div>
                       </div>
                       <div class="game-info-team game-info-team-second">
@@ -313,7 +313,6 @@ function experiment_5(){
 }
 .promo-creative {
   text-align: center;
-  font-family: "Kanit",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.05em;
@@ -561,7 +560,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
-  font-family: "Kanit",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   font-weight: 500;
   line-height: 1.1;
   color: #151515;
@@ -572,7 +570,6 @@ h3, .h3 {
 h1, h2, h3, h4, h5, h6, [class*='heading-'] {
   margin-top: 0px;
   margin-bottom: 0px;
-  font-family: "Kanit",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   font-weight: 500;
   letter-spacing: 0.05em;
   color: #151515;
@@ -661,7 +658,6 @@ p {
   margin: 0 3px;
   width: 29px;
   height: 29px;
-  font-family: "Kanit",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   line-height: 29px;
   font-weight: 500;
   color: #fff;
@@ -676,7 +672,6 @@ p {
   font-size: 14px;
   line-height: 1.25;
   border: 2px solid;
-  font-family: "Kanit",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   font-weight: 500;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -781,7 +776,7 @@ ul li, ol li {
   display: block;
 }
 .promo-share-item {
-  font-family: "Kanit",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  
   font-size: 12px;
   line-height: 1;
   font-weight: 500;
@@ -1031,7 +1026,6 @@ h5, .heading-5 {
                     <div class="promo-buttons text-nowrap">
                       <a class="button button-primary" href="#">Bet Now</a>
                     </div>
-                    <p class="promo-creative-tickets-description">Only<span class="promo-creative-tickets-number">89</span>Tickets Left, Hurry Up</p>
                   </div>
                 </div>
               </div>
