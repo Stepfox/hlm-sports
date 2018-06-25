@@ -82,7 +82,7 @@
 				<div class="odds-date">
 					<?php 
 
-						$myDateTime = get_field('start_time');
+						$myDateTime = (int)get_field('start_time');
 						echo date('l F d',$myDateTime);
 			
 
@@ -97,7 +97,7 @@
 							<div class="odds-game-home-team-name">
 								<?php  $home_team = get_term( get_field('home_team'), 'teams' );  ?>
 								<a href="<?php echo esc_url(get_term_link($home_team, 'teams')); ?>">
-									<?php echo $home_team->slug;?>
+									<?php echo $home_team->name;?>
 								</a>
 							</div>
 						</div>
@@ -110,7 +110,7 @@
 							<div class="odds-game-away-team-name">
 								<?php  $away_team = get_term( get_field('away_team'), 'teams' );  ?>
 								<a href="<?php echo esc_url(get_term_link($away_team, 'teams')); ?>">
-									<?php echo $away_team->slug;?>
+									<?php echo $away_team->name;?>
 								</a>
 							</div>
 						</div>
