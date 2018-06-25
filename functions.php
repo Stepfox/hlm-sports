@@ -354,11 +354,29 @@ function hlm_sports_archive_page_queries( $query ) {
  	}
 
         $query->set('meta_key', 'overall_rating');
-        $query->set('orderby', 'meta_value_num');
+        $query->set('orderby', 'meta_value');
         $query->set('order', 'DESC');
 			$query->set('posts_per_page', '9');
 			
 	}
+
+
+ if ( is_post_type_archive( 'match' ) && $query->is_main_query() ) {
+$now_date = current_time('timestamp');
+        $query->set('meta_key', 'start_time');
+        $query->set('orderby', 'meta_value');
+        $query->set('order', 'ASC');
+		$query->set('posts_per_page', '10');
+
+		$query->set('meta_query', array(
+						array('key' => 'start_time',
+							'value'   => $now_date,
+							'compare' => '>'),
+				   			 ));
+
+			
+	}
+
 
 
 

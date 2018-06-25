@@ -204,64 +204,68 @@ echo '<tr><th>Betting Company</th>';
     // print_r($test[0]);
     // echo "</pre>";
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-experiment_4();
-experiment_5();
-experiment_5();
-experiment_5();
-
 ?>
+<div class="col-sm-6 widget">
+    <div class="widget-title">
+      <h2>
+         Home Team Roster
+      </h2>
+    </div>
+ <?php 
+$home_team = get_term( get_field('home_team', get_the_ID() ), 'teams' );
+$away_team = get_term( get_field('away_team', get_the_ID()), 'teams' );
+
+
+ experiment_6($home_team); ?>
+</div>
+
+<div class="col-sm-6 widget">
+    <div class="widget-title">
+      <h2>
+         Away Team Roster
+      </h2>
+    </div>
+ <?php experiment_6($away_team); ?>
+</div>
+<div class="col-sm-12 widget">
+    <div class="widget-title">
+      <h2>
+         Upcoming Games
+      </h2>
+    </div>
+<?php 
 
 
 
-        <?php
-      if ( have_posts() ) :
-        while ( have_posts() ) : the_post();
-              the_content();
-                wp_link_pages(array(  
-                'before' => '<div class="pagination">' . 'Pages:',  
-                 'after' => '</div>'  
-                  )); 
-        endwhile;
-      else :
-        ?><p><?php _e( 'Sorry, no posts matched your criteria.', 'hlm-sports' ); ?></p><?php
-      endif;
-    ?>
+
+$args = array(
+          'posts_per_page' => -1,
+          'post_type' => 'match',
+          'post_status' => 'publish', 
+          'offset' => 1,
+        'meta_key'      => 'start_time',
+        'orderby'     => 'meta_value',
+        'order'       => 'ASC',
+          'tax_query' => array(
+                array(
+                    'taxonomy' => 'teams',
+                    'field' => 'slug',
+                    'terms' => array($home_team->slug, $away_team->slug)
+                 )
+              )
+      );
+
+                $matches_query = new WP_Query($args);
+                while($matches_query->have_posts()) : $matches_query->the_post();
+
+
+
+
+
+experiment_5();
+
+ endwhile; ?>
+</div>
 
       </div>
 

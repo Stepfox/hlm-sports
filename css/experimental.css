@@ -1,3 +1,22 @@
+.tax-teams .post-title{position: relative;margin-bottom: 20px;}
+.tax-teams .post-title h1{font-size:50px;position: absolute;top:20%;width: 100%;text-align: center;padding:0 30px;color:#FFF;}
+.tax-teams .post-title:before{content:'';background:#000;position: absolute;width: 100%;height: 100%;opacity:0.5;}
+.tax-teams .team-flag{width:100%;position: absolute; top:50%;text-align: center;}
+.tax-teams .team-flag img{width:90px;border-radius: 4px;}
+
+figure.promo-team-figure{max-width: 90px;margin:0 10px;    border-radius: 4px;    overflow: hidden;box-shadow: 0 0 20px #777;}
+.promo-creative-team:first-child .promo-team-title{    margin-top: 0px;  margin-left: 0; margin-right:10px;}
+
+.game-result-team-name{font-size:20px;font-weight: 700;}
+
+
+.widget .promo-creative-details{padding:10px;}
+.promo-creative-team{padding:;}
+
+.post-type-archive-match .container{padding:0;}
+.unit-spacing-lg .unit > *, .unit-spacing-lg .unit-vertical > *{margin-left:15px;}
+
+.promo-creative-team { padding: 0 5px;    max-width: 43%;}
 
 
 
@@ -289,7 +308,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
   position: relative;
   overflow: hidden;
   min-height: 100vh;
-  opacity: 0;
+
 }
 .animated {
   animation-duration: 1s;
@@ -599,7 +618,7 @@ a, a:focus, a:active, a:hover {
   text-decoration: none;
 }
 a, a:focus, a:active {
-  color: #35ad79;
+  color: #358d53;
 }
 .button {
   position: relative;
@@ -641,8 +660,8 @@ html .button-share-outline, html .button-share-outline:active, html .button-shar
 }
 html .button-primary, html .button-primary:focus {
   color: #fff;
-  background-color: #35ad79;
-  border-color: #35ad79;
+  background-color: #358d53;
+  border-color: #358d53;
 }
 html .group-sm > * {
   display: inline-block;
@@ -662,9 +681,9 @@ html .group-sm > * {
   padding-right: 15px;
 }
 html .button-share-outline:hover {
-  color: #35ad79;
-  background-color: #35ad79;
-  border-color: #35ad79;
+  color: #358d53;
+  background-color: #358d53;
+  border-color: #358d53;
 }
 * + .button {
   margin-top: 30px;
@@ -748,7 +767,7 @@ a:hover {
 .game-info-share .icon {
   display: block;
   font-size: 12px;
-  line-height: 40px;
+  line-height: 50px;
 }
 .game-info-share .icon, .game-info-share .icon:focus, .game-info-share .icon:active {
   color: #fff;
@@ -793,12 +812,12 @@ a:hover {
 .game-info-team-divider {
   position: relative;
   display: inline-block;
-  color: #35ad79;
+  color: #358d53;
 }
 .time-big span {
   display: block;
   line-height: 1;
-  color: #35ad79;
+  color: #358d53;
 }
 
 
@@ -945,7 +964,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
   position: relative;
   overflow: hidden;
   min-height: 100vh;
-  opacity: 0;
+
 }
 .animated {
   animation-duration: 1s;
@@ -1083,7 +1102,7 @@ p + p {
   line-height: 1;
 }
 .icon-primary {
-  color: #35ad79;
+  color: #358d53;
 }
 .icon-blue-boston {
   color: #3b7cc0;
@@ -1113,7 +1132,7 @@ p + p {
   color: #3b7cc0;
 }
 .team-primary .game-highlights-goal {
-  color: #35ad79;
+  color: #358d53;
 }
 .game-highlights li:first-child .game-highlights-minute {
   top: 10px;

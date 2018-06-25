@@ -1,4 +1,7 @@
-<?php get_header();?>
+<?php get_header();
+
+$page = (get_query_var('paged')) ? get_query_var('paged') : 1;
+?>
 
 
 
@@ -7,40 +10,33 @@
 
 <main id="main" class="category-page">
   <div class="three-parts post-page-area hlm-sports-widget">
-        <div class="post-content widget">
+        <div class="post-content widget blog-post">
 
           <div class="post-title">
             <h1>
-              <?php  $term = get_queried_object(); echo $term->name;?>
+        <?php
+          the_archive_title( '<h1 class="page-title">', '</h1>' );
+          the_archive_description( '<div class="taxonomy-description">', '</div>' );?>
             </h1>
           
           <?php 
         
-            $image = get_field('flag', $term);                            
-            if( $image ) {?>
-            <div class="team-flag">
-              <img src="<?php  echo $image['sizes']['hlm_sports_166x92']; ?>" alt="" >  
-            </div>               
-            <?php }        
+          $term = get_queried_object();
 
-            $image = get_field('main_image', $term);                            
+         $image = get_field('main_image', $term);                            
             if( $image ) {?>
               <img src="<?php  echo $image['sizes']['hlm_sports_900x260']; ?>" alt="" >                 
-            <?php } ?>
+            <?php }     
+
+          ?>
             
           </div>
-
-    <div class="widget-title">
-      <h2>
-         Upcoming Games
-      </h2>
-    </div>
   <ul>
         <?php
       if ( have_posts() ) :
         while ( have_posts() ) : the_post();
              ?>               
-        <li>          
+        <li class="col-sm-6 widget">          
 
             <?php experiment_5(); ?>
 
@@ -51,12 +47,10 @@
       endif;
     ?>
   </ul>
-    <div class="widget-title">
-      <h2>
-         Roster
-      </h2>
-    </div>
-   <?php experiment_6($term);?>
+  		<div class="pagination pagination-load-more auto-load">
+			<?php next_posts_link('Load More', '' ); ?>
+		</div>
+		<!--pagination-->
     </div>
   </div>
   <div class="one-part post-page-area">

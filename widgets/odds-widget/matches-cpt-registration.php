@@ -119,7 +119,7 @@ if (isset($_POST) && !empty($_POST['crawl_matches'])){
 
 }
 
-
+/*
         echo '<h2>Crawl Matches Winner Odds</h2>';
 ?>
             <form method="post">                    
@@ -133,7 +133,7 @@ if (isset($_POST) && !empty($_POST['crawl_matches_winnerodds'])){
 
 
 }
-
+*/
 
 
         echo '<h2>Crawl Matches oods</h2>';
@@ -253,11 +253,11 @@ if (isset($_POST) && !empty($_POST['crawl_odds']) ){
 
 
 
-        echo '<h2>Remove All Matches</h2>';
+        echo '<h2>Remove Past Matches</h2>';
 
 ?>
             <form method="post">                    
-                <input  type="submit" class="button-secondary" name="remove_all_matches" value="<?php echo esc_attr('Reset Do not play with it'); ?>"/>
+                <input  type="submit" class="button-secondary" name="remove_all_matches" value="<?php echo esc_attr('remove past matches'); ?>"/>
             </form>
 <?php  
 
@@ -265,8 +265,8 @@ if (isset($_POST) && !empty($_POST['crawl_odds']) ){
 
 if (isset($_POST) && !empty($_POST['remove_all_matches'])){
 
-        remove_all_matches();
-        //remove_past_matches();
+        //remove_all_matches();
+        remove_past_matches();
 
 }
 

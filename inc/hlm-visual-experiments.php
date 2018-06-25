@@ -175,14 +175,14 @@ function experiment_3(){
                 <!-- Game Result Bug-->
                 <article class="game-result">
                   <div class="game-info game-info-creative">
-                    <h3 class="game-info-title"><?php echo get_the_title(); ?></h3>
+                    
                     <div class="game-info-main">
                       <div class="game-info-team game-info-team-first">
                         <figure>
                           <?php $home_team = get_term( get_field('home_team'), 'teams' ); 
                                $image = get_field('flag', $home_team);                            
                                   if( $image ) {?>
-                                    <img src="<?php  echo $image['sizes']['hlm_sports_196x196']; ?>">                 
+                                    <img src="<?php  echo $image['sizes']['hlm_sports_166x92']; ?>">                 
                                   <?php } ?>
                         </figure>
                         <div class="game-result-team-name">                      
@@ -217,16 +217,18 @@ function experiment_3(){
                                 $away_team = get_term( get_field('away_team'), 'teams' );
                                $image = get_field('flag', $away_team);                            
                                   if( $image ) {?>
-                                    <img src="<?php  echo $image['sizes']['hlm_sports_196x196']; ?>">                 
+                                    <img src="<?php  echo $image['sizes']['hlm_sports_166x92']; ?>">                 
                                   <?php } ?>
 
                         </figure>
-                          <?php   ?>
+                          <div class="game-result-team-name">  
                           <a href="<?php echo esc_url(get_term_link($away_team, 'teams')); ?>">
                             <?php echo $away_team->slug;?>
                           </a>
+                          </div>
                       </div>
                     </div>
+                    <h1 class="h3"><?php echo get_the_title(); ?></h1>
                   </div>
                 </article>
 
@@ -677,7 +679,7 @@ p {
   line-height: 29px;
   font-weight: 500;
   color: #fff;
-  background-color: #35ad79;
+  background-color: #358d53;
   border-radius: 50%;
 }
 .button {
@@ -737,15 +739,15 @@ a, a:focus, a:active, a:hover {
   text-decoration: none;
 }
 a, a:focus, a:active {
-  color: #35ad79;
+  color: #358d53;
 }
 * + .button {
   margin-top: 30px;
 }
 html .button-primary, html .button-primary:focus {
   color: #fff;
-  background-color: #35ad79;
-  border-color: #35ad79;
+  background-color: #358d53;
+  border-color: #358d53;
 }
 .promo-creative-tickets * + .button {
   margin-top: 0px;
@@ -974,7 +976,7 @@ img {
   line-height: 1.3;
 }
 html .page .text-primary {
-  color: #35ad79;
+  color: #358d53;
 }
 h1, .heading-1 {
   font-size: 32px;
@@ -1016,7 +1018,7 @@ h5, .heading-5 {
                   <div class="promo-creative-countdown">
                       <p class="game-info-subtitle">
                         <time> 
-                          <?php $myDateTime = get_field('start_time'); 
+                          <?php $myDateTime = (int)get_field('start_time'); 
                           echo date ('F d, Y H : i',$myDateTime); ?>                  
                         </time>
                       </p>
@@ -1035,7 +1037,7 @@ h5, .heading-5 {
                           $home_team = get_term( get_field('home_team'), 'teams' );
                          $image = get_field('flag', $home_team);                            
                             if( $image ) {?>
-                              <img src="<?php  echo $image['sizes']['hlm_sports_40x40']; ?>">                 
+                              <img src="<?php  echo $image['sizes']['hlm_sports_166x92']; ?>">                 
                             <?php } ?>
                       </figure>
                     </div>
@@ -1045,7 +1047,7 @@ h5, .heading-5 {
                                 $away_team = get_term( get_field('away_team'), 'teams' );
                                $image = get_field('flag', $away_team);                            
                                   if( $image ) {?>
-                                    <img src="<?php  echo $image['sizes']['hlm_sports_40x40']; ?>">                 
+                                    <img src="<?php  echo $image['sizes']['hlm_sports_166x92']; ?>">                 
                                   <?php } ?>
                       </figure>
                       <div class="promo-team-title">
@@ -1075,3 +1077,290 @@ h5, .heading-5 {
 
 }
 add_shortcode('experiment_5','experiment_5');
+
+
+
+
+
+function experiment_6($term){
+
+?>
+
+
+<style>
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+.heading-component + * {
+  margin-top: 25px;
+}
+* + .table-custom-responsive {
+  margin-top: 25px;
+}
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto, .col-xxl-1, .col-xxl-2, .col-xxl-3, .col-xxl-4, .col-xxl-5, .col-xxl-6, .col-xxl-7, .col-xxl-8, .col-xxl-9, .col-xxl-10, .col-xxl-11, .col-xxl-12, .col-xxl, .col-xxl-auto {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+/* @media all and (min-width:992px) */
+.col-lg-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+/* @media all and (min-width:1200px) */
+.col-xl-4 {
+  flex: 0 0 33.33333%;
+  max-width: 33.33%;
+}
+.row-50 > * {
+  margin-bottom: 50px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.row-50 {
+  margin-bottom: -50px;
+}
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+/* @media all and (min-width:576px) */
+.container {
+  max-width: 540px;
+}
+/* @media all and (min-width:768px) */
+.container {
+  max-width: 720px;
+}
+/* @media all and (min-width:992px) */
+.container {
+  max-width: 960px;
+}
+/* @media all and (min-width:1200px) */
+.container {
+  max-width: 1140px;
+}
+/* @media all and (min-width:1600px) */
+.container {
+  max-width: 1200px;
+}
+article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+.section-sm, .section-md, .section-lg, .section-xl {
+  padding: 50px 0;
+}
+/* @media all and (min-width:768px) */
+.section-sm {
+  padding: 60px 0;
+}
+.bg-gray-100 {
+  background-color: #edeff4;
+}
+.page {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  opacity: 0;
+}
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  opacity: 1;
+}
+body {
+  margin: 0;
+  font-family: "Roboto",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7142;
+  color: #9b9b9b;
+  text-align: left;
+  background-color: #fff;
+}
+body {
+  display: block;
+  font-family: "Roboto",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.7142;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: #9b9b9b;
+  background-color: #fff;
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+}
+:root {
+  --blue:  #007bff;
+  --indigo:  #6610f2;
+  --purple:  #6f42c1;
+  --pink:  #e83e8c;
+  --red:  #dc3545;
+  --orange:  #fd7e14;
+  --yellow:  #ffc107;
+  --green:  #28a745;
+  --teal:  #20c997;
+  --cyan:  #17a2b8;
+  --white:  #fff;
+  --gray:  #868e96;
+  --gray-dark:  #343a40;
+  --breakpoint-xs:  0;
+  --breakpoint-sm:  576px;
+  --breakpoint-md:  768px;
+  --breakpoint-lg:  992px;
+  --breakpoint-xl:  1200px;
+  --breakpoint-xxl:  1600px;
+  --font-family-sans-serif:  "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+table {
+  border-collapse: collapse;
+}
+.table-custom {
+  width: 100%;
+  text-align: center;
+  font-family: "Kanit",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  text-transform: uppercase;
+  line-height: 1.2;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+.table-standings {
+  font-size: 14px;
+  letter-spacing: 0.1em;
+}
+.table-standings tr {
+  transition: all 200ms ease-in-out;
+}
+.table-standings tr + tr {
+  border-top: 1px solid #ddd;
+}
+.player-inline, .team-inline {
+  display: flex;
+  align-items: center;
+}
+.table-standings td {
+  padding: 5px;
+
+  font-weight: 400;
+  color: #151515;
+}
+.table-standings tbody td:first-child {
+  width: 11%;
+  padding-left: 20px;
+  font-size: 16px;
+}
+.table-modern tbody td:first-child {
+  width: 18%;
+}
+.table-standings td:nth-child(n+3) {
+  width: 14%;
+}
+.player-title, .team-title {
+  text-align: left;
+  line-height: 1.15;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+.player-title {
+  margin-left: 4px;
+}
+.player-country, .team-country {
+  font-size: 12px;
+  color: #9b9b9b;
+}
+.table-counter {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  width: 38px;
+  height: 29px;
+  line-height: 29px;
+  z-index: 1;
+  transition: all 200ms ease-in-out;
+}
+.table-modern tr:hover {
+  background: #f5f7f9;
+}
+th {
+  text-align: inherit;
+}
+.table-standings th {
+  padding: 12px 10px;
+  text-align: center;
+  font-weight: 500;
+  color: #fff;
+  background: #358d53;
+}
+.table-standings th:first-child {
+  text-align: left;
+}
+.table-standings thead th:first-child {
+  padding-left: 22px;
+}
+.table-standings tr, .table-standings tr:nth-child(odd) td{background: #FFF;}
+</style>
+
+<div class="table-custom-responsive">
+                <table class="table-custom table-standings table-modern">
+                  <thead>
+                    <tr>
+                      <th>Number</th>
+                      <th>Player Name</th>
+                      <th>Position</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <?php 
+                    if(empty($term)){
+                      $term = get_queried_object();
+                    }
+                    if( have_rows('player_roster', $term ) ):
+                        while ( have_rows('player_roster', $term ) ) : the_row();
+
+                    $player_number = get_sub_field('player_number');
+                    $player_name = get_sub_field('player_name' );
+                    $player_position = get_sub_field('player_position');
+
+                          ?>
+                    <tr>
+                      <td><span class="table-counter"><?php echo $player_number;?></span></td>
+                      <td class="player-inline">
+                        <div class="player-title">
+                          <div class="player-name"><?php echo $player_name;?></div>
+                        </div>
+                      </td>
+                      <td><?php echo $player_position;?></td>
+                    </tr>
+                    <?php
+                     endwhile;
+                      endif;
+                    ?>
+                  </tbody>
+                </table>
+              </div>
+
+<?php 
+
+}
+
+add_shortcode('experiment_6','experiment_6');
