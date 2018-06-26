@@ -1,6 +1,6 @@
 <?php 
 function remove_past_matches(){
-
+		$now_date = current_time('timestamp');
 			//Delete Matches
 			$args = array(
 			    'posts_per_page' => -1,
@@ -493,7 +493,7 @@ return $gggg;
 
 function crawl_full_football_game(){
 
-		$now_date = current_time('timestamp');
+
         $args = array(
             'post_type' => 'match',
             'posts_per_page' => -1, 
