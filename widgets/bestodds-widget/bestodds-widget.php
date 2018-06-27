@@ -68,7 +68,7 @@ class bestodds_widget_hlm_sports extends WP_Widget {
 <?php 
 $now_date = current_time('timestamp');
 $args = array(
-			    'posts_per_page' => 3,
+			    'posts_per_page' => 1,
 			    'post_type' => 'match',
 			    'post_status' => 'publish', 
 				'meta_key'			=> 'start_time',

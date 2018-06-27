@@ -12,7 +12,7 @@ function remove_past_matches(){
 				'meta_query' => array(
 						array('key' => 'start_time',
 							'value'   => $now_date,
-							'compare' => '>'),
+							'compare' => '<'),
 				   			 ),
 			);
 			$hlm_sports_posts = new WP_Query($args);
@@ -552,7 +552,7 @@ the_title();
 echo ' Done!';
 
  endwhile; 
-convert_winner_table();
+
 
 }
 

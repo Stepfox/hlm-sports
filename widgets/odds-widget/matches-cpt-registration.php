@@ -148,6 +148,9 @@ if (isset($_POST) && !empty($_POST['crawl_matches_odds'])){
 
         crawl_full_football_game();
 
+
+        convert_winner_table();
+
 }
 
 

@@ -84,7 +84,7 @@ if (is_home()){ ?>
 <!-- Services section -->
 <div class="container">
         <p class="h1 col-8">Top World Cup Bets</p>
-        <p class="text-left col-6 text-muted h5">Bet £10 on Harry Kane winning the Golden Boot and win £140</p>
+        <p class="text-left col-6 text-muted h5">Get odds of 7/4 on Harry Kane to win the Golden Boot</p>
         <div class="container-fluid">
             <div class="row mt-5">
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 col-xl-3">
@@ -97,7 +97,7 @@ if (is_home()){ ?>
                         </div>
                         <div class="card-block block-2">
                             <h3 class="card-title">888Sport</h3>
-                            <p class="card-text">Wager just £10 on England to win the World Cup and you can win £160 plus an extra £5 free bet every time the team winds a match</p>
+                            <p class="card-text">Each game in the tournament will have 10 winners to share the jackpot for that match. T&Cs apply</p>
                             <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/888-bg1">
                                 <div class="bet-now">bet now</div>
                     </a>
@@ -113,7 +113,7 @@ if (is_home()){ ?>
                         </div>
                         <div class="card-block block-1">
                             <h3 class="card-title">Unibet</h3>
-                            <p class="card-text">Wager £10 on England to top the group and win £22.5</p>
+                            <p class="card-text">Place a bet on that selected game to get an entry into the draw. T&Cs apply</p>
                             <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/unibet-bg1">
                                 <div class="bet-now">bet now</div>
                             </a>
@@ -129,7 +129,7 @@ if (is_home()){ ?>
                         </div>
                         <div class="card-block block-3">
                             <h3 class="card-title">BetFred</h3>
-                            <p class="card-text">Spain vs Portugal, Place a wager of £10 on both Ronaldo and David Silva scoring form direct free kick and win £1000</p>
+                            <p class="card-text">Bet £5 either pre-match or in-play on a World Cup match to get an entry into the jackpot. T&Cs apply</p>
                             <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/betfred-bg1">
                                 <div class="bet-now">bet now</div>
                     </a>
@@ -145,7 +145,7 @@ if (is_home()){ ?>
                         </div>
                         <div class="card-block block-3">
                             <h3 class="card-title">Ladbrokes</h3>
-                            <p class="card-text">Bet just £1 on England making the knockout stages and win a massive £50 Bet Now</p>
+                            <p class="card-text">Earn an entry for every £5 bet on the match.T&Cs apply</p>
                             <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/ladbrokes-bg1">
                                 <div class="bet-now">bet now</div>
                             </a>
@@ -216,7 +216,7 @@ if (is_home()){ ?>
                 </div>                
 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text"> Bet £10 on Harry Kane to with the Golden Boot and win £170                    
+                    <p class="list-group-item-text"> Get odds of 7/4 on Harry Kane to win the Golden Boot                    
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
@@ -233,7 +233,7 @@ if (is_home()){ ?>
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text"> Bet on Brazil to win the World Cup at odds of 9/2                      
+                    <p class="list-group-item-text">Brazil to win the World Cup 5/1                    
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
@@ -250,7 +250,7 @@ if (is_home()){ ?>
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text"> Bet £10 on England reaching the final and win £70
+                    <p class="list-group-item-text"> Bet £10 on England reaching the final and win £90
                       
                     </p>
                 </div>
@@ -268,7 +268,7 @@ if (is_home()){ ?>
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text"> Bet on Iceland to get knocked out in the quarter finals at odds of 12/1       
+                    <p class="list-group-item-text"> Bet on a Germany Brazil final at odds of 20/1     
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
@@ -285,7 +285,7 @@ if (is_home()){ ?>
                 </div>                
 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text"> Bet on France being the top scoring team at odds of 11/2                 
+                    <p class="list-group-item-text"> Bet on France to reach the finals at odds of 3/1
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
@@ -302,7 +302,7 @@ if (is_home()){ ?>
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text"> Bet £10 on Jordan Pickford earning the Golden Glove and win £160                      
+                    <p class="list-group-item-text"> Bet £10 on Jordan Pickford winning the Golden Glove and win £140
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
@@ -319,7 +319,7 @@ if (is_home()){ ?>
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text"> Bet £10 on the winner coming from group G and win £60                    
+                    <p class="list-group-item-text"> Bet £10 on Spain winning the tournament and win £45
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
@@ -336,7 +336,7 @@ if (is_home()){ ?>
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text">Bet £10 on Marcus Rashford being top England goal scorer and win £70      
+                    <p class="list-group-item-text">Bet on England to reach the finals at odds of 7/4
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
@@ -345,6 +345,45 @@ if (is_home()){ ?>
                     </a>
                 </div>
             </div>
+
+             <div class="card">
+                <div class="logo col-sm-12 col-xs-3 col-md-3">
+                    <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/guts">
+                       <img src="https://www.winningsportsbets.co.uk/wp-content/uploads/2018/03/guts-1-136x44.png" alt="" class="bookmaker-background-wrap-197">
+                    </a>
+                </div> 
+                <div class="col-sm-12 col-xs-6 col-md-6">
+                    <p class="list-group-item-text">Bet on Brazil to win with Harry Kane as top goal scorer at odds of 273/1
+                    </p>
+                </div>
+                <div class="col-sm-12 col-xs-3 col-md-3 text-center">
+                    <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/bethard">
+                        <div class="bet-now">bet now</div>
+                    </a>
+                </div>
+            </div>
+
+
+             <div class="card">
+                <div class="logo col-sm-12 col-xs-3 col-md-3">
+                    <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/tonybet">
+                       <img src="https://www.winningsportsbets.co.uk/wp-content/uploads/tonybet-logoo-136x44.png" alt="" class="bookmaker-background-wrap-823">
+                    </a>
+                </div> 
+                <div class="col-sm-12 col-xs-6 col-md-6">
+                    <p class="list-group-item-text">Bet £10 on England being top European team and win £60
+                    </p>
+                </div>
+                <div class="col-sm-12 col-xs-3 col-md-3 text-center">
+                    <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/bethard">
+                        <div class="bet-now">bet now</div>
+                    </a>
+                </div>
+            </div>
+
+
+
+
 
         </div>
 </div>
