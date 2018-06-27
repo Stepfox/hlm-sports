@@ -264,7 +264,7 @@ $args = array(
 
 experiment_5();
 
- endwhile; ?>
+ endwhile; wp_reset_postdata(); ?>
 </div>
 
       </div>
@@ -273,17 +273,7 @@ experiment_5();
 
 
 
-  <div class="one-part post-page-area">
-
-      <div class="one-part hlm-sports-widget">
-            <div class="widget-title">
-      <h2>
-         Next Game Best Odds
-      </h2>
-    </div>
-        <?php echo do_shortcode( '[hlm_sports_highest_odd]' ); ?>
-      </div>
-       
+  <div class="one-part post-page-area">      
       <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Post Sidebar')): endif; ?>
   </div>
 

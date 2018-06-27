@@ -1,9 +1,10 @@
-<?php
+<?php 
+
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
     'key' => 'group_5a853a25258da',
-    'title' => 'Bookmakers: Basic Info',
+    'title' => 'Bookmakers: Basic Info (Recovered)',
     'fields' => array(
         array(
             'key' => 'field_5a8563070e609',
@@ -153,7 +154,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5a8564563ba28',
-    'title' => 'Bookmakers: Bonus',
+    'title' => 'Bookmakers: Bonus (Recovered)',
     'fields' => array(
         array(
             'key' => 'field_5a8564664ef4f',
@@ -1221,7 +1222,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5b0e915cc5df3',
-    'title' => 'Bookmakers: Content Target Menu',
+    'title' => 'Bookmakers: Content Target Menu (Recovered)',
     'fields' => array(
         array(
             'key' => 'field_5b0e917b96081',
@@ -1304,7 +1305,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5a89c29b47895',
-    'title' => 'Bookmakers: Rating',
+    'title' => 'Bookmakers: Rating (Recovered)',
     'fields' => array(
         array(
             'key' => 'field_5a89c2b0de48e',
@@ -1537,7 +1538,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5aeff2763e2bb',
-    'title' => 'Bookmakers: Support Details',
+    'title' => 'Bookmakers: Support Details (Recovered)',
     'fields' => array(
         array(
             'key' => 'field_5aeff2ba261d2',
@@ -1682,7 +1683,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5a89c25d91736',
-    'title' => 'Bookmakers: Trackers',
+    'title' => 'Bookmakers: Trackers (Recovered)',
     'fields' => array(
         array(
             'key' => 'field_5a89c26759b8e',
@@ -1725,7 +1726,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5aa5735762222',
-    'title' => 'HLM Sports Options: Archive - Payment Methods',
+    'title' => 'HLM Sports Options: Archive - Payment Methods (Recovered)',
     'fields' => array(
         array(
             'key' => 'field_5aacffd5ddce2',
@@ -1892,7 +1893,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5aa52ffa195ea',
-    'title' => 'HLM Sports Options: Article - Post Page',
+    'title' => 'HLM Sports Options: Article - Post Page (Recovered)',
     'fields' => array(
         array(
             'key' => 'field_5aa52ffa697de',
@@ -2115,7 +2116,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5aeffd8bb0b67',
-    'title' => 'HLM Sports Options: Bookmaker support details',
+    'title' => 'HLM Sports Options: Bookmaker support details (Recovered)',
     'fields' => array(
         array(
             'key' => 'field_5aeffda04df5d',
@@ -2234,7 +2235,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5aa7def50cf7e',
-    'title' => 'HLM Sports Options: Footer Options',
+    'title' => 'HLM Sports Options: Footer Options (Recovered)',
     'fields' => array(
         array(
             'key' => 'field_5af165f1b25b4',
@@ -2382,7 +2383,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5b0532da9fbd2',
-    'title' => 'HLM Sports Options: Header Options',
+    'title' => 'HLM Sports Options: Header Options (Recovered)',
     'fields' => array(
         array(
             'key' => 'field_5b0532edfda59',
@@ -2449,7 +2450,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5aa52ef6a0c8a',
-    'title' => 'HLM Sports Options: Translations',
+    'title' => 'HLM Sports Options: Translations (Recovered)',
     'fields' => array(
         array(
             'key' => 'field_5aa5304456ff9',
@@ -2910,7 +2911,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5abb8d5b40262',
-    'title' => 'Page Image Text',
+    'title' => 'Page Image Text (Recovered)',
     'fields' => array(
         array(
             'key' => 'field_5abb8e0051bea',
@@ -2953,7 +2954,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5a89cc1add4f5',
-    'title' => 'Payment Options: Basic Info',
+    'title' => 'Payment Options: Basic Info (Recovered)',
     'fields' => array(
         array(
             'key' => 'field_5a89cf063e7c7',
@@ -3020,7 +3021,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5aa56808c3b75',
-    'title' => 'Review: Payment Methods',
+    'title' => 'Review: Payment Methods (Recovered)',
     'fields' => array(
         array(
             'key' => 'field_5aa56808f3133',
@@ -3254,7 +3255,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5a9d4d8b66bfa',
-    'title' => 'Review: Pros and Cons',
+    'title' => 'Review: Pros and Cons (Recovered)',
     'fields' => array(
         array(
             'key' => 'field_5a9d5863b0ec5',
@@ -3535,8 +3536,158 @@ acf_add_local_field_group(array(
 ));
 
 acf_add_local_field_group(array(
+    'key' => 'group_5b2a4bbcb9388',
+    'title' => 'Teams Additions',
+    'fields' => array(
+        array(
+            'key' => 'field_5b2a4bc6a17dd',
+            'label' => 'main image',
+            'name' => 'main_image',
+            'type' => 'image',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'return_format' => 'array',
+            'preview_size' => 'hlm_sports_900x260',
+            'library' => 'all',
+            'min_width' => '',
+            'min_height' => '',
+            'min_size' => '',
+            'max_width' => '',
+            'max_height' => '',
+            'max_size' => '',
+            'mime_types' => '',
+        ),
+        array(
+            'key' => 'field_5b30ac7d612ea',
+            'label' => 'Flag',
+            'name' => 'flag',
+            'type' => 'image',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'return_format' => 'array',
+            'preview_size' => 'hlm_sports_196x66',
+            'library' => 'all',
+            'min_width' => '',
+            'min_height' => '',
+            'min_size' => '',
+            'max_width' => '',
+            'max_height' => '',
+            'max_size' => '',
+            'mime_types' => '',
+        ),
+        array(
+            'key' => 'field_5b2cf0e78288b',
+            'label' => 'Player Roster',
+            'name' => 'player_roster',
+            'type' => 'repeater',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'collapsed' => '',
+            'min' => 0,
+            'max' => 0,
+            'layout' => 'table',
+            'button_label' => '',
+            'sub_fields' => array(
+                array(
+                    'key' => 'field_5b2cf10c8288c',
+                    'label' => 'Player number',
+                    'name' => 'player_number',
+                    'type' => 'text',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                    'maxlength' => '',
+                ),
+                array(
+                    'key' => 'field_5b2cf11c8288d',
+                    'label' => 'Player Name',
+                    'name' => 'player_name',
+                    'type' => 'text',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                    'maxlength' => '',
+                ),
+                array(
+                    'key' => 'field_5b2cf1258288e',
+                    'label' => 'Player Position',
+                    'name' => 'player_position',
+                    'type' => 'text',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                    'maxlength' => '',
+                ),
+            ),
+        ),
+    ),
+    'location' => array(
+        array(
+            array(
+                'param' => 'taxonomy',
+                'operator' => '==',
+                'value' => 'teams',
+            ),
+        ),
+    ),
+    'menu_order' => 0,
+    'position' => 'normal',
+    'style' => 'default',
+    'label_placement' => 'top',
+    'instruction_placement' => 'label',
+    'hide_on_screen' => '',
+    'active' => 1,
+    'description' => '',
+));
+
+acf_add_local_field_group(array(
     'key' => 'group_5afd379222df0',
-    'title' => 'World Cup: Knockout Stage',
+    'title' => 'World Cup: Knockout Stage (Recovered)',
     'fields' => array(
         array(
             'key' => 'field_5b0bb71004e51',
@@ -3992,4 +4143,5 @@ acf_add_local_field_group(array(
 
 endif;
 
- ?>
+
+?>
