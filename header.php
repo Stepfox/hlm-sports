@@ -50,7 +50,7 @@
 					<?php get_search_form(); ?>
 				</div>
 				<!--search-box-->	
-				<?php if ( has_nav_menu( 'top-menu' ) ) {wp_nav_menu(array('theme_location' => 'top-menu', 'depth' => 2, 'fallback_cb'     => 'wp_page_menu')); } else { echo '<span class="top-add-menu"></span>';} ?>
+				<?php if ( has_nav_menu( 'top-menu' ) ) {wp_nav_menu(array('theme_location' => 'top-menu', 'depth' => 3, 'fallback_cb'     => 'wp_page_menu')); } else { echo '<span class="top-add-menu"></span>';} ?>
 			</nav>
 			<!--top-menu-->
 		</div>
