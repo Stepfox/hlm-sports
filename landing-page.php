@@ -97,7 +97,7 @@ if (is_home()){ ?>
                         </div>
                         <div class="card-block block-2">
                             <h3 class="card-title">888Sport</h3>
-                            <p class="card-text">Each game in the tournament will have 10 winners to share the jackpot for that match. T&Cs apply</p>
+                            <p class="card-text">Get a Free Bet Every Time Your Team Scores. T&Cs apply</p>
                             <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/888-bg1">
                                 <div class="bet-now">bet now</div>
                     </a>
@@ -113,7 +113,7 @@ if (is_home()){ ?>
                         </div>
                         <div class="card-block block-1">
                             <h3 class="card-title">Unibet</h3>
-                            <p class="card-text">Place a bet on that selected game to get an entry into the draw. T&Cs apply</p>
+                            <p class="card-text">Unibet £1,000,000 Jackpot. T&Cs apply</p>
                             <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/unibet-bg1">
                                 <div class="bet-now">bet now</div>
                             </a>
@@ -129,7 +129,8 @@ if (is_home()){ ?>
                         </div>
                         <div class="card-block block-3">
                             <h3 class="card-title">BetFred</h3>
-                            <p class="card-text">Bet £5 either pre-match or in-play on a World Cup match to get an entry into the jackpot. T&Cs apply</p>
+                            <p class="card-text">Double Delight and Hat-Trick Heaven
+. T&Cs apply</p>
                             <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/betfred-bg1">
                                 <div class="bet-now">bet now</div>
                     </a>
@@ -145,7 +146,8 @@ if (is_home()){ ?>
                         </div>
                         <div class="card-block block-3">
                             <h3 class="card-title">Ladbrokes</h3>
-                            <p class="card-text">Earn an entry for every £5 bet on the match.T&Cs apply</p>
+                            <p class="card-text">England v Colombia: England to Quaify 50/1
+.T&Cs apply</p>
                             <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/ladbrokes-bg1">
                                 <div class="bet-now">bet now</div>
                             </a>
@@ -216,7 +218,7 @@ if (is_home()){ ?>
                 </div>                
 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text"> Get odds of 7/4 on Harry Kane to win the Golden Boot                    
+                    <p class="list-group-item-text"> Get odds of 7/1 on Mbappe to win the Golden Boot                      
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
@@ -233,7 +235,8 @@ if (is_home()){ ?>
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text">Brazil to win the World Cup 5/1                    
+                    <p class="list-group-item-text">Colombia v England: Any England Player to Score from Outside the Box 7/2
+                   
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
@@ -250,8 +253,8 @@ if (is_home()){ ?>
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text"> Bet £10 on England reaching the final and win £90
-                      
+                    <p class="list-group-item-text"> Colombia v England: Kane to score 2 or more Goals 7/1
+                     
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
@@ -268,7 +271,7 @@ if (is_home()){ ?>
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text"> Bet on a Germany Brazil final at odds of 20/1     
+                    <p class="list-group-item-text"> Bet on England winning the World Cup at odds of 6/1     
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
@@ -285,7 +288,7 @@ if (is_home()){ ?>
                 </div>                
 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text"> Bet on France to reach the finals at odds of 3/1
+                    <p class="list-group-item-text"> Bet on a Brazil v England final at odds of 9/1
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
@@ -319,7 +322,7 @@ if (is_home()){ ?>
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text"> Bet £10 on Spain winning the tournament and win £45
+                    <p class="list-group-item-text"> Bet £10 on Russia winning the tournament and win £190
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
@@ -336,7 +339,8 @@ if (is_home()){ ?>
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text">Bet on England to reach the finals at odds of 7/4
+                    <p class="list-group-item-text">Bet on England to reach the finals at odds of 11/4
+
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
@@ -353,7 +357,8 @@ if (is_home()){ ?>
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text">Bet on Brazil to win with Harry Kane as top goal scorer at odds of 273/1
+                    <p class="list-group-item-text">Bet on Brazil to win with Harry Kane as top goal scorer at odds of 7/1
+
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
@@ -371,7 +376,7 @@ if (is_home()){ ?>
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text">Bet £10 on England being top European team and win £60
+                    <p class="list-group-item-text">Bet £10 on Sweden to reach the final and win £140
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
