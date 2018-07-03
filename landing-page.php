@@ -84,7 +84,7 @@ if (is_home()){ ?>
 <!-- Services section -->
 <div class="container">
         <p class="h1 col-8">Top World Cup Bets</p>
-        <p class="text-left col-6 text-muted h5">Get odds of 7/4 on Harry Kane to win the Golden Boot</p>
+        <p class="text-left col-6 text-muted h5">Get odds of 7/1 on Mbappe to win the Golden Boot</p>
         <div class="container-fluid">
             <div class="row mt-5">
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 col-xl-3">
@@ -209,7 +209,7 @@ if (is_home()){ ?>
 
 <div id="bonus-list" class="container">
         <div class="container-fluid">
-            <p class="section-title mb-2 h1 text-center">What we do</p>
+            <p class="section-title mb-2 h1 text-center">Get Them Before They're Gone</p>
              <div class="card">
                 <div class="logo col-sm-12 col-xs-3 col-md-3">
                     <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/888-bg1">
