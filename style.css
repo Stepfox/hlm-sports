@@ -295,7 +295,7 @@ li.thumb-down:before{background:#d62a1c;}
 .blog-post-author{}
 .blog-post-date{}
 .blog-post-content{}
-.category-page .top-page-area li{position:relative;float:left;}
+.category-page .top-page-area li{position:relative;float:left;width: 100%;}
 .category-page .post-content{padding:10px;}
 .top-page-area .blog-post-title h2{font-size:30px;line-height: 36px;}
 .top-page-area .blog-post-title h2 a, .top-page-area .blog-post-date-author a{color:#FFF;}
@@ -590,18 +590,19 @@ input#search-switch:checked + .search-box{position:absolute;float:left;display:b
 .latest-articles{float:left;width:100%;box-sizing:border-box;}
 .latest-articles-thumbnails{width:100%;list-style:none;float:left;margin:0;display:flex;flex-wrap:wrap;}
 .latest-articles-thumbnails li{background:#FFF;width:100%;float:left;padding:0;margin-bottom:2px;position:relative;}
+.looks1 .latest-articles-thumbnails li{max-height: 85px;overflow: hidden;}
 .latest-articles-posts-image{float:left;position:relative;overflow:hidden;}
 .latest-articles-posts-image:after{content:'';width:100px;height:100%;position:absolute;background:#FFF;transform:skew(-28deg);top:0;right:-75px;}
 .latest-articles-posts-image img{width:100%;max-width:100%;}
 .latest-articles-posts-text{height:92px;float:left;width:calc(100% - 166px);padding:15px 0 15px 0;position:relative;}
 .latest-articles-posts-text:after{bottom:0;content:'';width:100px;height:100%;position:absolute;background:#358d53;transform:skew(-28deg);top:0;right:-92px;}
 .latest-articles-posts-text:before{bottom:5px;content:'>';position:absolute;color:#FFF;right:5px;z-index:1;}
-.latest-articles-posts-title{width:100%;font-size:16px;font-weight:600;line-height:18px;}
+.latest-articles-posts-title{width:100%;font-size:14px;font-weight:600;line-height:18px;}
 .latest-articles .latest-articles-read-more a, .latest-articles .latest-articles-read-more a:visited{font-size:12px;width:100%;text-decoration:underline;font-weight:600;}
 .looks2 .latest-articles-posts-text{background:rgba(0, 0, 0, 0.5);width:100%;position:absolute;bottom:0;}
 .looks2 .latest-articles-posts-title a{color:#FFF;}
 .looks2 .latest-articles-posts-image:after, .looks2 .latest-articles-posts-text:after, .looks2 .latest-articles-posts-text:before{content:none;}
-.looks2 .latest-articles-posts-text{color:#FFF;width:100%;position:absolute;bottom:0;z-index:1;padding:5px 10px;height:auto;}
+.looks2 .latest-articles-posts-text{color:#FFF;width:100%;position:absolute;bottom:0;z-index:1;padding:5px 10px;height:auto;padding-right: 130px;}
 .looks2 .latest-articles-posts-text a{color:#FFF;}
 .looks2 .latest-articles-posts-date{font-size:12px;margin-bottom:5px;}
 .looks2 .latest-articles-posts-title{font-size:20px;font-weight:400;margin-bottom:5px;}
