@@ -191,7 +191,10 @@ function hlm_sports_image_sizes_reg( $sizes ) {
 
 function hlm_sports_form_widget_size( $widget, $return, $instance ) {
 
+
         $widget_size = isset( $instance['widget_size'] ) ? $instance['widget_size'] : '';
+        if (strpos($widget->id_base, 'exm') === false) {
+
         ?>
             <p class="widget-size-radio">
 			<input type="radio" name="<?php echo esc_attr($widget->get_field_name( 'widget_size' )); ?>" value="one-part" <?php checked('one-part', $instance['widget_size']); ?> class="one-part"/>
@@ -200,6 +203,7 @@ function hlm_sports_form_widget_size( $widget, $return, $instance ) {
 			<input type="radio" name="<?php echo esc_attr($widget->get_field_name( 'widget_size' )); ?>" value="four-parts" <?php checked('four-parts', $instance['widget_size']); ?> class="four-parts"/>
             </p>
         <?php
+    	}
 
 }
 add_filter('in_widget_form', 'hlm_sports_form_widget_size', 5, 3 );
@@ -276,7 +280,6 @@ function hlm_sports_scripts() {
 		}
 		wp_enqueue_script('hlm_sports_smoothscroll', get_template_directory_uri() . '/js/smoothscroll.js', array('jquery'));
 
-		// wp_enqueue_style('hlm_sports_responsive', get_template_directory_uri() . '/css/responsive.css');
 		wp_enqueue_script('flexslider-min', get_template_directory_uri() . '/js/jquery.flexslider-min.js', array('jquery'));
 		wp_enqueue_script('hlm_sports_scripts', get_template_directory_uri() . '/js/hlm-scripts.js', array('jquery'));
 }
@@ -304,7 +307,7 @@ include( get_template_directory().'/inc/world-cup-knockout.php' );
 
 //Odds Widget
  include( get_template_directory().'/widgets/odds-widget/matches-cpt-registration.php' );
- //include( get_template_directory().'/widgets/odds-widget/testeri.php' );
+ include( get_template_directory().'/widgets/odds-widget/testeri.php' );
  include( get_template_directory().'/widgets/odds-widget/odds-custom-fields.php' );
  include( get_template_directory().'/widgets/odds-widget/matches-crawl.php' );
  include( get_template_directory().'/widgets/odds-widget/simplehtmldom.php' );
@@ -333,6 +336,103 @@ include(get_template_directory()."/widgets/deposit-withdraw-widget/deposit-withd
 include(get_template_directory()."/widgets/shortcode-widget/shortcode-widget.php");
 include(get_template_directory()."/widgets/payment-options-widget/payment-options-widget.php");
 include(get_template_directory()."/widgets/bestodds-widget/bestodds-widget.php");
+
+
+
+
+
+
+
+
+
+
+
+//EXAMINER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+
+
+function exm1_widgets_style(){
+	echo 
+"<style type='text/css'>
+	div.widget[id*=_exm1] .widget-title h4:before {content: '';background: url(".esc_url(get_template_directory_uri())."/images/stepfox-tiny-logo-widgets.png)no-repeat;width: 16px;height: 16px;float: left;margin-right: 5px;}
+	div.widget[id*=_exm1] .widget-title h4{color: #0F7BB8;}
+	div.widget[id*=_exm1] input[type=radio]{height:30px;border-radius:0;width:22%;margin: 0 1% 0 0;text-indent:0;font-size:12px;line-height:30px;color:#747474;font-weight:700;font-family: Open Sans;background-color: #D1D1D1;text-shadow: 1px 1px 0px #FFF;box-shadow: inset 1px 1px 1px #AAA;}
+	div.widget[id*=_exm1] input[type=radio]:checked:before{border-radius:0;padding:0;margin:0;height:100%;width:100%;background-color: #0DA000;text-indent:0;font-size:12px;line-height:30px;color:#FFF;font-weight:700;font-family: Open Sans;text-shadow: 1px 1px 0px #000;box-shadow: none;}
+	div.widget[id*=_exm1] .one-part:before{content: '1/4';}
+	div.widget[id*=_exm1] .two-parts:before{content: '2/4';}
+	div.widget[id*=_exm1] .three-parts:before{content: '3/4';}
+	div.widget[id*=_exm1] .four-parts:before{content: '4/4';}
+</style>"
+;}
+add_action('admin_print_styles-widgets.php', 'exm1_widgets_style');
+
+
+
+
+
+
+include(get_template_directory()."/sf-widgets/image-sizes.php");
+
+function exm1_scripts() {
+
+		 wp_enqueue_style('sf-widgets', get_template_directory_uri() . '/sf-widgets/style.css');
+
+		wp_enqueue_script('exm1-scripts', get_template_directory_uri() . '/sf-widgets/exm1-scripts.js', array('jquery'));
+}
+add_action('wp_enqueue_scripts', 'exm1_scripts');
+
+
+function excerpt($limit) {
+  $excerpt = explode(' ', get_the_excerpt(), $limit);
+  if (count($excerpt)>=$limit) {
+    array_pop($excerpt);
+		if(!empty($excerpt)) {
+			$excerpt = implode(' ',$excerpt).'...';
+		}else{
+			$excerpt = '';
+		}
+  } elseif ( strpos( get_the_excerpt(), 'more-link' ) === false ) {
+  	$excerpt = implode(' ',$excerpt).'...';  
+  } else {
+    $excerpt = implode(' ',$excerpt);
+  }
+  $excerpt = preg_replace('`\[[^\]]*\]`','',$excerpt);
+  return $excerpt;
+
+}
+
+
+include(get_template_directory()."/sf-widgets/small-featured-images.php");
+include(get_template_directory()."/sf-widgets/big-featured-images.php");
+include(get_template_directory()."/sf-widgets/huge-featured-images.php");
+include(get_template_directory()."/sf-widgets/featured-categories.php");
+include(get_template_directory()."/sf-widgets/blogroll1.php");
+include(get_template_directory()."/sf-widgets/newsroll.php");
+include(get_template_directory()."/sf-widgets/slider.php");
+include(get_template_directory()."/sf-widgets/carousel.php");
+include(get_template_directory()."/sf-widgets/jumping-posts.php");
+include(get_template_directory()."/sf-widgets/blogroll2.php");
+include(get_template_directory()."/sf-widgets/blogroll3.php");
+include(get_template_directory()."/sf-widgets/tabber.php");
+include(get_template_directory()."/sf-widgets/video.php");
+include(get_template_directory()."/sf-widgets/tv-widget.php");
+include(get_template_directory()."/sf-widgets/about-us.php");
+include(get_template_directory()."/sf-widgets/ad-widget.php");
+include(get_template_directory()."/sf-widgets/thumbnails.php");
+include(get_template_directory()."/sf-widgets/most-commented.php");
+include(get_template_directory()."/sf-widgets/ticker.php");
+include(get_template_directory()."/sf-widgets/super-slider.php");
+include(get_template_directory()."/sf-widgets/video-list-ajax.php");
+include(get_template_directory()."/sf-widgets/trending-posts.php");
+include(get_template_directory()."/sf-widgets/social-widget.php");
+include(get_template_directory()."/sf-widgets/custom-title-widget.php");
+
+
+
 
 
 
@@ -686,6 +786,7 @@ function hlm_sports_excerpt($limit) {
   return $excerpt;
 
 }
+
 
 
 
