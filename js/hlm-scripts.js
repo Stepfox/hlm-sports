@@ -64,7 +64,6 @@ $(".top-menu ul li").mouseover(function(){
 
 $(".top-menu ul li .sub-menu li").mouseover(function(){
    $(this).find(".sub-menu").stop(true, true).delay(200).slideDown(200);
-   //alert('deez');
 });
 
 $(".top-menu ul > li").mouseout(function(){
