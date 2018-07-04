@@ -333,7 +333,6 @@ include(get_template_directory()."/widgets/deposit-withdraw-widget/deposit-withd
 include(get_template_directory()."/widgets/shortcode-widget/shortcode-widget.php");
 include(get_template_directory()."/widgets/payment-options-widget/payment-options-widget.php");
 include(get_template_directory()."/widgets/bestodds-widget/bestodds-widget.php");
-include(get_template_directory()."/widgets/blogroll/blogroll.php");
 
 
 
