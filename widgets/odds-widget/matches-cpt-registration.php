@@ -107,16 +107,41 @@ function crawler_options_function(){
 ?>
             <form method="post">                    
                 <input  type="submit" class="button-secondary" name="crawl_matches" value="<?php echo esc_attr('Crawl All Matches'); ?>"/>
-            </form>
+            
+              <select name="sport_select">
+                    <?php
+                       $tax_terms = get_terms('sports', array('hide_empty' => '0'));      
+                       foreach ( $tax_terms as $tax_term ){ 
+                                $sport_crawl = $tax_term->name;
+                                $parentId = $tax_term->parent;
+                                if(!empty($parentId)){
+                                $parentObj = get_term_by('id', $parentId, 'sports');
+                                    $sport_crawl = $parentObj->name.'/'.$tax_term->name;
+
+                                    $main_parentId = $parentObj->parent;
+                                    if(!empty($main_parentId)){
+                                        $main_parentObj = get_term_by('id', $main_parentId, 'sports');                                      
+                                        $sport_crawl = $main_parentObj->name.'/'.$parentObj->name.'/'.$tax_term->name;
+                                    }
+
+                                }
+
+
+
+                          echo '<option value="'.strtolower($sport_crawl).'">'.$sport_crawl.'</option>';   
+                       }
+                    ?>
+                </select> 
+    </form>
+
 <?php               
 
 if (isset($_POST) && !empty($_POST['crawl_matches'])){
 
-
-
-
-        crawl_matches();
-
+    if(isset($_POST['sport_select']) && !empty($_POST['sport_select'])){
+        $sport = $_POST['sport_select'];
+        crawl_matches($sport);
+    }
 }
 
 /*
@@ -149,7 +174,7 @@ if (isset($_POST) && !empty($_POST['crawl_matches_odds'])){
         crawl_full_football_game();
 
 
-        convert_winner_table();
+        //convert_winner_table();
 
 }
 
@@ -245,17 +270,6 @@ if (isset($_POST) && !empty($_POST['crawl_odds']) ){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
         echo '<h2>Remove Past Matches</h2>';
 
 ?>
@@ -268,8 +282,8 @@ if (isset($_POST) && !empty($_POST['crawl_odds']) ){
 
 if (isset($_POST) && !empty($_POST['remove_all_matches'])){
 
-        //remove_all_matches();
-        remove_past_matches();
+        remove_all_matches();
+        //remove_past_matches();
 
 }
 
@@ -336,30 +350,30 @@ add_action( 'init', 'match_post_type');
 
 
 
-function taxonomy_league() {
-    register_taxonomy('leagues', array('match' ), array(
+function taxonomy_sport() {
+    register_taxonomy('sports', array('match' ), array(
         'hierarchical' => true,
         'labels' => array(
-            'name' => esc_html__('League', 'hlm-sports'),
-            'singular_name' => esc_html__('League', 'hlm-sports'),
-            'search_items' => esc_html__('Search League', 'hlm-sports'),
-            'all_items' => esc_html__('All Leagues', 'hlm-sports'),
-            'parent_item' => esc_html__('League', 'hlm-sports'),
-            'parent_item_colon' => esc_html__('League:', 'hlm-sports'),
-            'edit_item' => esc_html__('Edit League', 'hlm-sports'),
-            'update_item' => esc_html__('Update League', 'hlm-sports'),
-            'add_new_item' => esc_html__('Add New League', 'hlm-sports'),
-            'new_item_name' => esc_html__('New League Name', 'hlm-sports'),
-            'menu_name' => esc_html__('League', 'hlm-sports'),
+            'name' => esc_html__('Sport', 'hlm-sports'),
+            'singular_name' => esc_html__('Sport', 'hlm-sports'),
+            'search_items' => esc_html__('Search Sport', 'hlm-sports'),
+            'all_items' => esc_html__('All Sports', 'hlm-sports'),
+            'parent_item' => esc_html__('Sport', 'hlm-sports'),
+            'parent_item_colon' => esc_html__('Sport:', 'hlm-sports'),
+            'edit_item' => esc_html__('Edit Sport', 'hlm-sports'),
+            'update_item' => esc_html__('Update Sport', 'hlm-sports'),
+            'add_new_item' => esc_html__('Add New Sport', 'hlm-sports'),
+            'new_item_name' => esc_html__('New Sport Name', 'hlm-sports'),
+            'menu_name' => esc_html__('Sport', 'hlm-sports'),
             ),
         'rewrite' => array(
-            'slug' => 'leagues',
+            'slug' => 'sports',
             'with_front' => false, 
             'hierarchical' => true 
             ),
         ));
 }
-add_action( 'init', 'taxonomy_league');
+add_action( 'init', 'taxonomy_sport');
 
 
 function taxonomy_team() {

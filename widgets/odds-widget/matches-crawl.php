@@ -42,12 +42,16 @@ function remove_all_matches(){
 
 
 
-function crawl_matches(){
+function crawl_matches($sport){
+
+
+
+
 
 	$opts=array('http'=>array('method'=>"GET",'header'=>"Accept-language: en\r\n"."Cookie: odds_type=decimal\r\n",'user_agent'=>'Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10.4; en-US; rv:1.9.2.28) Gecko/20120306 Firefox/3.6.28'));
 	$context=stream_context_create($opts);
 
-	$html = file_get_html('https://www.oddschecker.com/football/world-cup',false,$context);
+	$html = file_get_html('https://www.oddschecker.com/'.$sport,false,$context);
 
 
 
@@ -65,8 +69,12 @@ function crawl_matches(){
 
 			$duplicate = 'unique';
 			$title = $html->find('.match-on p.fixtures-bet-name', $i)->plaintext.' vs '.$html->find('.match-on p.fixtures-bet-name', $i + 1)->plaintext;
+			if (substr($html->find('.match-on .link-right a', $i / 2)->href, 0, 1) === '/') { 
+
 			$match_url = 'https://www.oddschecker.com'.$html->find('.match-on .link-right a', $i / 2)->href;
-			
+			}else{
+			$match_url = 'https://www.oddschecker.com/'.$html->find('.match-on .link-right a', $i / 2)->href;
+			}
 
 
 
@@ -454,8 +462,7 @@ foreach($table->find('tr') as $row) {
 
     		$flight[] = $cell->plaintext;
     	}
-    	$cell_count++;
-        	
+
     }
     if(array_filter($flight)){
     	$rowData[] = $flight;
@@ -504,28 +511,28 @@ function crawl_full_football_game(){
         while($lunar_magazine_posts->have_posts()) : $lunar_magazine_posts->the_post();
 
 
-$page_name_id = get_the_ID();
+		$page_name_id = get_the_ID();
 
 		$crawl_football_markets = array(
-				 'first-goalscorer' => 'first-goalscorer',
-				'both-teams-to-score' => 'both-teams-to-score',
-				'correct-score' => 'correct-score',
-				'half-time-full-time' => 'half-time-full-time',
-				'anytime-goalscorer' => 'anytime-goalscorer',
-				'draw-no-bet' => 'draw-no-bet',
-				'total-goals-over-under' => 'total-goals-over-under',
-				'total-goals-exact' => 'total-goals-exact',
-				'asian-handicap' => 'asian-handicap',
-				'enhanced-odds-specials' => 'enhanced-odds-specials',
-				'half-time' => 'half-time',
-				'last-goalscorer' => 'last-goalscorer',
-				'half-time-score' => 'half-time-score',
-				'winning-margin' => 'winning-margin',
-				'total-corners' => 'total-corners',
-				'man-of-the-match' => 'man-of-the-match',
-				'double-chance' => 'double-chance',
-				'score-win-double' => 'score-win-double',
-				'betting-markets' => 'betting-markets',
+				//  'first-goalscorer' => 'first-goalscorer',
+				// 'both-teams-to-score' => 'both-teams-to-score',
+				// 'correct-score' => 'correct-score',
+				// 'half-time-full-time' => 'half-time-full-time',
+				// 'anytime-goalscorer' => 'anytime-goalscorer',
+				// 'draw-no-bet' => 'draw-no-bet',
+				// 'total-goals-over-under' => 'total-goals-over-under',
+				// 'total-goals-exact' => 'total-goals-exact',
+				// 'asian-handicap' => 'asian-handicap',
+				// 'enhanced-odds-specials' => 'enhanced-odds-specials',
+				// 'half-time' => 'half-time',
+				// 'last-goalscorer' => 'last-goalscorer',
+				// 'half-time-score' => 'half-time-score',
+				// 'winning-margin' => 'winning-margin',
+				// 'total-corners' => 'total-corners',
+				// 'man-of-the-match' => 'man-of-the-match',
+				// 'double-chance' => 'double-chance',
+				// 'score-win-double' => 'score-win-double',
+				// 'betting-markets' => 'betting-markets',
 				'winner' => 'winner',
 			);
 
@@ -635,6 +642,91 @@ endwhile;
 
 
 
+
+
+/*
+
+
+function get_team_images_from_google($team_search = "winningsportsbets"){
+    
+    $html = file_get_html( "https://www.shutterstock.com/search?search_source=base_landing_page&language=en&searchterm=".$search_query."&image_type=all" );
+    $images = $html->find('img');
+    $image_count = 2; //Enter the amount of images to be shown
+    $i = 0;
+    foreach($images as $image){
+        if($i == $image_count) break;
+        $i++;
+        // DO with the image whatever you want here (the image element is '$image'):
+        
+        $image_list[] = $image->src;
+	}
+
+	return $image_list[1];
+
+}
+
+
+
+	function get_team_images_from_google_for_all_teams(){
+
+						$tax_terms = get_terms('teams', array('hide_empty' => '0'));      
+                       foreach ( $tax_terms as $tax_term ){
+
+
+                                $sport_crawl = $tax_term->name;
+                                $parentId = $tax_term->parent;
+                                if(!empty($parentId)){
+                                $parentObj = get_term_by('id', $parentId, 'sports');
+                                    $sport_crawl = $parentObj->name.' '.$tax_term->name;
+
+                                    $main_parentId = $parentObj->parent;
+                                    if(!empty($main_parentId)){
+                                        $main_parentObj = get_term_by('id', $main_parentId, 'sports');                                      
+                                        $sport_crawl = $main_parentObj->name.' '.$parentObj->name.' '.$tax_term->name;
+                                    }
+
+                                }
+
+
+
+
+
+
+
+                       			$img = hlm_autoimage_upload( get_team_images_from_google($sport_crawl ));
+								update_field( 'flag', $img, $tax_term);
+
+                          }
+
+	}
+
+
+
+
+function hlm_autoimage_upload( $image_url  ){
+    $upload_dir = wp_upload_dir();
+    $image_data = wp_remote_get($image_url);
+	$image_data = wp_remote_retrieve_body( $image_data );
+    $filename = basename($image_url);
+    if(wp_mkdir_p($upload_dir['path']))     $file = $upload_dir['path'] . '/' . $filename;
+    else                                    $file = $upload_dir['basedir'] . '/' . $filename;
+	global $wp_filesystem;
+	WP_Filesystem(); // Initial WP file system
+	$wp_filesystem->put_contents( $file, $image_data );
+    $wp_filetype = wp_check_filetype($filename, null );
+    $attachment = array(
+        'post_mime_type' => $wp_filetype['type'],
+        'post_title' => sanitize_file_name($filename),
+        'post_content' => '',
+        'post_status' => 'inherit'
+    );
+    $attach_id = wp_insert_attachment( $attachment, $file );
+    $attach_data = wp_generate_attachment_metadata( $attach_id, $file );
+    $res1= wp_update_attachment_metadata( $attach_id, $attach_data );
+    return $attach_id;
+}
+
+*/
 
 
 

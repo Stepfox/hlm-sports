@@ -49,7 +49,15 @@ class Menu_Item_Custom_Fields_Walker extends Walker_Nav_Menu_Edit {
 
 
 
-
+function add_script_to_menu_page(){
+    global $pagenow;
+     if ($pagenow != 'nav-menus.php') {
+        return;
+    }
+		wp_enqueue_script('menu-image-upload-fields', get_stylesheet_directory_uri() . '/js/menu-image-upload-fields.js', array('jquery'));
+}
+ 
+add_action( 'admin_enqueue_scripts', 'add_script_to_menu_page' );
 
 
 
@@ -62,7 +70,7 @@ class Menu_Item_Custom_Fields_Example {
 		add_action( 'wp_update_nav_menu_item', array( __CLASS__, '_save' ), 10, 3 );
 		add_filter( 'manage_nav-menus_columns', array( __CLASS__, '_columns' ), 99 );
 		add_action( 'admin_enqueue_scripts', 'wp_enqueue_media' );
-		wp_enqueue_script('menu-image-upload-fields', get_stylesheet_directory_uri() . '/js/menu-image-upload-fields.js', array('jquery'));
+
 
 
 		self::$fields = array(
