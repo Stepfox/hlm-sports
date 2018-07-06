@@ -307,7 +307,7 @@ include( get_template_directory().'/inc/world-cup-knockout.php' );
 
 //Odds Widget
  include( get_template_directory().'/widgets/odds-widget/matches-cpt-registration.php' );
- include( get_template_directory().'/widgets/odds-widget/testeri.php' );
+ //include( get_template_directory().'/widgets/odds-widget/testeri.php' );
  include( get_template_directory().'/widgets/odds-widget/odds-custom-fields.php' );
  include( get_template_directory().'/widgets/odds-widget/matches-crawl.php' );
  include( get_template_directory().'/widgets/odds-widget/simplehtmldom.php' );

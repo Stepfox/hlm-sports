@@ -39,13 +39,14 @@ class odds_widget_hlm_sports extends WP_Widget {
 		
 		/* Default widget settings. */
 		
-		$defaults = array( 'title' => 'Odds widget', 'looks' => 'looks1', 'categories' => '0', 'number'=> '1' );
+		$defaults = array( 'title' => 'Odds widget', 'looks' => 'looks1', 'categories' => '0', 'number'=> '1', 'offset' => '0' );
 		$instance = wp_parse_args( (array) $instance, $defaults );
 		
 		
 		$title = $instance['title'];
 		$looks = $instance['looks'];
 		$number = $instance['number'];
+		$offset = $instance['offset'];
 		$categories = $instance['categories'];
 
 
@@ -78,8 +79,6 @@ class odds_widget_hlm_sports extends WP_Widget {
 		}
 
 		?>
-</div>
-</div>
 
 
 <?php
@@ -98,6 +97,7 @@ class odds_widget_hlm_sports extends WP_Widget {
 		$instance['title'] = $new_instance['title'];
 		$instance['looks'] = $new_instance['looks'];
 		$instance['number'] = $new_instance['number'];
+		$instance['offset'] = $new_instance['offset'];
 		$instance['categories'] = $new_instance['categories'];
 
 		return $instance;
@@ -108,7 +108,7 @@ class odds_widget_hlm_sports extends WP_Widget {
 		
 		/* Default widget settings. */
 		
-		$defaults = array( 'title' => 'Odds widget', 'looks' => 'looks1', 'categories' => '0', 'number'=> '1' );
+		$defaults = array( 'title' => 'Odds widget', 'looks' => 'looks1', 'categories' => '0', 'number'=> '1', 'offset' => '0' );
 		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
 
 <!-- Widget Title-->
@@ -139,6 +139,14 @@ class odds_widget_hlm_sports extends WP_Widget {
 	<input type="number" min="1" id="<?php echo esc_attr($this->get_field_id( 'number' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'number' )); ?>" value="<?php echo esc_attr($instance['number']); ?>" size="3" />
 </p>
 
+
+<!-- Offset posts -->
+<p>
+	<label for="<?php echo esc_attr($this->get_field_id( 'offset' )); ?>">
+		<?php _e('Forward Posts(offset):', 'examiner'); ?>
+	</label>
+	<input type="number" min="0" id="<?php echo esc_attr($this->get_field_id( 'offset' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'offset' )); ?>" value="<?php echo esc_attr($instance['offset']); ?>" size="3" />
+</p>
 
 <!-- Sports -->
 <?php $options = get_terms('sports', array('hide_empty' => '0'));

@@ -8,6 +8,7 @@
           'posts_per_page' => $number,
           'post_type' => 'match',
           'post_status' => 'publish', 
+          'offset' => $offset,
         'meta_key'      => 'start_time',
         'orderby'     => 'meta_value',
         'order'       => 'ASC',
@@ -182,3 +183,6 @@ echo '<tr><th>Betting Company</th>';
 
 
 ?>
+
+</div>
+</div>

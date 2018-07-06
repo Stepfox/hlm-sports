@@ -66,13 +66,13 @@
 							'compare' => '>'),
 				   			 ),
 			
-		      // 'tax_query' => array(
-        //         array(
-        //             'taxonomy' => 'leagues',
-        //             'field' => 'slug',
-        //             'terms' => $categories
-        //      	   )
-        //     	)
+          'tax_query' => array(
+                array(
+                    'taxonomy' => 'sports',
+                    'field' => 'slug',
+                    'terms' => $categories
+                  )
+             )
 			);
 
 		            $matches_query = new WP_Query($args);
