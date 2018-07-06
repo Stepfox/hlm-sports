@@ -802,7 +802,9 @@ function hlm_sports_get_image_id($image_url) {
 }
 
 
-
+function in_array_r($item , $array){
+    return preg_match('/"'.preg_quote($item, '/').'"/i' , json_encode($array));
+}
 
 
 ?>

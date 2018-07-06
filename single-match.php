@@ -29,9 +29,7 @@
 
 
 
-function in_array_r($item , $array){
-    return preg_match('/"'.preg_quote($item, '/').'"/i' , json_encode($array));
-}
+
 
                 $bookmakers_count = 0;
                 $args1 = array(

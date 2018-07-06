@@ -55,7 +55,7 @@ img.alignright, .wp-caption.alignright{float:right;margin:5px 0 20px 20px;}
 img.alignleft, .wp-caption.alignleft{float:left;margin:5px 20px 20px 0;}
 table{margin-bottom:30px;width:100%;text-align:center;font-size:12px;font-weight:800;}
 td{border:1px solid #c5c5c5;padding:2px 15px;background:#4cb469;color:#FFF;}
-tr:nth-child(odd) td{background:#302f2f;}
+tr:nth-child(odd) td{}
 th{border:1px solid #999;padding:2px 15px;background:#358d53;color:#FFF;}
 th, tfoot td{padding:10px 15px;border:1px solid #999;font-weight:800;text-transform:uppercase;}
 .post-password-form input[type="submit"]{cursor:pointer;border:none;font-size:12px;font-weight:800;height:32px;margin-bottom:20px;background:transparent;border:2px solid #161616;text-transform:uppercase;}
@@ -380,14 +380,20 @@ li.thumb-down:before{background:#d62a1c;}
 
 
 
-.all-odds tr{ width:100%;   background: #FFF;}
+.all-odds::-webkit-scrollbar {width: 10px; background-color: rgba(129, 129, 129, 0.05); }
+.all-odds::-webkit-scrollbar-thumb{border: 1px solid rgba(129, 129, 129, 0.5); background-color: #F00;border-right:none; }
+
+
+.all-odds{  float:left;margin: 20px auto 0;overflow-x:scroll; display: block;}
+.all-odds tbody{        width: 100%;    float: left;}
+.all-odds tr{ width:100%;   background: #FFF;display: flex;}
 .all-odds tr:hover td{background: #ebebeb;}
 .all-odds caption{float:left;width:100%;border-bottom:5px solid #fff;
     background: #27272f;font-size:20px;padding:5px;color: #FFF;font-weight: 400;text-transform: uppercase;}
 
  .all-odds tr td:first-child, .all-odds tr th:first-child{text-align:left;color:#FFF;background:#27272f;
   font-size:14px;
-  width: 250px;padding-left:20px;}
+  width: calc(100% - (40px * 8));padding-left:20px;}
 
  .all-odds tr:first-child td{text-align:center;background: #FFF;color:#000;}
 .all-odds tr:nth-child(2) th{text-align:center;background: #FFF;color:#000;}
@@ -621,7 +627,7 @@ input#search-switch:checked + .search-box{position:absolute;float:left;display:b
 .looks3 .latest-articles-category-icon:before{position:absolute;content:'';left:0;bottom:-5px;border-color:#358d53 transparent transparent transparent;border-style:solid;border-width:5px 0 0 5px;}
 .looks3 .latest-articles-category-icon:after{z-index:-1;content:'';top:0;width:30px;height:100%;position:absolute;background:#4cb469;transform:skew(-28deg);right:-10px;}
 /*Odds widget*/
-.widget_hlm_sports_odds{background:#5a5859;}
+.widget_hlm_sports_odds table{padding: 0 20px;}
 .text-editor-widget-content .widget_hlm_sports_odds{margin-left:-20px;width:calc(100% + 40px);}
 .odds-sports-wrap{float:left;background:#ccc;width:30%;border:1px solid #FFF;position:relative;}
 .odds-widget-sports{color:#FFF;width:100%;float:left;line-height:80px;font-size:20px;text-align:center;}

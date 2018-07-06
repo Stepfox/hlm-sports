@@ -174,10 +174,24 @@ if (isset($_POST) && !empty($_POST['crawl_matches_odds'])){
         crawl_full_football_game();
 
 
-        //convert_winner_table();
+     
 
 }
 
+
+        echo '<h2>Old Widget Convert</h2>';
+?>
+            <form method="post">                    
+                <input  type="submit" class="button-secondary" name="old_crawl_matches_odds" value="<?php echo esc_attr('old odds'); ?>"/>
+            </form>
+<?php               
+
+if (isset($_POST) && !empty($_POST['old_crawl_matches_odds'])){
+
+
+        convert_winner_table();
+
+}
 
 
 /*

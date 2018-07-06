@@ -39,12 +39,13 @@ class odds_widget_hlm_sports extends WP_Widget {
 		
 		/* Default widget settings. */
 		
-		$defaults = array( 'title' => 'Odds widget', 'looks' => 'looks1', 'categories' => '0' );
+		$defaults = array( 'title' => 'Odds widget', 'looks' => 'looks1', 'categories' => '0', 'number'=> '1' );
 		$instance = wp_parse_args( (array) $instance, $defaults );
 		
 		
 		$title = $instance['title'];
 		$looks = $instance['looks'];
+		$number = $instance['number'];
 		$categories = $instance['categories'];
 
 
@@ -72,10 +73,13 @@ class odds_widget_hlm_sports extends WP_Widget {
 			//include( locate_template( 'widgets/odds-widget/looks-3.php', false, false ) );   
 		}elseif($looks == 'looks4'){
 			include( locate_template( 'widgets/odds-widget/looks-4.php', false, false ) );   
+		}elseif($looks == 'looks5'){
+			include( locate_template( 'widgets/odds-widget/looks-5.php', false, false ) );   
 		}
 
 		?>
-
+</div>
+</div>
 
 
 <?php
@@ -93,6 +97,7 @@ class odds_widget_hlm_sports extends WP_Widget {
 		
 		$instance['title'] = $new_instance['title'];
 		$instance['looks'] = $new_instance['looks'];
+		$instance['number'] = $new_instance['number'];
 		$instance['categories'] = $new_instance['categories'];
 
 		return $instance;
@@ -103,7 +108,7 @@ class odds_widget_hlm_sports extends WP_Widget {
 		
 		/* Default widget settings. */
 		
-		$defaults = array( 'title' => 'Odds widget', 'looks' => 'looks1', 'categories' => '0' );
+		$defaults = array( 'title' => 'Odds widget', 'looks' => 'looks1', 'categories' => '0', 'number'=> '1' );
 		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
 
 <!-- Widget Title-->
@@ -119,18 +124,24 @@ class odds_widget_hlm_sports extends WP_Widget {
 	<label for="<?php echo esc_attr($this->get_field_id('looks')); ?>"><?php _e('Looks:', 'hlm-sports');?></label>
 	<select name="<?php echo esc_attr($this->get_field_name('looks')); ?>" id="<?php echo esc_attr($this->get_field_id('looks')); ?>" class="widefat" >
 		<?php 
-		$options = array('looks1', 'looks2', 'looks3', 'looks4' );
+		$options = array('looks1', 'looks2', 'looks3', 'looks4', 'looks5' );
 		foreach ($options as $option) {?>
 		<option value='<?php echo esc_attr($option); ?>' <?php if ($option == $instance['looks']) echo 'selected="selected"'; ?>><?php echo esc_html($option); ?></option>
 		<?php } ?>
 	</select>
 </p>
 
-
+<!-- Number of posts -->
+<p>
+	<label for="<?php echo esc_attr($this->get_field_id( 'number' )); ?>">
+		<?php _e('Number of posts to show:', 'examiner'); ?>
+	</label>
+	<input type="number" min="1" id="<?php echo esc_attr($this->get_field_id( 'number' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'number' )); ?>" value="<?php echo esc_attr($instance['number']); ?>" size="3" />
+</p>
 
 
 <!-- Sports -->
-<?php $options = get_terms('leagues', array('hide_empty' => '0'));
+<?php $options = get_terms('sports', array('hide_empty' => '0'));
 
 
 	?>
