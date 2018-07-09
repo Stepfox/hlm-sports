@@ -165,9 +165,10 @@ $args = array(
 				<div class="bestodds-teams">
 					<div class="bestodds-team">
 						<div class="bestodds-team-part">
-							<a href="<?php echo get_term_link($terms[0]->slug, 'teams');?>">
-								<?php  echo $terms[0]->name; ?>					
-							</a>
+								<?php  $home_team = get_term( get_field('home_team'), 'teams' );  ?>
+								<a href="<?php echo esc_url(get_term_link($home_team, 'teams')); ?>">
+									<?php echo $home_team->name;?>
+								</a>
 						</div>
 						<div class="bestodds-team-part bookmaker-background-wrap-<?php echo $bookmaker_win_odd; ?>">
 							<?php $image = get_field('logo_136x44', $bookmaker_win_odd);          
@@ -209,9 +210,10 @@ $args = array(
 
 					<div class="bestodds-team">
 						<div class="bestodds-team-part">
-							<a href="<?php echo get_term_link($terms[1]->slug, 'teams');?>">
-								<?php  echo $terms[1]->name; ?>					
-							</a>
+								<?php  $away_team = get_term( get_field('away_team'), 'teams' );  ?>
+								<a href="<?php echo esc_url(get_term_link($away_team, 'teams')); ?>">
+									<?php echo $away_team->name;?>
+								</a>
 						</div>
 						<div class="bestodds-team-part bookmaker-background-wrap-<?php echo $bookmaker_loss_odd; ?>">
 							<?php $image = get_field('logo_136x44', $bookmaker_loss_odd);          

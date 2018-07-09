@@ -74,25 +74,6 @@ endif;
           </ul>
       </div>
     </div>
-<div class="four-parts hlm-sports-widget top-page-area payment-section">
-      <div class="four-parts hlm-sports-widget">
-        <div class="widget">
-          <div class="bonus-with-check">
-          <?php echo the_field( 'payment_options_bonus_1' ); ?>
-          </div>
-          <div class="bonus-with-check">
-          <?php echo the_field( 'payment_options_bonus_2' ); ?>
-          </div>
-          <div class="bonus-with-check">
-          <?php echo the_field( 'payment_options_bonus_3' ); ?>
-          </div>
-          <div class="bonus-with-check">
-          <?php echo the_field( 'payment_options_bonus_4' ); ?>
-          </div>
-
-        </div>
-      </div>
-</div>
   </div>
 
 
