@@ -289,6 +289,32 @@ if (isset($_POST) && !empty($_POST['crawl_odds']) ){
 ?>
             <form method="post">                    
                 <input  type="submit" class="button-secondary" name="remove_all_matches" value="<?php echo esc_attr('remove past matches'); ?>"/>
+              <select name="sport_select_remove">
+                    <?php
+                       $tax_terms = get_terms('sports', array('hide_empty' => '0'));      
+                       foreach ( $tax_terms as $tax_term ){ 
+                                $sport_crawl = $tax_term->name;
+                                $parentId = $tax_term->parent;
+                                if(!empty($parentId)){
+                                $parentObj = get_term_by('id', $parentId, 'sports');
+                                    $sport_crawl = $parentObj->name.'/'.$tax_term->name;
+
+                                    $main_parentId = $parentObj->parent;
+                                    if(!empty($main_parentId)){
+                                        $main_parentObj = get_term_by('id', $main_parentId, 'sports');                                      
+                                        $sport_crawl = $main_parentObj->name.'/'.$parentObj->name.'/'.$tax_term->name;
+                                    }
+
+                                }
+
+
+
+                          echo '<option value="'.strtolower($sport_crawl).'">'.$sport_crawl.'</option>';   
+                       }
+                    ?>
+                </select> 
+
+
             </form>
 <?php  
 
@@ -296,7 +322,8 @@ if (isset($_POST) && !empty($_POST['crawl_odds']) ){
 
 if (isset($_POST) && !empty($_POST['remove_all_matches'])){
 
-        remove_all_matches();
+        $sport = $_POST['sport_select_remove'];
+        remove_all_matches($sport);
         //remove_past_matches();
 
 }

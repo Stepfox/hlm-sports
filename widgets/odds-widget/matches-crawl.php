@@ -24,13 +24,20 @@ function remove_past_matches(){
 }
 
 
-function remove_all_matches(){
+function remove_all_matches($sport){
 
 			//Delete Matches
 			$args = array(
 			    'posts_per_page' => -1,
 			    'post_type' => 'match',
-			    'post_status' => 'publish',   
+			    'post_status' => 'publish',
+          'tax_query' => array(
+                array(
+                    'taxonomy' => 'sports',
+                    'field' => 'slug',
+                    'terms' => $sport
+                  )
+             )   
 			);
 			$hlm_sports_posts = new WP_Query($args);
 			while($hlm_sports_posts->have_posts()) : $hlm_sports_posts->the_post();
