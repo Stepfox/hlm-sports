@@ -631,7 +631,7 @@ input#search-switch:checked + .search-box{position:absolute;float:left;display:b
 .looks3 .latest-articles-category-icon:before{position:absolute;content:'';left:0;bottom:-5px;border-color:#358d53 transparent transparent transparent;border-style:solid;border-width:5px 0 0 5px;}
 .looks3 .latest-articles-category-icon:after{z-index:-1;content:'';top:0;width:30px;height:100%;position:absolute;background:#4cb469;transform:skew(-28deg);right:-10px;}
 /*Odds widget*/
-.widget_hlm_sports_odds table{padding: 0 20px;}
+.widget_hlm_sports_odds table, .widget_hlm_sports_odds1 table{padding: 0 20px;}
 .text-editor-widget-content .widget_hlm_sports_odds{margin-left:-20px;width:calc(100% + 40px);}
 .odds-sports-wrap{float:left;background:#ccc;width:30%;border:1px solid #FFF;position:relative;}
 .odds-widget-sports{color:#FFF;width:100%;float:left;line-height:80px;font-size:20px;text-align:center;}

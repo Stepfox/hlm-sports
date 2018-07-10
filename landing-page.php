@@ -70,7 +70,6 @@ if (is_home()){ ?>
                     </ul>
                 </li>
                 <li><a target="_blank" href="https://www.winningsportsbets.co.uk/world-cup-2018-calendar">World Cup Odds<span class="sr-only">(current)</span></a></li>
-                <li class="active"><a target="_blank" href="https://www.winningsportsbets.co.uk/world-cup-2018-betting-tips ">World Cup Tips</a></li>
             </ul>
         </div>
     </div>
@@ -146,7 +145,7 @@ if (is_home()){ ?>
                         </div>
                         <div class="card-block block-3">
                             <h3 class="card-title">Ladbrokes</h3>
-                            <p class="card-text">England v Colombia: England to Quaify 50/1
+                            <p class="card-text">Free Odds Boost For Every Match
 .T&Cs apply</p>
                             <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/ladbrokes-bg1">
                                 <div class="bet-now">bet now</div>
@@ -218,7 +217,7 @@ if (is_home()){ ?>
                 </div>                
 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text"> Get odds of 7/1 on Mbappe to win the Golden Boot                      
+                    <p class="list-group-item-text"> France v Belgium: Belgium to win with Lukaku to score - odds of 21/4                      
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
@@ -235,7 +234,7 @@ if (is_home()){ ?>
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text">Colombia v England: Any England Player to Score from Outside the Box 7/2
+                    <p class="list-group-item-text">France v Belgium: France to win on penalties: 9/1
                    
                     </p>
                 </div>
@@ -253,7 +252,7 @@ if (is_home()){ ?>
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text"> Colombia v England: Kane to score 2 or more Goals 7/1
+                    <p class="list-group-item-text"> France and England Both to Win, Lukaku and Kane both to score: 40/1
                      
                     </p>
                 </div>
@@ -271,7 +270,7 @@ if (is_home()){ ?>
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text"> Bet on England winning the World Cup at odds of 6/1     
+                    <p class="list-group-item-text"> World Cup winner to come from group G: 4/5    
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
@@ -288,7 +287,7 @@ if (is_home()){ ?>
                 </div>                
 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text"> Bet on a Brazil v England final at odds of 9/1
+                    <p class="list-group-item-text"> Romelu Lukaku to win the Golden Boot award: 9/1
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
@@ -305,7 +304,7 @@ if (is_home()){ ?>
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text"> Bet £10 on Jordan Pickford winning the Golden Glove and win £140
+                    <p class="list-group-item-text"> France v Belgium: Both teams to score, Antoine Griezmann to score and get booked: 13/1
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
@@ -322,7 +321,7 @@ if (is_home()){ ?>
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text"> Bet £10 on Russia winning the tournament and win £190
+                    <p class="list-group-item-text"> France v Belgium: Bet £10 on VAR being used 2-times or more: 3/1
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
@@ -339,7 +338,7 @@ if (is_home()){ ?>
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text">Bet on England to reach the finals at odds of 11/4
+                    <p class="list-group-item-text">Bet on Croatia to win the tournament at odds of 5/1
 
                     </p>
                 </div>
@@ -357,7 +356,7 @@ if (is_home()){ ?>
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text">Bet on Brazil to win with Harry Kane as top goal scorer at odds of 7/1
+                    <p class="list-group-item-text">Bet on France to win the tournament with Griezmann as top goalscorer: 29/1
 
                     </p>
                 </div>
@@ -376,7 +375,7 @@ if (is_home()){ ?>
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text">Bet £10 on Sweden to reach the final and win £140
+                    <p class="list-group-item-text">Bet on a France v England World Cup Final: 41/20
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">

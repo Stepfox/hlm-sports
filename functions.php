@@ -328,6 +328,7 @@ include(get_template_directory()."/widgets/faq-widget/faq-widget.php");
 include(get_template_directory()."/widgets/related-widget/related-widget.php");
 include(get_template_directory()."/widgets/landing-widget/landing-widget.php");
 include(get_template_directory()."/widgets/odds-widget/odds-widget.php");
+include(get_template_directory()."/widgets/odds-widget/new-odds-widget.php");
 include(get_template_directory()."/widgets/latest-articles/latest-articles.php");
 include(get_template_directory()."/widgets/betting-strategies/betting-strategies.php");
 include(get_template_directory()."/widgets/linking-image-widget/linking-image-widget.php");
