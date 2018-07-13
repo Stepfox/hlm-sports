@@ -55,7 +55,13 @@ img.alignright, .wp-caption.alignright{float:right;margin:5px 0 20px 20px;}
 img.alignleft, .wp-caption.alignleft{float:left;margin:5px 20px 20px 0;}
 table{margin-bottom:30px;width:100%;text-align:center;font-size:12px;font-weight:800;}
 td{border:1px solid #c5c5c5;padding:2px 15px;background:#4cb469;color:#FFF;}
-tr:nth-child(odd) td{}
+tr:nth-child(odd) td{background:#302f2f;}
+body .post-content table {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    float: left;
+}
 th{border:1px solid #999;padding:2px 15px;background:#358d53;color:#FFF;}
 th, tfoot td{padding:10px 15px;border:1px solid #999;font-weight:800;text-transform:uppercase;}
 .post-password-form input[type="submit"]{cursor:pointer;border:none;font-size:12px;font-weight:800;height:32px;margin-bottom:20px;background:transparent;border:2px solid #161616;text-transform:uppercase;}
