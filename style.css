@@ -597,7 +597,7 @@ input#search-switch:checked + .search-box{position:absolute;float:left;display:b
 /*Shortcode Widget*/
 .widget_shortcode_widget_sizes_hlm_sports{background:transparent;}
 /*Text-editor*/
-.text-editor-widget-content{padding:10px 20px;float:left;}
+.text-editor-widget-content{padding:10px 20px;float:left;width:100%;}
 .connect-top{margin-top:-10px;}
 .connect-bottom{margin-bottom:-10px;}
 .connect-both{margin-top:-10px;margin-bottom:-10px;}
