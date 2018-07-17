@@ -8,7 +8,15 @@
           'posts_per_page' => 1,
           'post_type' => 'match',
           'post_status' => 'publish', 
-      'post__in' => array($categories)
+          'meta_key'      => 'start_time',
+          'orderby'     => 'meta_value',
+          'order'       => 'ASC',
+          'post__in' => array($categories),
+          'meta_query' => array(
+              array('key' => 'start_time',
+                'value'   => $now_date,
+                'compare' => '>'),
+                   )
       );
 
                 $matches_query = new WP_Query($args);

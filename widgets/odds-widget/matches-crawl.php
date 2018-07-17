@@ -548,8 +548,29 @@ function crawl_full_football_game(){
 				'winner' => 'winner',
 			);
 
+                $tax_terms = get_the_terms( get_the_ID(), 'sports' );
+                   
+
+
+foreach($tax_terms as $term) {
+    if ($term->parent === 0) { // avoid parent categories
+        $sport_crawl = $term;
+    }
+}
+
+$market = array();
+if( have_rows('crawl_markets', $sport_crawl ) ):
+   while ( have_rows('crawl_markets', $sport_crawl ) ) : the_row();
+   	$market[] = get_sub_field('market');
+                    
+	endwhile;
+endif;
+
+                
+
+
 			$i = 0;
-			foreach ($crawl_football_markets as $key => $value) {
+			foreach ($market as $key => $value) {
 
 				$crawl_full[$i]['name_of_the_table'] = $value;
 				$crawl_full[$i]['odds_lists'] = crawl_super_table($value, $page_name_id);

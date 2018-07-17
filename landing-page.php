@@ -145,7 +145,7 @@ if (is_home()){ ?>
                         </div>
                         <div class="card-block block-3">
                             <h3 class="card-title">Ladbrokes</h3>
-                            <p class="card-text">Free Odds Boost For Every Match
+                            <p class="card-text">England to beat Croatia at odds of 33/1
 .T&Cs apply</p>
                             <a target="_blank" href="https://www.winningsportsbets.co.uk/goto/ladbrokes-bg1">
                                 <div class="bet-now">bet now</div>
@@ -217,7 +217,7 @@ if (is_home()){ ?>
                 </div>                
 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text"> France v Belgium: Belgium to win with Lukaku to score - odds of 21/4                      
+                    <p class="list-group-item-text"> England v Croatia: England to win with Sterling to score at odds of 13/2
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
@@ -234,7 +234,7 @@ if (is_home()){ ?>
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text">France v Belgium: France to win on penalties: 9/1
+                    <p class="list-group-item-text">Bet on a France v England final at odds of 8/13
                    
                     </p>
                 </div>
@@ -252,7 +252,7 @@ if (is_home()){ ?>
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text"> France and England Both to Win, Lukaku and Kane both to score: 40/1
+                    <p class="list-group-item-text"> Harry Kane to score and England to win at odds of 5/2
                      
                     </p>
                 </div>
@@ -270,7 +270,7 @@ if (is_home()){ ?>
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text"> World Cup winner to come from group G: 4/5    
+                    <p class="list-group-item-text"> England to be eliminated by a penalty shootout at odds of 5/1
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
@@ -287,7 +287,7 @@ if (is_home()){ ?>
                 </div>                
 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text"> Romelu Lukaku to win the Golden Boot award: 9/1
+                    <p class="list-group-item-text"> England to win the World Cup, Harry Kane to win the Golden Boot and Jordan Pickford to win the Golden Glove: odds of 11/4
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
@@ -304,7 +304,7 @@ if (is_home()){ ?>
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text"> France v Belgium: Both teams to score, Antoine Griezmann to score and get booked: 13/1
+                    <p class="list-group-item-text">England v Croatia: Trippier to give an assist in regular time at odds of 13/2
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
@@ -321,7 +321,7 @@ if (is_home()){ ?>
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text"> France v Belgium: Bet £10 on VAR being used 2-times or more: 3/1
+                    <p class="list-group-item-text"> England v Croatia: Bet £10 on England to be leading in the first half and get a £16 return
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
@@ -339,7 +339,6 @@ if (is_home()){ ?>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
                     <p class="list-group-item-text">Bet on Croatia to win the tournament at odds of 5/1
-
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">
@@ -356,7 +355,7 @@ if (is_home()){ ?>
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text">Bet on France to win the tournament with Griezmann as top goalscorer: 29/1
+                    <p class="list-group-item-text">Bet on France to win the tournament with Griezmann as top goalscorer: 44/1
 
                     </p>
                 </div>
@@ -375,7 +374,7 @@ if (is_home()){ ?>
                     </a>
                 </div> 
                 <div class="col-sm-12 col-xs-6 col-md-6">
-                    <p class="list-group-item-text">Bet on a France v England World Cup Final: 41/20
+                    <p class="list-group-item-text">Bet on England to win the World Cup at odds of 5/2
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-3 col-md-3 text-center">

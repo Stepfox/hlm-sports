@@ -295,8 +295,6 @@ include( get_template_directory().'/inc/hlm-sports-custom-fields.php' );
 include( get_template_directory().'/inc/hlm-sports-shortcodes.php' );
 include( get_template_directory().'/inc/hlm-visual-experiments.php' );
 
-include( get_template_directory().'/inc/world-cup-knockout.php' );
-
 
 
 // include( get_template_directory().'/inc/widget-presets/widget-presets.php' );
