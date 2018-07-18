@@ -3,7 +3,7 @@ if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
     'key' => 'group_5a853a25258da',
-    'title' => 'Bookmakers: Basic Info (Recovered) (Recovered)',
+    'title' => 'Bookmakers: Basic Info  ',
     'fields' => array(
         array(
             'key' => 'field_5a8563070e609',
@@ -153,7 +153,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5b0e915cc5df3',
-    'title' => 'Bookmakers: Content Target Menu (Recovered) (Recovered)',
+    'title' => 'Bookmakers: Content Target Menu  ',
     'fields' => array(
         array(
             'key' => 'field_5b0e917b96081',
@@ -236,7 +236,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5a89c29b47895',
-    'title' => 'Bookmakers: Rating (Recovered) (Recovered)',
+    'title' => 'Bookmakers: Rating  ',
     'fields' => array(
         array(
             'key' => 'field_5a89c2b0de48e',
@@ -279,7 +279,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5aeff2763e2bb',
-    'title' => 'Bookmakers: Support Details (Recovered) (Recovered)',
+    'title' => 'Bookmakers: Support Details  ',
     'fields' => array(
         array(
             'key' => 'field_5aeff2ba261d2',
@@ -424,7 +424,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5a89c25d91736',
-    'title' => 'Bookmakers: Trackers (Recovered) (Recovered)',
+    'title' => 'Bookmakers: Trackers  ',
     'fields' => array(
         array(
             'key' => 'field_5a89c26759b8e',
@@ -467,7 +467,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5ab0f837b7bd5',
-    'title' => 'CRAWLER:Bookmaker order (Recovered)',
+    'title' => 'CRAWLER:Bookmaker order ',
     'fields' => array(
         array(
             'key' => 'field_5ab0f84414817',
@@ -510,7 +510,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5aa5735762222',
-    'title' => 'HLM Sports Options: Archive - Payment Methods (Recovered) (Recovered)',
+    'title' => 'HLM Sports Options: Archive - Payment Methods  ',
     'fields' => array(
         array(
             'key' => 'field_5aacffd5ddce2',
@@ -677,7 +677,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5aeffd8bb0b67',
-    'title' => 'HLM Sports Options: Bookmaker support details (Recovered) (Recovered)',
+    'title' => 'HLM Sports Options: Bookmaker support details  ',
     'fields' => array(
         array(
             'key' => 'field_5aeffda04df5d',
@@ -796,7 +796,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5aa7def50cf7e',
-    'title' => 'HLM Sports Options: Footer Options (Recovered) (Recovered)',
+    'title' => 'HLM Sports Options: Footer Options  ',
     'fields' => array(
         array(
             'key' => 'field_5af165f1b25b4',
@@ -944,7 +944,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5b0532da9fbd2',
-    'title' => 'HLM Sports Options: Header Options (Recovered) (Recovered)',
+    'title' => 'HLM Sports Options: Header Options  ',
     'fields' => array(
         array(
             'key' => 'field_5b0532edfda59',
@@ -1011,7 +1011,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5aa52ef6a0c8a',
-    'title' => 'HLM Sports Options: Translations (Recovered) (Recovered)',
+    'title' => 'HLM Sports Options: Translations  ',
     'fields' => array(
         array(
             'key' => 'field_5aa5304456ff9',
@@ -1472,7 +1472,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5aaee35426847',
-    'title' => 'Odds Table (Recovered)',
+    'title' => 'Odds Table ',
     'fields' => array(
         array(
             'key' => 'field_5afec0fd70e04',
@@ -1698,7 +1698,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5abb8d5b40262',
-    'title' => 'Page Image Text (Recovered) (Recovered)',
+    'title' => 'Page Image Text  ',
     'fields' => array(
         array(
             'key' => 'field_5abb8e0051bea',
@@ -1741,7 +1741,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5a89cc1add4f5',
-    'title' => 'Payment Options: Basic Info (Recovered) (Recovered)',
+    'title' => 'Payment Options: Basic Info  ',
     'fields' => array(
         array(
             'key' => 'field_5a89cf063e7c7',
@@ -1808,7 +1808,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5aa56808c3b75',
-    'title' => 'Review: Payment Methods (Recovered) (Recovered)',
+    'title' => 'Review: Payment Methods  ',
     'fields' => array(
         array(
             'key' => 'field_5aa56808f3133',
@@ -2042,7 +2042,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5a9d4d8b66bfa',
-    'title' => 'Review: Pros and Cons (Recovered) (Recovered)',
+    'title' => 'Review: Pros and Cons  ',
     'fields' => array(
         array(
             'key' => 'field_5a9d5863b0ec5',
@@ -2324,7 +2324,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5b45d1225dce2',
-    'title' => 'Sports crawling additions (Recovered)',
+    'title' => 'Sports crawling additions ',
     'fields' => array(
         array(
             'key' => 'field_5b45d12271cef',
@@ -2388,7 +2388,7 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
     'key' => 'group_5b2a4bbcb9388',
-    'title' => 'Teams Additions (Recovered)',
+    'title' => 'Teams Additions ',
     'fields' => array(
         array(
             'key' => 'field_5b2a4bc6a17dd',

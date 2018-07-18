@@ -7,6 +7,13 @@ Tags: one-column, two-columns, three-columns, four-columns, custom-colors, custo
 Text Domain: hlm-sports
 */
 
+body .blog-post-title{margin-bottom:0;}
+.top-page-area .blog-post-content{    position: relative;
+    color: #FFF;}
+.top-page-area .blog-post-date-author > div:first-child{border:none;}
+.post-content table a {
+    color: #FFF;
+}
 
 
 /*Css reset*/

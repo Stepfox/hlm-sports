@@ -72,7 +72,12 @@ function crawl_matches($sport){
 		}
 
 
-		for ($i=0; $i < $crawled_titles_number; $i++) { 
+		for ($i=0; $i < $crawled_titles_number; $i+=2) { 
+
+			$html->find('.match-on p.fixtures-bet-name', $i)->plaintext = str_replace("/"," & ", $html->find('.match-on p.fixtures-bet-name', $i)->plaintext);
+			$html->find('.match-on p.fixtures-bet-name', $i + 1)->plaintext = str_replace("/"," & ", $html->find('.match-on p.fixtures-bet-name', $i + 1)->plaintext);
+
+
 
 			$duplicate = 'unique';
 			$title = $html->find('.match-on p.fixtures-bet-name', $i)->plaintext.' vs '.$html->find('.match-on p.fixtures-bet-name', $i + 1)->plaintext;
