@@ -103,6 +103,7 @@ function crawler_options_function(){
 
 
         echo '<h2>Crawl Matches</h2>';
+        echo $_SERVER['HTTP_HOST'];
 
 ?>
             <form method="post">                    
