@@ -87,9 +87,12 @@ if ( ! wp_next_scheduled( 'cron_crawl_odds' ) ) {
 */
 
 
+if ($_SERVER['HTTP_HOST'] != '35.189.74.126' ){
 
 add_action('admin_menu', 'add_crawler_options_page');
- 
+ }
+
+
 function add_crawler_options_page() {
     add_submenu_page('edit.php?post_type=match', __('Crawler Options','hlm-sports'), __('Crawler Options','hlm-sports'), 'manage_options', 'crawler_options_page', 'crawler_options_function');
 }
@@ -103,7 +106,7 @@ function crawler_options_function(){
 
 
         echo '<h2>Crawl Matches</h2>';
-        echo $_SERVER['HTTP_HOST'];
+       
 
 ?>
             <form method="post">                    
