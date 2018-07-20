@@ -54,7 +54,30 @@ function customizer_css() {
     </style>";
 }
 
+//Fonts
 
+function hlm_sports_fonts_url() {
+    $fonts_url = '';
+
+    $fonts     = array(get_option('hlm_sports_fonts', 'Roboto'));
+    $subsets   = '';
+    if ( $fonts ) {
+        $fonts_url = add_query_arg( array(
+            'family' => urlencode( implode( ':100,200,300,400,600,700,800|', $fonts ) ),
+            'subset' => urlencode( $subsets ),
+        ), 'https://fonts.googleapis.com/css' );
+    }
+    return $fonts_url;
+}
+
+function hlm_sports_fonts_add() {
+    // Add custom fonts, used in the main stylesheet.
+    wp_enqueue_style( 'hlm_sports-fonts', hlm_sports_fonts_url(), array(), null );
+}
+
+
+
+add_action( 'wp_enqueue_scripts', 'hlm_sports_fonts_add', 0 );
 add_action( 'wp_head', 'hlm_sports_head', 999999);
 add_action( 'customize_controls_print_styles', 'customizer_css' );
 ?>
