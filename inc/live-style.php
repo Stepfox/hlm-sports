@@ -77,7 +77,7 @@ function hlm_sports_fonts_add() {
 
 
 
-add_action( 'wp_enqueue_scripts', 'hlm_sports_fonts_add' );
+add_action( 'wp_enqueue_scripts', 'hlm_sports_fonts_add', 0 );
 add_action( 'wp_head', 'hlm_sports_head', 999999);
 add_action( 'customize_controls_print_styles', 'customizer_css' );
 ?>
