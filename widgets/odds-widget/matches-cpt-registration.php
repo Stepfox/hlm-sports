@@ -1,8 +1,52 @@
 <?php 
 
 
-
 /*
+
+global $wpdb;
+$wpdb_backup = $wpdb;
+$wpdb = new wpdb( 'root', 'makaveli123', 'wordpress', '35.197.207.246' );
+# Do your stuff here...
+# then when done...
+$wpdb = $wpdb_backup;
+
+
+
+global $wpdb;
+$wpdb_backup = $wpdb;
+$wpdb = new wpdb( 'root', 'makaveli123', 'wordpress', '35.197.207.246' );
+$wpdb->set_prefix('wp_');
+
+
+      //Delete Matches
+      $args = array(
+          'posts_per_page' => -1,
+          'post_type' => 'match',
+          'post_status' => 'publish'
+      );
+      $hlm_sports_posts = new WP_Query($args);
+      while($hlm_sports_posts->have_posts()) : $hlm_sports_posts->the_post();
+
+             ?>               
+        <li>          
+
+            <?php experiment_5(); ?>
+
+        </li>
+        <?php 
+
+      endwhile; 
+
+
+$wpdb = $wpdb_backup;
+    ?>
+
+
+
+
+
+
+
 
 
 back i front 
@@ -89,7 +133,7 @@ if ( ! wp_next_scheduled( 'cron_crawl_odds' ) ) {
 
 if ($_SERVER['HTTP_HOST'] != '35.189.74.126' ){
 
-add_action('admin_menu', 'add_crawler_options_page');
+    add_action('admin_menu', 'add_crawler_options_page');
  }
 
 
