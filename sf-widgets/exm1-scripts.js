@@ -688,51 +688,6 @@ var slide_picker = 'slide';
         $(window).resize(mobile_menu_sub);
 
 
-    function hover_intent_menu(){       
-		function mousein_triger(){
-        if ($(window).width() > 700) {  	         
-			$(".menu-item").removeClass("active");
-			$(this).addClass("active");	
-			$(this).find('.sub-menu-wrapper').css('visibility', 'hidden').show();			
-			$(this).find('.sub-menu-wrapper').height($(this).find('.sub-menu').height());
-            $(this).find('.sub-menu-wrapper').css('min-height', $(this).find('.menu-links.inside-menu').outerHeight());
-			$(this).find('.sub-menu-wrapper').css('visibility', 'visible').hide();
-			$(this).children('.sub-menu-wrapper, .sub-meni').fadeIn(150);
-		}else{
-            $('.menu-item').removeClass('active');
-            $('.sub-menu-wrapper').removeAttr( 'style' );
-        }}
-		function mouseout_triger() {
-        if ($(window).width() > 700){                    
-            $(this).children('.sub-menu-wrapper, .sub-meni').fadeOut(150);
-		}}
-		var settings = {
-			sensitivity: 4,
-			interval: 150,
-			timeout: 300,
-			over: mousein_triger,
-			out:mouseout_triger
-		
-		};
-		$('.menu-item').not( '.inside-menu .menu-item' ).hoverIntent( settings );
-
-
-        var settings1 = {
-            sensitivity: 4,
-            interval: 0,
-            timeout: 300,
-            over: mousein_triger,
-            out:mouseout_triger
-        
-        };
-
-        $( '.inside-menu .menu-item' ).hoverIntent( settings1 );
-        }
-    
-
-        hover_intent_menu();
-        $(window).resize(hover_intent_menu);
-
 
 //autoload for all
 $(window).scroll(function() {

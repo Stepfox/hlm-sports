@@ -28,7 +28,7 @@ class hlm_sports_232x310_widget extends WP_Widget {
 
 	    public function widget_enqueue_scripts() {
 			wp_enqueue_style('top_5_reviews_widget', get_stylesheet_directory_uri() . '/widgets/top-5-reviews/top-5-reviews.css');
-			wp_enqueue_script('top_5_reviews_widget_script', get_stylesheet_directory_uri() . '/widgets/top-5-reviews/top-5-reviews.js');
+			wp_enqueue_script('top_5_reviews_widget_script', get_stylesheet_directory_uri() . '/widgets/top-5-reviews/top-5-reviews.js', array('jquery'));
 			
 	    }
 
