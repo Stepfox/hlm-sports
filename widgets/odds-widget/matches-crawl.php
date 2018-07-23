@@ -544,13 +544,7 @@ return $gggg;
 function crawl_full_football_game(){
 
 
-        $args = array(
-            'post_type' => 'match',
-            'posts_per_page' => -1, 
-            'post_status' => 'publish'
-        );
-        $lunar_magazine_posts = new WP_Query($args);
-        while($lunar_magazine_posts->have_posts()) : $lunar_magazine_posts->the_post();
+
 
 
 		$page_name_id = get_the_ID();
@@ -633,7 +627,7 @@ $markets = $html->find('#mc', 0);
 the_title();
 echo ' Done!</br>';
 
- endwhile; 
+
 
 
 }
