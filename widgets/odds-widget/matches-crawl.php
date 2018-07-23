@@ -569,14 +569,14 @@ function crawl_full_football_game(){
 
                 
 
-	$opts=array('http'=>array('method'=>"GET",'header'=>"Accept-language: en\r\n"."Cookie: odds_type=decimal\r\n",'user_agent'=>'Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10.4; en-US; rv:1.9.2.28) Gecko/20120306 Firefox/3.6.28'));
-	$context = stream_context_create($opts);
-	$match_url = str_replace('winner', 'betting-markets', get_field('match_url', $page_name_id ));
+			$opts=array('http'=>array('method'=>"GET",'header'=>"Accept-language: en\r\n"."Cookie: odds_type=decimal\r\n",'user_agent'=>'Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10.4; en-US; rv:1.9.2.28) Gecko/20120306 Firefox/3.6.28'));
+			$context = stream_context_create($opts);
+			$match_url = str_replace('winner', 'betting-markets', get_field('match_url', $page_name_id ));
 
-	$html = file_get_html($match_url,false,$context);
+			$html = file_get_html($match_url,false,$context);
 
 
-$markets = $html->find('#mc', 0);
+			$markets = $html->find('#mc', 0);
 
 
 			
@@ -597,7 +597,7 @@ $markets = $html->find('#mc', 0);
 			$i = 0;
 			foreach ($market as $key => $value) {
 
-				sleep(1);
+				usleep(500000);
 
 					$crawl_full[$i]['odds_lists'] = crawl_super_table($value, $page_name_id);
 					$crawl_full[$i]['name_of_the_table'] = $value;			
@@ -616,11 +616,11 @@ $markets = $html->find('#mc', 0);
 			   update_post_meta ( $page_name_id, 'lice_za_kontakt', $value );
 			}
 
-			// $now_date = current_time('timestamp');
+			$now_date = current_time('timestamp');
 
-			// if ( ! add_post_meta( $page_name_id, 'last_crawled', $now_date, true ) ) { 
-			//    update_post_meta ( $page_name_id, 'last_crawled', $now_date );
-			// }
+			if ( ! add_post_meta( $page_name_id, 'last_crawled', $now_date, true ) ) { 
+			   update_post_meta ( $page_name_id, 'last_crawled', $now_date );
+			}
 
  the_title();
  echo ' Done!</br>';
