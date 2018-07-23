@@ -155,8 +155,7 @@ echo $match_url;
 echo '     ';
 echo $title;
 echo '</br>';
-sleep(1);
-crawl_full_football_game($post_ID);
+
 
 
 
