@@ -531,7 +531,14 @@ for ($i = 0; $i <= $rowdata_count; $i++) {
        
 
 return $gggg;
+}else{
+
+	echo 'empryyyyyyyyyyy1321132';
 }
+
+
+
+
 }
 
 function crawl_full_football_game(){
@@ -571,9 +578,10 @@ endif;
 
 			$i = 0;
 			foreach ($market as $key => $value) {
+				$crawl_full[$i]['odds_lists'] = crawl_super_table($value, $page_name_id);
 
 				$crawl_full[$i]['name_of_the_table'] = $value;
-				$crawl_full[$i]['odds_lists'] = crawl_super_table($value, $page_name_id);
+				
 				$i++;
 			}
 
