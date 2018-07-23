@@ -100,13 +100,7 @@ function cron_crawl_odds() {
         );
         $lunar_magazine_posts = new WP_Query($args);
         while($lunar_magazine_posts->have_posts()) : $lunar_magazine_posts->the_post();
-
-        $post= array('post_title' => $title, 'post_content' => '', 'post_status' => 'publish', 'post_type' => 'match' );
-        $post_ID = wp_insert_post( $post );
-
-
         $page_name_id = get_the_ID();
-        echo $page_name_id;
         $now_date = current_time('timestamp');
         $last_crawled = get_post_meta( get_the_ID(), 'last_crawled', true );
         $machine_working = get_post_meta( get_the_ID(), 'machine_working', true );
@@ -114,7 +108,7 @@ function cron_crawl_odds() {
         if(empty($machine_working)){$machine_working = 'free'; }
 
 
-        //if($now_date - $last_crawled > 600 && $machine_working === 'free'){
+        if($now_date - $last_crawled > 600 && $machine_working === 'free'){
             if ( ! add_post_meta( $page_name_id, 'machine_working', 'working', true ) ) { 
                update_post_meta ( $page_name_id, 'machine_working', 'working' );
             }
@@ -127,7 +121,7 @@ function cron_crawl_odds() {
                update_post_meta ( $page_name_id, 'machine_working', 'free' );
             }
 
-        //}
+        }
 
         endwhile; 
 }
