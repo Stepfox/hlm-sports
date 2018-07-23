@@ -456,7 +456,7 @@ function crawl_super_table($market = 'correct-score', $page_name_id){
 	
 	$html = file_get_html($match_url,false,$context);
 
-if (!empty($html)){
+if (!empty($html->find('#t1', 0))){
 
 echo $match_url;
 echo '</br>';
