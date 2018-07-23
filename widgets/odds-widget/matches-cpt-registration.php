@@ -225,23 +225,8 @@ if (isset($_POST) && !empty($_POST['crawl_matches_winnerodds'])){
 if (isset($_POST) && !empty($_POST['crawl_matches_odds'])){
 
 
-        $args = array(
-            'post_type' => 'match',
-            'posts_per_page' => -1, 
-            'post_status' => 'publish',
-        );
-        $lunar_magazine_posts = new WP_Query($args);
-        while($lunar_magazine_posts->have_posts()) : $lunar_magazine_posts->the_post();
-        $page_name_id = get_the_ID();
-            crawl_full_football_game($page_name_id);
-
-            the_title();
-            echo ' Done!';
-
- endwhile; 
-
-
-     
+            crawl_full_football_game();
+   
 
 }
 
