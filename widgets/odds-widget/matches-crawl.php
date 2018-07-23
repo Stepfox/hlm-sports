@@ -541,15 +541,15 @@ return $gggg;
 
 }
 
-function crawl_full_football_game(){
+function crawl_full_football_game($page_name_id = null){
 
 
 
 
 
-		$page_name_id = get_the_ID();
 
-        $tax_terms = get_the_terms( get_the_ID(), 'sports' );
+
+//        $tax_terms = get_the_terms( get_the_ID(), 'sports' );
                    
 
 
@@ -595,8 +595,8 @@ function crawl_full_football_game(){
 
 			$i = 0;
 			foreach ($market as $key => $value) {
-
-				usleep(50000);
+				//delay of 0.5 sec
+				usleep(500000);
 
 					$crawl_full[$i]['odds_lists'] = crawl_super_table($value, $page_name_id);
 					$crawl_full[$i]['name_of_the_table'] = $value;			
