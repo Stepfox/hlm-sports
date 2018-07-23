@@ -597,6 +597,7 @@ $markets = $html->find('#mc', 0);
 			$i = 0;
 			foreach ($market as $key => $value) {
 
+				sleep(1);
 
 					$crawl_full[$i]['odds_lists'] = crawl_super_table($value, $page_name_id);
 					$crawl_full[$i]['name_of_the_table'] = $value;			
@@ -624,7 +625,6 @@ $markets = $html->find('#mc', 0);
  the_title();
  echo ' Done!</br>';
 
-sleep(1);
 
 
 }
