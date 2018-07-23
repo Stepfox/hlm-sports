@@ -30,9 +30,9 @@ custom posg types izglea poveke
 
 
 
-wp_clear_scheduled_hook('cron_crawl_matches');
+// wp_clear_scheduled_hook('cron_crawl_matches');
 
-wp_clear_scheduled_hook('cron_crawl_odds');
+// wp_clear_scheduled_hook('cron_crawl_odds');
 
 
 
