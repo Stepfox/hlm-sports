@@ -152,6 +152,8 @@ function add_crawler_options_page() {
 
 
 function crawler_options_function(){
+ini_set('max_execution_time', 25);
+
 phpinfo();
 
 
