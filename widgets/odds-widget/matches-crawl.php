@@ -591,6 +591,7 @@ $markets = $html->find('#mc', 0);
 
            		$market[] =  end(explode('/',$row->href)); 
            		echo   end(explode('/',$row->href)); 
+           		echo '</br>'
 
                 }
 
@@ -598,15 +599,11 @@ $markets = $html->find('#mc', 0);
 
 			$i = 0;
 			foreach ($market as $key => $value) {
-				$see_if_empty = crawl_super_table($value, $page_name_id);
-				
-				if($see_if_empty == 'none'){
-					echo 'its empty </br>';
-				}else{
+
 					$crawl_full[$i]['odds_lists'] = crawl_super_table($value, $page_name_id);
 					$crawl_full[$i]['name_of_the_table'] = $value;			
 				$i++;
-				}
+				
 			}
 
 			// echo $page_name_id;
