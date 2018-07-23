@@ -582,10 +582,9 @@ function crawl_full_football_game(){
 			
 
 			foreach($markets->find('li a') as $row) {
-			
-           		$market[] =  end(explode('/',$row->href));	 
-           		echo   end(explode('/',$row->href)); 
-           		echo '</br>';
+				
+				$market_name = end(explode('/',$row->href));
+           		$market[] =  $market_name;	 
            		
            		
                 }
