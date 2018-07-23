@@ -104,7 +104,10 @@ function cron_crawl_odds() {
         $now_date = current_time('timestamp');
         $last_crawled = get_post_meta( get_the_ID(), 'last_crawled', true );
         $machine_working = get_post_meta( get_the_ID(), 'machine_working', true );
-        if($now_date - $last_crawled > 600 && $machine_working == 'free'){
+        if(empty($last_crawled)){$last_crawled = 0; }
+        if(empty($now_date)){$now_date = 10000; }
+
+        if($now_date - $last_crawled > 600 && $machine_working === 'free'){
             if ( ! add_post_meta( $page_name_id, 'machine_working', 'working', true ) ) { 
                update_post_meta ( $page_name_id, 'machine_working', 'working' );
             }
