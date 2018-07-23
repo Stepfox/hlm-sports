@@ -596,7 +596,7 @@ function crawl_full_football_game(){
 			$i = 0;
 			foreach ($market as $key => $value) {
 
-				usleep(500000);
+				//usleep(500000);
 
 					$crawl_full[$i]['odds_lists'] = crawl_super_table($value, $page_name_id);
 					$crawl_full[$i]['name_of_the_table'] = $value;			
