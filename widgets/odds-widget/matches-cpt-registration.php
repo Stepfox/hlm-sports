@@ -90,26 +90,45 @@ wp_clear_scheduled_hook('cron_crawl_odds');
 // add_action( 'cron_crawl_matches', 'cron_crawl_matches' );
 
 
-// function cron_crawl_odds() {
+function cron_crawl_odds() {
 
-//         $args = array(
-//             'post_type' => 'match',
-//             'posts_per_page' => -1, 
-//             'post_status' => 'publish',
-//         );
-//         $lunar_magazine_posts = new WP_Query($args);
-//         while($lunar_magazine_posts->have_posts()) : $lunar_magazine_posts->the_post();
-//         $page_name_id = get_the_ID();
+        $args = array(
+            'post_type' => 'match',
+            'posts_per_page' => -1, 
+            'post_status' => 'publish',
+        );
+        $lunar_magazine_posts = new WP_Query($args);
+        while($lunar_magazine_posts->have_posts()) : $lunar_magazine_posts->the_post();
+        $page_name_id = get_the_ID();
 
-//         $now_date = current_time('timestamp');
-//         $last_crawled = get_post_meta( get_the_ID(), 'last_crawled', true );
-//         if($now_date - $last_crawled > 600){
-//           crawl_full_football_game($page_name_id);
-//         }
+        $now_date = current_time('timestamp');
+        $last_crawled = get_post_meta( get_the_ID(), 'last_crawled', true );
+        $machine_working = get_post_meta( get_the_ID(), 'machine_working', true );
+        if($now_date - $last_crawled > 600 && $machine_working == 'free'){
+            if ( ! add_post_meta( $page_name_id, 'machine_working', 'working', true ) ) { 
+               update_post_meta ( $page_name_id, 'machine_working', 'working' );
+            }
 
-//         endwhile; 
-// }
-// add_action( 'cron_crawl_odds', 'cron_crawl_odds' );
+
+            crawl_full_football_game($page_name_id);
+
+
+            if ( ! add_post_meta( $page_name_id, 'machine_working', 'free', true ) ) { 
+               update_post_meta ( $page_name_id, 'machine_working', 'free' );
+            }
+
+        }
+
+        endwhile; 
+}
+add_action( 'cron_crawl_odds', 'cron_crawl_odds' );
+
+if ( ! wp_next_scheduled( 'cron_crawl_odds' ) ) {
+    wp_schedule_event( time(), 'halfhour', 'cron_crawl_odds' );
+}
+
+
+
 
 
 // function cron_remove_past_matches() {
@@ -128,9 +147,7 @@ wp_clear_scheduled_hook('cron_crawl_odds');
 //     wp_schedule_event( time(), 'fullhour', 'cron_crawl_matches' );
 // }
 
-// if ( ! wp_next_scheduled( 'cron_crawl_odds' ) ) {
-//     wp_schedule_event( time(), 'halfhour', 'cron_crawl_odds' );
-// }
+
 
 
 
