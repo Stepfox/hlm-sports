@@ -152,7 +152,7 @@ function add_crawler_options_page() {
 
 
 function crawler_options_function(){
-
+phpinfo();
 
 
         echo '<h2>Crawl Matches</h2>';
