@@ -559,21 +559,40 @@ function crawl_full_football_game(){
                    
 
 
-foreach($tax_terms as $term) {
-    if ($term->parent === 0) { // avoid parent categories
-        $sport_crawl = $term;
-    }
-}
+// foreach($tax_terms as $term) {
+//     if ($term->parent === 0) { // avoid parent categories
+//         $sport_crawl = $term;
+//     }
+// }
 
-$market = array();
-if( have_rows('crawl_markets', $sport_crawl ) ):
-   while ( have_rows('crawl_markets', $sport_crawl ) ) : the_row();
-   	$market[] = get_sub_field('market');
+// $market = array();
+// if( have_rows('crawl_markets', $sport_crawl ) ):
+//    while ( have_rows('crawl_markets', $sport_crawl ) ) : the_row();
+//    	$market[] = get_sub_field('market');
                     
-	endwhile;
-endif;
+// 	endwhile;
+// endif;
 
                 
+
+	$opts=array('http'=>array('method'=>"GET",'header'=>"Accept-language: en\r\n"."Cookie: odds_type=decimal\r\n",'user_agent'=>'Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10.4; en-US; rv:1.9.2.28) Gecko/20120306 Firefox/3.6.28'));
+	$context = stream_context_create($opts);
+	$match_url = str_replace('winner', 'betting-markets', get_field('match_url', $page_name_id ));
+
+	$html = file_get_html($match_url,false,$context);
+
+
+$markets = $html->find('#mc', 0);
+
+
+
+
+foreach($markets->find('li a') as $row) {
+
+           $market[] =  end(explode('/',$row->href));   
+
+                }
+
 
 
 			$i = 0;
