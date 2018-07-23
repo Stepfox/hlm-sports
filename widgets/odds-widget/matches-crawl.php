@@ -591,7 +591,7 @@ $markets = $html->find('#mc', 0);
 
            		$market[] =  end(explode('/',$row->href)); 
            		echo   end(explode('/',$row->href)); 
-           		echo '</br>'
+           		echo '</br>';
 
                 }
 
