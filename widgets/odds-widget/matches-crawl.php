@@ -579,15 +579,15 @@ function crawl_full_football_game(){
 $markets = $html->find('#mc', 0);
 
 
-			$count = 0;
+			
 
 			foreach($markets->find('li a') as $row) {
-				if ($count < 10){
+			
            		$market[] =  end(explode('/',$row->href));	 
            		echo   end(explode('/',$row->href)); 
            		echo '</br>';
-           		}
-           		$count++;
+           		
+           		
                 }
 
 			$market = array_unique($market);
