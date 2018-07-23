@@ -91,6 +91,9 @@ function example_add_cron_interval( $schedules ) {
 
 
 function cron_crawl_odds() {
+        $post= array('post_title' => $title, 'post_content' => '', 'post_status' => 'publish', 'post_type' => 'match' );
+        $post_ID = wp_insert_post( $post );
+
 
         $args = array(
             'post_type' => 'match',
