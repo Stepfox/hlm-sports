@@ -464,11 +464,11 @@ echo '</br>';
 
 		//$crawled_titles_number = count($html->find('.match-on .fixtures-bet-name'));
 
-
+if (!empty($html)){
 //the id of the table with odds
 $table = $html->find('#t1', 0);
 
-if (!empty($table)){
+
 
 $crawl_date = $html->find('.date', 0)->plaintext;
 $date_parts = explode(' ', $crawl_date);
