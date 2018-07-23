@@ -239,9 +239,15 @@ if (isset($_POST) && !empty($_POST['crawl_matches_odds'])){
         while($lunar_magazine_posts->have_posts()) : $lunar_magazine_posts->the_post();
             usleep(500000);
             $page_name_id = get_the_ID();
-            
+            $test = get_post_meta( get_the_ID(), 'last_crawled', true );
+            $now_date = current_time('timestamp');
+
+            if($now_date - $test > 3600 ){
+
             crawl_full_football_game($page_name_id);
-   
+
+            } 
+
  endwhile; 
 }
 
