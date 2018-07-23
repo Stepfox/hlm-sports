@@ -587,9 +587,10 @@ $markets = $html->find('#mc', 0);
 
 
 
-foreach($markets->find('li a') as $row) {
+			foreach($markets->find('li a') as $row) {
 
-           $market[] =  end(explode('/',$row->href));   
+           		$market[] =  end(explode('/',$row->href)); 
+           		echo   end(explode('/',$row->href)); 
 
                 }
 
