@@ -582,7 +582,7 @@ $markets = $html->find('#mc', 0);
 			$count = 0;
 
 			foreach($markets->find('li a') as $row) {
-				if ($count < 10){
+				if ($count < 100){
            		$market[] =  end(explode('/',$row->href));	 
            		echo   end(explode('/',$row->href)); 
            		echo '</br>';
