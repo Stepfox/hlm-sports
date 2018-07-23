@@ -594,7 +594,7 @@ endif;
 			}
 
 the_title();
-echo ' Done!';
+echo ' Done!</br>';
 
  endwhile; 
 
