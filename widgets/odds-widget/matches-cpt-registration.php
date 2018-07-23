@@ -39,21 +39,21 @@ wp_clear_scheduled_hook('cron_crawl_odds');
 
 
 
-// add_filter( 'cron_schedules', 'example_add_cron_interval' );
+add_filter( 'cron_schedules', 'example_add_cron_interval' );
  
-// function example_add_cron_interval( $schedules ) {
-//     $schedules['halfhour'] = array(
-//         'interval' => 60,
-//         'display'  => esc_html__( 'Every Half Hour' ),
-//     );
+function example_add_cron_interval( $schedules ) {
+    $schedules['halfhour'] = array(
+        'interval' => 60,
+        'display'  => esc_html__( 'Every Half Hour' ),
+    );
 
-//     $schedules['fullhour'] = array(
-//         'interval' => 3600,
-//         'display'  => esc_html__( 'Every Hour' ),
-//     );
+    $schedules['fullhour'] = array(
+        'interval' => 3600,
+        'display'  => esc_html__( 'Every Hour' ),
+    );
  
-//     return $schedules;
-// }
+    return $schedules;
+}
 
 
 
