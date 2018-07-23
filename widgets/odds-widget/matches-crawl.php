@@ -595,6 +595,7 @@ $markets = $html->find('#mc', 0);
 
                 }
 
+			$market = array_unique($market);
 
 
 			$i = 0;
