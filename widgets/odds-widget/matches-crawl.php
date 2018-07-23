@@ -618,14 +618,14 @@ $markets = $html->find('#mc', 0);
 			   update_post_meta ( $page_name_id, 'lice_za_kontakt', $value );
 			}
 
-			$now_date = current_time('timestamp');
+			// $now_date = current_time('timestamp');
 
-			if ( ! add_post_meta( $page_name_id, 'last_crawled', $now_date, true ) ) { 
-			   update_post_meta ( $page_name_id, 'last_crawled', $now_date );
-			}
+			// if ( ! add_post_meta( $page_name_id, 'last_crawled', $now_date, true ) ) { 
+			//    update_post_meta ( $page_name_id, 'last_crawled', $now_date );
+			// }
 
-// the_title();
-// echo ' Done!</br>';
+ the_title();
+ echo ' Done!</br>';
 
 
 
