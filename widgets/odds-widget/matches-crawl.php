@@ -624,7 +624,7 @@ $markets = $html->find('#mc', 0);
  the_title();
  echo ' Done!</br>';
 
-
+sleep(1);
 
 
 }
