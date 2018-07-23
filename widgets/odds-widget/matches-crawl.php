@@ -578,11 +578,13 @@ endif;
 
 			$i = 0;
 			foreach ($market as $key => $value) {
-				$crawl_full[$i]['odds_lists'] = crawl_super_table($value, $page_name_id);
-				if($crawl_full[$i]['odds_lists'] === 'none'){}else{
-
-				$crawl_full[$i]['name_of_the_table'] = $value;
+				$see_if_empty = crawl_super_table($value, $page_name_id);
 				
+				if($see_if_empty == 'none'){
+					echo 'its empty </br>';
+				}else{
+					$crawl_full[$i]['odds_lists'] = crawl_super_table($value, $page_name_id);
+					$crawl_full[$i]['name_of_the_table'] = $value;			
 				$i++;
 				}
 			}
