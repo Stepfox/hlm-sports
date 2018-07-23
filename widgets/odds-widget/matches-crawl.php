@@ -468,7 +468,7 @@ echo '</br>';
 //the id of the table with odds
 $table = $html->find('#t1', 0);
 
-
+if (!empty($table)){
 
 $crawl_date = $html->find('.date', 0)->plaintext;
 $date_parts = explode(' ', $crawl_date);
@@ -531,7 +531,7 @@ for ($i = 0; $i <= $rowdata_count; $i++) {
        
 
 return $gggg;
-
+}
 }
 
 function crawl_full_football_game(){
