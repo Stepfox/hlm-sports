@@ -579,7 +579,7 @@ endif;
 			$i = 0;
 			foreach ($market as $key => $value) {
 				$crawl_full[$i]['odds_lists'] = crawl_super_table($value, $page_name_id);
-				if($crawl_full[$i]['odds_lists'] == 'none'){}else{
+				if($crawl_full[$i]['odds_lists'] === 'none'){}else{
 
 				$crawl_full[$i]['name_of_the_table'] = $value;
 				
