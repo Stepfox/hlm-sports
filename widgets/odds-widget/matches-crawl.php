@@ -624,8 +624,8 @@ $markets = $html->find('#mc', 0);
 			   update_post_meta ( $page_name_id, 'last_crawled', $now_date );
 			}
 
-the_title();
-echo ' Done!</br>';
+// the_title();
+// echo ' Done!</br>';
 
 
 
