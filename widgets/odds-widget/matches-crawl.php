@@ -459,6 +459,7 @@ function crawl_super_table($market = 'correct-score', $page_name_id){
 
 
 echo $match_url;
+echo '</br>';
 
 
 		//$crawled_titles_number = count($html->find('.match-on .fixtures-bet-name'));
