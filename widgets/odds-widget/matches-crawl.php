@@ -48,6 +48,25 @@ function remove_all_matches($sport){
 }
 
 
+function remove_all_matches_all(){
+
+			//Delete Matches
+			$args = array(
+			    'posts_per_page' => -1,
+			    'post_type' => 'match',
+			    'post_status' => 'publish',
+			);
+			$hlm_sports_posts = new WP_Query($args);
+			while($hlm_sports_posts->have_posts()) : $hlm_sports_posts->the_post();
+			  	$page_name_id = get_the_ID();
+			 	wp_delete_post( $page_name_id, true );
+			endwhile;	
+
+}
+
+
+
+
 
 function crawl_matches($sport){
 
@@ -127,17 +146,17 @@ wp_set_object_terms( $post_ID, $sports_tax, 'sports', false );
 
 
 
-$i++;
+
 				}
 
-echo $i;
+echo $i / 2;
 echo '     ';
 echo $match_url;
 echo '     ';
 echo $title;
 echo '</br>';
-
-
+sleep(1);
+crawl_full_football_game($post_ID);
 
 
 
@@ -515,13 +534,14 @@ return $gggg;
 
 }
 
-function crawl_full_football_game(){
+function crawl_full_football_game($post_id = null){
 
 
         $args = array(
             'post_type' => 'match',
             'posts_per_page' => -1, 
-            'post_status' => 'publish', 
+            'post_status' => 'publish',
+            'post__in' => array($post_id) 
 
         );
         $lunar_magazine_posts = new WP_Query($args);
@@ -530,30 +550,7 @@ function crawl_full_football_game(){
 
 		$page_name_id = get_the_ID();
 
-		$crawl_football_markets = array(
-				//  'first-goalscorer' => 'first-goalscorer',
-				// 'both-teams-to-score' => 'both-teams-to-score',
-				// 'correct-score' => 'correct-score',
-				// 'half-time-full-time' => 'half-time-full-time',
-				// 'anytime-goalscorer' => 'anytime-goalscorer',
-				// 'draw-no-bet' => 'draw-no-bet',
-				// 'total-goals-over-under' => 'total-goals-over-under',
-				// 'total-goals-exact' => 'total-goals-exact',
-				// 'asian-handicap' => 'asian-handicap',
-				// 'enhanced-odds-specials' => 'enhanced-odds-specials',
-				// 'half-time' => 'half-time',
-				// 'last-goalscorer' => 'last-goalscorer',
-				// 'half-time-score' => 'half-time-score',
-				// 'winning-margin' => 'winning-margin',
-				// 'total-corners' => 'total-corners',
-				// 'man-of-the-match' => 'man-of-the-match',
-				// 'double-chance' => 'double-chance',
-				// 'score-win-double' => 'score-win-double',
-				// 'betting-markets' => 'betting-markets',
-				'winner' => 'winner',
-			);
-
-                $tax_terms = get_the_terms( get_the_ID(), 'sports' );
+        $tax_terms = get_the_terms( get_the_ID(), 'sports' );
                    
 
 
@@ -591,6 +588,12 @@ endif;
 			// delete_post_meta($page_name_id, 'lice_za_kontakt');
 			if ( ! add_post_meta( $page_name_id, 'lice_za_kontakt', $value, true ) ) { 
 			   update_post_meta ( $page_name_id, 'lice_za_kontakt', $value );
+			}
+
+			$now_date = current_time('timestamp');
+
+			if ( ! add_post_meta( $page_name_id, 'last_crawled', $now_date, true ) ) { 
+			   update_post_meta ( $page_name_id, 'last_crawled', $now_date );
 			}
 
 the_title();

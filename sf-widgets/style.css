@@ -1188,13 +1188,9 @@ widget effects-------------------------------------------------------------
     }
     @media screen and (max-width: 850px){
         .img-featured-text{display:none;}
-        .big-logo{width:154px;height:auto;}
-        .top-menu{display:none;}
-        .top-menu-posts li{width:100%;}
         #main-nav{  width: calc(100% - 154px);}
         .four-parts .huge .img-featured-title h2{font-size:25px;line-height:27px;}
         .menu-link{padding:0 10px;font-size:14px !important;}
-        .sub-menu-wrapper, .sub-meni{top:70px;}
         .combination-title-subtitle, .combination-title-right-text{display:none;}
         .fullwidth-post-image #post-page-title h1{    font-size: calc(2vw + 15px);  line-height: calc(2vw + 18px);  font-weight: 800;  }
         .fullwidth-post-image #post-page-subtitle{font-size: 15px;  text-align: center;  width: 100%;  line-height: 18px;  font-weight: 400;  color: #FFF;margin-top:1vw;}

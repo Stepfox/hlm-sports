@@ -12,41 +12,6 @@ $wpdb = $wpdb_backup;
 
 
 
-global $wpdb;
-$wpdb_backup = $wpdb;
-$wpdb = new wpdb( 'root', 'makaveli123', 'wordpress', '35.197.207.246' );
-$wpdb->set_prefix('wp_');
-
-
-      //Delete Matches
-      $args = array(
-          'posts_per_page' => -1,
-          'post_type' => 'match',
-          'post_status' => 'publish'
-      );
-      $hlm_sports_posts = new WP_Query($args);
-      while($hlm_sports_posts->have_posts()) : $hlm_sports_posts->the_post();
-
-             ?>               
-        <li>          
-
-            <?php experiment_5(); ?>
-
-        </li>
-        <?php 
-
-      endwhile; 
-
-
-$wpdb = $wpdb_backup;
-    ?>
-
-
-
-
-
-
-
 
 
 back i front 
@@ -58,11 +23,16 @@ flash game custom post type i link do play igata
 custom posg types izglea poveke
 
 
+*/
 
 
 
 
 
+
+// wp_clear_scheduled_hook('cron_crawl_matches');
+
+// wp_clear_scheduled_hook('cron_crawl_odds');
 
 
 
@@ -73,7 +43,7 @@ add_filter( 'cron_schedules', 'example_add_cron_interval' );
  
 function example_add_cron_interval( $schedules ) {
     $schedules['halfhour'] = array(
-        'interval' => 1800,
+        'interval' => 60,
         'display'  => esc_html__( 'Every Half Hour' ),
     );
 
@@ -93,42 +63,78 @@ function example_add_cron_interval( $schedules ) {
 
 function cron_crawl_matches() {
 
-   crawl_matches();
+
+                    $tax_terms = get_terms('sports', array('hide_empty' => '0'));      
+                       foreach ( $tax_terms as $tax_term ){ 
+                                $sport_crawl = $tax_term->name;
+                                $parentId = $tax_term->parent;
+                                if(!empty($parentId)){
+                                $parentObj = get_term_by('id', $parentId, 'sports');
+                                    $sport_crawl = $parentObj->name.'/'.$tax_term->name;
+
+                                    $main_parentId = $parentObj->parent;
+                                    if(!empty($main_parentId)){
+                                        $main_parentObj = get_term_by('id', $main_parentId, 'sports');                                      
+                                        $sport_crawl = $main_parentObj->name.'/'.$parentObj->name.'/'.$tax_term->name;
+                                    }
+
+                                }
+                                $sport_crawls[] = $sport_crawl;
+                            }
+
+    foreach ( $sport_crawls as $sport_crawlz ){ 
+        crawl_matches($sport_crawlz);
+    }
 
 }
 add_action( 'cron_crawl_matches', 'cron_crawl_matches' );
 
 
 function cron_crawl_odds() {
-    crawl_table();
-   crawl_full_football_game();
 
+        $args = array(
+            'post_type' => 'match',
+            'posts_per_page' => -1, 
+            'post_status' => 'publish',
+        );
+        $lunar_magazine_posts = new WP_Query($args);
+        while($lunar_magazine_posts->have_posts()) : $lunar_magazine_posts->the_post();
+        $page_name_id = get_the_ID();
+
+        $now_date = current_time('timestamp');
+        $last_crawled = get_post_meta( get_the_ID(), 'last_crawled', true );
+        if($now_date - $last_crawled > 600){
+          crawl_full_football_game($page_name_id);
+        }
+
+        endwhile; 
 }
 add_action( 'cron_crawl_odds', 'cron_crawl_odds' );
 
 
-function cron_remove_past_matches() {
-remove_past_matches();
-}
-add_action( 'cron_remove_past_matches', 'cron_remove_past_matches' );
+// function cron_remove_past_matches() {
+// remove_all_matches();
+// }
+// add_action( 'cron_remove_past_matches', 'cron_remove_past_matches' );
 
 
-if ( ! wp_next_scheduled( 'cron_remove_past_matches' ) ) {
-    wp_schedule_event( time(), 'fullhour', 'cron_remove_past_matches' );
-}
+// if ( ! wp_next_scheduled( 'cron_remove_past_matches' ) ) {
+//     wp_schedule_event( time(), 'halfhour', 'cron_remove_past_matches' );
+// }
+
+
 
 if ( ! wp_next_scheduled( 'cron_crawl_matches' ) ) {
     wp_schedule_event( time(), 'fullhour', 'cron_crawl_matches' );
 }
 
 if ( ! wp_next_scheduled( 'cron_crawl_odds' ) ) {
-    wp_schedule_event( time(), 'fullhour', 'cron_crawl_odds' );
+    wp_schedule_event( time(), 'halfhour', 'cron_crawl_odds' );
 }
 
 
 
 
-*/
 
 
 if ($_SERVER['HTTP_HOST'] != '35.189.74.126' ){
@@ -219,7 +225,20 @@ if (isset($_POST) && !empty($_POST['crawl_matches_winnerodds'])){
 if (isset($_POST) && !empty($_POST['crawl_matches_odds'])){
 
 
-        crawl_full_football_game();
+        $args = array(
+            'post_type' => 'match',
+            'posts_per_page' => -1, 
+            'post_status' => 'publish',
+        );
+        $lunar_magazine_posts = new WP_Query($args);
+        while($lunar_magazine_posts->have_posts()) : $lunar_magazine_posts->the_post();
+        $page_name_id = get_the_ID();
+            crawl_full_football_game($page_name_id);
+
+            the_title();
+            echo ' Done!';
+
+ endwhile; 
 
 
      
@@ -375,6 +394,26 @@ if (isset($_POST) && !empty($_POST['remove_all_matches'])){
         //remove_past_matches();
 
 }
+
+
+
+        echo '<h2>REMOVE ALL MATCHES!!!!!!!</h2>';
+
+?>
+            <form method="post">                    
+                <input  type="submit" class="button-secondary" name="remove_all_matches_all" value="<?php echo esc_attr('remove past matches'); ?>"/>
+            </form>
+<?php  
+
+
+
+if (isset($_POST) && !empty($_POST['remove_all_matches_all'])){
+
+        remove_all_matches_all();
+        //remove_past_matches();
+
+}
+
 
 
 
