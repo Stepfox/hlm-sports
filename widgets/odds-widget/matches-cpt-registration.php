@@ -100,7 +100,7 @@ function cron_crawl_odds() {
         $lunar_magazine_posts = new WP_Query($args);
         while($lunar_magazine_posts->have_posts()) : $lunar_magazine_posts->the_post();
         $page_name_id = get_the_ID();
-
+        echo $page_name_id;
         $now_date = current_time('timestamp');
         $last_crawled = get_post_meta( get_the_ID(), 'last_crawled', true );
         $machine_working = get_post_meta( get_the_ID(), 'machine_working', true );
