@@ -160,10 +160,10 @@ if ( ! wp_next_scheduled( 'cron_crawl_odds' ) ) {
 
 
 
-if ($_SERVER['HTTP_HOST'] != '35.189.74.126' ){
 
-    add_action('admin_menu', 'add_crawler_options_page');
- }
+
+add_action('admin_menu', 'add_crawler_options_page');
+
 
 
 function add_crawler_options_page() {
@@ -175,12 +175,12 @@ function add_crawler_options_page() {
 
 
 function crawler_options_function(){
-ini_set('memory_limit', '2560M');        
+//ini_set('memory_limit', '2560M');        
 ini_set('max_input_time', 300);         
 ini_set('max_execution_time', 3600);  
 set_time_limit(3600);
-ini_set('display_errors',1);
-error_reporting(E_ALL|E_STRICT);
+//ini_set('display_errors',1);
+//error_reporting(E_ALL|E_STRICT);
 
 
 
