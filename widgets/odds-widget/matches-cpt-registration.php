@@ -108,7 +108,7 @@ function cron_crawl_odds() {
         $myDateTime = (int)get_field('start_time'); 
             if($now_date - $myDateTime > 3600){
                 wp_delete_post( $page_name_id, true );
-                continue;
+                return;
             }
 
         $last_crawled = get_post_meta( get_the_ID(), 'last_crawled', true );
