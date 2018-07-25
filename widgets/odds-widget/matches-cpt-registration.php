@@ -127,25 +127,28 @@ function cron_crawl_odds() {
 }
 add_action( 'cron_crawl_odds', 'cron_crawl_odds' );
 
+
+
+
+function cron_remove_past_matches() {
+    remove_past_matches();
+}
+add_action( 'cron_remove_past_matches', 'cron_remove_past_matches' );
+
+
 if ($_SERVER['HTTP_HOST'] != '35.189.74.126' ){
 
-if ( ! wp_next_scheduled( 'cron_crawl_odds' ) ) {
-    wp_schedule_event( time(), 'halfhour', 'cron_crawl_odds' );
+    if ( ! wp_next_scheduled( 'cron_crawl_odds' ) ) {
+        wp_schedule_event( time(), 'halfhour', 'cron_crawl_odds' );
+    }
+
+    if ( ! wp_next_scheduled( 'cron_remove_past_matches' ) ) {
+        wp_schedule_event( time(), 'halfhour', 'cron_remove_past_matches' );
+    }
+
+
 }
 
-}
-
-
-
-// function cron_remove_past_matches() {
-// remove_all_matches();
-// }
-// add_action( 'cron_remove_past_matches', 'cron_remove_past_matches' );
-
-
-// if ( ! wp_next_scheduled( 'cron_remove_past_matches' ) ) {
-//     wp_schedule_event( time(), 'halfhour', 'cron_remove_past_matches' );
-// }
 
 
 

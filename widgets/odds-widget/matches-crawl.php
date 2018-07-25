@@ -1,6 +1,6 @@
 <?php 
 function remove_past_matches(){
-		$now_date = current_time('timestamp');
+		$now_date = current_time('timestamp') - 3600;
 			//Delete Matches
 			$args = array(
 			    'posts_per_page' => -1,
