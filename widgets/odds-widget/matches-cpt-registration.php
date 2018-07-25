@@ -100,8 +100,17 @@ function cron_crawl_odds() {
         );
         $lunar_magazine_posts = new WP_Query($args);
         while($lunar_magazine_posts->have_posts()) : $lunar_magazine_posts->the_post();
+
+
+
         $page_name_id = get_the_ID();
         $now_date = current_time('timestamp');
+        $myDateTime = (int)get_field('start_time'); 
+            if($now_date - $myDateTime > 3600){
+                wp_delete_post( $page_name_id, true );
+                continue;
+            }
+
         $last_crawled = get_post_meta( get_the_ID(), 'last_crawled', true );
         $machine_working = get_post_meta( get_the_ID(), 'machine_working', true );
         if(empty($last_crawled)){$last_crawled = 0; }
@@ -130,11 +139,14 @@ add_action( 'cron_crawl_odds', 'cron_crawl_odds' );
 
 
 
-function cron_remove_past_matches() {
-    remove_past_matches();
-}
-add_action( 'cron_remove_past_matches', 'cron_remove_past_matches' );
+// function cron_remove_past_matches() {
+//     remove_past_matches();
+// }
+// add_action( 'cron_remove_past_matches', 'cron_remove_past_matches' );
 
+    // if ( ! wp_next_scheduled( 'cron_remove_past_matches' ) ) {
+    //     wp_schedule_event( time(), 'halfhour', 'cron_remove_past_matches' );
+    // }
 
 if ($_SERVER['HTTP_HOST'] != '35.189.74.126' ){
 
@@ -142,9 +154,6 @@ if ($_SERVER['HTTP_HOST'] != '35.189.74.126' ){
         wp_schedule_event( time(), 'halfhour', 'cron_crawl_odds' );
     }
 
-    if ( ! wp_next_scheduled( 'cron_remove_past_matches' ) ) {
-        wp_schedule_event( time(), 'halfhour', 'cron_remove_past_matches' );
-    }
 
 
 }
