@@ -97,6 +97,10 @@ function cron_crawl_odds() {
             'post_type' => 'match',
             'posts_per_page' => -1, 
             'post_status' => 'publish',
+            'meta_key'          => 'last_crawled',
+            'orderby'           => 'meta_value',
+            'order'             => 'ASC',
+
         );
         $lunar_magazine_posts = new WP_Query($args);
         while($lunar_magazine_posts->have_posts()) : $lunar_magazine_posts->the_post();
@@ -197,8 +201,21 @@ set_time_limit(3600);
 
 
 
-        echo '<h2>Crawl Matches</h2>';
-       
+        echo '<h2>Crawl Matcheszzzz</h2>';
+             $args = array(
+            'post_type' => 'match',
+            'posts_per_page' => -1, 
+            'post_status' => 'publish',
+            'meta_key'          => 'last_crawled',
+            'orderby'           => 'meta_value',
+            'order'             => 'ASC',
+
+        );
+        $lunar_magazine_posts = new WP_Query($args);
+        while($lunar_magazine_posts->have_posts()) : $lunar_magazine_posts->the_post();
+            echo get_post_meta( get_the_ID(), 'last_crawled', true );
+            echo get_the_title();
+        endwhile;  
 
 ?>
             <form method="post">                    

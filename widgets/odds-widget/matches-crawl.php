@@ -139,6 +139,14 @@ wp_set_object_terms( $post_ID, $sports_tax, 'sports', false );
 
 					update_field( 'home_team', $teams[0], $post_ID );
 					update_field( 'away_team', $teams[1], $post_ID );
+
+					$last_crawled_reset = '0';
+
+					if ( ! add_post_meta( $post_ID, 'last_crawled', $last_crawled_reset, true ) ) { 
+					   update_post_meta ( $post_ID, 'last_crawled', $last_crawled_reset );
+					}
+
+
 // update_field( 'start_time', $html->find('.match-on .time .time-div .time-digits', $i)->plaintext, $post_ID );
 
 
