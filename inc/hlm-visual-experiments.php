@@ -467,7 +467,7 @@ function experiment_7(){
                 while($bookmakers_query->have_posts()) : $bookmakers_query->the_post();
                   if(!empty(get_field('bookmaker_crawl_order')) && is_numeric(get_field('bookmaker_crawl_order'))){ 
 
-                      $bookmaker_crawl_order[] = get_field('bookmaker_crawl_order') - 1;
+                      $bookmaker_crawl_order[] = get_field('bookmaker_crawl_order') ;
                     
                   } endwhile; wp_reset_postdata();
 
@@ -486,6 +486,14 @@ if(!empty($key['odds_lists']) || $key['odds_lists'] != NULL || $key['odds_lists'
 array_shift($key['odds_lists'][0]['odd_list']);
 array_shift($key['odds_lists'][1]['odd_list']);
 array_shift($key['odds_lists'][2]['odd_list']);
+
+foreach ($bookmaker_crawl_order as $yee) {
+  unset($key['odds_lists'][0]['odd_list'][$yee]);
+  unset($key['odds_lists'][1]['odd_list'][$yee]);
+  unset($key['odds_lists'][2]['odd_list'][$yee]);
+}
+
+
 
 $whitelist = $bookmaker_crawl_order;
 $output_odd1 = array_intersect_key( $key['odds_lists'][0]['odd_list'],  $whitelist  );
