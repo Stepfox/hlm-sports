@@ -445,3 +445,114 @@ function experiment_6($term){
 }
 
 add_shortcode('experiment_6','experiment_6');
+
+
+
+
+function experiment_7(){
+
+?>
+
+
+      <?php 
+
+
+                $bookmakers_count = 0;
+                $args1 = array(
+                    'post_type' => 'bookmaker',
+                    'posts_per_page' => -1, 
+                    'post_status' => 'publish',   
+                );
+                $bookmakers_query = new WP_Query($args1);
+                while($bookmakers_query->have_posts()) : $bookmakers_query->the_post();
+                  if(!empty(get_field('bookmaker_crawl_order')) && is_numeric(get_field('bookmaker_crawl_order'))){ 
+
+                      $bookmaker_crawl_order[] = get_field('bookmaker_crawl_order') - 1;
+                    
+                  } endwhile; wp_reset_postdata();
+
+
+
+$all_odds_array = get_post_meta( get_the_ID(), 'lice_za_kontakt', true );
+
+var_dump($bookmaker_crawl_order);
+
+
+$name_of_the_odds_table = 'winner';
+foreach ($all_odds_array as $key){
+if($key['name_of_the_table'] == $name_of_the_odds_table ){
+if(!empty($key['odds_lists']) || $key['odds_lists'] != NULL || $key['odds_lists'] != ""){
+
+array_shift($key['odds_lists'][0]['odd_list']);
+array_shift($key['odds_lists'][1]['odd_list']);
+array_shift($key['odds_lists'][2]['odd_list']);
+
+$whitelist = $bookmaker_crawl_order;
+$output_odd1 = array_intersect_key( $key['odds_lists'][0]['odd_list'],  $whitelist  );
+$output_odd2 = array_intersect_key( $key['odds_lists'][1]['odd_list'],  $whitelist  );
+$output_odd3 = array_intersect_key( $key['odds_lists'][2]['odd_list'],  $whitelist  );
+
+var_dump($output_odd1);
+var_dump($output_odd2);
+var_dump($output_odd3);
+
+
+
+$odd_1 =  max(array_values($output_odd1));
+
+
+$odd_2 =  max(array_values($output_odd2));
+
+
+$odd_3 =  max(array_values($output_odd3));
+
+
+}
+}
+}
+
+
+
+
+?>
+
+
+                            <tr>
+                              <td>
+                                <p><?php echo date ('H : i',$myDateTime); ?></p>
+                              </td>
+                              <td>
+                                <p>
+                                  <?php  $away_team = get_term( get_field('away_team'), 'teams' );  ?>
+                                  <a href="<?php echo esc_url(get_term_link($away_team, 'teams')); ?>">
+                                    <?php echo $away_team->slug;?>
+                                  </a>
+                                </p>
+                                <p>
+                                  <?php  $home_team = get_term( get_field('home_team'), 'teams' );  ?>
+                                  <a href="<?php echo esc_url(get_term_link($home_team, 'teams')); ?>">
+                                    <?php echo $home_team->slug;?>
+                                  </a>                                    
+                                </p>
+                              </td>
+                              <td>
+                                <p><span><?php echo $odd_1['odd']; ?></span></p>
+                              </td>
+                              <td>
+                                <p><span><?php echo $odd_2['odd']; ?></span></p>
+                              </td>
+                              <td>
+                                <p><span><?php echo $odd_3['odd']; ?></span></p>
+                              </td>
+                              <td>
+                               <a href="<?php the_permalink();?>">Check Game Odds</a>
+                              </td>
+                            </tr>
+
+
+
+
+<?php
+}
+
+add_shortcode('experiment_7','experiment_7');

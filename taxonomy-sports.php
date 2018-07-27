@@ -35,22 +35,58 @@
          Upcoming Games
       </h2>
     </div>
-  <ul>
+
+
+                        <table>
+                          <tbody>
+
+
+
         <?php
+        $same_day_check = '414444444444444';
+
       if ( have_posts() ) :
         while ( have_posts() ) : the_post();
+
+                          $myDateTime = (int)get_field('start_time');
+                          $game_date = (string)date("d Y",$myDateTime);
+                          $check_game_date = (string)date("d Y",$same_day_check);                        
+                          if ( $game_date != $check_game_date ){
+                          
              ?>               
-        <li>          
+                            <tr>
+                              <td colspan="6">
+                                <?php echo date ('F d, Y H : i',$myDateTime); ?>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td colspan="2">US MLS</td>
+                              <td>Home</td>
+                              <td>Draw</td>
+                              <td>Away</td>
+                              <td></td>
+                            </tr>
 
-            <?php experiment_5(); ?>
+            <?php       $same_day_check =  $myDateTime;
+                       }
+                       
 
-        </li>
+            experiment_7(); ?>
+
+
         <?php 
         endwhile;
                  
       endif;
     ?>
-  </ul>
+
+                          </tbody>
+                        </table>
+
+
+
+
+
 </div>
   </div>
   <div class="one-part post-page-area">

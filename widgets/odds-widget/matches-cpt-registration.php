@@ -61,33 +61,33 @@ function example_add_cron_interval( $schedules ) {
 
 
 
-// function cron_crawl_matches() {
+function cron_crawl_matches() {
 
 
-//                     $tax_terms = get_terms('sports', array('hide_empty' => '0'));      
-//                        foreach ( $tax_terms as $tax_term ){ 
-//                                 $sport_crawl = $tax_term->name;
-//                                 $parentId = $tax_term->parent;
-//                                 if(!empty($parentId)){
-//                                 $parentObj = get_term_by('id', $parentId, 'sports');
-//                                     $sport_crawl = $parentObj->name.'/'.$tax_term->name;
+                    $tax_terms = get_terms('sports', array('hide_empty' => '0'));      
+                       foreach ( $tax_terms as $tax_term ){ 
+                                $sport_crawl = $tax_term->name;
+                                $parentId = $tax_term->parent;
+                                if(!empty($parentId)){
+                                $parentObj = get_term_by('id', $parentId, 'sports');
+                                    $sport_crawl = $parentObj->name.'/'.$tax_term->name;
 
-//                                     $main_parentId = $parentObj->parent;
-//                                     if(!empty($main_parentId)){
-//                                         $main_parentObj = get_term_by('id', $main_parentId, 'sports');                                      
-//                                         $sport_crawl = $main_parentObj->name.'/'.$parentObj->name.'/'.$tax_term->name;
-//                                     }
+                                    $main_parentId = $parentObj->parent;
+                                    if(!empty($main_parentId)){
+                                        $main_parentObj = get_term_by('id', $main_parentId, 'sports');                                      
+                                        $sport_crawl = $main_parentObj->name.'/'.$parentObj->name.'/'.$tax_term->name;
+                                    }
 
-//                                 }
-//                                 $sport_crawls[] = $sport_crawl;
-//                             }
+                                }
+                                $sport_crawls[] = $sport_crawl;
+                            }
 
-//     foreach ( $sport_crawls as $sport_crawlz ){ 
-//         crawl_matches($sport_crawlz);
-//     }
+    foreach ( $sport_crawls as $sport_crawlz ){ 
+        crawl_matches($sport_crawlz);
+    }
 
-// }
-// add_action( 'cron_crawl_matches', 'cron_crawl_matches' );
+}
+add_action( 'cron_crawl_matches', 'cron_crawl_matches' );
 
 
 function cron_crawl_odds() {
@@ -121,7 +121,7 @@ function cron_crawl_odds() {
         if(empty($machine_working)){$machine_working = 'free'; }
 
 
-        if($now_date - $last_crawled > 600 && $machine_working === 'free'){
+        if($now_date - $last_crawled > 3600 && $machine_working === 'free'){
             if ( ! add_post_meta( $page_name_id, 'machine_working', 'working', true ) ) { 
                update_post_meta ( $page_name_id, 'machine_working', 'working' );
             }
@@ -152,22 +152,22 @@ add_action( 'cron_crawl_odds', 'cron_crawl_odds' );
     //     wp_schedule_event( time(), 'halfhour', 'cron_remove_past_matches' );
     // }
 
-if ($_SERVER['HTTP_HOST'] != '35.189.74.126' ){
+if ($_SERVER['HTTP_HOST'] != '35.189.74.126' || $_SERVER['HTTP_HOST'] != 'http://hlm-sports-betting.local' ){
 
     if ( ! wp_next_scheduled( 'cron_crawl_odds' ) ) {
         wp_schedule_event( time(), 'halfhour', 'cron_crawl_odds' );
     }
 
-
+    if ( ! wp_next_scheduled( 'cron_crawl_matches' ) ) {
+        wp_schedule_event( time(), 'daily', 'cron_crawl_matches' );
+    }
 
 }
 
 
 
 
-// if ( ! wp_next_scheduled( 'cron_crawl_matches' ) ) {
-//     wp_schedule_event( time(), 'fullhour', 'cron_crawl_matches' );
-// }
+
 
 
 
@@ -201,7 +201,7 @@ set_time_limit(3600);
 
 
 
-        echo '<h2>Crawl Matcheszzzz</h2>';
+        echo '<h2>Crawl Matches</h2>';
              $args = array(
             'post_type' => 'match',
             'posts_per_page' => -1, 
@@ -223,6 +223,7 @@ set_time_limit(3600);
             
               <select name="sport_select">
                     <?php
+                    echo '<option value="crawl_all">Crawl All Games</option>'; 
                        $tax_terms = get_terms('sports', array('hide_empty' => '0'));      
                        foreach ( $tax_terms as $tax_term ){ 
                                 $sport_crawl = $tax_term->name;
@@ -251,9 +252,11 @@ set_time_limit(3600);
 
 if (isset($_POST) && !empty($_POST['crawl_matches'])){
 
-    if(isset($_POST['sport_select']) && !empty($_POST['sport_select'])){
+    if(isset($_POST['sport_select']) && !empty($_POST['sport_select']) && $_POST['sport_select'] != 'crawl_all'){
         $sport = $_POST['sport_select'];
         crawl_matches($sport);
+    }elseif($_POST['sport_select'] === 'crawl_all' && !empty($_POST['sport_select'])){
+        cron_crawl_matches();
     }
 }
 
@@ -274,7 +277,7 @@ if (isset($_POST) && !empty($_POST['crawl_matches_winnerodds'])){
 */
 
 
-        echo '<h2>Crawl Matches oods</h2>';
+        echo '<h2>Crawl Matches odds</h2>';
 ?>
             <form method="post">                    
                 <input  type="submit" class="button-secondary" name="crawl_matches_odds" value="<?php echo esc_attr('Crawl All Matches odds'); ?>"/>
@@ -284,7 +287,7 @@ if (isset($_POST) && !empty($_POST['crawl_matches_winnerodds'])){
 if (isset($_POST) && !empty($_POST['crawl_matches_odds'])){
         $args = array(
             'post_type' => 'match',
-            'posts_per_page' => -1, 
+            'posts_per_page' => 1, 
             'post_status' => 'publish'
         );
         $lunar_magazine_posts = new WP_Query($args);
