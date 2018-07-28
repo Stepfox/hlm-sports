@@ -110,7 +110,7 @@ function cron_crawl_odds() {
         $page_name_id = get_the_ID();
         $now_date = current_time('timestamp');
         $myDateTime = (int)get_field('start_time'); 
-            if($now_date - $myDateTime > 3600){
+            if($now_date - $myDateTime > 3600 && $now_date - $myDateTime < 360000){
                 wp_delete_post( $page_name_id, true );
                 return;
             }
