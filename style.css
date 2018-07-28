@@ -6,7 +6,67 @@ Version: 1.0
 Tags: one-column, two-columns, three-columns, four-columns, custom-colors, custom-menu, featured-images, post-formats, theme-options
 Text Domain: hlm-sports
 */
-.crawler{}
+
+.matches-table{}
+.post-content .matches-table tr, .post-content .matches-table td{padding:0; background: #FFF;color:#000; }
+.post-content .matches-table a{color:#358d53;}
+.post-content .matches-table .match-date{    
+	background: #dadada;
+    width: 100%;
+    line-height: 28px;
+    font-size: 18px;
+    color: #747474;}
+
+
+
+.post-content .matches-table .match-titles td{
+background: #434343;
+    line-height: 18px;
+    font-size: 13px;
+    color: #e4e4e4;
+    text-transform: uppercase;
+
+}
+
+.post-content .matches-table tr.match {
+background: #434343;
+    line-height: 20px;
+    font-size: 13px;
+    color: #e4e4e4;
+    text-transform: uppercase;
+    border-bottom:2px solid #CCC;
+
+
+}
+
+
+.post-content .matches-table tr.match .competitors p{
+margin-top:;
+    line-height: 18px;
+    font-size: 14px;
+    margin:0;
+    text-transform: uppercase;
+
+
+}
+
+
+.post-content .matches-table tr.match td{
+vertical-align: middle;
+    line-height: 56px;
+    font-size: 14px;
+    margin:0;
+    text-transform: uppercase;
+
+}
+
+
+
+
+
+
+
+
 body .blog-post-title{margin-bottom:0;}
 .top-page-area .blog-post-content{    position: relative;
     color: #FFF;}

@@ -466,8 +466,8 @@ function experiment_7(){
                 $bookmakers_query = new WP_Query($args1);
                 while($bookmakers_query->have_posts()) : $bookmakers_query->the_post();
                   if(!empty(get_field('bookmaker_crawl_order')) && is_numeric(get_field('bookmaker_crawl_order'))){ 
-
-                      $bookmaker_crawl_order[] = get_field('bookmaker_crawl_order') ;
+                      // -2 cause of array shift for removing the name of the odd
+                      $bookmaker_crawl_order[] = get_field('bookmaker_crawl_order') - 2  ;
                     
                   } endwhile; wp_reset_postdata();
 
@@ -475,34 +475,24 @@ function experiment_7(){
 
 $all_odds_array = get_post_meta( get_the_ID(), 'lice_za_kontakt', true );
 
-var_dump($bookmaker_crawl_order);
-
 
 $name_of_the_odds_table = 'winner';
 foreach ($all_odds_array as $key){
 if($key['name_of_the_table'] == $name_of_the_odds_table ){
 if(!empty($key['odds_lists']) || $key['odds_lists'] != NULL || $key['odds_lists'] != ""){
 
+
+
+
 array_shift($key['odds_lists'][0]['odd_list']);
 array_shift($key['odds_lists'][1]['odd_list']);
 array_shift($key['odds_lists'][2]['odd_list']);
 
 foreach ($bookmaker_crawl_order as $yee) {
-  unset($key['odds_lists'][0]['odd_list'][$yee]);
-  unset($key['odds_lists'][1]['odd_list'][$yee]);
-  unset($key['odds_lists'][2]['odd_list'][$yee]);
+  $output_odd1[] = $key['odds_lists'][0]['odd_list'][$yee];
+  $output_odd2[] = $key['odds_lists'][1]['odd_list'][$yee];
+  $output_odd3[] = $key['odds_lists'][2]['odd_list'][$yee];
 }
-
-
-
-$whitelist = $bookmaker_crawl_order;
-$output_odd1 = array_intersect_key( $key['odds_lists'][0]['odd_list'],  $whitelist  );
-$output_odd2 = array_intersect_key( $key['odds_lists'][1]['odd_list'],  $whitelist  );
-$output_odd3 = array_intersect_key( $key['odds_lists'][2]['odd_list'],  $whitelist  );
-
-var_dump($output_odd1);
-var_dump($output_odd2);
-var_dump($output_odd3);
 
 
 
@@ -525,11 +515,11 @@ $odd_3 =  max(array_values($output_odd3));
 ?>
 
 
-                            <tr>
+                            <tr class="match">
                               <td>
-                                <p><?php echo date ('H : i',$myDateTime); ?></p>
+                                <?php $myDateTime = (int)get_field('start_time'); echo date ('H : i',$myDateTime); ?>
                               </td>
-                              <td>
+                              <td class="competitors">
                                 <p>
                                   <?php  $away_team = get_term( get_field('away_team'), 'teams' );  ?>
                                   <a href="<?php echo esc_url(get_term_link($away_team, 'teams')); ?>">
@@ -544,13 +534,13 @@ $odd_3 =  max(array_values($output_odd3));
                                 </p>
                               </td>
                               <td>
-                                <p><span><?php echo $odd_1['odd']; ?></span></p>
+                                <span><?php echo $odd_1['odd']; ?></span>
                               </td>
                               <td>
-                                <p><span><?php echo $odd_2['odd']; ?></span></p>
+                                <span><?php echo $odd_2['odd']; ?></span>
                               </td>
                               <td>
-                                <p><span><?php echo $odd_3['odd']; ?></span></p>
+                                <span><?php echo $odd_3['odd']; ?></span>
                               </td>
                               <td>
                                <a href="<?php the_permalink();?>">Check Game Odds</a>

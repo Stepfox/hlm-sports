@@ -37,7 +37,7 @@
     </div>
 
 
-                        <table>
+                        <table class="matches-table">
                           <tbody>
 
 
@@ -55,16 +55,17 @@
                           
              ?>               
                             <tr>
-                              <td colspan="6">
-                                <?php echo date ('F d, Y H : i',$myDateTime); ?>
+                              <td class="match-date" colspan="6">
+                                <?php echo date ('F d, Y',$myDateTime); ?>
                               </td>
                             </tr>
-                            <tr>
-                              <td colspan="2">US MLS</td>
+                            <tr class="match-titles">
+                              <td>Time</td>
+                              <td>Competitors</td>
                               <td>Home</td>
                               <td>Draw</td>
                               <td>Away</td>
-                              <td></td>
+                              <td>Visit Detailed Odds</td>
                             </tr>
 
             <?php       $same_day_check =  $myDateTime;
