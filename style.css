@@ -60,7 +60,23 @@ vertical-align: middle;
 
 }
 
-
+.post-content .matches-table tr.match td.match-odds{        position: relative;
+    font-size: 16px;
+    z-index: 1;
+    color: #FFF;}
+.post-content .matches-table tr.match td.match-odds span:after{z-index: -1;
+    left: 13%;
+    top: 5px;
+    content: '';
+    background: #358d53;
+    font-size: 16px;
+    color: #FFF;
+    border-left: 2px solid #FFF;
+    width: 58px;
+    height: 44px;
+    border-radius: 4px;
+    position: absolute;
+}
 
 
 

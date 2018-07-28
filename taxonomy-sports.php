@@ -44,7 +44,7 @@
 
         <?php
         $same_day_check = '414444444444444';
-
+        $check=0;
       if ( have_posts() ) :
         while ( have_posts() ) : the_post();
 
@@ -59,6 +59,13 @@
                                 <?php echo date ('F d, Y',$myDateTime); ?>
                               </td>
                             </tr>
+
+<?php 
+
+
+if ($check==0) {?>
+
+
                             <tr class="match-titles">
                               <td>Time</td>
                               <td>Competitors</td>
@@ -68,7 +75,11 @@
                               <td>Visit Detailed Odds</td>
                             </tr>
 
-            <?php       $same_day_check =  $myDateTime;
+
+<?php   
+  $check++;
+};
+      $same_day_check =  $myDateTime;
                        }
                        
 

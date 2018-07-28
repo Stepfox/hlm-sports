@@ -480,6 +480,23 @@ $now_date = current_time('timestamp');
 
 			
 	}
+ 
+ if ( is_tax( 'sports' ) && $query->is_main_query()) {
+
+$now_date = current_time('timestamp');
+        $query->set('meta_key', 'start_time');
+        $query->set('orderby', 'meta_value');
+        $query->set('order', 'ASC');
+		$query->set('posts_per_page', '50');
+
+		$query->set('meta_query', array(
+						array('key' => 'start_time',
+							'value'   => $now_date,
+							'compare' => '>'),
+				   			 ));
+			
+	}
+
 
 
 

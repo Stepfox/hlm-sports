@@ -533,13 +533,13 @@ $odd_3 =  max(array_values($output_odd3));
                                   </a>                                    
                                 </p>
                               </td>
-                              <td>
+                              <td class="match-odds">
                                 <span><?php echo $odd_1['odd']; ?></span>
                               </td>
-                              <td>
+                              <td class="match-odds">
                                 <span><?php echo $odd_2['odd']; ?></span>
                               </td>
-                              <td>
+                              <td class="match-odds">
                                 <span><?php echo $odd_3['odd']; ?></span>
                               </td>
                               <td>
