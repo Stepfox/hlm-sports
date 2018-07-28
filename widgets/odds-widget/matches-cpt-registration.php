@@ -152,17 +152,24 @@ add_action( 'cron_crawl_odds', 'cron_crawl_odds' );
     //     wp_schedule_event( time(), 'halfhour', 'cron_remove_past_matches' );
     // }
 
-if ($_SERVER['HTTP_HOST'] != '35.189.74.126' || $_SERVER['HTTP_HOST'] != 'http://hlm-sports-betting.local' ){
+if ($_SERVER['HTTP_HOST'] != '35.189.74.126' ){
 
     if ( ! wp_next_scheduled( 'cron_crawl_odds' ) ) {
         wp_schedule_event( time(), 'halfhour', 'cron_crawl_odds' );
     }
+
+
+}
+
+if ($_SERVER['HTTP_HOST'] == '35.189.74.126' ){
+
 
     if ( ! wp_next_scheduled( 'cron_crawl_matches' ) ) {
         wp_schedule_event( time(), 'daily', 'cron_crawl_matches' );
     }
 
 }
+
 
 
 
