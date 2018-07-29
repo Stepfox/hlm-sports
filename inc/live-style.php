@@ -23,10 +23,18 @@ function hlm_sports_head() {
         
 <?php 
     $pageposts = get_posts(array('posts_per_page' => -1, 'post_type' => 'bookmaker', 'post_status' => 'publish'));
+    $bookmakers_count = 0;
     foreach ( $pageposts as $q ){
     $color = get_field('color', $q->ID);           
     echo '.bookmaker-background-wrap-'.esc_html($q->ID).'{background:'.$color.'}';
+    if(!empty(get_field('bookmaker_crawl_order', $q->ID)) && is_numeric(get_field('bookmaker_crawl_order', $q->ID))){
+        $bookmakers_count++;
+     }
+
+
     }
+
+     echo '.all-odds tr td:first-child, .all-odds tr th:first-child{width: calc(100% - (40px * '.$bookmakers_count.'));}';
 ?>
 
 
