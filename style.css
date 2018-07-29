@@ -86,7 +86,7 @@ vertical-align: middle;
 .matches-table td:nth-child(3){width: 10%;float:left;height:60px;}
 .matches-table td:nth-child(4){width: 10%;float:left;height:60px;}
 .matches-table td:nth-child(5){width: 10%;float:left;height:60px;}
-.matches-table td:last-child{width: 30%;float:left;height:60px;}
+.matches-table td:last-child{width: 20%;float:left;height:60px;}
 .matches-table td:nth-child(4) + td:last-child{width: 30%;float:left;height:60px;padding-left:10%;}
 .match-titles td{max-height: 18px;}
 .post-content .matches-table tr.match .competitors{padding:10px;}
