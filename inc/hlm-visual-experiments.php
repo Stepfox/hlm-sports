@@ -449,7 +449,7 @@ add_shortcode('experiment_6','experiment_6');
 
 
 
-function experiment_7(){
+function experiment_7($check){
 
 ?>
 
@@ -483,10 +483,10 @@ if(!empty($key['odds_lists']) || $key['odds_lists'] != NULL || $key['odds_lists'
 
 
 
+if(!empty($key['odds_lists'][0]['odd_list'])){array_shift($key['odds_lists'][0]['odd_list']);}
+if(!empty($key['odds_lists'][1]['odd_list'])){array_shift($key['odds_lists'][1]['odd_list']);}
+if(!empty($key['odds_lists'][2]['odd_list'])){array_shift($key['odds_lists'][2]['odd_list']);}
 
-array_shift($key['odds_lists'][0]['odd_list']);
-array_shift($key['odds_lists'][1]['odd_list']);
-array_shift($key['odds_lists'][2]['odd_list']);
 
 foreach ($bookmaker_crawl_order as $yee) {
   $output_odd1[] = $key['odds_lists'][0]['odd_list'][$yee];
@@ -505,11 +505,30 @@ $odd_2 =  max(array_values($output_odd2));
 $odd_3 =  max(array_values($output_odd3));
 
 
+
+
 }
 }
 }
 
+if ($check==0) {?>
 
+
+                            <tr class="match-titles">
+                              <td>Time</td>
+                              <td>Competitors</td>
+                              <td>Home</td>
+                              <?php if (!empty($odd_3)){?>
+                              <td>Draw</td>
+                              <?php  } ?>
+                              <td>Away</td>
+                              <td>Visit Detailed Odds</td>
+                            </tr>
+
+
+<?php   
+
+};
 
 
 ?>
@@ -539,9 +558,11 @@ $odd_3 =  max(array_values($output_odd3));
                               <td class="match-odds">
                                 <span><?php echo $odd_2['odd']; ?></span>
                               </td>
+                              <?php if (!empty($odd_3)){?>
                               <td class="match-odds">
                                 <span><?php echo $odd_3['odd']; ?></span>
                               </td>
+                              <?php } ?>
                               <td>
                                <a href="<?php the_permalink();?>">Check Game Odds</a>
                               </td>

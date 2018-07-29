@@ -63,27 +63,14 @@
 <?php 
 
 
-if ($check==0) {?>
 
-
-                            <tr class="match-titles">
-                              <td>Time</td>
-                              <td>Competitors</td>
-                              <td>Home</td>
-                              <td>Draw</td>
-                              <td>Away</td>
-                              <td>Visit Detailed Odds</td>
-                            </tr>
-
-
-<?php   
-  $check++;
-};
       $same_day_check =  $myDateTime;
                        }
                        
 
-            experiment_7(); ?>
+            experiment_7($check); 
+            $check++;
+            ?>
 
 
         <?php 
