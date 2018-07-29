@@ -13,9 +13,11 @@ Text Domain: hlm-sports
 .post-content .matches-table .match-date{    
 	background: #dadada;
     width: 100%;
-    line-height: 28px;
+    line-height: 40px;
+    height: 40px;
     font-size: 18px;
-    color: #747474;}
+    color: #747474;
+}
 
 
 
@@ -29,7 +31,7 @@ background: #434343;
 }
 
 .post-content .matches-table tr.match {
-background: #434343;
+
     line-height: 20px;
     font-size: 13px;
     color: #e4e4e4;
@@ -41,7 +43,7 @@ background: #434343;
 
 
 .post-content .matches-table tr.match .competitors p{
-margin-top:;
+
     line-height: 18px;
     font-size: 14px;
     margin:0;
@@ -79,9 +81,15 @@ vertical-align: middle;
 }
 
 
-
-
-
+.matches-table td:nth-child(1){width: 10%;float:left;height:60px;}
+.matches-table td:nth-child(2){width: 40%;float:left;height:60px;}
+.matches-table td:nth-child(3){width: 10%;float:left;height:60px;}
+.matches-table td:nth-child(4){width: 10%;float:left;height:60px;}
+.matches-table td:nth-child(5){width: 10%;float:left;height:60px;}
+.matches-table td:last-child{width: 30%;float:left;height:60px;}
+.matches-table td:nth-child(4) + td:last-child{width: 30%;float:left;height:60px;padding-left:10%;}
+.match-titles td{max-height: 18px;}
+.post-content .matches-table tr.match .competitors{padding:10px;}
 
 body .blog-post-title{margin-bottom:0;}
 .top-page-area .blog-post-content{    position: relative;

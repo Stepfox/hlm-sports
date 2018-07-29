@@ -511,7 +511,7 @@ $odd_3 =  max(array_values($output_odd3));
 }
 }
 
-if ($check==0) {?>
+if ($check === 0) {?>
 
 
                             <tr class="match-titles">
