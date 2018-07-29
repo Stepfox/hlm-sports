@@ -632,7 +632,7 @@ nav ul > li a:hover{color:#FFF;}
 .top-menu ul > li:hover ul.sub-menu{display:none;}
 .top-menu .sub-menu a{color:#206539;}
 
-.top-menu ul li:after{opacity:0;visibility:hidden;transition:all 0.3s;bottom:-20px;content:'';width:0;height:0;position:absolute;border-left:10px solid transparent;border-right:10px solid transparent;border-bottom:10px solid white;left:calc(50% - 5px);}
+.top-menu ul li.menu-item-has-children:after{opacity:0;visibility:hidden;transition:all 0.3s;bottom:-20px;content:'';width:0;height:0;position:absolute;border-left:10px solid transparent;border-right:10px solid transparent;border-bottom:10px solid white;left:calc(50% - 5px);}
 .top-menu ul li:hover:after{bottom:0px;opacity:1;visibility:visible;transition-delay: 0.2s;}
 .top-menu ul .sub-menu li:after{content:none;}
 
