@@ -152,7 +152,7 @@ add_action( 'cron_crawl_odds', 'cron_crawl_odds' );
     //     wp_schedule_event( time(), 'halfhour', 'cron_remove_past_matches' );
     // }
 
-if ($_SERVER['HTTP_HOST'] != '35.189.74.126' ){
+if ($_SERVER['HTTP_HOST'] != '35.189.74.126' && $_SERVER['HTTP_HOST'] != 'hlm-betting.local' ){
 
     if ( ! wp_next_scheduled( 'cron_crawl_odds' ) ) {
         wp_schedule_event( time(), 'halfhour', 'cron_crawl_odds' );
@@ -161,7 +161,7 @@ if ($_SERVER['HTTP_HOST'] != '35.189.74.126' ){
 
 }
 
-if ($_SERVER['HTTP_HOST'] == '35.189.74.126' ){
+if ($_SERVER['HTTP_HOST'] == '35.189.74.126' && $_SERVER['HTTP_HOST'] != 'hlm-betting.local'){
 
 
     if ( ! wp_next_scheduled( 'cron_crawl_matches' ) ) {
@@ -209,20 +209,21 @@ set_time_limit(3600);
 
 
         echo '<h2>Crawl Matches</h2>';
-             $args = array(
-            'post_type' => 'match',
-            'posts_per_page' => -1, 
-            'post_status' => 'publish',
-            'meta_key'          => 'last_crawled',
-            'orderby'           => 'meta_value',
-            'order'             => 'ASC',
+        // echo $_SERVER['HTTP_HOST'];
+        //      $args = array(
+        //     'post_type' => 'match',
+        //     'posts_per_page' => -1, 
+        //     'post_status' => 'publish',
+        //     'meta_key'          => 'last_crawled',
+        //     'orderby'           => 'meta_value',
+        //     'order'             => 'ASC',
 
-        );
-        $lunar_magazine_posts = new WP_Query($args);
-        while($lunar_magazine_posts->have_posts()) : $lunar_magazine_posts->the_post();
-            echo get_post_meta( get_the_ID(), 'last_crawled', true );
-            echo get_the_title();
-        endwhile;  
+        // );
+        // $lunar_magazine_posts = new WP_Query($args);
+        // while($lunar_magazine_posts->have_posts()) : $lunar_magazine_posts->the_post();
+        //     echo get_post_meta( get_the_ID(), 'last_crawled', true );
+        //     echo get_the_title();
+        // endwhile;  
 
 ?>
             <form method="post">                    

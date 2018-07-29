@@ -56,21 +56,6 @@ $test = get_post_meta( get_the_ID(), 'lice_za_kontakt', true );
 
 $name_of_the_odds_table = 'winner';
 
-?>
-<script type="text/javascript">
-  jQuery(document).ready(function($) {
-  $('.all-odds').not('#winner').hide();
-  $('#dropDown').change(function(){
-   $(this).find("option").each(function(){
-      $('#' + this.value).hide();
-    });
-    $('#' + this.value).show();
-});
-});
-</script>
-
-<?php 
-
     echo '<div class="select"><select id="dropDown">';
 
           foreach ($test as $key){
@@ -162,10 +147,21 @@ echo '<tr><th>Betting Company</th>';
                           if(!empty($odd_list) || $odd_list != NULL || $odd_list != ""){
 
 
-                                  if (empty($odd_list['odd'])){echo '<td>';}else{echo '<td class="filled">';}
+                                 
+                                    
+                             
 //var_dump($odds_lists['odd_list'][$i]['odd']);   
                                   if($i != 0){
-                            echo $odds_lists['odd_list'][$bookmakers_order[$i - 1]['bookmaker_crawl_order']]['odd'];              }else{echo $odd_list['odd'];}                   
+                                    if(!empty($odds_lists['odd_list'][$bookmakers_order[$i - 1]['bookmaker_crawl_order']]['odd'])){
+                                      echo '<td class="filled">';
+
+                                    }else{echo '<td>';}
+                                    
+                                      echo $odds_lists['odd_list'][$bookmakers_order[$i - 1]['bookmaker_crawl_order']]['odd'];              
+                                    }else{
+                                      echo '<td>';
+                                      echo $odd_list['odd'];
+                                    }                   
                                   // echo $odd_list['odd'];
                                   // if($i != 0){
                                   //   echo '!!';

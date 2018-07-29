@@ -35,7 +35,14 @@ jQuery(document).ready(function($) {
         });
     });
 
-
+//all odds dropdown on match page
+  $('.all-odds').not('#winner').hide();
+  $('#dropDown').change(function(){
+   $(this).find("option").each(function(){
+      $('#' + this.value).hide();
+    });
+    $('#' + this.value).show();
+});
 
 // Header 
 var lastScrollTop = 50;
