@@ -79,7 +79,7 @@
 
                           </tbody>
                         </table>
-
+    </div>
   </div>
   <div class="one-part post-page-area">
       <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Post Sidebar')): endif; ?>
