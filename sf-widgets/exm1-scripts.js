@@ -12,8 +12,8 @@ var slide_picker = 'slide';
         });
 
         //wp-widgets width
-        $('.widget_text, .widget_recent_comments, .widget_recent_entries, .widget_calendar, .widget_nav_menu, .widget_pages, .widget_archive, .widget_links, .widget_meta, .widget_tag_cloud, .widget_rss, .widget_search, .widget_categories, .woocommerce, .widget[id*=bbp_], .widget[id*=bp_]').each(function() {
-            $(this).closest('.home-widget').addClass('one-part');
+        $('.widget_exm1_newsroll_exm1, .widget_text, .widget_recent_comments, .widget_recent_entries, .widget_calendar, .widget_nav_menu, .widget_pages, .widget_archive, .widget_links, .widget_meta, .widget_tag_cloud, .widget_rss, .widget_search, .widget_categories, .woocommerce, .widget[id*=bbp_], .widget[id*=bp_]').each(function() {
+            $(this).closest('.hlm-sports-widget').addClass('one-part');
         });
 
             //Masonry script

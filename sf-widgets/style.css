@@ -3,10 +3,25 @@ Widgets css---------------------------------------------------------------------
 */
 
 
+
+#main{}
+
+div.widget[id*=_exm1]{padding-bottom: 0px;background: transparent;}
+
+
+
+
+
+
+
+
+
+
+
 /*
 Widget li Sizes----------------------------------------------------------------------------------------------------------
 */
-.one-part { width: 25%; }
+.one-part { width: 24.9%; }
 .two-parts { width: 49.95%; }
 .three-parts { width: 74.95%; }
 .four-parts { width: 99.95%; }

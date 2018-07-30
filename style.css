@@ -44,7 +44,7 @@ background: #434343;
 
 .post-content .matches-table tr.match .competitors p{
 
-    line-height: 18px;
+    line-height: 20px;
     font-size: 14px;
     margin:0;
     text-transform: uppercase;
@@ -65,7 +65,14 @@ vertical-align: middle;
 .post-content .matches-table tr.match td.match-odds{        position: relative;
     font-size: 16px;
     z-index: 1;
-    color: #FFF;}
+    color: #FFF;font-weight: 800;text-align: center;}
+
+.post-content .matches-table tr.match td.match-odds span{    letter-spacing: 1px;
+    display: inline;
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: -4px;
+    text-shadow: 1px 1px 2px #00000073;}
 .post-content .matches-table tr.match td.match-odds span:after{z-index: -1;
     left: 13%;
     top: 5px;
@@ -78,6 +85,7 @@ vertical-align: middle;
     height: 44px;
     border-radius: 4px;
     position: absolute;
+        box-shadow: inset 0 0 7px #1d462b;
 }
 
 
@@ -302,7 +310,7 @@ a, a:visited{color:#000;}
 .page-with-featured-image .top-page-area img{width:100%;}
 .parallax-background{position:fixed;top:0;z-index:-1;width:100%}
 .parallax-background img{width:100%;}
-div.widget[id*=_exm1]{padding-bottom: 20px;}
+
 /*review single*/
 .top-page-area{float:left;margin-bottom:30px;}
 .page-template-pagewithfeaturedimageandsidebar .top-page-area{overflow:hidden;float:left;margin-bottom:30px;position:relative;}
