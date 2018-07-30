@@ -199,28 +199,7 @@ echo '<tr><th>Betting Company</th>';
     // echo "</pre>";
 
 ?>
-<div class="col-sm-6 widget">
-    <div class="widget-title">
-      <h2>
-         Home Team Roster
-      </h2>
-    </div>
- <?php 
-$home_team = get_term( get_field('home_team', get_the_ID() ), 'teams' );
-$away_team = get_term( get_field('away_team', get_the_ID()), 'teams' );
 
-
- experiment_6($home_team); ?>
-</div>
-
-<div class="col-sm-6 widget">
-    <div class="widget-title">
-      <h2>
-         Away Team Roster
-      </h2>
-    </div>
- <?php experiment_6($away_team); ?>
-</div>
 <div class="col-sm-12 widget">
     <div class="widget-title">
       <h2>
@@ -229,36 +208,17 @@ $away_team = get_term( get_field('away_team', get_the_ID()), 'teams' );
     </div>
 <?php 
 
-
-
-
-$args = array(
-          'posts_per_page' => -1,
-          'post_type' => 'match',
-          'post_status' => 'publish', 
-          'offset' => 1,
-        'meta_key'      => 'start_time',
-        'orderby'     => 'meta_value',
-        'order'       => 'ASC',
-          'tax_query' => array(
-                array(
-                    'taxonomy' => 'teams',
-                    'field' => 'slug',
-                    'terms' => array($home_team->slug, $away_team->slug)
-                 )
-              )
-      );
-
-                $matches_query = new WP_Query($args);
-                while($matches_query->have_posts()) : $matches_query->the_post();
+$home_team = get_term( get_field('home_team', get_the_ID() ), 'teams' );
+$away_team = get_term( get_field('away_team', get_the_ID()), 'teams' );
 
 
 
 
 
-experiment_5();
 
- endwhile; wp_reset_postdata(); ?>
+experiment_8();
+
+?>
 </div>
 
       </div>

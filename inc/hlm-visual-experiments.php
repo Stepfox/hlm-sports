@@ -575,3 +575,80 @@ if ($check === 0) {?>
 }
 
 add_shortcode('experiment_7','experiment_7');
+
+
+function experiment_8(){
+
+        ?>
+
+                        <table class="matches-table">
+                          <tbody>
+
+
+
+        <?php
+$home_team = get_term( get_field('home_team', get_the_ID() ), 'teams' );
+$away_team = get_term( get_field('away_team', get_the_ID()), 'teams' );
+
+$args = array(
+          'posts_per_page' => -1,
+          'post_type' => 'match',
+          'post_status' => 'publish', 
+          'offset' => 1,
+        'meta_key'      => 'start_time',
+        'orderby'     => 'meta_value',
+        'order'       => 'ASC',
+          'tax_query' => array(
+                array(
+                    'taxonomy' => 'teams',
+                    'field' => 'slug',
+                    'terms' => array($home_team->slug, $away_team->slug)
+                 )
+              )
+      );
+
+
+
+
+        $same_day_check = '414444444444444';
+        $check=0;
+                $matches_query = new WP_Query($args);
+                while($matches_query->have_posts()) : $matches_query->the_post();
+
+                          $myDateTime = (int)get_field('start_time');
+                          $game_date = (string)date("d Y",$myDateTime);
+                          $check_game_date = (string)date("d Y",$same_day_check);                        
+                          if ( $game_date != $check_game_date ){
+                          
+             ?>               
+                            <tr>
+                              <td class="match-date" colspan="6">
+                                <?php echo date ('F d, Y',$myDateTime); ?>
+                              </td>
+                            </tr>
+
+<?php 
+
+
+
+      $same_day_check =  $myDateTime;
+                       }
+                       
+
+            experiment_7($check); 
+            $check++;
+            ?>
+
+
+        <?php 
+ endwhile; wp_reset_postdata();
+    ?>
+
+                          </tbody>
+                        </table>
+
+<?php
+
+}
+
+add_shortcode('experiment_8','experiment_8');
