@@ -816,7 +816,7 @@ function hlm_sports_excerpt($limit) {
 
 function hlm_sports_get_image_id($image_url) {
 		global $wpdb;
-		$query = $wpdb->prepare("SELECT ID FROM {$wpdb->posts} WHERE guid=%s", $image);
+		$query = $wpdb->prepare("SELECT ID FROM {$wpdb->posts} WHERE guid=%s", $image_url);
 		$id = $wpdb->get_var($query);
 		return $id;
 }
