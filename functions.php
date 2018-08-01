@@ -352,7 +352,8 @@ include(get_template_directory()."/widgets/bestodds-widget/bestodds-widget.php")
 
 
 
-
+include( get_template_directory().'/inc/exm1-customize.php' );
+include( get_template_directory().'/inc/live-style-exm1.php' );
 
 
 

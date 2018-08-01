@@ -6,7 +6,7 @@ Version: 1.0
 Tags: one-column, two-columns, three-columns, four-columns, custom-colors, custom-menu, featured-images, post-formats, theme-options
 Text Domain: hlm-sports
 */
-
+#dropDown option:first-letter{text-transform: uppercase;}
 .matches-table{}
 .post-content .matches-table tr, .post-content .matches-table td{padding:0; background: #FFF;color:#000; }
 .post-content .matches-table a{color:#358d53;}
@@ -17,8 +17,24 @@ Text Domain: hlm-sports
     height: 40px;
     font-size: 18px;
     color: #747474;
+    text-align: left;
+    padding:0 20px;
 }
 
+.matches-table tr.competition-titles td{
+    height: auto;
+    background: #358d53;
+    line-height: 18px;
+    font-size: 13px;
+    color: #e4e4e4;
+    text-transform: uppercase;
+    width:100%;
+    text-align: left;
+    padding-left:20px;
+
+}
+
+.matches-table tr.competition-titles td a{color:#FFF;font-weight: 400;text-decoration: none;}
 
 
 .post-content .matches-table .match-titles td{
@@ -1184,6 +1200,7 @@ body.custom-background{background-image:none;}
 
 
 #dropDown{ width: 100%; font-size: 16px;}
+
 #dropDown {padding-left: 50px; -webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; appearance: none; outline: 0; box-shadow: none; background: #FFF; background-image: none; }
 .select {font-size:20px; position: relative; display: block; width: 100%;     margin-bottom:10px; line-height: 2; background: #FFF; overflow: hidden; border-radius: .25em; border:1px solid #ccc; }
 #dropDown {border:none; height: 40px;width: 100%;  margin: 0; color: #101010; cursor: pointer; }

@@ -60,7 +60,7 @@ $name_of_the_odds_table = 'winner';
 
           foreach ($test as $key){
             if(!empty($key['odds_lists']) || $key['odds_lists'] != NULL || $key['odds_lists'] != ""){
-            echo '<option value="'.$key['name_of_the_table'].'">'.$key['name_of_the_table'].'</option>';
+            echo '<option value="'.$key['name_of_the_table'].'">'.ucfirst(str_replace("-"," ",$key['name_of_the_table'])).'</option>';
           }
           }
      echo '</select></div>';
@@ -109,7 +109,7 @@ echo '<tr><th>Betting Company</th>';
 
      <th>
           <div class="bookmaker-background-wrap-<?php the_ID(); ?>">
-            <a href="<?php the_permalink() ?>">
+            <a href="<?php echo the_field( 'default_tracker'); ?>" target="_blank">
             <?php $image = get_field('logo_136x44');                            
             if( $image ) {?>
               <img src="<?php  echo $image['sizes']['hlm_sports_136x44']; ?>" alt="<?php echo $photo['alt']; ?>" >                 
@@ -117,11 +117,7 @@ echo '<tr><th>Betting Company</th>';
 
             </a>
           </div>
-          <div class="odds-widget-bookmakers-links-button top-5-review-bet-now">
-            <a href="<?php echo the_field( 'default_tracker'); ?>" target="_blank">
-                        <?php the_field('bet_now', 'option');  ?>
-                    </a>
-          </div>
+
         </th>
       <?php  } endwhile; wp_reset_postdata();echo '</tr>';
 

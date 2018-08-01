@@ -174,31 +174,13 @@ function experiment_3(){
                 <!-- Game Result Bug-->
                 <article class="game-result">
                   <div class="game-info game-info-creative">
-                    
+                    <h1 class="h3"><?php echo get_the_title(); echo ' odds'; ?></h1>
                     <div class="game-info-main">
-                      <div class="game-info-team game-info-team-first">
-                        <figure>
-                          <?php $home_team = get_term( get_field('home_team'), 'teams' ); 
-                               $image = get_field('flag', $home_team);                            
-                                  if( $image ) {?>
-                                    <img src="<?php  echo $image['sizes']['hlm_sports_166x92']; ?>">                 
-                                  <?php } ?>
-                        </figure>
-                        <div class="game-result-team-name">                      
-                          <?php    ?>
-                          <a href="<?php echo esc_url(get_term_link($home_team, 'teams')); ?>">
-                            <?php echo $home_team->slug;   ?>       
-
-
-
-                          </a>
-                        </div>
-                      </div>
                       <div class="game-info-middle game-info-middle-vertical">
-                        <time class="time-big" ><span class="heading-3"><?php $myDateTime = get_field('start_time'); echo date('D d',$myDateTime);?></span> <?php echo date('F Y',$myDateTime);?>
-                        <span class="heading-3"><?php echo date ('H:i',$myDateTime); ?></span>
+                        <time class="time-big" ><?php $myDateTime = get_field('start_time'); echo date('D d',$myDateTime);?><?php echo date('F Y',$myDateTime);?>
+                        <span class="heading-3"><?php echo date ('H:i',$myDateTime); ?>
                         </time>
-                        <div class="game-result-divider-wrap"><span class="game-info-team-divider">VS</span></div>
+                        
                         <div class="group-sm">
                           <div class="button button-sm button-share-outline">Share
                             <ul class="game-info-share">
@@ -208,29 +190,15 @@ function experiment_3(){
                               <li class="game-info-share-item"><a href="https://plusone.google.com/_/+1/confirm?hl=en-US&amp;url=<?php the_permalink(); ?>" target="_blank" title="<?php _e('Share this post on Google Plus', 'examiner'); ?>" onclick="window.open(this.href,'window','width=640,height=480,resizable,scrollbars,toolbar,menubar') ;return false;"  class="icon fa fa-google-plus" href="#"></a></li>
                               <li class="game-info-share-item"><a href="http://www.reddit.com/submit?url=<?php the_permalink(); ?>&amp;title=<?php echo urlencode(get_the_title()); ?>" target="_blank" title="<?php _e('Share this post on Reddit', 'examiner'); ?>" onclick="window.open(this.href,'window','width=640,height=480,resizable,scrollbars,toolbar,menubar') ;return false;" class="icon fa fa-reddit" href="#"></a></li>
                             </ul>
-                          </div><a href="<?php the_permalink();?>" class="button button-sm button-primary" href="#">Bet Now</a>
-                        </div>
-                      </div>
-                      <div class="game-info-team game-info-team-second">
-                        <figure>
-                                <?php
-                                $away_team = get_term( get_field('away_team'), 'teams' );
-                               $image = get_field('flag', $away_team);                            
-                                  if( $image ) {?>
-                                    <img src="<?php  echo $image['sizes']['hlm_sports_166x92']; ?>">                 
-                                  <?php } ?>
-
-                        </figure>
-                          <div class="game-result-team-name">  
-                          <a href="<?php echo esc_url(get_term_link($away_team, 'teams')); ?>">
-                            <?php echo $away_team->slug;?>
-                          </a>
-                          </div>
                       </div>
                     </div>
-                    <h1 class="h3"><?php echo get_the_title(); ?></h1>
+                    
                   </div>
+
+
+
                 </article>
+
 
 
 
@@ -376,7 +344,7 @@ function experiment_5(){
                   </div>
                   <div class="promo-creative-tickets">
                     <div class="promo-buttons text-nowrap">
-                      <a class="button button-primary" href="<?php the_permalink();?>">Check Game Odds</a>
+                      <a class="button button-primary" href="<?php the_permalink();?>">Check All oDds</a>
                     </div>
                   </div>
                 </div>
@@ -534,6 +502,10 @@ if ($check === 0) {?>
 ?>
 
 
+
+
+
+
                             <tr class="match">
                               <td>
                                 <?php $myDateTime = (int)get_field('start_time'); echo date ('H : i',$myDateTime); ?>
@@ -564,7 +536,7 @@ if ($check === 0) {?>
                               </td>
                               <?php } ?>
                               <td>
-                               <a href="<?php the_permalink();?>">Check Game Odds</a>
+                               <a href="<?php the_permalink();?>">Check All oDds</a>
                               </td>
                             </tr>
 
@@ -595,6 +567,7 @@ $args = array(
           'post_type' => 'match',
           'post_status' => 'publish', 
           'offset' => 1,
+          'post__not_in' => array(get_the_ID()),
         'meta_key'      => 'start_time',
         'orderby'     => 'meta_value',
         'order'       => 'ASC',

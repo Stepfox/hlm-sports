@@ -558,7 +558,7 @@ function taxonomy_sport() {
             'menu_name' => esc_html__('Sport', 'hlm-sports'),
             ),
         'rewrite' => array(
-            'slug' => 'sports',
+            'slug' => 'odds',
             'with_front' => false, 
             'hierarchical' => true 
             ),

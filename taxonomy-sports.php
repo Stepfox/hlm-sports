@@ -60,6 +60,39 @@
                               </td>
                             </tr>
 
+                            <tr class="competition-titles">
+                              <td>
+                                <?php 
+
+                                $tax_terms = wp_get_post_terms(get_the_ID(), 'sports', array('hide_empty' => '0'));
+                                 foreach ( $tax_terms as $tax_term ){ 
+                                          $sport_crawl = $tax_term->name;
+                                          $parentId = $tax_term->parent;
+                                          if(!empty($parentId)){
+                                          $parentObj = get_term_by('id', $parentId, 'sports');
+                                              $sport_crawl = $tax_term->name;
+
+                                              $main_parentId = $parentObj->parent;
+                                              if(!empty($main_parentId)){
+                                                  $main_parentObj = get_term_by('id', $main_parentId, 'sports');                                      
+                                                  $sport_crawl = $parentObj->name.' '.$tax_term->name;
+                                                  $sport_crawl_href = get_term_link($tax_term->term_id);
+
+                                              }
+
+                                          }
+                                        }     
+                                if ( $old_sport_crawl !== $sport_crawl || empty($old_sport_crawl) || $game_date != $check_game_date) {
+                                  echo '<a href="'.$sport_crawl_href.' ">';
+                                  echo $sport_crawl;
+                                  echo '</a>';
+                                  $old_sport_crawl = $sport_crawl;
+                                  $check=0;
+                                }
+
+                                 ?>
+                              </td>
+                            </tr>
 <?php 
 
 
