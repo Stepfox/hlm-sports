@@ -166,9 +166,9 @@ class Walker_Nav_Menu_with_icons extends Walker {
         // retrieve the thumbnail size of our image
 
         $icon_image = wp_get_attachment_image_src($image_id, 'hlm_sports_20x20');
-        if (!empty($icon_image)){
+       // if (!empty($icon_image)){
             $output .= '<div class="menu-icon"><img src="'.$icon_image[0].'"/></div>';
-        }
+       // }
 
         $atts = array();
         $atts['title']  = ! empty( $item->attr_title ) ? $item->attr_title : '';
