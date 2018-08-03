@@ -303,7 +303,7 @@ span.rss-date{float:left;margin:10px 0;width:100%;}
 /*Universal Widget parts*/
 a, a:visited{color:#000;}
 #main{min-height:700px;color:#000;background-position:50%;max-width:1210px;margin:22px auto;width:100%;z-index:2;}
- header{width:100%;margin-bottom:10px;}
+ header{width:100%;margin-bottom:10px;    box-shadow: 0 0 34px #000000b3;}
 .hlm-sports-widget{padding:0 5px 10px;box-sizing:border-box;}
 .widget{float:left;width:100%;border-radius:2px;overflow:hidden;box-sizing:border-box;background:#FFF;}
 .text-editor-widget-content .widget{}

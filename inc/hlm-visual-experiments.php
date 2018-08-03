@@ -4,7 +4,7 @@
 if ( ! function_exists( 'hlm_theme_styles' ) ) :
   function hlm_theme_styles() {
     wp_enqueue_style( 'experimental', get_template_directory_uri() . '/css/experimental.css', array('style', 'hlm-sports-bootstrap') );
-    wp_enqueue_style( 'hlm-sports-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.4.0' );
+    wp_enqueue_style( 'hlm-sports-font-awesome', get_template_directory_uri() . '/css/font-awesome.css', array());
     wp_enqueue_style( 'hlm-sports-bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array() );
   }
 endif;
