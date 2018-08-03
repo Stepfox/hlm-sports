@@ -8,6 +8,13 @@ Text Domain: hlm-sports
 */
 
 .odds-latest-news .blog-category{background: #FFF;padding:0 10px 10px;}
+#nav-wrapper.upmenu {
+    position: absolute;
+    margin-top: -50px;
+    z-index: -1;
+    box-shadow: 0 0 34px transparent;
+
+}
 #dropDown option:first-letter{text-transform: uppercase;}
 .matches-table{}
 .post-content .matches-table tr, .post-content .matches-table td{padding:0; background: #FFF;color:#000; }
@@ -641,7 +648,7 @@ nav ul > li a:hover{color:#FFF;}
  .big-logo img{width:240px;height:50px;max-width:240px;}
  /*Top Navigation--------------------------------------*/
 .top-navigation-wrap{width:100%;margin:0 auto;max-width:1200px;}
-.top-navigation{width:100%;background:#2f2f2f;height:50px;}
+.top-navigation{width:100%;background:#2f2f2f;height:50px;z-index: 99;}
 .top-menu{float:left;width:calc(100% - 250px);position:relative;}
 .top-menu ul.sub-menu{min-width: 180px;}
 .top-menu ul li{float:left;position:relative;}
@@ -669,7 +676,7 @@ nav ul > li a:hover{color:#FFF;}
 .top-menu .menu-item{line-height:normal;}
 .top-add-menu{color:#FFF;float:left;width:100%;text-align:center;}
 /*Main Navigation--------------------------------------*/
-#nav-wrapper{width:100%;background:#358d53;}
+#nav-wrapper{width:100%;background:#358d53;transition:all 0.15s;z-index: -1;    position: absolute;box-shadow: 0 0 34px #000000b3;}
 #navigation{width:100%;margin:0 auto;max-width:1200px;height:50px;position:relative;}
 #main-nav{width:100%;float:left;}
 #main-nav ul li{float:left;border-left:1px solid rgba(0, 0, 0, 0.2);transition:all 0.3s;}

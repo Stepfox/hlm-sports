@@ -13,7 +13,7 @@
             <h1>
               <?php  $term = get_queried_object(); echo $term->name;?>
             </h1>
-          
+          <?php echo term_description(); ?>          
           <?php 
         
             $image = get_field('flag', $term);                            
@@ -48,61 +48,11 @@
       if ( have_posts() ) :
         while ( have_posts() ) : the_post();
 
-                          $myDateTime = (int)get_field('start_time');
-                          $game_date = (string)date("d Y",$myDateTime);
-                          $check_game_date = (string)date("d Y",$same_day_check);                        
-                          if ( $game_date != $check_game_date ){
-                          
-             ?>               
-                            <tr>
-                              <td class="match-date" colspan="6">
-                                <?php echo date ('F d, Y',$myDateTime); ?>
-                              </td>
-                            </tr>
-
-                            <tr class="competition-titles">
-                              <td>
-                                <?php 
-
-                                $tax_terms = wp_get_post_terms(get_the_ID(), 'sports', array('hide_empty' => '0'));
-                                 foreach ( $tax_terms as $tax_term ){ 
-                                          $sport_crawl = $tax_term->name;
-                                          $parentId = $tax_term->parent;
-                                          if(!empty($parentId)){
-                                          $parentObj = get_term_by('id', $parentId, 'sports');
-                                              $sport_crawl = $tax_term->name;
-
-                                              $main_parentId = $parentObj->parent;
-                                              if(!empty($main_parentId)){
-                                                  $main_parentObj = get_term_by('id', $main_parentId, 'sports');                                      
-                                                  $sport_crawl = $parentObj->name.' '.$tax_term->name;
-                                                  $sport_crawl_href = get_term_link($tax_term->term_id);
-
-                                              }
-
-                                          }
-                                        }     
-                                if ( $old_sport_crawl !== $sport_crawl || empty($old_sport_crawl) || $game_date != $check_game_date) {
-                                  echo '<a href="'.$sport_crawl_href.' ">';
-                                  echo $sport_crawl;
-                                  echo '</a>';
-                                  $old_sport_crawl = $sport_crawl;
-                                  $check=0;
-                                }
-
-                                 ?>
-                              </td>
-                            </tr>
-<?php 
-
-
-
-      $same_day_check =  $myDateTime;
-                       }
                        
-
-            experiment_7($check); 
+            $myDateTime = (int)get_field('start_time');
+            experiment_7($check, $same_day_check); 
             $check++;
+            $same_day_check =  $myDateTime;
             ?>
 
 
@@ -193,16 +143,6 @@
     </li>
     <?php endwhile; ?>
   </ul>
-
-  <?php if($navigation) { ?>
-    <div class="pagination pagination-load-more <?php if($auto_load) {echo esc_attr('auto-load');} ?>">
-      <?php 
-      $loadmoreword = get_option('exm1_word_load_more');
-      next_posts_link(esc_html($loadmoreword), $exm1_posts->max_num_pages);
-      wp_reset_postdata();  ?>
-    </div>
-    <!--pagination-->
-  <?php } ?>
 
 </div>
 <!--blog-category-->

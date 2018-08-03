@@ -51,14 +51,14 @@ $(window).scroll(function(event){
    if (st > lastScrollTop){
        // downscroll codeconso
 
-       $('#nav-wrapper').slideUp(100);
-       $('.one-part.post-page-area .hlm-sports-widget:last-child').addClass('upmenu');
+
+       $('.one-part.post-page-area .hlm-sports-widget:last-child, #nav-wrapper').addClass('upmenu');
 
    } else {
       // upscroll code
 
-       $('#nav-wrapper').slideDown(100);
-       $('.one-part.post-page-area .hlm-sports-widget:last-child').removeClass('upmenu');
+
+       $('.one-part.post-page-area .hlm-sports-widget:last-child, #nav-wrapper').removeClass('upmenu');
 
    }
    lastScrollTop = st;
