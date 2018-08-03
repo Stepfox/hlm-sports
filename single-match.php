@@ -112,7 +112,7 @@ echo '<tr><th>Betting Company</th>';
             <a href="<?php echo the_field( 'default_tracker'); ?>" target="_blank">
             <?php $image = get_field('logo_136x44');                            
             if( $image ) {?>
-              <img src="<?php  echo $image['sizes']['hlm_sports_136x44']; ?>" alt="<?php echo $photo['alt']; ?>" >                 
+              <img src="<?php  echo $image['sizes']['hlm_sports_136x44']; ?>" >                 
             <?php } ?>  
 
             </a>
@@ -123,7 +123,7 @@ echo '<tr><th>Betting Company</th>';
 
 
 
-
+if(is_array($key['odds_lists'])){
 
           foreach($key['odds_lists'] as $odds_lists){
             if(!empty($odds_lists) || $odds_lists != NULL || $odds_lists != ""){
@@ -175,7 +175,7 @@ echo '<tr><th>Betting Company</th>';
               // echo "<pre>";
               // print_r($odds_lists['odd_list'][0]);
               // echo "</pre>";
-
+            }
 
 
             }
@@ -226,7 +226,55 @@ experiment_8();
   <div class="one-part post-page-area">      
       <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Post Sidebar')): endif; ?>
   </div>
+  <div class="four-parts post-page-area hlm-sports-widget odds-latest-news">
 
+    <div class="widget-title">
+      <h2>
+         Latest News
+      </h2>
+    </div>
+
+<div class="blog-category">
+  <ul>
+    <?php 
+    
+
+      $exm1_posts = new WP_Query(array( 'posts_per_page' => '4'));
+
+     while ( $exm1_posts->have_posts()) : $exm1_posts->the_post(); ?>
+    <li <?php post_class((is_sticky()?'sticky':'')); ?>>    
+      <div class="blog-post-image">
+        <?php if (  (function_exists('has_post_thumbnail')) && (has_post_thumbnail())  ) { ?>
+        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+        <?php the_post_thumbnail('small-blog'); ?>
+        </a>
+        <?php } ?>
+      </div>
+      <!--blog-post-image-->
+
+      <div class="category-icon">
+        <?php $category = get_the_category(); if($category[0]){echo '<a href="'.esc_url(get_category_link($category[0]->term_id )).'" title="'.esc_attr($category[0]->cat_name).'">'.esc_html($category[0]->cat_name).'</a>';} ?>
+      </div>
+      <!--featured-category-->
+
+      <div class="blog-post-title-box">
+        <div class="blog-post-title">
+          <h2>
+            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+            <?php the_title(); ?>
+            </a>
+          </h2>
+        </div>
+        <!--blog-post-title-->
+      </div>
+      <!--blog-post-title-box-->
+    </li>
+    <?php endwhile; ?>
+  </ul>
+
+</div>
+<!--blog-category-->
+</div>
 
 </main>
 <?php get_footer(); ?>
