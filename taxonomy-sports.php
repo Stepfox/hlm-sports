@@ -119,27 +119,6 @@
         <!--blog-post-title-->
       </div>
       <!--blog-post-title-box-->
-
-      <div class="blog-post-date-author">
-
-        <div class="blog-post-author">
-          <?php the_author_posts_link(); ?>
-        </div>
-        <!--blog-post-author-->
-
-
-        <div class="blog-post-date">
-          <?php echo esc_html(get_the_date()); ?>
-        </div>
-        <!--blog-post-date-->
-
-      </div>
-      <!--blog-post-date-author-->
-
-      <div class="blog-post-content">
-        <?php echo nl2br(excerpt(25)); ?>
-      </div>
-      <!--blog-post-content-->
     </li>
     <?php endwhile; ?>
   </ul>
