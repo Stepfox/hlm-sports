@@ -488,7 +488,7 @@ $now_date = current_time('timestamp');
         $query->set('meta_key', 'start_time');
         $query->set('orderby', 'meta_value');
         $query->set('order', 'ASC');
-		$query->set('posts_per_page', '50');
+		$query->set('posts_per_page', '20');
 
 		$query->set('meta_query', array(
 						array('key' => 'start_time',
