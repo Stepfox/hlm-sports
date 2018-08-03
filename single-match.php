@@ -55,7 +55,7 @@
 $test = get_post_meta( get_the_ID(), 'lice_za_kontakt', true );
 
 $name_of_the_odds_table = 'winner';
-
+if(!empty($test)){
     echo '<div class="select"><select id="dropDown">';
 
           foreach ($test as $key){
@@ -186,7 +186,11 @@ echo '<tr><th>Betting Company</th>';
 }
 //}
 
+}else{
 
+  echo '<article class="game-result"><div class="h4">The Bookmakers Havent Released The odds For this Game. Visit Us Later.</div></article>';
+
+}
 
     // echo "<pre>";
     // print_r($test[0]['name_of_the_table']);
@@ -197,11 +201,7 @@ echo '<tr><th>Betting Company</th>';
 ?>
 
 <div class="col-sm-12 widget">
-    <div class="widget-title">
-      <h2>
-         Upcoming Games
-      </h2>
-    </div>
+
 <?php 
 
 $home_team = get_term( get_field('home_team', get_the_ID() ), 'teams' );

@@ -445,6 +445,8 @@ $all_odds_array = get_post_meta( get_the_ID(), 'lice_za_kontakt', true );
 
 
 $name_of_the_odds_table = 'winner';
+
+if (!empty($all_odds_array)) {
 foreach ($all_odds_array as $key){
 if($key['name_of_the_table'] == $name_of_the_odds_table ){
 if(!empty($key['odds_lists']) || $key['odds_lists'] != NULL || $key['odds_lists'] != ""){
@@ -455,30 +457,36 @@ if(!empty($key['odds_lists'][0]['odd_list'])){array_shift($key['odds_lists'][0][
 if(!empty($key['odds_lists'][1]['odd_list'])){array_shift($key['odds_lists'][1]['odd_list']);}
 if(!empty($key['odds_lists'][2]['odd_list'])){array_shift($key['odds_lists'][2]['odd_list']);}
 
-
+// if(!empty($bookmaker_crawl_order)){$bookmaker_crawl_order = array();};
 foreach ($bookmaker_crawl_order as $yee) {
-  $output_odd1[] = $key['odds_lists'][0]['odd_list'][$yee];
-  $output_odd2[] = $key['odds_lists'][1]['odd_list'][$yee];
-  $output_odd3[] = $key['odds_lists'][2]['odd_list'][$yee];
+  $yee = (int)$yee;
+  if (!empty($key['odds_lists'][0]['odd_list'][$yee])){
+    $output_odd1[] = $key['odds_lists'][0]['odd_list'][$yee];
+  }
+  if (!empty($key['odds_lists'][0]['odd_list'][$yee])){
+    $output_odd2[] = $key['odds_lists'][1]['odd_list'][$yee];
+  }
+  if (!empty($key['odds_lists'][0]['odd_list'][$yee])){
+    $output_odd3[] = $key['odds_lists'][2]['odd_list'][$yee];
+  }
+}
+
+if(!empty($output_odd1)){
+  $odd_1 =  max(array_values($output_odd1));
+}
+if(!empty($output_odd2)){
+  $odd_2 =  max(array_values($output_odd2));
+}
+if(!empty($output_odd3)){
+  $odd_3 =  max(array_values($output_odd3));
 }
 
 
 
-$odd_1 =  max(array_values($output_odd1));
-
-
-$odd_2 =  max(array_values($output_odd2));
-
-
-$odd_3 =  max(array_values($output_odd3));
-
-
-
-
 }
 }
 }
-
+}
 if ($check === 0) {?>
 
 
@@ -551,14 +559,7 @@ add_shortcode('experiment_7','experiment_7');
 
 function experiment_8(){
 
-        ?>
 
-                        <table class="matches-table">
-                          <tbody>
-
-
-
-        <?php
 $home_team = get_term( get_field('home_team', get_the_ID() ), 'teams' );
 $away_team = get_term( get_field('away_team', get_the_ID()), 'teams' );
 
@@ -579,13 +580,31 @@ $args = array(
                  )
               )
       );
+ $matches_query = new WP_Query($args);
+ 
+if($matches_query->have_posts()){
+
+        ?>
+    <div class="widget-title">
+      <h2>
+         Upcoming Games
+      </h2>
+    </div>
+<?php } ?>
+                        <table class="matches-table">
+                          <tbody>
+
+
+
+        <?php
+
 
 
 
 
         $same_day_check = '414444444444444';
         $check=0;
-                $matches_query = new WP_Query($args);
+               
                 while($matches_query->have_posts()) : $matches_query->the_post();
 
                           $myDateTime = (int)get_field('start_time');
