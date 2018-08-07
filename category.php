@@ -62,10 +62,16 @@
     ?>
 	</ul>
 
-
-
-
   </div>
+<?php
+if(!empty(category_description())){
+?>
+ <div class="four-parts hlm-sports-widget">
+ 	<div class="post-content widget">
+<?php echo category_description(); ?>
+</div>
+</div>
+<?php } ?>
 
   <div class="three-parts post-page-area hlm-sports-widget">
         <div class="post-content widget blog-post">
