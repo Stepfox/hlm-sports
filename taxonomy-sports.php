@@ -10,9 +10,6 @@
         <div class="post-content widget">
 
           <div class="post-title">
-            <h1>
-              <?php  $term = get_queried_object(); echo $term->name;?>
-            </h1>
           <?php echo term_description(); ?>          
           <?php 
         

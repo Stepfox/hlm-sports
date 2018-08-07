@@ -46,28 +46,11 @@
       if ( have_posts() ) :
         while ( have_posts() ) : the_post();
 
-                          $myDateTime = (int)get_field('start_time');
-                          $game_date = (string)date("d Y",$myDateTime);
-                          $check_game_date = (string)date("d Y",$same_day_check);                        
-                          if ( $game_date != $check_game_date ){
-                          
-             ?>               
-                            <tr>
-                              <td class="match-date" colspan="6">
-                                <?php echo date ('F d, Y',$myDateTime); ?>
-                              </td>
-                            </tr>
-
-<?php 
-
-
-
-      $same_day_check =  $myDateTime;
-                       }
                        
-
-            experiment_7($check); 
+            $myDateTime = (int)get_field('start_time');
+            experiment_7($check, $same_day_check); 
             $check++;
+            $same_day_check =  $myDateTime;
             ?>
 
 
