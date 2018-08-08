@@ -1177,12 +1177,11 @@ widget effects-------------------------------------------------------------
         #secondary .one-part{width:50%;}
         .fullwidth-post-image .post{  float: none;  position: static;  top: auto;  background: #FFF;  box-shadow: 0 0 0 0 #FFF;margin-bottom: 0;}
         .home-widget.fixed-widget{position:relative;float:left;top:0 !important;}
-        .footer-wrap{margin:20px auto;}
-        .footer-logo{width:100%;}
-        .footer-logo img{display: table;  margin: 0 auto;}
+
+
         #bottom-menu{width:100%;}
-        #footer .content-social{width:100%;text-align: center;}
-        #footer .content-social ul li{float:none;}
+
+
         #main-nav .menu-links.inside-menu{width:25%;}
         .sub-menu-wrapper .five-menu{width:75%;}
         .sub-menu-wrapper .five-menu li{width:33%;}
@@ -1281,13 +1280,12 @@ widget effects-------------------------------------------------------------
 
         .fullwidth-post-image .post{  float: none;  position: static;  top: auto;  background: #FFF;  box-shadow: 0 0 0 0 #FFF;}
         .fullwidth-post-image .trending-posts .post{float:left;}
-        .footer-wrap{margin:20px auto;}
+
         .footer-logo{width:100%;}
         .footer-logo img{display: table;  margin: 0 auto;}
-        #footer .content-social{width:100%;text-align: center;}
-        #footer .content-social ul li{float:none;}
+
         #bottom-menu{width:100%;}
-        #footer .content-social{width:100%;}
+
         .ticker-box{display:none;}
         .category-tv-icon{display: none;}
         .share-tv{height:auto;}

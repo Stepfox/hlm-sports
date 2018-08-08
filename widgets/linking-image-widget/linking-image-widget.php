@@ -199,13 +199,4 @@ class linking_image_widget_hlm_sports extends WP_Widget {
 }
 
 
-function linking_image_widget_hlm_sports_shortcode_scripts() {
-    global $post;
-    if( has_shortcode( $post->post_content, 'linking_image_widget_hlm_sports_shortcode') ) {
-
-    wp_enqueue_style('linking-image-front', get_stylesheet_directory_uri() . '/widgets/linking-image/linking-image-front.css'); 
-    }
-}
-add_action( 'wp_enqueue_scripts', 'linking_image_widget_hlm_sports_shortcode_scripts');
-
 ?>

@@ -1109,6 +1109,10 @@ display:none;
  .top-menu ul, #main-nav ul{width:100%;-webkit-overflow-scrolling:touch;overflow-x:scroll;overflow-y:visible;white-space:nowrap;}
  .top-menu ul > li:hover ul.sub-menu{white-space:normal;position:fixed;left:240px;}
  #main-nav ul > li:hover ul.sub-menu{position:fixed;left:0;}
+ #bottom-menu ul {
+    text-align: center;
+}
+.footer-logo{padding-left:20px;}
 }
 @media screen and (max-width:900px){.top-page-area .widget-title h2 span{width:100%;}
  .looks1 .top-5-logo{float:right;overflow:hidden;border-radius:3px;max-width:90px;}
@@ -1129,8 +1133,34 @@ display:none;
 /* top 5 widget */
 .looks1.top-5-reviews li{width:25%;margin-bottom:10px; margin-bottom: 10px;    margin-left: 0;    padding-left: 10px;}
 .looks1.top-5-reviews li:nth-child(5){display:none;}
+#bottom-menu ul {
+    text-align: center;
+}
 }
 @media screen and (max-width:700px){
+
+ .looks5 .big-looks5 .top-5-logo-wrap {
+    overflow: hidden;
+    width: 220px;
+    height: 114px;
+    background: #2f2f2f;
+    padding-right: 20px;
+}   
+.big-looks5 .looks-5-content-wrap.bonus-with-check{display:none;}
+
+.looks5 .biglooks-5-title{    font-size: 20px;
+    height: 50px;
+    overflow: hidden;
+    padding: 0;
+    padding-left: 50px;
+    width: 100%;
+    box-sizing: content-box;
+    left: -50px;}
+
+#footer .content-social ul li{float:right;}
+
+
+
 .payment-section .widget .bonus-with-check{width:33%;}
 .payment-section .widget{text-align: center;}
 .single-bookmaker .payment-icon{    max-width: 33%; width: 33%; box-sizing: border-box; text-align: left; padding-left: 30px;}
@@ -1209,8 +1239,10 @@ body.custom-background{background-image:none;}
 .looks-5-content-wrap:nth-child(3){width:100%;}
 .looks5 .big-looks5 .looks-5-content-wrap.bonus-with-check{display:none;}
 .looks5 .top-5-tooltip{display:none;}
-.widget .looks5 .big-looks5 .looks-5-content-wrap, .widget .looks5 .big-looks5 .top-5-review-content-wrap{height:128px;max-height:128px;}
-.looks5 .big-looks5 .top-5-review-bet-now{margin-top:80px;}
+.widget .looks5 .big-looks5 .looks-5-content-wrap, .widget .looks5 .big-looks5 .top-5-review-content-wrap{height:58px;max-height:58px;}
+.looks5 .big-looks5 .top-5-review-bet-now{}
+.looks5 .big-looks5 .top-5-review-content-wrap a{padding:0;     padding-right: 10px;}
+.looks5 .top-5-review-content-wrap a{padding:0;}
 .widget .landing4 .payment-icon-bookmakers{font-size:14px;text-align:center;line-height:normal;}
  .widget .landing4 .payment-icon-bookmakers span{margin-top:10px;float:left;width:100%;}
 .widget .landing4 .landing-widget-review-bet-now{width:100%;text-align:center;margin-bottom:10px;}
