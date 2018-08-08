@@ -135,7 +135,7 @@ $teams = wp_set_object_terms( $post_ID, array($html->find('.match-on p.fixtures-
 
 $sports_tax = explode("/", $sport);
 
-wp_set_object_terms( $post_ID, $sports_tax, 'sports', false );
+wp_set_object_terms( $post_ID, end($sports_tax), 'sports', false );
 
 					update_field( 'home_team', $teams[0], $post_ID );
 					update_field( 'away_team', $teams[1], $post_ID );
