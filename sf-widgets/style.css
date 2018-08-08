@@ -1203,7 +1203,6 @@ widget effects-------------------------------------------------------------
     }
     @media screen and (max-width: 850px){
         .img-featured-text{display:none;}
-        #main-nav{  width: calc(100% - 154px);}
         .four-parts .huge .img-featured-title h2{font-size:25px;line-height:27px;}
         .menu-link{padding:0 10px;font-size:14px !important;}
         .combination-title-subtitle, .combination-title-right-text{display:none;}

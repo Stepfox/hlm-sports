@@ -7,6 +7,15 @@ Tags: one-column, two-columns, three-columns, four-columns, custom-colors, custo
 Text Domain: hlm-sports
 */
 
+.nav-odds-title{
+position: absolute;
+    left: 0;
+    line-height: 50px;
+    font-size: 15px;
+    color: #FFF;
+        font-weight: 800;
+    text-shadow: 2px 2px 0 #27613a;
+}
 .odds-latest-news .blog-category{background: #FFF;padding:0 10px 10px;}
 #nav-wrapper.upmenu {
     position: absolute;
@@ -678,7 +687,7 @@ nav ul > li a:hover{color:#FFF;}
 /*Main Navigation--------------------------------------*/
 #nav-wrapper{width:100%;background:#358d53;transition:all 0.15s;z-index: -1;    position: absolute;box-shadow: 0 0 34px #000000b3;}
 #navigation{width:100%;margin:0 auto;max-width:1200px;height:50px;position:relative;}
-#main-nav{width:100%;float:left;}
+#main-nav{float:right;padding-right: 50px;}
 #main-nav ul li{float:left;border-left:1px solid rgba(0, 0, 0, 0.2);transition:all 0.3s;}
 #main-nav ul li:hover{background:#2f2f2f;}
 #main-nav ul li:last-child{border-right:1px solid rgba(0, 0, 0, 0.2);}
@@ -1093,7 +1102,10 @@ Top 5 Reviews Widget------------------------------------------------------------
 @media screen and (max-width:1200px) and (min-width:700px){.biglooks-5-title{white-space:nowrap;}
 #main > div.four-parts.hlm-sports-widget.top-page-area > div.widget.pros-and-cons > div.three-parts.hlm-sports-widget > img, .page-with-featured-image .top-page-area img{width:auto;float:right;min-height:100%;max-width:200%;}
  .top-menu .menu-item, #main-nav ul li{display:inline-block;line-height:normal;float:none;white-space:normal;}
- #main-nav{width:100%;}
+ #main-nav{width:100%;float:left;padding:0;}
+ .nav-odds-title{
+display:none;
+}
  .top-menu ul, #main-nav ul{width:100%;-webkit-overflow-scrolling:touch;overflow-x:scroll;overflow-y:visible;white-space:nowrap;}
  .top-menu ul > li:hover ul.sub-menu{white-space:normal;position:fixed;left:240px;}
  #main-nav ul > li:hover ul.sub-menu{position:fixed;left:0;}

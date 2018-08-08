@@ -59,10 +59,11 @@
 	<!--top-navigation-->
 
 
-
 	<div id="nav-wrapper">
 		<div id="navigation">
-
+				<div class="nav-odds-title">
+					Betting Odds:
+				</div>
 			<nav id="main-nav">	
 
 				<?php if ( has_nav_menu( 'main-menu' ) ) {wp_nav_menu(array(
