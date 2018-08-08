@@ -133,9 +133,9 @@ function crawl_matches($sport){
 
 $teams = wp_set_object_terms( $post_ID, array($html->find('.match-on p.fixtures-bet-name', $i)->plaintext,  $html->find('.match-on p.fixtures-bet-name', $i + 1)->plaintext), 'teams', false );
 
+$sports_tax = explode("/", $sport);
 
-
-wp_set_object_terms( $post_ID, $sport, 'sports', false );
+wp_set_object_terms( $post_ID, $sports_tax, 'sports', false );
 
 					update_field( 'home_team', $teams[0], $post_ID );
 					update_field( 'away_team', $teams[1], $post_ID );
