@@ -463,10 +463,10 @@ foreach ($bookmaker_crawl_order as $yee) {
   if (!empty($key['odds_lists'][0]['odd_list'][$yee])){
     $output_odd1[] = $key['odds_lists'][0]['odd_list'][$yee];
   }
-  if (!empty($key['odds_lists'][0]['odd_list'][$yee])){
+  if (!empty($key['odds_lists'][1]['odd_list'][$yee])){
     $output_odd2[] = $key['odds_lists'][1]['odd_list'][$yee];
   }
-  if (!empty($key['odds_lists'][0]['odd_list'][$yee])){
+  if (!empty($key['odds_lists'][2]['odd_list'][$yee])){
     $output_odd3[] = $key['odds_lists'][2]['odd_list'][$yee];
   }
 }
