@@ -141,7 +141,8 @@ body .blog-post-title{margin-bottom:0;}
     color: #FFF;
 }
 
-body .all-odds{display: none;margin-bottom:20px;}
+body .single-match .all-odds{display: none;margin-bottom:20px;}
+body .single-match .all-odds{display: none;margin-bottom:20px;}
 body #winner.all-odds{display: block;}
 
 
