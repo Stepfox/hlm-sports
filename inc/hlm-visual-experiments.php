@@ -660,45 +660,24 @@ if($matches_query->have_posts()){
                           <tbody>
 
 
-
         <?php
-
-
-
-
-
         $same_day_check = '414444444444444';
         $check=0;
-               
-                while($matches_query->have_posts()) : $matches_query->the_post();
+      
+       while($matches_query->have_posts()) : $matches_query->the_post();
 
-                          $myDateTime = (int)get_field('start_time');
-                          $game_date = (string)date("d Y",$myDateTime);
-                          $check_game_date = (string)date("d Y",$same_day_check);                        
-                          if ( $game_date != $check_game_date ){
-                          
-             ?>               
-                            <tr>
-                              <td class="match-date" colspan="6">
-                                <?php echo date ('F d, Y',$myDateTime); ?>
-                              </td>
-                            </tr>
-
-<?php 
-
-
-
-      $same_day_check =  $myDateTime;
-                       }
                        
-
-            experiment_7($check); 
+            $myDateTime = (int)get_field('start_time');
+            experiment_7($check, $same_day_check); 
             $check++;
+            $same_day_check =  $myDateTime;
             ?>
 
 
         <?php 
- endwhile; wp_reset_postdata();
+        endwhile;
+                 
+     
     ?>
 
                           </tbody>
