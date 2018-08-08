@@ -180,7 +180,7 @@ class Widget_Shortcode {
 
 		// if feasable, use sidebar's parameters
 		$widgets_map = $this->get_widgets_map();
-		if ( isset( $widgets_map[$id] ) ) {
+		if ( isset( $widgets_map[$id] ) && !empty($wp_registered_sidebars[ $widgets_map[$id] ]['id']) ) {
 			$params[0]['name'] = $wp_registered_sidebars[ $widgets_map[$id] ]['name'];
 			$params[0]['id'] = $wp_registered_sidebars[ $widgets_map[$id] ]['id'];
 			$params[0]['description'] = $wp_registered_sidebars[ $widgets_map[$id] ]['description'];
