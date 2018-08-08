@@ -196,14 +196,15 @@ function hlm_sports_form_widget_size( $widget, $return, $instance ) {
 
 
         $widget_size = isset( $instance['widget_size'] ) ? $instance['widget_size'] : '';
+        if(empty($widget_size)){$widget_size = 'one-part';}
         if (strpos($widget->id_base, 'exm') === false) {
 
         ?>
             <p class="widget-size-radio">
-			<input type="radio" name="<?php echo esc_attr($widget->get_field_name( 'widget_size' )); ?>" value="one-part" <?php checked('one-part', $instance['widget_size']); ?> class="one-part"/>
-			<input type="radio" name="<?php echo esc_attr($widget->get_field_name( 'widget_size' )); ?>" value="two-parts" <?php checked('two-parts', $instance['widget_size']); ?> class="two-parts" />
-			<input type="radio" name="<?php echo esc_attr($widget->get_field_name( 'widget_size' )); ?>" value="three-parts" <?php checked('three-parts', $instance['widget_size']); ?> class="three-parts"/>
-			<input type="radio" name="<?php echo esc_attr($widget->get_field_name( 'widget_size' )); ?>" value="four-parts" <?php checked('four-parts', $instance['widget_size']); ?> class="four-parts"/>
+			<input type="radio" name="<?php echo esc_attr($widget->get_field_name( 'widget_size' )); ?>" value="one-part" <?php checked('one-part',$widget_size); ?> class="one-part"/>
+			<input type="radio" name="<?php echo esc_attr($widget->get_field_name( 'widget_size' )); ?>" value="two-parts" <?php checked('two-parts', $widget_size); ?> class="two-parts" />
+			<input type="radio" name="<?php echo esc_attr($widget->get_field_name( 'widget_size' )); ?>" value="three-parts" <?php checked('three-parts',$widget_size); ?> class="three-parts"/>
+			<input type="radio" name="<?php echo esc_attr($widget->get_field_name( 'widget_size' )); ?>" value="four-parts" <?php checked('four-parts',$widget_size); ?> class="four-parts"/>
             </p>
         <?php
     	}

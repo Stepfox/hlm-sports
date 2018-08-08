@@ -98,7 +98,7 @@ global $post;
 $args = array( 'post_type'=> 'match' ,'numberposts' => -1);
 $posts = get_posts($args);
 foreach( $posts as $post ) : setup_postdata($post); ?>
-	<option value="<? echo $post->ID; ?>"  <?php if ($post->ID == $instance['categories']) echo 'selected="selected"'; ?>><?php the_title(); ?></option>
+	<option value="<?php echo $post->ID; ?>"  <?php if ($post->ID == $instance['categories']) echo 'selected="selected"'; ?>><?php the_title(); ?></option>
 <?php endforeach; ?>
 	</select>
 
