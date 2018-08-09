@@ -18,6 +18,9 @@
 <body <?php body_class(); ?>>
 
 
+
+
+
 <div class="parallax-background">
 	<img src="<?php echo get_template_directory_uri() . '/images/parallax-background.png'?>"/>
 </div>
@@ -51,6 +54,14 @@
 				</div>
 				<!--search-box-->	
 				<?php if ( has_nav_menu( 'top-menu' ) ) {wp_nav_menu(array('theme_location' => 'top-menu', 'depth' => 3, 'fallback_cb'     => 'wp_page_menu')); } else { echo '<span class="top-add-menu"></span>';} ?>
+			<label class="search-menu">
+			<input type="checkbox" id="search-switch" />
+			<div class="search-box">
+				<?php get_search_form(); ?>
+			</div>
+			<!--search-box-->	
+			<span class="search-menu-icon"></span>
+			</label>
 			</nav>
 			<!--top-menu-->
 		</div>
@@ -75,14 +86,6 @@
 
 			</nav>
 			<!--main-nav-->
-			<label class="search-menu">
-			<input type="checkbox" id="search-switch" />
-			<div class="search-box">
-				<?php get_search_form(); ?>
-			</div>
-			<!--search-box-->	
-			<span class="search-menu-icon"></span>
-			</label>	
 		</div>
 		<!--navigation-->
 	</div>
