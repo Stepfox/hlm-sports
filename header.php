@@ -79,7 +79,7 @@
 
 				<?php if ( has_nav_menu( 'main-menu' ) ) {wp_nav_menu(array(
 				'theme_location' => 'main-menu',
-				'depth' => 1, 
+				'depth' => 2, 
 				'fallback_cb'     => 'wp_page_menu',
 				'walker' => new Walker_Nav_Menu_with_icons()
 				));}else { echo '<span class="add-menu"></span>';} ?>
