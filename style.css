@@ -663,7 +663,7 @@ nav ul > li a:hover{color:#FFF;}
 .top-menu ul.sub-menu{min-width: 180px;}
 .top-menu ul li{float:left;position:relative;}
 .top-menu ul .sub-menu li:before{content:none;}
-.current-menu-item a{box-shadow: inset 0 3px 0 #358d53;}
+.top-menu .current-menu-item a{box-shadow: inset 0 3px 0 #358d53;}
 
 .top-menu ul li a{transition:all 0.3s;line-height:60px;font-size:14px;font-weight:400;margin:0 16px;color:#FFF;}
 .top-menu ul:hover > li:hover > a{color:#FFF;box-shadow: inset 0 3px 0 #358d53;}
