@@ -652,7 +652,7 @@ nav ul > li:hover ul.sub-menu{display:inline-table;}
 nav ul > li a:hover{color:#FFF;}
 /*Logo-------------------------------------*/
 .site-logo-wrapper{position:relative;float:left;z-index:1;}
-.site-logo-wrapper:after{top:0;left:0;background:#FFF;height:100%;content:'';position:absolute;box-shadow:5px -2px 5px #000;transform:skew(-40deg);width:100%;z-index:-1;}
+.site-logo-wrapper:after{top:0;left:0;background:#FFF;height:100%;content:'';position:absolute;transform:skew(-40deg);width:100%;z-index:-1;}
 .site-logo-wrapper:before{top:0;left:-90vw;background:#FFF;height:100%;content:'';position:absolute;width:100vw;z-index:-1;}
 .big-logo{float:left;width:250px;height:60px;padding-right:30px;box-sizing:content-box;}
  .big-logo img{width:240px;height:60px;max-width:240px;}
