@@ -637,7 +637,7 @@ a.page-numbers:hover{color:#FFF;text-decoration:underline;}
 .pagination-simple{text-align:center;margin:0 auto;float:left;width:100%;padding:50px 0;}
  #header{position:fixed;z-index:99;top:0;    box-shadow: 0 0 34px #00000040;}
 .admin-bar #header{top:32px;}
-#main{margin-top:120px;}
+#main{margin-top:80px;}
 .customize-partial-edit-shortcuts-shown #main{margin-top:135px;}
 /*navigation*/
 
