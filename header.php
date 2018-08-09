@@ -68,8 +68,8 @@
 		<!-- top-navigation-wrap -->
 	</div>
 	<!--top-navigation-->
-
-
+</header>
+<!--header-->
 	<div id="nav-wrapper">
 		<div id="navigation">
 				<div class="nav-odds-title">
@@ -79,7 +79,7 @@
 
 				<?php if ( has_nav_menu( 'main-menu' ) ) {wp_nav_menu(array(
 				'theme_location' => 'main-menu',
-				'depth' => 10, 
+				'depth' => 1, 
 				'fallback_cb'     => 'wp_page_menu',
 				'walker' => new Walker_Nav_Menu_with_icons()
 				));}else { echo '<span class="add-menu"></span>';} ?>
@@ -90,11 +90,3 @@
 		<!--navigation-->
 	</div>
 	<!--nav-wrapper-->
-</header>
-<!--header-->
-<?php if (! is_front_page()) {?>
-<div class="breadcrumb">
-
-<?php get_breadcrumb(); ?>
-	</div>
-<?php } ?>
