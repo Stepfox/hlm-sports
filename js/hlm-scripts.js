@@ -45,25 +45,7 @@ jQuery(document).ready(function($) {
 });
 
 // Header 
-var lastScrollTop = 50;
-$(window).scroll(function(event){
-   var st = $(this).scrollTop();
-   if (st > lastScrollTop){
-       // downscroll codeconso
 
-
-       $('.one-part.post-page-area .hlm-sports-widget:last-child, #nav-wrapper').addClass('upmenu');
-
-   } else {
-      // upscroll code
-
-
-       $('.one-part.post-page-area .hlm-sports-widget:last-child, #nav-wrapper').removeClass('upmenu');
-
-   }
-   lastScrollTop = st;
-
-});
 
 $(".top-menu ul li").mouseover(function(){
    $(this).find(".sub-menu").not(".sub-menu .sub-menu").stop(true, true).delay(200).slideDown(200);
