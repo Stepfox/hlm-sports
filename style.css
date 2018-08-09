@@ -700,8 +700,8 @@ nav ul > li a:hover{color:#FFF;}
     margin: 0 5px;
     border-radius: 4px;
 }
-#main-nav ul li:hover{border: 1px solid #101010;}
-#main-nav ul li:hover a{color:#101010;}
+#main-nav ul li:hover, #main-nav .current-menu-item{border: 1px solid #101010;}
+#main-nav ul li:hover a, #main-nav .current-menu-item a{color:#101010;}
 #main-nav ul li:last-child{border-right:1px solid rgba(0, 0, 0, 0.2);}
 #main-nav ul li a{display:inline-block;font-size:14px;line-height:30px;font-weight:600;padding:0 10px;color:#969696;}
 #main-nav ul li .sub-menu{background:#2f2f2f;-moz-animation:fadeInmenu .6s;-webkit-animation:fadeInmenu .6s;}
