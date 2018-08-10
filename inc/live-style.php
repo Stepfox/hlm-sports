@@ -15,7 +15,7 @@ function hlm_sports_head() {
     ?>
 
     <style type='text/css'>
-        body{font-family: 'Roboto';font-size:14px;line-height: 24px;}
+        body{font-family: Roboto,sans-serif;font-size:14px;line-height: 24px;}
    
 
 

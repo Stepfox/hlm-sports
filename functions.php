@@ -109,11 +109,7 @@ if (!class_exists('Widget_Shortcode')) {
 
 
 
-function amp_wp_yoast_glue_temp_workaround( $data ) {
-	amp_get_schemaorg_metadata();
-	return $data;
-}
-add_filter( 'amp_post_template_data', 'amp_wp_yoast_glue_temp_workaround', 9 ); // Before 10.
+
 
 
 
