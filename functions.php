@@ -11,6 +11,7 @@
 //github password makavelikl1kf484
 
 
+
 // 1. customize ACF path
 add_filter('acf/settings/path', 'my_acf_settings_path');
  
@@ -146,6 +147,7 @@ add_image_size( 'hlm_sports_232x310', 232, 310, true );
 add_image_size( 'hlm_sports_290x200', 290, 200, true );
 add_image_size( 'hlm_sports_166x92', 166, 92, true );
 add_image_size( 'hlm_sports_900x260', 900, 260, true );
+add_image_size( 'hlm_sports_900x380', 900, 380, true );
 add_image_size( 'hlm_sports_1200x260', 1200, 260, true );
 add_image_size( 'hlm_sports_196x66', 196, 66, true );
 add_image_size( 'hlm_sports_196x196', 196, 196, true );
@@ -445,7 +447,6 @@ function hlm_sports_archive_page_queries( $query ) {
 	
     if(is_category() && $query->is_main_query() && $page == 1){
 			$query->set('posts_per_page', '9');
-			$query->set('offset', '1' );	
 	}
 
     if(is_tag() && $query->is_main_query() && $page == 1){

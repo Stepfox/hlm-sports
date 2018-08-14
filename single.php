@@ -11,7 +11,7 @@
 
   <div class="four-parts top-page-area">
     <?php 
-      the_post_thumbnail('hlm_sports_900x260');
+      the_post_thumbnail('hlm_sports_900x380');
     ?>
   </div>
 

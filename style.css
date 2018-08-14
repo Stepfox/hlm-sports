@@ -7,6 +7,10 @@ Tags: one-column, two-columns, three-columns, four-columns, custom-colors, custo
 Text Domain: hlm-sports
 */
 
+
+.tax-sports .post-title{overflow: hidden;max-height: 380px;transition:all 0.4s;position: relative;}
+.tax-sports .post-title:after{    height: 100px; position: absolute; bottom: 0; content: ''; width: 120%; box-shadow: inset 0 -10px 30px #fff; z-index: 1; left: -10%;}
+
 .nav-odds-title{
 position: absolute;
     left: 0;

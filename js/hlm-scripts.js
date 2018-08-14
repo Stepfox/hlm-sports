@@ -90,8 +90,11 @@ $(".top-menu ul > li").mouseout(function(){
         $('html,body').animate({scrollTop: $(aid).offset().top - 200},'slow');
     });
 
-
-
+$('.tax-sports a.read-more').click(function(e) {
+     e.preventDefault();
+    $('.tax-sports .post-title').css('max-height', '8800px');
+    $(this).remove();
+});
 
     //fixed-sidebar-last widget
     $(window).load(function() {

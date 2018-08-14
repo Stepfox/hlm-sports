@@ -10,23 +10,12 @@
         <div class="post-content widget">
 
           <div class="post-title">
-          <?php echo term_description(); ?>          
-          <?php 
-        
-            $image = get_field('flag', $term);                            
-            if( $image ) {?>
-            <div class="team-flag">
-              <img src="<?php  echo $image['sizes']['hlm_sports_166x92']; ?>" alt="" >  
-            </div>               
-            <?php }        
-
-            $image = get_field('main_image', $term);                            
-            if( $image ) {?>
-              <img src="<?php  echo $image['sizes']['hlm_sports_900x260']; ?>" alt="" >                 
-            <?php } ?>
-            
+          <?php echo term_description(); ?> 
+             
           </div>
-
+            <a class="read-more" href="#">
+              read more
+            </a>  
     <div class="widget-title">
       <h2>
          Upcoming Games
