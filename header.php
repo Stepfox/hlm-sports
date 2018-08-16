@@ -12,9 +12,11 @@
 
 <?php $scripts = get_field('scripts', 'option'); eval( $scripts );  ?>
 <?php 
-if ($_SERVER['HTTP_HOST'] != 'www.winningsportsbets.co.uk' || $_SERVER['HTTP_HOST'] != 'winningsportsbets.co.uk'){
+if ($_SERVER['HTTP_HOST'] == 'www.winningsportsbets.co.uk' || $_SERVER['HTTP_HOST'] == 'winningsportsbets.co.uk'){
 
-	echo '<meta name="robots" content="noindex deez">';
+	
+}else{
+	echo '<meta name="robots" content="noindex">';
 }
 
 ?>
