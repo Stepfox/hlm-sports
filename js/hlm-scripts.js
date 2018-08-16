@@ -92,9 +92,19 @@ $(".top-menu ul > li").mouseout(function(){
 
 $('.tax-sports a.read-more').click(function(e) {
      e.preventDefault();
-    $('.tax-sports .post-title').css('max-height', '8800px');
-    $(this).remove();
+    $('.tax-sports .post-title').animate({ 'max-height': $('.tax-sports .post-title')[0].scrollHeight }, 300);
+    $('.tax-sports .post-title.active').animate({ 'max-height': '380'}, 300);
+    $('.tax-sports .post-title').toggleClass('active');
 });
+
+
+
+
+
+
+
+
+
 
     //fixed-sidebar-last widget
     $(window).load(function() {
@@ -102,21 +112,28 @@ $('.tax-sports a.read-more').click(function(e) {
             var widgetaboveHeight = $('.one-part.post-page-area .hlm-sports-widget:last-child ').offset().top - ($('#wpadminbar').height() - 25);
 
             var primaryheight = $('.three-parts.post-page-area').height();
-            var secondaryheight = 0;
-            $('.one-part.post-page-area .hlm-sports-widget').each(function() {
-                secondaryheight = $(this).height();
-            });
+            var secondaryheight = $('.one-part.post-page-area .hlm-sports-widget').height();
+
             //fixed widget in .one-part.post-page-area area           
             $(window).scroll(function() {       
                 if (primaryheight - secondaryheight < 0 ) {
                     $('.one-part.post-page-area .fixed-widget').css('position', 'relative');
                     $('.one-part.post-page-area .hlm-sports-widget:last-child ').css('top', '0');
                 } else {
-                    if ($(window).scrollTop() > widgetaboveHeight - 125 ) {
+                    if ($(window).scrollTop() > widgetaboveHeight - 125 && primaryheight > secondaryheight) {
+
                         $('.one-part.post-page-area .hlm-sports-widget:last-child').addClass('fixed-widget');
                     } else {
                         $('.one-part.post-page-area .hlm-sports-widget:last-child ').removeClass('fixed-widget');
                     }
+
+                        if ($('#footer').offset().top - ($(window).scrollTop() +  $('.one-part.post-page-area .hlm-sports-widget:last-child').height() + $('.odds-latest-news').height() + $('#header').height() + 50) < 0) {
+                            $('.one-part.post-page-area .hlm-sports-widget:last-child ').css('top', $('#footer').offset().top - ($(window).scrollTop() + $('.odds-latest-news').height() + $('.one-part.post-page-area .hlm-sports-widget:last-child').height() + 50));
+                        } else {
+                            $('.one-part.post-page-area .hlm-sports-widget:last-child ').css('top', '')
+                        }
+
+
                 }
             });
 
