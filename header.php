@@ -16,7 +16,7 @@ if ($_SERVER['HTTP_HOST'] == 'www.winningsportsbets.co.uk' || $_SERVER['HTTP_HOS
 
 	
 }else{
-	echo '<meta name="robots" content="noindex">';
+	echo '<meta name="robots" content="noindex, nofollow">';
 }
 
 ?>
