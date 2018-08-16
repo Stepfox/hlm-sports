@@ -32,7 +32,7 @@
 
       </div>
 
-<div class="four-parts">
+<div class="four-parts widget">
 
     <div class="widget-title">
       <h2>
@@ -42,7 +42,7 @@
 
 <?php 
           $authordesc = get_the_author_meta( 'description' );
-         /// if ( ! empty ( $authordesc ) ){ ?>
+          if ( ! empty ( $authordesc ) ){ ?>
         <div id="author-info">
           <div id="author-image">
             <?php echo wp_kses_post(get_avatar( get_the_author_meta('email'), '96' )); ?>
@@ -60,7 +60,7 @@
           <!--author-desc-->
         </div>
         <!--author-info-->
-        <?php///}
+        <?php }
 
 ?>
 </div>
