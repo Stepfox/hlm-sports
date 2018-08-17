@@ -92,7 +92,7 @@ $(".top-menu ul > li").mouseout(function(){
 
 $('.tax-sports a.read-more').click(function(e) {
      e.preventDefault();
-    $('.tax-sports a.read-more').text($('.category a.read-more').text() == 'read less' ? 'read more' : 'read less');
+    $('.tax-sports a.read-more').text($('.tax-sports a.read-more').text() == '[show less]'?'[show more]':'[show less]');
     $('.tax-sports .post-title').animate({ 'max-height': $('.tax-sports .post-title')[0].scrollHeight }, 300);
     $('.tax-sports .post-title.active').animate({ 'max-height': '380'}, 300);
     $('.tax-sports .post-title').toggleClass('active');
@@ -100,7 +100,7 @@ $('.tax-sports a.read-more').click(function(e) {
 
 $('.category a.read-more').click(function(e) {
      e.preventDefault();
-    $('.category a.read-more').text($('.category a.read-more').text() == 'read less' ? 'read more' : 'read less');
+    $('.category a.read-more').text($('.category a.read-more').text() == '[show less]'?'[show more]':'[show less]');
     $('.category .post-title').animate({ 'max-height': $('.category .post-title')[0].scrollHeight }, 300);
     $('.category .post-title.active').animate({ 'max-height': '380'}, 300);
     $('.category .post-title').toggleClass('active');

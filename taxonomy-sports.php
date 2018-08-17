@@ -14,7 +14,7 @@
              
           </div>
             <a class="read-more" href="#">
-              read more
+              [show more]
             </a>  
     <div class="widget-title">
       <h2>
