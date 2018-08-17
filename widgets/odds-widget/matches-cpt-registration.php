@@ -204,30 +204,36 @@ set_time_limit(3600);
 
 
         echo '<h2>Crawl Matches</h2>';
-             $args = array(
-            'post_type' => 'match',
-            'posts_per_page' => -1, 
-            'post_status' => 'publish',
-            'meta_key'          => 'last_crawled',
-            'orderby'           => 'meta_value',
-            'order'             => 'ASC',
 
-        );
-        $lunar_magazine_posts = new WP_Query($args);
-        while($lunar_magazine_posts->have_posts()) : $lunar_magazine_posts->the_post();
-            echo get_post_meta( get_the_ID(), 'last_crawled', true );
-            echo get_the_title();
-        endwhile;  
 
 ?>
             <form method="post">                    
                 <input  type="submit" class="button-secondary" name="crawl_matches" value="<?php echo esc_attr('Crawl All Matches'); ?>"/>
             
-              <select name="sport_select">
-                    <?php
-                    echo '<option value="crawl_all">Crawl All Games</option>'; 
-                       $tax_terms = get_terms('sports', array('hide_empty' => '0'));      
-                       foreach ( $tax_terms as $tax_term ){ 
+
+                <?php
+                $dropdown_args = array(
+                    'hide_empty'       => 0,
+                    'hide_if_empty'    => false,
+                    'taxonomy'         => 'sports',
+                    'name'             => 'sport_select',
+                    'orderby'          => 'name',
+                    'hierarchical'     => true,
+                    'show_option_none' => __( 'crawl all games' ),
+                );
+
+                /** This filter is documented in wp-admin/edit-tags.php */
+                $dropdown_args = apply_filters( 'taxonomy_parent_dropdown_args', $dropdown_args, 'sports', 'edit' );
+                wp_dropdown_categories( $dropdown_args ); ?>
+    </form>
+
+<?php               
+
+if (isset($_POST) && !empty($_POST['crawl_matches'])){
+
+    if(isset($_POST['sport_select']) && !empty($_POST['sport_select']) && $_POST['sport_select'] != 'crawl_all'){
+
+                                $tax_term = get_term_by('id', $_POST['sport_select'], 'sports');
                                 $sport_crawl = $tax_term->name;
                                 $parentId = $tax_term->parent;
                                 if(!empty($parentId)){
@@ -236,26 +242,14 @@ set_time_limit(3600);
 
                                     $main_parentId = $parentObj->parent;
                                     if(!empty($main_parentId)){
-                                        $main_parentObj = get_term_by('id', $main_parentId, 'sports');                                      
+                                        $main_parentObj = get_term_by('id', $main_parentId, 'sports');
                                         $sport_crawl = $main_parentObj->name.'/'.$parentObj->name.'/'.$tax_term->name;
                                     }
 
-                                }
+                                }       
 
 
-
-                          echo '<option value="'.strtolower($sport_crawl).'">'.$sport_crawl.'</option>';   
-                       }
-                    ?>
-                </select> 
-    </form>
-
-<?php               
-
-if (isset($_POST) && !empty($_POST['crawl_matches'])){
-
-    if(isset($_POST['sport_select']) && !empty($_POST['sport_select']) && $_POST['sport_select'] != 'crawl_all'){
-        $sport = $_POST['sport_select'];
+        $sport = strtolower($sport_crawl);
         crawl_matches($sport);
     }elseif($_POST['sport_select'] === 'crawl_all' && !empty($_POST['sport_select'])){
         cron_crawl_matches();
@@ -419,30 +413,20 @@ if (isset($_POST) && !empty($_POST['crawl_odds']) ){
 ?>
             <form method="post">                    
                 <input  type="submit" class="button-secondary" name="remove_all_matches" value="<?php echo esc_attr('remove past matches'); ?>"/>
-              <select name="sport_select_remove">
-                    <?php
-                       $tax_terms = get_terms('sports', array('hide_empty' => '0'));      
-                       foreach ( $tax_terms as $tax_term ){ 
-                                $sport_crawl = $tax_term->name;
-                                $parentId = $tax_term->parent;
-                                if(!empty($parentId)){
-                                $parentObj = get_term_by('id', $parentId, 'sports');
-                                    $sport_crawl = $parentObj->name.'/'.$tax_term->name;
+                <?php
+                $dropdown_args = array(
+                    'hide_empty'       => 0,
+                    'hide_if_empty'    => false,
+                    'taxonomy'         => 'sports',
+                    'name'             => 'sport_select_remove',
+                    'orderby'          => 'name',
+                    'hierarchical'     => true,
+                    'show_option_none' => __( 'None' ),
+                );
 
-                                    $main_parentId = $parentObj->parent;
-                                    if(!empty($main_parentId)){
-                                        $main_parentObj = get_term_by('id', $main_parentId, 'sports');                                      
-                                        $sport_crawl = $main_parentObj->name.'/'.$parentObj->name.'/'.$tax_term->name;
-                                    }
-
-                                }
-
-
-
-                          echo '<option value="'.strtolower($sport_crawl).'">'.$sport_crawl.'</option>';   
-                       }
-                    ?>
-                </select> 
+                /** This filter is documented in wp-admin/edit-tags.php */
+                $dropdown_args = apply_filters( 'taxonomy_parent_dropdown_args', $dropdown_args, 'sports', 'edit' );
+                wp_dropdown_categories( $dropdown_args ); ?>
 
 
             </form>
@@ -452,7 +436,25 @@ if (isset($_POST) && !empty($_POST['crawl_odds']) ){
 
 if (isset($_POST) && !empty($_POST['remove_all_matches'])){
 
-        $sport = $_POST['sport_select_remove'];
+        $tax_term = get_term_by('id', $_POST['sport_select_remove'], 'sports');
+        $sport_crawl = $tax_term->name;
+        $parentId = $tax_term->parent;
+        if(!empty($parentId)){
+        $parentObj = get_term_by('id', $parentId, 'sports');
+            $sport_crawl = $parentObj->name.'/'.$tax_term->name;
+
+            $main_parentId = $parentObj->parent;
+            if(!empty($main_parentId)){
+                $main_parentObj = get_term_by('id', $main_parentId, 'sports');
+                $sport_crawl = $main_parentObj->name.'/'.$parentObj->name.'/'.$tax_term->name;
+            }
+
+        }       
+
+
+        $sport = strtolower($sport_crawl);
+
+
         remove_all_matches($sport);
         //remove_past_matches();
 

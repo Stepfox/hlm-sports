@@ -11,20 +11,6 @@ endif;
 add_action('wp_enqueue_scripts', 'hlm_theme_styles');
 
 
-if ( ! function_exists( 'hlm_theme_scripts' ) ) :
-  function hlm_theme_scripts() {
-
-    wp_enqueue_script( 'hlm-sports-bootstrap-tether', get_template_directory_uri() . '/js/tether.js', array( 'jquery' ) );
-    wp_enqueue_script( 'hlm-sports-bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array( 'jquery' ) );
-
-  }
-endif;
-add_action('wp_enqueue_scripts', 'hlm_theme_scripts');
-
-
-
-
-
 
 
 function experiment_1(){ 

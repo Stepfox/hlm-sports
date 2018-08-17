@@ -12,10 +12,13 @@
 <?php
 if(!empty(category_description())){
 ?>
- <div class="four-parts hlm-sports-widget">
- 	<div class="post-content widget">
+<div class="post-content widget">
+ 	<div class="post-title">
 <?php echo category_description(); ?>
 </div>
+            <a class="read-more" href="#">
+              read more
+            </a>  
 </div>
 <?php } ?>
 

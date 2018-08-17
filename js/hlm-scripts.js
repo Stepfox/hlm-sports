@@ -97,7 +97,12 @@ $('.tax-sports a.read-more').click(function(e) {
     $('.tax-sports .post-title').toggleClass('active');
 });
 
-
+$('.category a.read-more').click(function(e) {
+     e.preventDefault();
+    $('.category .post-title').animate({ 'max-height': $('.category .post-title')[0].scrollHeight }, 300);
+    $('.category .post-title.active').animate({ 'max-height': '380'}, 300);
+    $('.category .post-title').toggleClass('active');
+});
 
 
 

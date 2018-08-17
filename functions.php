@@ -224,9 +224,9 @@ add_filter( 'widget_update_callback', 'hlm_sports_update_widget_size', 10, 2 );
 
 
 function hlm_sports_display_widget_size($instance, $widget, $args)  {
+	$widget_size = isset( $instance['widget_size'] ) ? $instance['widget_size'] : '';
 
-    $widget_classname = $instance['widget_size'];
-    $args['before_widget'] = preg_replace('/class="/', 'class="'. $widget_classname . ' ',  $args['before_widget'], 1 );
+    $args['before_widget'] = preg_replace('/class="/', 'class="'. $widget_size . ' ',  $args['before_widget'], 1 );
     $widget->widget($args, $instance);
     return false;
 }
@@ -341,100 +341,6 @@ include(get_template_directory()."/widgets/shortcode-widget/shortcode-widget.php
 include(get_template_directory()."/widgets/payment-options-widget/payment-options-widget.php");
 include(get_template_directory()."/widgets/bestodds-widget/bestodds-widget.php");
 
-
-
-
-
-
-
-
-
-
-
-//EXAMINER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
-
-// include( get_template_directory().'/inc/exm1-customize.php' );
-// include( get_template_directory().'/inc/live-style-exm1.php' );
-
-
-
-function exm1_widgets_style(){
-	echo 
-"<style type='text/css'>
-	div.widget[id*=_exm1] .widget-title h4:before {content: '';background: url(".esc_url(get_template_directory_uri())."/images/stepfox-tiny-logo-widgets.png)no-repeat;width: 16px;height: 16px;float: left;margin-right: 5px;}
-	div.widget[id*=_exm1] .widget-title h4{color: #0F7BB8;}
-	div.widget[id*=_exm1] input[type=radio]{height:30px;border-radius:0;width:22%;margin: 0 1% 0 0;text-indent:0;font-size:12px;line-height:30px;color:#747474;font-weight:700;font-family: Open Sans;background-color: #D1D1D1;text-shadow: 1px 1px 0px #FFF;box-shadow: inset 1px 1px 1px #AAA;}
-	div.widget[id*=_exm1] input[type=radio]:checked:before{border-radius:0;padding:0;margin:0;height:100%;width:100%;background-color: #0DA000;text-indent:0;font-size:12px;line-height:30px;color:#FFF;font-weight:700;font-family: Open Sans;text-shadow: 1px 1px 0px #000;box-shadow: none;}
-	div.widget[id*=_exm1] .one-part:before{content: '1/4';}
-	div.widget[id*=_exm1] .two-parts:before{content: '2/4';}
-	div.widget[id*=_exm1] .three-parts:before{content: '3/4';}
-	div.widget[id*=_exm1] .four-parts:before{content: '4/4';}
-</style>"
-;}
-add_action('admin_print_styles-widgets.php', 'exm1_widgets_style');
-
-
-
-
-
-
-include(get_template_directory()."/sf-widgets/image-sizes.php");
-
-function exm1_scripts() {
-
-		 wp_enqueue_style('sf-widgets', get_template_directory_uri() . '/sf-widgets/style.css');
-
-		wp_enqueue_script('exm1-scripts', get_template_directory_uri() . '/sf-widgets/exm1-scripts.js', array('jquery'));
-}
-add_action('wp_enqueue_scripts', 'exm1_scripts');
-
-
-function excerpt($limit) {
-  $excerpt = explode(' ', get_the_excerpt(), $limit);
-  if (count($excerpt)>=$limit) {
-    array_pop($excerpt);
-		if(!empty($excerpt)) {
-			$excerpt = implode(' ',$excerpt).'...';
-		}else{
-			$excerpt = '';
-		}
-  } elseif ( strpos( get_the_excerpt(), 'more-link' ) === false ) {
-  	$excerpt = implode(' ',$excerpt).'...';  
-  } else {
-    $excerpt = implode(' ',$excerpt);
-  }
-  $excerpt = preg_replace('`\[[^\]]*\]`','',$excerpt);
-  return $excerpt;
-
-}
-
-
-include(get_template_directory()."/sf-widgets/small-featured-images.php");
-include(get_template_directory()."/sf-widgets/big-featured-images.php");
-include(get_template_directory()."/sf-widgets/huge-featured-images.php");
-include(get_template_directory()."/sf-widgets/featured-categories.php");
-include(get_template_directory()."/sf-widgets/blogroll1.php");
-include(get_template_directory()."/sf-widgets/newsroll.php");
-include(get_template_directory()."/sf-widgets/slider.php");
-include(get_template_directory()."/sf-widgets/carousel.php");
-include(get_template_directory()."/sf-widgets/jumping-posts.php");
-include(get_template_directory()."/sf-widgets/blogroll2.php");
-include(get_template_directory()."/sf-widgets/blogroll3.php");
-include(get_template_directory()."/sf-widgets/tabber.php");
-include(get_template_directory()."/sf-widgets/video.php");
-include(get_template_directory()."/sf-widgets/tv-widget.php");
-include(get_template_directory()."/sf-widgets/about-us.php");
-include(get_template_directory()."/sf-widgets/ad-widget.php");
-include(get_template_directory()."/sf-widgets/thumbnails.php");
-include(get_template_directory()."/sf-widgets/most-commented.php");
-include(get_template_directory()."/sf-widgets/ticker.php");
-include(get_template_directory()."/sf-widgets/super-slider.php");
-include(get_template_directory()."/sf-widgets/video-list-ajax.php");
-include(get_template_directory()."/sf-widgets/trending-posts.php");
-include(get_template_directory()."/sf-widgets/social-widget.php");
-include(get_template_directory()."/sf-widgets/custom-title-widget.php");
 
 
 
@@ -685,14 +591,14 @@ add_theme_support( 'custom-header', $args );
 function hlm_sports_get_star_rating($rating){
 
 if(empty($rating)){ $rating = 0;}
+$rating = intval($rating);
 	?>
 
 
 <div class="star-rating">
 	<?php 
 
-			for ($star=0; $star < 5; $star++) { 
-
+			for ($star = 0; $star < 5; $star++) { 
 				if($rating - $star >= 1)
 					{  echo '<div class="full-star"></div>';}
 				elseif($rating - $star > 0.1 && $rating - $star < 1)
