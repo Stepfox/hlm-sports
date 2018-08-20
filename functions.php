@@ -590,6 +590,7 @@ add_theme_support( 'custom-header', $args );
 
 function hlm_sports_get_star_rating($rating){
 
+//$rating = 4.5;
 if(empty($rating)){ $rating = 0;}
 $rating = intval($rating);
 	?>
@@ -601,7 +602,7 @@ $rating = intval($rating);
 			for ($star = 0; $star < 5; $star++) { 
 				if($rating - $star >= 1)
 					{  echo '<div class="full-star"></div>';}
-				elseif($rating - $star > 0.1 && $rating - $star < 1)
+				elseif($rating - $star > -0.9 && $rating - $star < 1)
 					{ echo '<div class="half-star"></div>';}
 				elseif($rating - $star <= 1 )
 					{ echo '<div class="empty-star"></div>';}
