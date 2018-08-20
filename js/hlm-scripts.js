@@ -84,8 +84,7 @@ $(".top-menu ul > li").mouseout(function(){
         }, 200);
     });
 
-    $(".post-page-area nav a").click(function(e) {
-        e.preventDefault();
+    $(".post-page-area nav a").click(function(e) {     
         var aid = $(this).attr("href");
         $('html,body').animate({scrollTop: $(aid).offset().top - 200},'slow');
     });

@@ -763,7 +763,7 @@ input#search-switch:checked + .search-box:after{    top: 0;
     background: transparent;
     position: absolute;}
 
-#searchsubmit{display:inline-block;border:0;font-weight:400;padding:5px 12px;background:#358d53;border-bottom:3px solid #206539;font-size:12px;color:#FFF;margin:5px 0px 3px 5px;cursor:pointer;}
+#searchsubmit{display:inline-block;border:0;font-weight:400;padding:0px 12px;background:#358d53;border-bottom:3px solid #206539;font-size:12px;color:#FFF;margin:5px 0px 3px 5px;cursor:pointer;}
 #s{    border: 1px solid #dcdcdc;
     height: 27px;
     margin-top: 5px;
