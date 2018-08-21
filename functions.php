@@ -303,26 +303,10 @@ include( get_template_directory().'/inc/hlm-visual-experiments.php' );
 
 
 
-// include( get_template_directory().'/inc/widget-presets/widget-presets.php' );
-// include( get_template_directory().'/inc/widget-presets/widget-presets-func.php' );
-// include( get_template_directory().'/inc/widget-presets/widget-presets-save-func.php' );
-// include( get_template_directory().'/inc/widget-presets/widget-presets-save-templates-options.php' );
-
-
 //Odds Widget
  include( get_template_directory().'/widgets/odds-widget/matches-cpt-registration.php' );
- //include( get_template_directory().'/widgets/odds-widget/testeri.php' );
  include( get_template_directory().'/widgets/odds-widget/matches-crawl.php' );
  include( get_template_directory().'/widgets/odds-widget/simplehtmldom.php' );
-
-
-
-
-
-
-
-
-
 
 //Widgets
 include(get_template_directory()."/widgets/text-editor-widget/text-editor-widget.php");

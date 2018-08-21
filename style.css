@@ -1206,6 +1206,10 @@ left:20px;
 
 }
 @media screen and (max-width:700px){
+    .single-payment_option .pros-and-cons-bet-now, .single-payment_option .top-page-area .widget-title h2{display:none;}
+
+    #header{height:50px;}
+    .top-navigation{height: 50px;}
  .nav-odds-title{
 display:none;
 }

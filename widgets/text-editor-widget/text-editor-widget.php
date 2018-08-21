@@ -94,7 +94,7 @@ class hlm_sports_editor_widget extends WP_Widget {
         <!-- Widget Title-->
         <p>
             <label for="<?php echo esc_attr($this->get_field_id( 'title' )); ?>">
-                <?php _e('Title:', 'gsg-sports'); ?>
+                <?php _e('Title:', 'hlm-sports'); ?>
             </label>
             <input id="<?php echo esc_attr($this->get_field_id( 'title' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'title' )); ?>" value="<?php echo esc_textarea($instance['title']); ?>" style="width:90%;" />
         </p>

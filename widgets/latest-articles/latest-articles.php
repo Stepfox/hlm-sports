@@ -120,7 +120,7 @@ if($looks == 'looks1'){
 <!-- Number of posts -->
 <p>
 	<label for="<?php echo esc_attr($this->get_field_id( 'number' )); ?>">
-		<?php _e('Number of posts to show:', 'dawn-magazine'); ?>
+		<?php _e('Number of posts to show:', 'hlm-sports'); ?>
 	</label>
 	<input type="number" min="1" id="<?php echo esc_attr($this->get_field_id( 'number' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'number' )); ?>" value="<?php echo esc_attr($instance['number']); ?>" size="3" />
 </p>
@@ -128,18 +128,18 @@ if($looks == 'looks1'){
 <!-- Offset posts -->
 <p>
 	<label for="<?php echo esc_attr($this->get_field_id( 'offset' )); ?>">
-		<?php _e('Forward Posts(offset):', 'dawn-magazine'); ?>
+		<?php _e('Forward Posts(offset):', 'hlm-sports'); ?>
 	</label>
 	<input type="number" min="0" id="<?php echo esc_attr($this->get_field_id( 'offset' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'offset' )); ?>" value="<?php echo esc_attr($instance['offset']); ?>" size="3" />
 </p>
 <!-- Category -->
 <p>
 	<label for="<?php echo esc_attr($this->get_field_id('categories')); ?>">
-		<?php _e('(Optional)Select Category:', 'dawn-magazine'); ?>
+		<?php _e('(Optional)Select Category:', 'hlm-sports'); ?>
 	</label>
 	<select id="<?php echo esc_attr($this->get_field_id('categories')); ?>" name="<?php echo esc_attr($this->get_field_name('categories')); ?>" style="width:100%;">
 		<option value='all' <?php if ('all' == (isset($instance['categories']))) echo 'selected="selected"'; ?>>
-		<?php _e('All Categories', 'dawn-magazine'); ?>
+		<?php _e('All Categories', 'hlm-sports'); ?>
 		</option>
 		<?php $categories = get_categories('hide_empty=0&depth=1&type=post'); ?>
 		<?php foreach($categories as $category) { ?>
