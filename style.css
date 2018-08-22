@@ -8,7 +8,7 @@ Text Domain: hlm-sports
 */
 
 #snippet-box{max-width:100% !important;}
-#author-info {width: 100%;float: left;position:relative;border-bottom:1px solid #ebebeb;}
+#author-info {    padding: 0 20px;width: 100%;float: left;position:relative;border-bottom:1px solid #ebebeb;}
 #author-image { padding: 20px 20px 20px 0; float: left; }
 #author-desc { color: #9C9C9C; font-size: 14px; line-height: 20px; font-weight: 300; padding-top: 20px; float: left;width:calc(100% - 140px);}
 #author-desc h2 { font-size: 15px; font-weight: 700; text-transform: uppercase; padding-bottom: 5px; }

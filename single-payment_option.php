@@ -97,6 +97,40 @@ endif;
     ?>
 
       </div>
+<?php 
+          $authordesc = get_the_author_meta( 'description' );
+          if ( ! empty ( $authordesc ) ){ ?>
+<div class="four-parts widget">
+
+    <div class="widget-title">
+      <h2>
+         Author Info
+      </h2>
+    </div>
+        <div id="author-info">
+          <div id="author-image">
+            <?php echo wp_kses_post(get_avatar( get_the_author_meta('email'), '96' )); ?>
+          </div>
+          <!--author-image-->
+          <div id="author-desc">
+            <h2>
+              <?php the_author_posts_link(); ?>
+            </h2>
+            <div class="description-author">
+              <?php the_author_meta('description'); ?>
+            </div>
+            <!--description-author-->
+          </div>
+          <!--author-desc-->
+        </div>
+        <!--author-info-->
+</div>
+
+
+        <?php }
+
+?>
+      
 </div>
 
 

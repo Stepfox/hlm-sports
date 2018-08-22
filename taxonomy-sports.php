@@ -83,7 +83,7 @@
       <div class="blog-post-image">
         <?php if (  (function_exists('has_post_thumbnail')) && (has_post_thumbnail())  ) { ?>
         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-        <?php the_post_thumbnail('small-blog'); ?>
+        <?php the_post_thumbnail('hlm_sports_290x200'); ?>
         </a>
         <?php } ?>
       </div>

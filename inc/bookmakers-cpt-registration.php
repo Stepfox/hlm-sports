@@ -32,7 +32,7 @@ function bookmaker_post_type(){
         'hierarchical'       => false,
         'menu_position'      => 5,
        // 'register_meta_box_cb' => 'metabox_bookmaker',
-        'supports'           => array( 'editor', 'title', 'thumbnail', 'comments')
+        'supports'           => array( 'editor', 'title', 'thumbnail', 'comments', 'author')
         );
 
     register_post_type( 'bookmaker', $args );
@@ -75,7 +75,7 @@ function payment_option_post_type(){
         'hierarchical'       => false,
         'menu_position'      => 5,
         //'register_meta_box_cb' => 'metabox_payment_option',
-        'supports'           => array( 'editor', 'title', 'thumbnail', 'comments')
+        'supports'           => array( 'editor', 'title', 'thumbnail', 'comments', 'author')
         );
 
     register_post_type( 'payment_option', $args );

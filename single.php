@@ -32,6 +32,11 @@
 
       </div>
 
+
+
+<?php 
+          $authordesc = get_the_author_meta( 'description' );
+          if ( ! empty ( $authordesc ) ){ ?>
 <div class="four-parts widget">
 
     <div class="widget-title">
@@ -39,10 +44,6 @@
          Author Info
       </h2>
     </div>
-
-<?php 
-          $authordesc = get_the_author_meta( 'description' );
-          if ( ! empty ( $authordesc ) ){ ?>
         <div id="author-info">
           <div id="author-image">
             <?php echo wp_kses_post(get_avatar( get_the_author_meta('email'), '96' )); ?>
@@ -60,12 +61,12 @@
           <!--author-desc-->
         </div>
         <!--author-info-->
-        <?php }
-
-?>
 </div>
 
 
+        <?php }
+
+?>
 
 		</div>	
 
@@ -93,7 +94,7 @@
       <div class="blog-post-image">
         <?php if (  (function_exists('has_post_thumbnail')) && (has_post_thumbnail())  ) { ?>
         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-        <?php the_post_thumbnail('small-blog'); ?>
+        <?php the_post_thumbnail('hlm_sports_290x200'); ?>
         </a>
         <?php } ?>
       </div>
