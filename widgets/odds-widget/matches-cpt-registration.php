@@ -220,6 +220,7 @@ set_time_limit(3600);
                     'orderby'          => 'name',
                     'hierarchical'     => true,
                     'show_option_none' => __( 'crawl all games' ),
+                    'option_none_value'  => 'crawl_all',
                 );
 
                 /** This filter is documented in wp-admin/edit-tags.php */

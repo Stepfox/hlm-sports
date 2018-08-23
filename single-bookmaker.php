@@ -206,6 +206,30 @@ if( $payment_options ): ?>
               <?php the_author_meta('description'); ?>
             </div>
             <!--description-author-->
+<ul>
+<?php
+
+  if( have_rows("social_media", "user_".get_the_author_meta('ID') ) ):
+   while ( have_rows("social_media", "user_".get_the_author_meta('ID') ) ) : the_row();?>
+
+<li>
+  <?php $image = get_sub_field('icon', "user_" .get_the_author_meta('ID'));                                      
+  if( $image ) {?>
+    <a href="<?php echo get_sub_field('profile_link', "user_" .get_the_author_meta('ID')); ?>" target="_blank">
+      <img src="<?php  echo $image['sizes']['hlm_sports_20x20']; ?>" alt="">
+    </a>                        
+  <?php } ?>
+</li>
+
+<?php
+
+  endwhile;
+endif;
+
+?>
+
+</ul>
+            
           </div>
           <!--author-desc-->
         </div>

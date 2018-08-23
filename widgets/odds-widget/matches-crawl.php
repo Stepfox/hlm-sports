@@ -92,6 +92,7 @@ function crawl_matches($sport){
 
 
 		for ($i=0; $i < $crawled_titles_number; $i+=2) { 
+			if($i / 2 > 20){break;}
 
 			$html->find('.match-on p.fixtures-bet-name', $i)->plaintext = str_replace("/"," & ", $html->find('.match-on p.fixtures-bet-name', $i)->plaintext);
 			$html->find('.match-on p.fixtures-bet-name', $i + 1)->plaintext = str_replace("/"," & ", $html->find('.match-on p.fixtures-bet-name', $i + 1)->plaintext);
