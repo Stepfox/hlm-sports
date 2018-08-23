@@ -527,7 +527,7 @@ function match_post_type(){
         'hierarchical'       => false,
         'menu_position'      => 5,
         //'register_meta_box_cb' => 'metabox_payment_option',
-        'supports'           => array( 'title', 'thumbnail', 'comments')
+        'supports'           => array( 'title', 'thumbnail', 'comments', 'custom-fields')
         );
 
     register_post_type( 'match', $args );
