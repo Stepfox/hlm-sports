@@ -94,7 +94,7 @@ echo '<tr><td>Sign Up Bonus</td>';
                 while($bookmakers_query->have_posts()) : $bookmakers_query->the_post();
                   if(!empty(get_field('bookmaker_crawl_order')) && is_numeric(get_field('bookmaker_crawl_order'))){ ?>
 
-     <td>
+     <td datastep="<?php echo get_the_title();echo get_field('bookmaker_crawl_order'); ?>">
 
 10$
         </td>
