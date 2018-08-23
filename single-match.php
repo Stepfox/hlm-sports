@@ -134,7 +134,7 @@ if(is_array($key['odds_lists'])){
 
                        foreach($odds_lists['odd_list'] as $odd_list){
 
-                        if($i > $bookmakers_count) break;
+                        if($i > $bookmakers_count - 1) break;
                         $odd_list_number++;
 
                           if(in_array_r($odd_list_number , $bookmakers_order) || $odd_list_number == 0){
