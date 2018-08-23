@@ -10,7 +10,7 @@
 
 //github password makavelikl1kf484
 
-
+add_filter('acf/settings/remove_wp_meta_box', '__return_false');
 
 // 1. customize ACF path
 add_filter('acf/settings/path', 'my_acf_settings_path');
