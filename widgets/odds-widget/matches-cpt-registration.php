@@ -592,3 +592,31 @@ function taxonomy_team() {
         ));
 }
 add_action( 'init', 'taxonomy_team');
+
+
+
+
+
+
+    add_action( 'admin_bar_menu', 'toolbar_link_to_mypage', 999 );
+
+function toolbar_link_to_mypage( $wp_admin_bar ) {
+    global $post;
+    if ($post->post_type == "match") {
+    $args = array(
+        'id'    => 'recrawl_match',
+        'title' => 'Get Odds',
+        'href'  => '?gsg_saving=crawl_full_football_game'
+    );
+    $wp_admin_bar->add_node( $args );
+
+    if(isset($_GET['gsg_saving'])){
+        if ($_GET['gsg_saving'] == 'crawl_full_football_game'){
+
+         $page_name_id = get_the_ID();
+        crawl_full_football_game($page_name_id);
+    }
+
+        }
+    }
+}
