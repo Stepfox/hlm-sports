@@ -18,7 +18,7 @@
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
 				?>
-
+<div id="author-desc">
 <ul>
 <?php
 
@@ -42,7 +42,7 @@ endif;
 ?>
 
 </ul>
-
+</div>
 
           </div>
         <div class="post-content widget blog-post">
