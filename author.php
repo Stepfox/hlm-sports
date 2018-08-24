@@ -7,7 +7,10 @@
 
 <main id="main" class="category-page">
 
- <div class="three-parts post-page-area hlm-sports-widget">
+
+
+
+  <div class="three-parts post-page-area hlm-sports-widget">
 
           <div class="post-title">
             <h1>
@@ -17,10 +20,6 @@
 				?>
             </h1>
           </div>
-
-  </div>
-
-  <div class="three-parts post-page-area hlm-sports-widget">
         <div class="post-content widget blog-post">
 
 
