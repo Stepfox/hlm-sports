@@ -15,7 +15,9 @@ Text Domain: hlm-sports
 #author-info .author-social { float: left; padding-top: 5px; bottom:0; width:auto;width:100%; }
 .author-social li { float: left; }
 
-
+#author-desc ul li{    float: left;
+    margin-right: 10px;
+    margin-top: 10px;}
 
 .tax-sports .post-title{overflow: hidden;max-height: 380px;transition:all 0.4s;position: relative;padding-bottom:30px;}
 
