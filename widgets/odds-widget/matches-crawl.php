@@ -1,8 +1,48 @@
 <?php 
 
+
+/*test code
+
+
 //https://github.com/petewarden/ParallelCurl
 //http://www.webscrapingblog.com/how-to-use-curl-with-php-simple-html-dom-for-data-scraping/
 
+ include( get_template_directory().'/widgets/odds-widget/parallelcurl.php' );
+
+
+define ('SEARCH_URL_PREFIX', 'https://www.oddschecker.com');
+// This function gets called back for each request that completes
+function on_request_done($content, $url, $ch, $search) {
+    echo $url;
+    var_dump($content);
+}
+// The terms to search for on Google
+$terms_list = array(
+    "football", "basketball",
+    "darts", "tennis",
+    "boxing",
+
+);
+if (isset($argv[1])) {
+    $max_requests = $argv[1];
+} else {
+    $max_requests = 5;
+}
+$curl_options = array(
+    CURLOPT_SSL_VERIFYPEER => FALSE,
+    CURLOPT_SSL_VERIFYHOST => FALSE,
+    CURLOPT_USERAGENT => 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.1) Gecko/20061204 Firefox/2.0.0.1',
+);
+$parallel_curl = new ParallelCurl($max_requests, $curl_options);
+foreach ($terms_list as $terms) {
+    $search = '"'.$terms.' is a"';
+    $search_url = SEARCH_URL_PREFIX.'/'.urlencode($terms);
+    $parallel_curl->startRequest($search_url, 'on_request_done', $search);
+}
+// This should be called when you need to wait for the requests to finish.
+// This will automatically run on destruct of the ParallelCurl object, so the next line is optional.
+$parallel_curl->finishAllRequests();
+*/
 
 function remove_past_matches(){
 		$now_date = current_time('timestamp') + 3600;
@@ -459,16 +499,28 @@ $data = json_decode( $body, true );
 
 
 
-function crawl_super_table($market = 'correct-score', $page_name_id){
+function crawl_super_table($market = 'correct-score', $page_name_id, $content = 'deez'){
 
 		
-
+if($content != 'deez'){
 
 	$opts=array('http'=>array('method'=>"GET",'header'=>"Accept-language: en\r\n"."Cookie: odds_type=decimal\r\n",'user_agent'=>'Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10.4; en-US; rv:1.9.2.28) Gecko/20120306 Firefox/3.6.28'));
 	$context = stream_context_create($opts);
 	$match_url = str_replace('winner', $market, get_field('match_url', $page_name_id ));
 	
 	$html = file_get_html($match_url,false,$context);
+
+
+}else{
+
+	
+	$html = new simple_html_dom();
+	$html->load($content);
+
+
+}
+
+
 
 if ($html){
 
