@@ -1,9 +1,5 @@
 <?php 
 
-//https://github.com/petewarden/ParallelCurl
-//http://www.webscrapingblog.com/how-to-use-curl-with-php-simple-html-dom-for-data-scraping/
-
-
 function remove_past_matches(){
 		$now_date = current_time('timestamp') + 3600;
 			//Delete Matches

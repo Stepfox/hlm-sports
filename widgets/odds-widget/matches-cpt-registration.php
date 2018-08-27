@@ -605,7 +605,7 @@ add_action( 'init', 'taxonomy_team');
 
 function toolbar_link_to_mypage( $wp_admin_bar ) {
     global $post;
-    if ($post->post_type == "match") {
+    if (!empty($post) && $post->post_type == "match") {
     $args = array(
         'id'    => 'recrawl_match',
         'title' => 'Get Odds',
