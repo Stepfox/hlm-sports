@@ -200,20 +200,6 @@ set_time_limit(3600);
 //ini_set('display_errors',1);
 //error_reporting(E_ALL|E_STRICT);
 
-                $args1 = array(
-                    'post_type' => 'bookmaker',
-                    'posts_per_page' => -1, 
-                    'post_status' => 'publish',   
-                );
-                $bookmakers_query = new WP_Query($args1);
-                while($bookmakers_query->have_posts()) : $bookmakers_query->the_post();
-                  if(!empty(get_field('bookmaker_crawl_order')) && is_numeric(get_field('bookmaker_crawl_order'))){ ?>
-
-     <?php echo get_the_title();echo get_field('bookmaker_crawl_order'); ?>
-
-
-      <?php  } endwhile; 
-
 
         echo '<h2>Crawl Matches</h2>';
 
@@ -433,7 +419,7 @@ if (isset($_POST) && !empty($_POST['crawl_odds']) ){
 
 
 
-if (isset($_POST) && !empty($_POST['remove_all_matches'])){
+if (isset($_POST) && !empty($_POST['sport_select_remove'])){
 
         $tax_term = get_term_by('id', $_POST['sport_select_remove'], 'sports');
         $sport_crawl = $tax_term->name;
