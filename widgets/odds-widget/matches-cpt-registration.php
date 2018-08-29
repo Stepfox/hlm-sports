@@ -431,7 +431,7 @@ if (isset($_POST) && !empty($_POST['sport_select_remove'])){
             $main_parentId = $parentObj->parent;
             if(!empty($main_parentId)){
                 $main_parentObj = get_term_by('id', $main_parentId, 'sports');
-                $sport_crawl = $main_parentObj->name.'/'.$parentObj->name.'/'.$tax_term->name;
+                $sport_crawl = $tax_term->name;
             }
 
         }       
