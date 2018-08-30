@@ -8,7 +8,7 @@
 				 <?php $image = get_field('logo_136x44', $bookmaker_id);					                  
 						if( $image ) {?>
 
-								<img src="<?php  echo $image['sizes']['hlm_sports_136x44']; ?>" alt="">  
+								<img src="<?php  echo $image['sizes']['hlm_sports_136x44']; ?>" alt="<?php echo $image['alt']; ?>">  
  
 						<?php } ?>											
 			</div>

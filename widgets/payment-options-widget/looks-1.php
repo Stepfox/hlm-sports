@@ -5,7 +5,7 @@
 	         <?php $image = get_field('payment_icon', $bookmaker_id);                        
 	            if( $image ) {?>
 	            <a href="<?php the_permalink($bookmaker_id); ?>" title="<?php the_title($bookmaker_id); ?>">
-	              <img src="<?php  echo $image['sizes']['hlm_sports_136x44']; ?>" alt="">    
+	              <img src="<?php  echo $image['sizes']['hlm_sports_136x44']; ?>" alt="<?php echo $image['alt']; ?>">    
 	          	</a>            
 	            <?php } ?>  
 	      </div>

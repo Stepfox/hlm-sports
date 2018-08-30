@@ -36,7 +36,7 @@
 
                        
             $myDateTime = (int)get_field('start_time');
-            experiment_7($check, $same_day_check); 
+            matches_taxonomy_with_date($check, $same_day_check); 
             $check++;
             $same_day_check =  $myDateTime;
             ?>

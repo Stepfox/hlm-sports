@@ -18,7 +18,7 @@
             if( $image ) {?>
               <div class="bookmaker-background-wrap-<?php echo get_the_ID(); ?>">
                 <a href="<?php echo the_field( 'default_tracker' ); ?>" target="_blank">
-                <img src="<?php  echo $image['sizes']['hlm_sports_196x66']; ?>" alt="">  
+                <img src="<?php  echo $image['sizes']['hlm_sports_196x66']; ?>" alt="<?php echo $image['alt']; ?>">  
                 </a>   
               </div>           
             <?php } ?>  
@@ -48,7 +48,7 @@
               <div class="pros-and-cons-logo">     
                          <?php $image = get_field('right_logo');                            
             if( $image ) {?>
-              <img src="<?php  echo $image['sizes']['hlm_sports_196x66']; ?>" alt="">                
+              <img src="<?php  echo $image['sizes']['hlm_sports_196x66']; ?>" alt="<?php echo $image['alt']; ?>">                
             <?php } ?>                     
               </div>
               <div class="pros-and-cons-rating-grade">
@@ -64,7 +64,7 @@
           </div>
                     <?php $image = get_field('main_image');                            
             if( $image ) {?>
-              <img src="<?php  echo $image['sizes']['hlm_sports_900x260']; ?>" alt="">                
+              <img src="<?php  echo $image['sizes']['hlm_sports_900x260']; ?>" alt="<?php echo $image['alt']; ?>">                
             <?php } ?>  
       </div>
 
@@ -135,7 +135,7 @@ if( $payment_options ): ?>
       <div class="payment-icon">
          <?php $image = get_field('payment_icon', $p->ID);                            
             if( $image ) {?>
-              <img src="<?php  echo $image['sizes']['hlm_sports_136x44']; ?>" alt="">                
+              <img src="<?php  echo $image['sizes']['hlm_sports_136x44']; ?>" alt="<?php echo $image['alt']; ?>">                
             <?php } ?>  
       </div>
   <?php endforeach; ?>
@@ -216,7 +216,7 @@ if( $payment_options ): ?>
   <?php $image = get_sub_field('icon', "user_" .get_the_author_meta('ID'));                                      
   if( $image ) {?>
     <a href="<?php echo get_sub_field('profile_link', "user_" .get_the_author_meta('ID')); ?>" target="_blank">
-      <img src="<?php  echo $image['sizes']['hlm_sports_20x20']; ?>" alt="">
+      <img src="<?php  echo $image['sizes']['hlm_sports_20x20']; ?>" alt="<?php echo $image['alt']; ?>">
     </a>                        
   <?php } ?>
 </li>

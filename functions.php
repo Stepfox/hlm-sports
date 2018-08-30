@@ -299,7 +299,7 @@ include( get_template_directory().'/inc/menu-image-upload-fields-menu-walker.php
 include( get_template_directory().'/inc/bookmakers-cpt-registration.php' );
 include( get_template_directory().'/inc/hlm-sports-custom-fields.php' );
 include( get_template_directory().'/inc/hlm-sports-shortcodes.php' );
-include( get_template_directory().'/inc/hlm-visual-experiments.php' );
+include( get_template_directory().'/inc/matches-parts.php' );
 
 
 
@@ -307,6 +307,7 @@ include( get_template_directory().'/inc/hlm-visual-experiments.php' );
  include( get_template_directory().'/widgets/odds-widget/matches-cpt-registration.php' );
  include( get_template_directory().'/widgets/odds-widget/matches-crawl.php' );
  include( get_template_directory().'/widgets/odds-widget/simplehtmldom.php' );
+ include( get_template_directory().'/inc/match-header.php' );
 
 //Widgets
 include(get_template_directory()."/widgets/text-editor-widget/text-editor-widget.php");

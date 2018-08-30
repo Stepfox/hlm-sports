@@ -25,7 +25,7 @@ $page = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
          $image = get_field('main_image', $term);                            
             if( $image ) {?>
-              <img src="<?php  echo $image['sizes']['hlm_sports_900x260']; ?>" alt="" >                 
+              <img src="<?php  echo $image['sizes']['hlm_sports_900x260']; ?>" alt="<?php echo $image['alt']; ?>" >                 
             <?php }     
 
           ?>
@@ -38,7 +38,7 @@ $page = (get_query_var('paged')) ? get_query_var('paged') : 1;
              ?>               
         <li class="col-sm-6 widget">          
 
-            <?php experiment_5(); ?>
+            <?php matches_archive_list(); ?>
 
         </li>
         <?php 

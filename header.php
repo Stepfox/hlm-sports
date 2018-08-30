@@ -12,9 +12,9 @@
 
 <?php $scripts = get_field('scripts', 'option'); eval( $scripts );  ?>
 <?php 
-if ($_SERVER['HTTP_HOST'] == 'www.winningsportsbets.co.uk' || $_SERVER['HTTP_HOST'] == 'winningsportsbets.co.uk'){
+//dont index the virtual machines
+if ($_SERVER['HTTP_HOST'] == 'www.winningsportsbets.co.uk' || $_SERVER['HTTP_HOST'] == 'winningsportsbets.co.uk' || $_SERVER['HTTP_HOST'] == 'www.sportsbettingsverige.se' || $_SERVER['HTTP_HOST'] == 'sportsbettingsverige.se'){
 
-	
 }else{
 	echo '<meta name="robots" content="noindex, nofollow">';
 }

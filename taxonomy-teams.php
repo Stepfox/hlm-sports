@@ -19,13 +19,13 @@
             $image = get_field('flag', $term);                            
             if( $image ) {?>
             <div class="team-flag">
-              <img src="<?php  echo $image['sizes']['hlm_sports_166x92']; ?>" alt="" >  
+              <img src="<?php  echo $image['sizes']['hlm_sports_166x92']; ?>" alt="<?php echo $image['alt']; ?>" >  
             </div>               
             <?php }        
 
             $image = get_field('main_image', $term);                            
             if( $image ) {?>
-              <img src="<?php  echo $image['sizes']['hlm_sports_900x260']; ?>" alt="" >                 
+              <img src="<?php  echo $image['sizes']['hlm_sports_900x260']; ?>" alt="<?php echo $image['alt']; ?>" >                 
             <?php } ?>
             
           </div>
@@ -48,7 +48,7 @@
 
                        
             $myDateTime = (int)get_field('start_time');
-            experiment_7($check, $same_day_check); 
+            matches_taxonomy_with_date($check, $same_day_check); 
             $check++;
             $same_day_check =  $myDateTime;
             ?>

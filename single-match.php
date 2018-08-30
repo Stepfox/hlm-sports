@@ -2,7 +2,7 @@
 <main id="main">
 
   <div class="three-parts hlm-sports-widget post-page-area">
-<?php  experiment_3(); ?>
+<?php  match_header(); ?>
 
 
 
@@ -10,26 +10,6 @@
         <div class="post-content widget">
 
 <?php 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                 $bookmakers_count = 0;
                 $args1 = array(
@@ -212,7 +192,7 @@ $away_team = get_term( get_field('away_team', get_the_ID()), 'teams' );
 
 
 
-experiment_8();
+matches_similar();
 
 ?>
 </div>

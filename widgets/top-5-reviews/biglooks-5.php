@@ -14,7 +14,7 @@
 			<div class="top-5-logo">		 
 				 <?php $image = get_field('logo_136x44', $bookmaker_id);					                  
 						if( $image ) {?>
-							<img src="<?php  echo $image['sizes']['hlm_sports_136x44']; ?>" alt="" class="bookmaker-background-wrap-<?php echo $bookmaker_id; ?>">  							 
+							<img src="<?php  echo $image['sizes']['hlm_sports_136x44']; ?>" alt="<?php echo $image['alt']; ?>" class="bookmaker-background-wrap-<?php echo $bookmaker_id; ?>">  							 
 						<?php } ?>											
 			</div>
 			</a>
@@ -65,7 +65,7 @@ if( $posts ): ?>
          <?php $image = get_field('payment_icon', $p->ID);                            
             if( $image ) {?>
             	<a href="<?php echo get_permalink( $p->ID); ?>">
-              <img src="<?php  echo $image['sizes']['hlm_sports_136x44']; ?>" alt="">  
+              <img src="<?php  echo $image['sizes']['hlm_sports_136x44']; ?>" alt="<?php echo $image['alt']; ?>">  
               </a>              
             <?php } ?>  
       </div>

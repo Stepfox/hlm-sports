@@ -4,7 +4,7 @@
   <div class="four-parts hlm-sports-widget top-page-area">
 	            <?php $image = get_field('header_image', 'option');                            
             if( $image ) {?>
-              <img src="<?php  echo $image['sizes']['hlm_sports_1200x260']; ?>" alt="">                
+              <img src="<?php  echo $image['sizes']['hlm_sports_1200x260']; ?>" alt="<?php echo $image['alt']; ?>">                
             <?php } ?> 
 
   </div>
@@ -32,7 +32,7 @@
 	         <?php $image = get_field('payment_icon');                            
 	            if( $image ) {?>
 	            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-	              <img src="<?php  echo $image['sizes']['hlm_sports_136x44']; ?>" alt="">    
+	              <img src="<?php  echo $image['sizes']['hlm_sports_136x44']; ?>" alt="<?php echo $image['alt']; ?>">    
 	          	</a>            
 	            <?php } ?>  
 	      </div>

@@ -43,7 +43,7 @@
             if( $image ) {?>
               <div class="bookmaker-background-wrap-<?php echo get_the_ID(); ?>">
                 <a href="<?php echo get_permalink(); ?>">
-                <img src="<?php  echo $image['sizes']['hlm_sports_196x66']; ?>" alt="">  
+                <img src="<?php  echo $image['sizes']['hlm_sports_196x66']; ?>" alt="<?php echo $image['alt']; ?>">  
                 </a>   
               </div>           
             <?php } ?>  
@@ -73,7 +73,7 @@
               <div class="pros-and-cons-logo">     
                          <?php $image = get_field('right_logo');                            
             if( $image ) {?>
-              <img src="<?php  echo $image['sizes']['hlm_sports_196x66']; ?>" alt="">                
+              <img src="<?php  echo $image['sizes']['hlm_sports_196x66']; ?>" alt="<?php echo $image['alt']; ?>">                
             <?php } ?>                     
               </div>
               <div class="pros-and-cons-rating-grade">
@@ -89,7 +89,7 @@
           </div>
                     <?php $image = get_field('main_image');                            
             if( $image ) {?>
-              <img src="<?php  echo $image['sizes']['hlm_sports_900x260']; ?>" alt="">                
+              <img src="<?php  echo $image['sizes']['hlm_sports_900x260']; ?>" alt="<?php echo $image['alt']; ?>">                
             <?php } ?>  
       </div>
 
@@ -180,7 +180,7 @@ $bookmaker_id = $post->ID;
 			<div class="top-5-logo bookmaker-background-wrap-<?php echo $bookmaker_id; ?>">		 
 				 <?php $image = get_field('logo_136x44', $bookmaker_id);					                  
 						if( $image ) {?>
-							<img src="<?php  echo $image['sizes']['hlm_sports_136x44']; ?>" alt="">  							 
+							<img src="<?php  echo $image['sizes']['hlm_sports_136x44']; ?>" alt="<?php echo $image['alt']; ?>">  							 
 						<?php } ?>											
 			</div>
 			</a>	

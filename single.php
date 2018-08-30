@@ -67,7 +67,7 @@
   <?php $image = get_sub_field('icon', "user_" .get_the_author_meta('ID'));                                      
   if( $image ) {?>
     <a href="<?php echo get_sub_field('profile_link', "user_" .get_the_author_meta('ID')); ?>" target="_blank">
-      <img src="<?php  echo $image['sizes']['hlm_sports_20x20']; ?>" alt="">
+      <img src="<?php  echo $image['sizes']['hlm_sports_20x20']; ?>" alt="<?php echo $image['alt']; ?>">
     </a>                        
   <?php } ?>
 </li>

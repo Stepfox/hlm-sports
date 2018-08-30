@@ -15,7 +15,7 @@
 
           <?php $image = get_field('left_logo');                            
             if( $image ) {?>
-              <img src="<?php  echo $image['sizes']['hlm_sports_196x66']; ?>" alt="">                
+              <img src="<?php  echo $image['sizes']['hlm_sports_196x66']; ?>" alt="<?php echo $image['alt']; ?>">                
             <?php } ?>  
                  
               </div>
@@ -33,7 +33,7 @@
 
                     <?php $image = get_field('main_image');                            
             if( $image ) {?>
-              <img src="<?php  echo $image['sizes']['hlm_sports_900x260']; ?>" alt="">                
+              <img src="<?php  echo $image['sizes']['hlm_sports_900x260']; ?>" alt="<?php echo $image['alt']; ?>">                
             <?php } ?>  
       </div>
 
@@ -130,7 +130,7 @@ endif;
   <?php $image = get_sub_field('icon', "user_" .get_the_author_meta('ID'));                                      
   if( $image ) {?>
     <a href="<?php echo get_sub_field('profile_link', "user_" .get_the_author_meta('ID')); ?>" target="_blank">
-      <img src="<?php  echo $image['sizes']['hlm_sports_20x20']; ?>" alt="">
+      <img src="<?php  echo $image['sizes']['hlm_sports_20x20']; ?>" alt="<?php echo $image['alt']; ?>">
     </a>                        
   <?php } ?>
 </li>
