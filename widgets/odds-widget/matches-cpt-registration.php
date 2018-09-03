@@ -102,8 +102,8 @@ function cron_crawl_odds() {
             'order'             => 'ASC',
 
         );
-        $lunar_magazine_posts = new WP_Query($args);
-        while($lunar_magazine_posts->have_posts()) : $lunar_magazine_posts->the_post();
+        $hlm_sports_posts = new WP_Query($args);
+        while($hlm_sports_posts->have_posts()) : $hlm_sports_posts->the_post();
 
 
 
@@ -285,8 +285,8 @@ if (isset($_POST) && !empty($_POST['crawl_matches_odds'])){
             'posts_per_page' => 1, 
             'post_status' => 'publish'
         );
-        $lunar_magazine_posts = new WP_Query($args);
-        while($lunar_magazine_posts->have_posts()) : $lunar_magazine_posts->the_post();
+        $hlm_sports_posts = new WP_Query($args);
+        while($hlm_sports_posts->have_posts()) : $hlm_sports_posts->the_post();
             usleep(500000);
             $page_name_id = get_the_ID();
             $test = get_post_meta( get_the_ID(), 'last_crawled', true );

@@ -1,4 +1,10 @@
 <?php
+
+
+
+//Header For CPT Matches
+
+
 function match_header(){
 
  ?>
@@ -16,10 +22,10 @@ function match_header(){
                           <div class="button button-sm button-share-outline">Share
                             <ul class="game-info-share">
 
-                              <li class="game-info-share-item"><a href="http://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>" target="blank" title="<?php _e('Share this post on Facebook', 'examiner'); ?>" onclick="window.open(this.href,'window','width=640,height=480,resizable,scrollbars,toolbar,menubar') ;return false;" class="icon fa fa-facebook" href="#"></a></li>
-                              <li class="game-info-share-item"><a href="https://twitter.com/intent/tweet?original_referer=<?php the_permalink(); ?>&amp;text=<?php the_title(); ?>&amp;tw_p=tweetbutton&amp;url=<?php the_permalink(); ?>" target="_blank" title="<?php _e('Share this post on Twitter', 'examiner'); ?>" onclick="window.open(this.href,'window','width=640,height=480,resizable,scrollbars,toolbar,menubar') ;return false;" class="icon fa fa-twitter" href="#"></a></li>
-                              <li class="game-info-share-item"><a href="https://plusone.google.com/_/+1/confirm?hl=en-US&amp;url=<?php the_permalink(); ?>" target="_blank" title="<?php _e('Share this post on Google Plus', 'examiner'); ?>" onclick="window.open(this.href,'window','width=640,height=480,resizable,scrollbars,toolbar,menubar') ;return false;"  class="icon fa fa-google-plus" href="#"></a></li>
-                              <li class="game-info-share-item"><a href="http://www.reddit.com/submit?url=<?php the_permalink(); ?>&amp;title=<?php echo urlencode(get_the_title()); ?>" target="_blank" title="<?php _e('Share this post on Reddit', 'examiner'); ?>" onclick="window.open(this.href,'window','width=640,height=480,resizable,scrollbars,toolbar,menubar') ;return false;" class="icon fa fa-reddit" href="#"></a></li>
+                              <li class="game-info-share-item"><a href="http://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>" target="blank" title="<?php _e('Share this post on Facebook', 'hlm-sports'); ?>" onclick="window.open(this.href,'window','width=640,height=480,resizable,scrollbars,toolbar,menubar') ;return false;" class="icon fa fa-facebook" href="#"></a></li>
+                              <li class="game-info-share-item"><a href="https://twitter.com/intent/tweet?original_referer=<?php the_permalink(); ?>&amp;text=<?php the_title(); ?>&amp;tw_p=tweetbutton&amp;url=<?php the_permalink(); ?>" target="_blank" title="<?php _e('Share this post on Twitter', 'hlm-sports'); ?>" onclick="window.open(this.href,'window','width=640,height=480,resizable,scrollbars,toolbar,menubar') ;return false;" class="icon fa fa-twitter" href="#"></a></li>
+                              <li class="game-info-share-item"><a href="https://plusone.google.com/_/+1/confirm?hl=en-US&amp;url=<?php the_permalink(); ?>" target="_blank" title="<?php _e('Share this post on Google Plus', 'hlm-sports'); ?>" onclick="window.open(this.href,'window','width=640,height=480,resizable,scrollbars,toolbar,menubar') ;return false;"  class="icon fa fa-google-plus" href="#"></a></li>
+                              <li class="game-info-share-item"><a href="http://www.reddit.com/submit?url=<?php the_permalink(); ?>&amp;title=<?php echo urlencode(get_the_title()); ?>" target="_blank" title="<?php _e('Share this post on Reddit', 'hlm-sports'); ?>" onclick="window.open(this.href,'window','width=640,height=480,resizable,scrollbars,toolbar,menubar') ;return false;" class="icon fa fa-reddit" href="#"></a></li>
                             </ul>
                       </div>
                     </div>

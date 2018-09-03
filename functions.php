@@ -293,7 +293,6 @@ add_action('wp_enqueue_scripts', 'hlm_sports_scripts');
 
 // Theme Options
 include( get_template_directory().'/inc/live-style.php' );
-include( get_template_directory().'/inc/hlm-sports-customize.php' );
 include( get_template_directory().'/inc/menu-image-upload-fields.php' );
 include( get_template_directory().'/inc/menu-image-upload-fields-menu-walker.php' );
 include( get_template_directory().'/inc/bookmakers-cpt-registration.php' );
@@ -308,6 +307,8 @@ include( get_template_directory().'/inc/matches-parts.php' );
  include( get_template_directory().'/widgets/odds-widget/matches-crawl.php' );
  include( get_template_directory().'/widgets/odds-widget/simplehtmldom.php' );
  include( get_template_directory().'/inc/match-header.php' );
+ include(get_template_directory()."/widgets/odds-widget/odds-widget.php");
+ include(get_template_directory()."/widgets/odds-widget/new-odds-widget.php");
 
 //Widgets
 include(get_template_directory()."/widgets/text-editor-widget/text-editor-widget.php");
@@ -315,8 +316,6 @@ include(get_template_directory()."/widgets/top-5-reviews/top-5-reviews.php");
 include(get_template_directory()."/widgets/faq-widget/faq-widget.php");
 include(get_template_directory()."/widgets/related-widget/related-widget.php");
 include(get_template_directory()."/widgets/landing-widget/landing-widget.php");
-include(get_template_directory()."/widgets/odds-widget/odds-widget.php");
-include(get_template_directory()."/widgets/odds-widget/new-odds-widget.php");
 include(get_template_directory()."/widgets/latest-articles/latest-articles.php");
 include(get_template_directory()."/widgets/betting-strategies/betting-strategies.php");
 include(get_template_directory()."/widgets/linking-image-widget/linking-image-widget.php");
@@ -324,7 +323,7 @@ include(get_template_directory()."/widgets/content-block-widget/content-block-wi
 include(get_template_directory()."/widgets/deposit-withdraw-widget/deposit-withdraw-widget.php");
 include(get_template_directory()."/widgets/shortcode-widget/shortcode-widget.php");
 include(get_template_directory()."/widgets/payment-options-widget/payment-options-widget.php");
-include(get_template_directory()."/widgets/bestodds-widget/bestodds-widget.php");
+
 
 
 

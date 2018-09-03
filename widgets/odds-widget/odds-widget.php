@@ -134,7 +134,7 @@ class odds_widget_hlm_sports extends WP_Widget {
 <!-- Number of posts -->
 <p>
 	<label for="<?php echo esc_attr($this->get_field_id( 'number' )); ?>">
-		<?php _e('Number of posts to show:', 'examiner'); ?>
+		<?php _e('Number of posts to show:', 'hlm-sports'); ?>
 	</label>
 	<input type="number" min="1" id="<?php echo esc_attr($this->get_field_id( 'number' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'number' )); ?>" value="<?php echo esc_attr($instance['number']); ?>" size="3" />
 </p>
@@ -143,7 +143,7 @@ class odds_widget_hlm_sports extends WP_Widget {
 <!-- Offset posts -->
 <p>
 	<label for="<?php echo esc_attr($this->get_field_id( 'offset' )); ?>">
-		<?php _e('Forward Posts(offset):', 'examiner'); ?>
+		<?php _e('Forward Posts(offset):', 'hlm-sports'); ?>
 	</label>
 	<input type="number" min="0" id="<?php echo esc_attr($this->get_field_id( 'offset' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'offset' )); ?>" value="<?php echo esc_attr($instance['offset']); ?>" size="3" />
 </p>

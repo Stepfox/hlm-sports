@@ -1,5 +1,7 @@
 <?php 
 
+//cpt matches functions
+
 
 if ( ! function_exists( 'hlm_theme_styles' ) ) :
   function hlm_theme_styles() {
@@ -11,6 +13,7 @@ add_action('wp_enqueue_scripts', 'hlm_theme_styles');
 
 
 
+//matches archive list
 
 
 

@@ -1,26 +1,16 @@
 <?php 
 
+
+//adding fonts and css
+
+
 function hlm_sports_head() {
 
-	$bloginfo = get_template_directory_uri();
-
-
-
-
-
-
-
-
-    //Css
     ?>
 
     <style type='text/css'>
         body{font-family: Roboto,sans-serif;font-size:15px;line-height: 24px;}
-   
-
-
-
-        
+    
 <?php 
     $pageposts = get_posts(array('posts_per_page' => -1, 'post_type' => 'bookmaker', 'post_status' => 'publish'));
     $bookmakers_count = 0;

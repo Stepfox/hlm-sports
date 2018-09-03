@@ -120,8 +120,8 @@ function crawl_matches($sport){
 		                's' => $title, 
 		                'post_status' => 'publish',   
 		            );
-		            $lunar_magazine_posts = new WP_Query($args);
-		            while($lunar_magazine_posts->have_posts()) : $lunar_magazine_posts->the_post();
+		            $hlm_sports_posts = new WP_Query($args);
+		            while($hlm_sports_posts->have_posts()) : $hlm_sports_posts->the_post();
 		                // $page_name_id = get_the_ID();
 		                // wp_delete_post( $page_name_id, true );
 		                $duplicate = 'duplicate';
@@ -199,8 +199,8 @@ function crawl_table(){
 		                'posts_per_page' => -1, 
 		                'post_status' => 'publish',   
 		            );
-		            $lunar_magazine_posts = new WP_Query($args);
-		            while($lunar_magazine_posts->have_posts()) : $lunar_magazine_posts->the_post();
+		            $hlm_sports_posts = new WP_Query($args);
+		            while($hlm_sports_posts->have_posts()) : $hlm_sports_posts->the_post();
 
 
 	$opts=array('http'=>array('method'=>"GET",'header'=>"Accept-language: en\r\n"."Cookie: odds_type=decimal\r\n",'user_agent'=>'Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10.4; en-US; rv:1.9.2.28) Gecko/20120306 Firefox/3.6.28'));
@@ -659,8 +659,8 @@ function convert_winner_table(){
 		                'posts_per_page' => -1, 
 		                'post_status' => 'publish',   
 		            );
-		            $lunar_magazine_posts = new WP_Query($args);
-		            while($lunar_magazine_posts->have_posts()) : $lunar_magazine_posts->the_post();
+		            $hlm_sports_posts = new WP_Query($args);
+		            while($hlm_sports_posts->have_posts()) : $hlm_sports_posts->the_post();
 
 
 		$page_name_id = get_the_ID();

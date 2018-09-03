@@ -1,5 +1,9 @@
 <?php 
 
+//registering cpt
+
+
+
 function bookmaker_post_type(){
 
     $labels = array(
