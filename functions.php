@@ -1,14 +1,5 @@
 <?php
-//Wgd0BrYrr6ss&zml
 
-//stefan_hlm
-
-//gpass Q%tEC3L75C/?eQhe
-//github 0e71099a023f635ab068ea0f5b5b38c05a99e50b
-
-//stg User: winningsportsb Password: e71f0a74
-
-//github password makavelikl1kf484
 
 add_filter('acf/settings/remove_wp_meta_box', '__return_false');
 
@@ -77,18 +68,6 @@ if( function_exists('acf_add_options_page') ) {
        		'icon_url' => 'dashicons-images-alt2',
         	'position' => 7
 		));
-		
-		// acf_add_options_sub_page(array(
-		// 	'page_title' 	=> 'Page 1',
-		// 	'menu_title'	=> 'Page 1',
-		// 	'parent_slug'	=> 'options',
-		// ));
-		
-		// acf_add_options_sub_page(array(
-		// 	'page_title' 	=> 'Page 2',
-		// 	'menu_title'	=> 'Page 2',
-		// 	'parent_slug'	=> 'options',
-		// ));
 	
 	}
 
@@ -96,28 +75,6 @@ if( function_exists('acf_add_options_page') ) {
 if (!class_exists('Widget_Shortcode')) {
 	include( get_stylesheet_directory() . '/plugins/widget-shortcode/init.php' );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -168,29 +125,6 @@ function hlm_sports_image_sizes_reg( $sizes ) {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -256,25 +190,6 @@ function hlm_sports_widgets_style(){
 </style>"
 ;}
 add_action('admin_print_styles-widgets.php', 'hlm_sports_widgets_style');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //register styles and scripts
 
@@ -653,11 +568,6 @@ add_action( 'after_setup_theme', 'hlm_sports_alternative_homepage' );
 
 
 
-
-
-
-
-
 // Get the page number
 
 function hlm_sports_pagination() {
@@ -670,10 +580,6 @@ function hlm_sports_pagination() {
 		  'total' => $wp_query->max_num_pages,
   ) );	
 }
-
-
-
-
 
 
 
@@ -698,12 +604,6 @@ function hlm_sports_excerpt($limit) {
   return $excerpt;
 
 }
-
-
-
-
-
-
 
 
 

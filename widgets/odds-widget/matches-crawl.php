@@ -1,5 +1,9 @@
 <?php 
 
+//it works with simplephpdom
+//some parts are writen on a advanced custom fields and the odds are writen in post meta
+
+//this is removing past function
 function remove_past_matches(){
 		$now_date = current_time('timestamp') + 3600;
 			//Delete Matches
@@ -25,6 +29,8 @@ function remove_past_matches(){
 }
 
 
+
+// this removes all matches from a sport taxonomy
 function remove_all_matches($sport){
 
 			//Delete Matches
@@ -49,6 +55,9 @@ function remove_all_matches($sport){
 }
 
 
+
+
+//remove all matches hard reset
 function remove_all_matches_all(){
 
 			//Delete Matches
@@ -67,8 +76,7 @@ function remove_all_matches_all(){
 
 
 
-
-
+//crawl matches by sport taxonomy
 function crawl_matches($sport){
 
 
@@ -148,15 +156,6 @@ wp_set_object_terms( $post_ID, $sports_tax, 'sports', false );
 					   update_post_meta ( $post_ID, 'last_crawled', $last_crawled_reset );
 					}
 
-
-// update_field( 'start_time', $html->find('.match-on .time .time-div .time-digits', $i)->plaintext, $post_ID );
-
-
-
-
-
-
-
 				}
 
 echo $i / 2;
@@ -166,16 +165,7 @@ echo '     ';
 echo $title;
 echo '</br>';
 
-
-
-
-
-
 		}
-
-
-
-
 
 
 
@@ -186,7 +176,7 @@ echo '</br>';
 
 
 
-
+//crawls table for old api useless now
 
 function crawl_table(){
 
@@ -314,7 +304,7 @@ update_field( $field_key, $value, $page_name_id );
 
 
 
-
+//old api useless now
 function our_own_api($pick_league){
 
 $url = 'http://market.exaloc.org/v1/pre-match/markets?categories='.$pick_league;
@@ -389,67 +379,6 @@ $data = json_decode( $body, true );
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -551,6 +480,9 @@ return $gggg;
 
 }
 
+
+//crawls a full match with all odds
+
 function crawl_full_football_game($page_name_id = null){
 
 
@@ -647,7 +579,7 @@ function crawl_full_football_game($page_name_id = null){
 
 
 
-
+//old function convert table useless now
 function convert_winner_table(){
 
 
@@ -720,7 +652,7 @@ endwhile;
 
 
 /*
-
+//this is experimental thing
 
 function get_team_images_from_google($team_search = "winningsportsbets"){
     

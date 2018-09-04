@@ -1,43 +1,6 @@
 <?php 
 
 
-/*
-
-global $wpdb;
-$wpdb_backup = $wpdb;
-$wpdb = new wpdb( 'root', 'makaveli123', 'wordpress', '35.197.207.246' );
-# Do your stuff here...
-# then when done...
-$wpdb = $wpdb_backup;
-
-
-
-
-
-back i front 
-
-promotion page
-contact form design
-Bonus list page
-flash game custom post type i link do play igata
-custom posg types izglea poveke
-
-
-*/
-
-
-
-
-
-
-// wp_clear_scheduled_hook('cron_crawl_matches');
-
-// wp_clear_scheduled_hook('cron_crawl_odds');
-
-
-
-
-
 
 add_filter( 'cron_schedules', 'example_add_cron_interval' );
  
@@ -143,14 +106,6 @@ add_action( 'cron_crawl_odds', 'cron_crawl_odds' );
 
 
 
-// function cron_remove_past_matches() {
-//     remove_past_matches();
-// }
-// add_action( 'cron_remove_past_matches', 'cron_remove_past_matches' );
-
-    // if ( ! wp_next_scheduled( 'cron_remove_past_matches' ) ) {
-    //     wp_schedule_event( time(), 'halfhour', 'cron_remove_past_matches' );
-    // }
 
 if ($_SERVER['HTTP_HOST'] != 'winningsportsbets.co.uk' && $_SERVER['HTTP_HOST'] != 'http://hlm-betting.highlight' ){
 
@@ -193,12 +148,11 @@ function add_crawler_options_page() {
 
 
 function crawler_options_function(){
-//ini_set('memory_limit', '2560M');        
+
 ini_set('max_input_time', 300);         
 ini_set('max_execution_time', 3600);  
 set_time_limit(3600);
-//ini_set('display_errors',1);
-//error_reporting(E_ALL|E_STRICT);
+
 
 
         echo '<h2>Crawl Matches</h2>';
@@ -255,22 +209,6 @@ if (isset($_POST) && !empty($_POST['crawl_matches'])){
     }
 }
 
-/*
-        echo '<h2>Crawl Matches Winner Odds</h2>';
-?>
-            <form method="post">                    
-                <input  type="submit" class="button-secondary" name="crawl_matches_winnerodds" value="<?php echo esc_attr('Crawl Winner Odds'); ?>"/>
-            </form>
-<?php               
-
-if (isset($_POST) && !empty($_POST['crawl_matches_winnerodds'])){
-
-        crawl_table();
-
-
-}
-*/
-
 
         echo '<h2>Crawl Matches odds</h2>';
 ?>
@@ -302,102 +240,11 @@ if (isset($_POST) && !empty($_POST['crawl_matches_odds'])){
 }
 
 
-
-/*
-
-
-
-        echo '<h2>Crawl Odds</h2>';
+        echo '<h2>Remove Matches from sport</h2>';
 
 ?>
             <form method="post">                    
-                <input  type="submit" class="button-secondary" name="crawl_odds" value="<?php echo esc_attr('Crawl Odds'); ?>"/>
-
-
-
-
-            </form>
-<?php  
-if (isset($_POST) && !empty($_POST['crawl_odds']) ){
-        
-        crawl_table_our_own_api();
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        echo '<h2>Odds api</h2>';
-
-
-?>
-            <form method="post">                    
-                <input  type="submit" class="button-secondary" name="checker_checker" value="<?php echo esc_attr('Add Games and odds for the games'); ?>"/>
-
-            <select name="pick_league" id="widget-layout-dropdown">
-
-                <?php $options = array(
-                    '' => 'Pick a League',
-                    '5b1540d1557b8cb1558b46c6' => 'World Cup',
-                    //'54a229f8d443afef088b45b4' => 'Premiere League',
-                    //'54a229fad443afef088b45c9' => 'Bundesliga',
-                    );
-
-                foreach ($options as $option => $name) {?>
-                    <option value='<?php echo esc_attr($option); ?>'>
-                        <?php echo esc_html($name); ?>
-                    </option>
-                <?php } ?>
-            </select>
-
-            </form>
-
-
-<?php  
-
-        if (isset($_POST) && !empty($_POST['checker_checker']) && !empty($_POST['pick_league'])){
-        $pick_league = $_POST['pick_league'];
-         our_own_api($pick_league);
-
-        }
-
-*/
-
-
-
-
-
-
-
-
-
-        echo '<h2>Remove Past Matches</h2>';
-
-?>
-            <form method="post">                    
-                <input  type="submit" class="button-secondary" name="remove_all_matches" value="<?php echo esc_attr('Remove past matches'); ?>"/>
+                <input  type="submit" class="button-secondary" name="remove_all_matches" value="<?php echo esc_attr('Remove matches from sport'); ?>"/>
                 <?php
                 $dropdown_args = array(
                     'hide_empty'       => 0,
