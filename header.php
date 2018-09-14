@@ -20,11 +20,7 @@ if ($_SERVER['HTTP_HOST'] == 'www.winningsportsbets.co.uk' || $_SERVER['HTTP_HOS
 }
 
 ?>
-<!--Crazy Egg Tracking -->
 
-<script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0072/6444.js" async="async"></script>
-
-<!-- End Crazy Egg Tracking -->
 </head>
 
 <body <?php body_class(); ?>>
